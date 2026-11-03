@@ -28,3 +28,10 @@ The presentation video for the FleetHacker hackathon, if the team is chosen to p
 - Uniforms, ranks, insignia and the Navy terms in the dialogue come from public sources and a few photos, and are **not verified** by a submariner. See `notes/open-questions.md`.
 - This is a team project. It is not a US Navy product and is not endorsed by the Navy.
 - The generated clips are 480p. Keepers should be re-run at a higher resolution once the cut is locked.
+
+## Example Display Video in github pages
+```html
+<video width="320" height="240" controls loop="" muted="" autoplay="">
+    <source src="https://github.com/fleethacker-data-crucible/Commissioning/raw/refs/heads/main/video/opening-scene-rough-cut.mp4" />
+</video>
+```
