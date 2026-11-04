@@ -20,7 +20,7 @@ def missing(j):
     return sorted(k for k in keys if not ids.get(k))
 out = os.path.join(here, 'out'); os.makedirs(out, exist_ok=True)
 for j in jobs:
-    m = missing(j); tag = 'optional' if j['optional'] else 'required'
+    m = missing(j); tag = 'optional' if j['optional'] else ('manual' if j.get('manual') else 'required')
     if '--list' in sys.argv:
         print(f"{j['order']:02d} {j['id']:20s} {tag:9s} {'BLOCKED, needs: ' + ', '.join(m) if m else 'ready':45s} {j['model']} {j['size']} {j['aspect']} x{j['count']}")
         continue
@@ -28,6 +28,7 @@ for j in jobs:
         print(f"skip  {j['order']:02d} {j['id']} (needs {', '.join(m)})"); continue
     body = j['prompt']
     for k, v in ids.items(): body = body.replace('{{%s}}' % k, v)
-    hdr = f"# {j['title']}\n# Model: {j['model']}   Size: {j['size']}   Aspect: {j['aspect']}   Count: {j['count']}   Optional: {j['optional']}\n# When done, record the result:  python make-prompts.py --set {j['records']}=<ID>\n\n"
+    note = ('# Note: ' + j['notes'] + '\n') if j.get('notes') else ''
+    hdr = f"# {j['title']}\n{note}# Model: {j['model']}   Size: {j['size']}   Aspect: {j['aspect']}   Count: {j['count']}   Optional: {j['optional']}\n# When done, record the result:  python make-prompts.py --set {j['records']}=<ID>\n\n"
     path = os.path.join(out, f"{j['order']:02d}-{j['id']}.txt")
     open(path, 'w').write(hdr + body + '\n'); print('wrote', path)

@@ -1,11 +1,13 @@
 {
-  "_help": "Copy to ids.json. Fill the ones you have. Task IDs are written without the @task: prefix, material IDs without @material:.",
+  "_help": "Copy to ids.json. Task IDs without the @task: prefix, material IDs without @material:. Masters and sheets are TASK IDs; the two *-north-panel keys are MATERIAL IDs of the cropped north panels.",
   "captain-v2-sheet": "413570",
   "captain-identity": "413362",
   "reyes-pick": "",
   "morgan-pick": "",
   "carrier-north-master": "",
-  "carrier-north": "",
+  "carrier-sheet": "",
+  "carrier-north-panel": "",
   "shore-north-master": "",
-  "shore-north": ""
+  "shore-sheet": "",
+  "shore-north-panel": ""
 }

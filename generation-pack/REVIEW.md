@@ -1,12 +1,16 @@
 # Review: everything that would be sent to Renoise
-**Nothing has been sent.** This file is the complete payload, in order, for you to review and edit before anything is generated. Placeholders like `{{reyes-pick}}` are filled in with the IDs of earlier results. Edit `jobs.json` (then re-run `python make-prompts.py`) or tell me what to change.
-Credits are not shown because I have no price list. Your own ledger puts a character sheet at about 23 credits, a 4k room sheet at about 28 and a 1k image at about 6. Check live prices.
+
+**Nothing has been sent.** Placeholders like {{reyes-pick}} are replaced by the ID of an earlier result. Masters and sheets are task IDs; the two *-north-panel keys are material IDs of the cropped north panels.
+
 ## Review checklist
-- Appearance slots (REYES, MORGAN) are filled with my defaults. Change anything you do not want.
-- Uniform wording for REYES is a placeholder `[UNIFORM: confirm with a carrier Sailor]`; it is sent as written unless you fix it first.
-- No real names, ship names, hull numbers or seals are in any prompt. The cap text and badge are composited later, not generated.
-- The Captain job references your existing sheets 413570 and 413362; it sends no new personal data.
-- Voice job: voices are described, not cloned.
+
+- REYES and MORGAN appearance descriptions use my defaults. Change anything you do not want.
+- REYES wears navy blue flame-resistant coveralls with rank on the collar and tapes on the chest (a reviewer's at-sea choice). Her exact uniform is still worth a carrier Sailor's look; the prompts carry no bracketed notes.
+- The Captain's cap is plain navy with a small gold crest and gold oak-leaf visor, no lettering. The boat name is composited later.
+- Badges are shown turned backward (plain white reverse). The "CIV" tag and name are composited later.
+- No real names, ship names, hull numbers or seals appear in any prompt.
+- Voices are described and given sample lines, not cloned. Seed Audio took three speakers in one task before (task 413603).
+- No prices: there is no price list. Your ledger put a 1k image at about 6 credits, a character sheet at about 23 and a 4k room sheet at about 28.
 
 ## 01. Captain HARLAN sheet v3 (cap, no hull number)
 - Model: GPT Image 2.5 Sunburst, size 2k, aspect 16:9, count 1
@@ -16,9 +20,9 @@ Credits are not shown because I have no price list. Your own ledger puts a chara
 ```text
 USE: Photorealistic character turnaround reference sheet of one US Navy submarine Commanding Officer, for keeping his face identical across many video shots.
 IDENTITY AND COSTUME REFERENCE: @task:{{captain-v2-sheet}} is the existing Captain sheet. Keep this exact man's face, hair, build, expression and every part of the uniform identical in every panel. @task:{{captain-identity}} is the original identity pick.
-CHANGE ONLY the cap, to a navy blue ball cap with gold embroidery: the boat name "USS FLEETHACKER" and a small crest on the front, and gold oak-leaf embroidery along the visor. No hull number, no "SSN 999". Everything else stays exactly as in the existing sheet: navy blue submarine coverall, name tape "HARLAN" and "U.S. NAVY" tape, gold officer dolphins above the left chest tape, silver oak leaf (Commander, O-5) on each collar point, tan web belt with a metal buckle.
+CHANGE ONLY the cap, to a plain navy blue ball cap with a small gold crest on the front and gold oak-leaf embroidery along the visor. No lettering of any kind on the cap, no boat name, no hull number. Everything else stays exactly as in the existing sheet: navy blue submarine coverall, name tape "HARLAN" and "U.S. NAVY" tape, gold officer dolphins above the left chest tape, silver oak leaf (Commander, O-5) on each collar point, tan web belt with a metal buckle.
 LAYOUT: four equal vertical panels side by side on a seamless pure white studio background, separated by thin grey vertical lines. Panel 1: full body, front view, standing relaxed, arms at his sides. Panel 2: full body, exact side profile facing right. Panel 3: full body, three-quarter view. Panel 4: extreme straight-on close-up of his face, head, cap and collar, looking into the camera, neutral expression, rank insignia visible. Same man, same uniform, same proportions in all four panels. Soft even studio lighting, sharp focus, no shadows on the background.
-EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text beyond the uniform tapes and the cap embroidery, no watermark, no player controls.
+EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text beyond the uniform tapes, no watermark.
 ```
 
 ## 02. REYES identity picks
@@ -27,7 +31,7 @@ EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "
 - Result recorded as: `reyes-pick`
 
 ```text
-Photorealistic full-body photograph of a female US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, [APPEARANCE: a woman in her mid-twenties, lean and weathered, dark hair pulled back in a regulation-neat bun, a tired but steady face with light shadows under the eyes, no makeup, natural and approachable, watchful; uniform lightly worn, boots scuffed]. Plain working uniform [UNIFORM: confirm with a carrier Sailor], zipped or buttoned to the collar, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at her sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
+Photorealistic full-body photograph of a female US Navy enlisted Sailor, a woman in her mid-twenties, lean and weathered, dark hair pulled back in a regulation-neat bun, a tired but steady face with light shadows under the eyes, no makeup, natural and approachable, watchful; uniform lightly worn, boots scuffed. Navy blue flame-resistant coveralls zipped to the collar, rank insignia on the collar, a name tape on the right chest and a second tape on the left chest, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at her sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
 ```
 
 ## 03. REYES four-panel sheet
@@ -36,11 +40,11 @@ Photorealistic full-body photograph of a female US Navy enlisted Sailor standing
 - Result recorded as: `reyes-sheet`
 
 ```text
-USE: Photorealistic character turnaround reference sheet of one female US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, for keeping her face identical across many video shots.
+USE: Photorealistic character turnaround reference sheet of one female US Navy enlisted Sailor, for keeping her face identical across many video shots.
 IDENTITY REFERENCE: @task:{{reyes-pick}} is the identity reference. Keep this exact woman's face, skin tone, hair, build and expression identical in every panel.
-CHANGE ONLY their clothing, to the carrier working uniform [UNIFORM: confirm with a carrier Sailor]: a sewn-on name tape over the right chest reading "REYES" and a sewn-on tape over the left chest reading "U.S. NAVY"; petty officer second class (E-5) rank insignia, an eagle above two chevrons; no cap; black safety boots; no warfare pins. The women's version of the uniform and the hair rules should be confirmed by a carrier Sailor [unverified].
+CHANGE ONLY her clothing, to navy blue flame-resistant coveralls zipped to the collar: a sewn-on name tape over the right chest reading "REYES" and a sewn-on tape over the left chest reading "U.S. NAVY"; petty officer second class (E-5) rank insignia, an eagle above two chevrons; no cap; black safety boots; no warfare pins.
 LAYOUT: four equal vertical panels side by side on a seamless pure white studio background, separated by thin grey vertical lines. Panel 1: full body, front view, standing relaxed, arms at her sides. Panel 2: full body, exact side profile facing right. Panel 3: full body, three-quarter view. Panel 4: extreme straight-on close-up of the face, head and collar, looking into the camera, neutral expression, rank insignia visible, hair in a regulation bun. Same woman, same uniform, same proportions in all four panels. Soft even studio lighting, sharp focus, no shadows on the background.
-EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text beyond the uniform tapes, no watermark, no player controls.
+EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text beyond the uniform tapes, no watermark.
 ```
 
 ## 04. MORGAN identity picks
@@ -49,7 +53,7 @@ EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "
 - Result recorded as: `morgan-pick`
 
 ```text
-Photorealistic full-body photograph of a government civilian software developer, [APPEARANCE: mid-thirties, medium build, dark hair tied back, light olive skin, calm tired eyes, understated and dry]. Business-casual office clothing: a plain light-blue collared button-up shirt, dark trousers, flat dark shoes, and a plain white badge holder on a dark lanyard around their neck, the badge face blank. Standing relaxed facing the camera straight on, arms at their sides, whole body from head to shoes in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
+Photorealistic full-body photograph of a government civilian software developer, mid-thirties, medium build, dark hair tied back, light olive skin, calm tired eyes, understated and dry. Business-casual office clothing: a plain light-blue collared button-up shirt, dark trousers, flat dark shoes, and a dark lanyard around their neck with a plain white badge holder, the badge turned backward so only its plain white reverse side shows. Standing relaxed facing the camera straight on, arms at their sides, whole body from head to shoes in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
 ```
 
 ## 05. MORGAN four-panel sheet
@@ -60,9 +64,9 @@ Photorealistic full-body photograph of a government civilian software developer,
 ```text
 USE: Photorealistic character turnaround reference sheet of one government civilian software developer, for keeping their face identical across many video shots.
 IDENTITY REFERENCE: @task:{{morgan-pick}} is the identity reference. Keep this exact person's face, skin tone, hair, build and expression identical in every panel.
-CHANGE ONLY their clothing, to: a plain light-blue collared button-up shirt, dark trousers, flat dark shoes, a plain white rectangular badge holder on a dark lanyard around their neck with a BLANK badge face (no photo, no text), no insignia of any kind.
+CHANGE ONLY their clothing, to: a plain light-blue collared button-up shirt, dark trousers, flat dark shoes, a dark lanyard around their neck with a plain white rectangular badge holder, the badge turned backward so only its plain white reverse side shows, no text, no insignia of any kind.
 LAYOUT: four equal vertical panels side by side on a seamless pure white studio background, separated by thin grey vertical lines. Panel 1: full body, front view, standing relaxed, arms at their sides. Panel 2: full body, exact side profile facing right. Panel 3: full body, three-quarter view. Panel 4: extreme straight-on close-up of the face, head, collar and the lanyard, looking into the camera, neutral expression. Same person, same clothes, same proportions in all four panels. Soft even studio lighting, sharp focus, no shadows on the background.
-EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text, no watermark, no player controls.
+EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text, no watermark.
 ```
 
 ## 06. Carrier workcenter: north master
@@ -87,25 +91,37 @@ FIXED INVENTORY: NORTH (back wall): the desk wall exactly as in the reference. E
 LAYOUT: 2x2 grid separated by thin white lines, NORTH top-left, EAST top-right, SOUTH bottom-left, WEST bottom-right, each panel 16:9. EXACT TEXT: a small bold white sans-serif label in the top-left corner of each panel: "NORTH", "EAST", "SOUTH", "WEST". No other text, no logos, no watermark.
 ```
 
-## 08. Carrier: clock insert
-- Model: Seedream 5.0 Pro, size 1k, aspect 16:9, count 1
-- Needs: carrier-north
-- Result recorded as: `carrier-clock`
+## 08. Crop the carrier 2x2 sheet and register the north panel
+- Model: manual (local), size n/a, aspect n/a, count 1
+- Needs: carrier-sheet
+- Result recorded as: `carrier-north-panel`
 
 ```text
-Close-up of the plain analog wall clock from @material:{{carrier-north}}, no numerals on the face, the second hand mid-sweep, shallow depth of field, same lighting as the reference. No text, no logos, no watermark.
+No prompt. Download the carrier 2x2 sheet, run: python tools/crop-sheet.py <sheet.png> panels/carrier
+Register panels/carrier/north.png (and east, south, west) in Renoise as materials, then record the NORTH panel's material ID:
+  python make-prompts.py --set carrier-north-panel=<material ID>
 ```
 
-## 09. Carrier: watch log insert
+## 09. Carrier: clock insert
 - Model: Seedream 5.0 Pro, size 1k, aspect 16:9, count 1
-- Needs: carrier-north
+- Needs: carrier-north-panel
+- Result recorded as: `carrier-clock`
+- Note: The clock hands will be random. Fix the time in post (or ignore: no numerals).
+
+```text
+Close-up of the plain analog wall clock from @material:{{carrier-north-panel}}, no numerals on the face, the second hand mid-sweep, shallow depth of field, same lighting as the reference. No text, no logos, no watermark.
+```
+
+## 10. Carrier: watch log insert
+- Model: Seedream 5.0 Pro, size 1k, aspect 16:9, count 1
+- Needs: carrier-north-panel
 - Result recorded as: `carrier-log`
 
 ```text
-Close-up from above of the open bound watch log from @material:{{carrier-north}}, two ruled pages covered in dense blue-ink handwriting that is NOT legible, scribbled lines and cross-outs, a hand holding a black pen above the page, shallow depth of field, same lighting as the reference. No legible words, no numbers, no logos, no watermark.
+Close-up from above of the open bound watch log from @material:{{carrier-north-panel}}, two ruled pages covered in dense blue-ink handwriting that is NOT legible, scribbled lines and cross-outs, a hand holding a black pen above the page, shallow depth of field, same lighting as the reference. No legible words, no numbers, no logos, no watermark.
 ```
 
-## 10. Carrier: flight deck establishing shot  (optional)
+## 11. Carrier: flight deck establishing shot  (optional)
 - Model: Seedream 5.0 Pro, size 1k, aspect 16:9, count 1
 - Needs: nothing
 - Result recorded as: `carrier-flightdeck`
@@ -114,7 +130,7 @@ Close-up from above of the open bound watch log from @material:{{carrier-north}}
 Photorealistic documentary photograph of the flight deck of a large US Navy aircraft carrier at night, seen from a distance, dark silhouettes of parked aircraft, dim blue taxi lights and a few small amber lights along the deck edge, a faint haze, no people in focus, no readable text, no ship name, no hull number, no logos, no watermark. Generic, not a specific ship.
 ```
 
-## 11. Shore office: north master
+## 12. Shore office: north master
 - Model: Seedream 5.0 Pro, size 1k, aspect 16:9, count 1
 - Needs: nothing
 - Result recorded as: `shore-north-master`
@@ -123,7 +139,7 @@ Photorealistic documentary photograph of the flight deck of a large US Navy airc
 Photorealistic documentary photograph of the back wall of a small plain US government office in the morning, shot from the center of the room at eye height with a 35mm lens, camera straight on. A beige laminate desk against a grey-beige wall. On the desk: a plain black laptop with the lid open and its screen a plain flat pale blue-grey, a small grey smart-card reader on a short cable beside it, a keyboard, a white ceramic coffee mug, a plain desk phone. A plain analog wall clock above the desk, no numerals, its hands near nine. A grey fabric office chair. Ceiling fluorescent panels in a drop ceiling, on, cool white, even light. No windows, no posters, no readable text anywhere, no logos. Documentary photograph style, available light, mild film grain, realistic, not a video game.
 ```
 
-## 12. Shore office: 2x2 room sheet
+## 13. Shore office: 2x2 room sheet
 - Model: GPT Image 2.5 Sunburst, size 4k, aspect 16:9, count 1
 - Needs: shore-north-master
 - Result recorded as: `shore-sheet`
@@ -136,32 +152,48 @@ FIXED INVENTORY: NORTH (back wall): the desk wall exactly as in the reference. E
 LAYOUT: 2x2 grid separated by thin white lines, NORTH top-left, EAST top-right, SOUTH bottom-left, WEST bottom-right, each panel 16:9. EXACT TEXT: a small bold white sans-serif label in the top-left corner of each panel: "NORTH", "EAST", "SOUTH", "WEST". No other text, no logos, no watermark.
 ```
 
-## 13. Shore office: clock insert
+## 14. Crop the shore 2x2 sheet and register the north panel
+- Model: manual (local), size n/a, aspect n/a, count 1
+- Needs: shore-sheet
+- Result recorded as: `shore-north-panel`
+
+```text
+No prompt. Download the shore office 2x2 sheet, run: python tools/crop-sheet.py <sheet.png> panels/shore
+Register panels/shore/north.png (and east, south, west) in Renoise as materials, then record the NORTH panel's material ID:
+  python make-prompts.py --set shore-north-panel=<material ID>
+```
+
+## 15. Shore office: clock insert
 - Model: Seedream 5.0 Pro, size 1k, aspect 16:9, count 1
-- Needs: shore-north
+- Needs: shore-north-panel
 - Result recorded as: `shore-clock`
+- Note: The clock hands will be random. Fix the time in post (or ignore: no numerals).
 
 ```text
-Close-up of the plain analog wall clock from @material:{{shore-north}}, no numerals on the face, the second hand mid-sweep, shallow depth of field, same lighting as the reference. No text, no logos, no watermark.
+Close-up of the plain analog wall clock from @material:{{shore-north-panel}}, no numerals on the face, the second hand mid-sweep, shallow depth of field, same lighting as the reference. No text, no logos, no watermark.
 ```
 
-## 14. Shore office: laptop and reader insert  (optional)
+## 16. Shore office: laptop and reader insert  (optional)
 - Model: Seedream 5.0 Pro, size 1k, aspect 16:9, count 1
-- Needs: shore-north
+- Needs: shore-north-panel
 - Result recorded as: `shore-laptop`
+- Note: Becomes required if the close zooms out of Periscope onto Morgan's laptop.
 
 ```text
-Close-up of the plain black laptop and the small grey smart-card reader on the beige desk from @material:{{shore-north}}, the laptop screen a plain flat pale blue-grey with nothing on it, shallow depth of field, same lighting as the reference. No text, no logos, no watermark.
+Close-up of the plain black laptop and the small grey smart-card reader on the beige desk from @material:{{shore-north-panel}}, the laptop screen a plain flat pale blue-grey with nothing on it, shallow depth of field, same lighting as the reference. No text, no logos, no watermark.
 ```
 
-## 15. Voices: REYES, MORGAN, NARRATOR (Seed Audio)
+## 17. Voices: REYES, MORGAN, NARRATOR (Seed Audio)
 - Model: Seed Audio, size n/a, aspect n/a, count 1
 - Needs: nothing
 - Result recorded as: `voices-dialogue`
+- Note: Seed Audio took three speakers in one task before (task 413603, the control-room dialogue). No tool names are in these lines, so no respelling is needed; your notes say respellings made the tool names worse.
 
 ```text
 Setting: clean, dry, close-microphone dialogue recorded for a film, no background noise, no music, no room reverb.
-Speaker MORGAN: [VOICE: even, a little weary, understated, neither hurried nor dramatic].
-Speaker REYES: [VOICE: a woman's voice, low, tired and dry, steady, never raised].
-Speaker NARRATOR: [VOICE: calm, level, slightly dry, neither hurried nor dramatic].
+Three speakers, one pass.
+NARRATOR (calm, level, slightly dry, neither hurried nor dramatic): "Every watch, the same hunt through the same paper." ... "And the people who could fix it can't build on this machine." ... "Now imagine it's not a quiet night."
+REYES (a woman's voice, low, tired and dry, steady, never raised): "Third time through this log tonight. Still can't find the open item."
+MORGAN (even, a little weary, understated): "Python's not installed. Git's not installed. Nothing's installed."
+Leave a short natural pause between lines. These are sample lines; edit them before you send.
 ```

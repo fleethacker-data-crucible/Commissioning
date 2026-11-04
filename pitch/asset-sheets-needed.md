@@ -1,5 +1,7 @@
 # Asset sheets: what exists, what to make
 
+> **The prompts in `generation-pack/jobs.json` (and `generation-pack/REVIEW.md`) are the final versions.** They include fixes from a videography review: bracketed notes removed, a plain Captain cap with no lettering, badges turned backward, no "player controls", and consistent ID names. Where this page differs, jobs.json wins.
+
 Prompts below copy the structure of the ones you already used (`intro/prompts/prompt-audit.md`): identity pick first, then a four-panel character sheet; a master wall, then a 2x2 room sheet; then "same photograph, change only the lighting" for variants. Nothing here was generated: I have no Renoise access in this session. Credit figures are rough, from the costs in your own ledger; check live prices.
 
 ## 1. Checklist
