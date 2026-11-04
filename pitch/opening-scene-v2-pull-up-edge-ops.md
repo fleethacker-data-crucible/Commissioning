@@ -1,4 +1,4 @@
-# Opening scene v2: "Pull up Periscope"
+# Opening scene v2: "Pull up Scope"
 
 Keep the submarine cold open (already shot, 36.8 s). Change only the last line and the hand-off. After the zoom, the video ends on the Edge Ops catalog and the viewer takes over: every tool is a card, and each card plays its own demo (`interactive/index.html`). Judges can watch any demo in any order.
 
@@ -6,8 +6,8 @@ Keep the submarine cold open (already shot, 36.8 s). Change only the last line a
 
 | Where | Now | New |
 |---|---|---|
-| Captain's order (clip B v2) | "Then we get our inference local. Rig for ultra-quiet. Windlass and Fairlead. Bring them online now." | "Then we work with what's aboard. Raise Periscope." |
-| DELGADO's last line (clip C v3, audio clipped in separately) | "Windlass online! Fairlead online!" | "Aye, Captain! Raising Periscope!" |
+| Captain's order (clip B v2) | "Then we get our inference local. Rig for ultra-quiet. Windlass and Fairlead. Bring them online now." | "Then we work with what's aboard. Bring up Scope." |
+| DELGADO's last line (clip C v3, audio clipped in separately) | "Windlass online! Fairlead online!" | "Aye, Captain! Scope is up!" |
 | Zoom target (the flat-colour monitor) | Fairlead screenshot | Screenshot of the Edge Ops catalog page (`interactive/index.html#tools`) |
 | End of video | Hand-off to a demo | Freeze on the catalog; the page unhides the cards |
 
@@ -23,7 +23,7 @@ Why the old line is a problem: the mispronounced "Windlass and Fairlead" in B v2
 ## Why this works
 
 - It uses footage you already paid for.
-- The "Pull up Periscope" line makes the product the hero, not one tool.
+- The "Pull up Scope" line makes the product the hero, not one tool.
 - It turns a passive video into a self-serve demo for judges who walk the stations, which is the Signal-Gun plan (per-tool demos for stations, a polished video for the top five).
 
 ## What has to exist before this ships
@@ -38,13 +38,13 @@ When the zoom lands on the catalog, an AI voice starts and the page scrolls slow
 
 Voiceover (about 35 s, one calm voice, no hype):
 
-> Periscope is a home for tools.
+> Scope is a home for tools.
 > Halyard tidies a backlog, with your approval.
 > Eight Bells turns a watch log into a turnover.
 > Semaphore builds dashboards from plain English.
 > Fairlead puts every AI model behind one address.
 > Windlass runs giant models on an ordinary PC.
-> All of them hosted in Periscope. That's five of sixteen. No admin. No install.
+> All of them hosted in Scope. That's five of sixteen. No admin. No install.
 
 Notes:
 - The five tools are in the order their cards appear on the page, so the scroll only moves down. If you change the five, keep them in page order or the page will scroll back up.
