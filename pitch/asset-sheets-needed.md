@@ -38,14 +38,14 @@ Keep the rest of the v2 prompt unchanged (gold officer dolphins, silver oak leaf
 ### REYES, carrier Sailor
 **Identity picks** (Seedream 5.0 Pro, 1k, 3:4, three candidates). The appearance block is yours to set; default shown. The uniform is a placeholder until a carrier Sailor confirms it.
 ```text
-Photorealistic full-body photograph of a US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, [APPEARANCE: mid-twenties, lean and weathered, short dark hair, a hard tired face with deep eye bags and a squint, clean-shaven and regulation-neat, looks older than their years, tired but watchful; uniform faded and worn, boots scuffed]. Plain working uniform [UNIFORM: confirm with a carrier Sailor], zipped or buttoned to the collar, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at their sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
+Photorealistic full-body photograph of a female US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, [APPEARANCE: a woman in her mid-twenties, lean and weathered, dark hair pulled back in a regulation-neat bun, a hard tired face with deep eye bags and a squint, no makeup, looks older than her years, tired but watchful; uniform faded and worn, boots scuffed]. Plain working uniform [UNIFORM: confirm with a carrier Sailor], zipped or buttoned to the collar, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at her sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
 ```
 **Four-panel sheet** (GPT Image 2.5 Sunburst, 2k, 16:9; reference: the identity pick you choose):
 ```text
-USE: Photorealistic character turnaround reference sheet of one US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, for keeping their face identical across many video shots.
-IDENTITY REFERENCE: @task:<REYES pick> is the identity reference. Keep this exact person's face, skin tone, hair, build and expression identical in every panel.
-CHANGE ONLY their clothing, to the carrier working uniform [UNIFORM: confirm with a carrier Sailor]: a sewn-on name tape over the right chest reading "REYES" and a sewn-on tape over the left chest reading "U.S. NAVY"; petty officer second class (E-5) rank insignia, an eagle above two chevrons; no cap; black safety boots; no warfare pins.
-LAYOUT: four equal vertical panels side by side on a seamless pure white studio background, separated by thin grey vertical lines. Panel 1: full body, front view, standing relaxed, arms at their sides. Panel 2: full body, exact side profile facing right. Panel 3: full body, three-quarter view. Panel 4: extreme straight-on close-up of the face, head and collar, looking into the camera, neutral expression, rank insignia visible. Same person, same uniform, same proportions in all four panels. Soft even studio lighting, sharp focus, no shadows on the background.
+USE: Photorealistic character turnaround reference sheet of one female US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, for keeping her face identical across many video shots.
+IDENTITY REFERENCE: @task:<REYES pick> is the identity reference. Keep this exact woman's face, skin tone, hair, build and expression identical in every panel.
+CHANGE ONLY their clothing, to the carrier working uniform [UNIFORM: confirm with a carrier Sailor]: a sewn-on name tape over the right chest reading "REYES" and a sewn-on tape over the left chest reading "U.S. NAVY"; petty officer second class (E-5) rank insignia, an eagle above two chevrons; no cap; black safety boots; no warfare pins. The women's version of the uniform and the hair rules should be confirmed by a carrier Sailor [unverified].
+LAYOUT: four equal vertical panels side by side on a seamless pure white studio background, separated by thin grey vertical lines. Panel 1: full body, front view, standing relaxed, arms at her sides. Panel 2: full body, exact side profile facing right. Panel 3: full body, three-quarter view. Panel 4: extreme straight-on close-up of the face, head and collar, looking into the camera, neutral expression, rank insignia visible, hair in a regulation bun. Same woman, same uniform, same proportions in all four panels. Soft even studio lighting, sharp focus, no shadows on the background.
 EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text beyond the uniform tapes, no watermark, no player controls.
 ```
 The carrier name and hull number on the cap are composited later.
@@ -114,10 +114,10 @@ Clock close-up (same prompt as the carrier, referencing the shore north panel) a
 ```text
 Setting: clean, dry, close-microphone dialogue recorded for a film, no background noise, no music, no room reverb.
 Speaker MORGAN: [VOICE: even, a little weary, understated, neither hurried nor dramatic].
-Speaker REYES: [VOICE: tired, rough and dry, a little crusty, never raised].
+Speaker REYES: [VOICE: a woman's voice, low and tired, rough and dry, a little crusty, never raised].
 Speaker NARRATOR: [VOICE: calm, level, slightly dry, neither hurried nor dramatic].
 ```
-Add a REYES line to the same pass (tired, rough and dry, a little crusty, never raised). Describe the voices in the prompt and do not clone from a reference, because cloning did not keep the voices before. Write the lines once the lead-up scenes are scripted; test "Periscope" and "SCOPE" on a short clip first.
+Add a REYES line to the same pass (a woman's voice, low and tired, rough and dry, a little crusty, never raised). Describe the voices in the prompt and do not clone from a reference, because cloning did not keep the voices before. Write the lines once the lead-up scenes are scripted; test "Periscope" and "SCOPE" on a short clip first.
 
 ## 6. Local assets (no credits)
 

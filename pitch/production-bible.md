@@ -43,7 +43,7 @@ Different people in each scene. Four speaking characters plus an off-screen narr
 
 | Role | Scene | Who | Notes |
 |---|---|---|---|
-| **REYES** | Night Watch (carrier) | Petty officer second class, enlisted Sailor on watch | New. **[DEFAULT appearance: a crusty second class in their mid-twenties: lean and weathered, a hard tired face with deep eye bags and a squint, clean-shaven and regulation-neat, uniform faded and worn, boots scuffed. Tired but watchful.]** Needs identity picks and a four-panel sheet. Uniform: see section 2a. Voice: tired, rough and dry, a little crusty, never raised. |
+| **REYES** | Night Watch (carrier) | Petty officer second class, enlisted Sailor on watch | New. **[DEFAULT appearance: a crusty female second class in her mid-twenties: lean and weathered, dark hair in a regulation-neat bun, a hard tired face with deep eye bags and a squint, no makeup, uniform faded and worn, boots scuffed. Tired but watchful.]** Needs identity picks and a four-panel sheet. Uniform: see section 2a. Voice: a woman's voice, low and tired, rough and dry, a little crusty, never raised. |
 | **MORGAN, the CIV** | The Desk (shore) | Government civilian software developer. **Civilians are addressed by first name**, so the dialogue and the badge use "Morgan" (first name), where Sailors are addressed by rank or last name. First name is a placeholder; change it. | New. **[DEFAULT: mid-thirties, medium build, dark hair tied back, calm, dry.]** Needs identity picks and a four-panel sheet. Business-casual, lanyard with a fictional ID badge. Voice: even, a little weary. |
 | **DELGADO** | Control room | Petty officer second class, radioman | Existing sheet 413420. Control room only now. Rating wording unverified; a modern equivalent may be Information Systems Technician. |
 | **Captain HARLAN** | Control room | Commander | Existing sheet 413570. **Cap decision: keep the boat name, the crest and the gold visor leaves; drop the hull number "SSN 999".** Needs a v3 sheet (section 2 of `asset-sheets-needed.md`). |
@@ -55,7 +55,7 @@ Different people in each scene. Four speaking characters plus an off-screen narr
 
 **Control room (DELGADO, Captain, Sullivan):** from your existing sheets and notes: navy-blue submarine coverall; name tape right chest and "U.S. NAVY" tape left chest; silver (enlisted) or gold (officer) dolphins above the left chest; collar rank devices (E-5 eagle with two chevrons; Commander silver oak leaf; chief gold anchor with silver USN) [all unverified]; the Captain's navy cap with gold visor leaves, boat name and crest, no hull number.
 
-**REYES, carrier:** a shipboard working uniform. Which one a carrier watchstander would wear (blue coverall, the green digital working uniform, or something else) is [unverified], so have a carrier Sailor confirm before generating. Whatever it is: name tape, "U.S. NAVY" tape, rank insignia for an E-5, and a ball cap with the fictional carrier name composited. A carrier Sailor may carry a warfare or qualification pin; leave it off rather than invent one.
+**REYES, carrier:** a shipboard working uniform. Which one a carrier watchstander would wear (blue coverall, the green digital working uniform, or something else) is [unverified], so have a carrier Sailor confirm before generating. Whatever it is (the women's version of the uniform and the hair rules need the same check): name tape, "U.S. NAVY" tape, rank insignia for an E-5, and a ball cap with the fictional carrier name composited. A carrier Sailor may carry a warfare or qualification pin; leave it off rather than invent one.
 
 **MORGAN:** no insignia. A dark lanyard and a white badge holder with a **blank face**. The photo and a small tag reading "CIV" are composited, as a **fictional** badge. Do not copy a real government ID's layout, seal or colour bands.
 
@@ -100,7 +100,7 @@ No music in any generated clip. Any music is added once, in the edit, over the w
 | Voice | Description for the audio prompt |
 |---|---|
 | NARRATOR | Calm, level, slightly dry, neither hurried nor dramatic. |
-| REYES | Tired, rough and dry, a little crusty; watchful, never raised. |
+| REYES | A woman's voice: low and tired, rough and dry, a little crusty; watchful, never raised. |
 | MORGAN | Even, a little weary, understated. |
 | DELGADO | Young tenor, fast, breathless in the control room. |
 | Captain HARLAN | Deep, calm, completely flat and deadpan. |
