@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SCOPE: Interactive Demo</title>
+<title>Periscope: Interactive Demo</title>
 <style>
 :root{--bg:#f4f1e8;--panel:#fffdf7;--ink:#14213d;--muted:#55607a;--brass:#9a6b12;--line:#d8d2bf;--accent:#14213d;--onaccent:#fffdf7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1426;--panel:#121f38;--ink:#efe9d8;--muted:#9fb0cc;--brass:#d6a948;--line:#243556;--accent:#d6a948;--onaccent:#0b1426}}
@@ -43,8 +43,8 @@ footer{margin:2rem 0 1rem;color:var(--muted);font-size:.85rem}
 </head>
 <body>
 <div class="wrap">
-<h1 id="brand"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" style="vertical-align:-6px;margin-right:12px"><circle cx="17" cy="17" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 1v8M17 25v8M1 17h8M25 17h8" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="2" fill="currentColor"/></svg>SCOPE</h1>
-<p class="sub"><b style="color:#d6a948">S</b>hip <b style="color:#d6a948">C</b>ontinuity <b style="color:#d6a948">O</b>f o<b style="color:#d6a948">P</b>erations <b style="color:#d6a948">E</b>nvironment<br>Launch, deliver and run tools on the endpoint you already have. Pick a tool to watch its demo.</p>
+<h1 id="brand"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" style="vertical-align:-6px;margin-right:12px"><circle cx="17" cy="17" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 1v8M17 25v8M1 17h8M25 17h8" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="2" fill="currentColor"/></svg>PERISCOPE</h1>
+<p class="sub"><b style="color:#d6a948">SCOPE</b> &middot; <b style="color:#d6a948">S</b>hip <b style="color:#d6a948">C</b>ontinuity <b style="color:#d6a948">O</b>f o<b style="color:#d6a948">P</b>erations <b style="color:#d6a948">E</b>nvironment<br>Launch, deliver and run tools on the endpoint you already have. Pick a tool to watch its demo.</p>
 
 <section id="intro" aria-label="Opening scene">
   <div id="stage"><video id="openVid" preload="metadata" playsinline controls poster="opening-poster.jpg"><source src="opening.mp4" type="video/mp4"></video></div>
@@ -140,14 +140,14 @@ var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {
     var feat=FEATURED.slice();
     try{var m=/[#&]feature=([^&]*)/.exec(location.hash);if(m)feat=m[1].split(',').filter(Boolean)}catch(e){}
     var ids=[].map.call(document.querySelectorAll('.card'),function(c){return c.getAttribute('data-id')});
-    var t=0,out=[{t:0,text:"Scope is a home for tools."}];t=3;
+    var t=0,out=[{t:0,text:"SCOPE is a home for tools. This is Periscope."}];t=3;
     ids.forEach(function(id){
       var isF=feat.indexOf(id)>-1,dur=isF?5:0.8;
       out.push({t:TIME_OVERRIDES[id]!=null?TIME_OVERRIDES[id]:t,id:id,text:isF?SPOKEN[id]:NAMES[id]+".",full:isF});
       t+=dur;
     });
     var n=feat.filter(function(x){return ids.indexOf(x)>-1}).length;
-    out.push({t:t,id:ids[ids.length-1],nohot:true,text:"All of them hosted in Scope. "+NUM[n]+" shown, "+NUM[ids.length]+" in all. No admin. No install."});
+    out.push({t:t,id:ids[ids.length-1],nohot:true,text:"All of them hosted in SCOPE. "+NUM[n]+" shown, "+NUM[ids.length]+" in all. No admin. No install."});
     TOUR=out;TOUR_END=t+7;
   }
   function scriptText(){

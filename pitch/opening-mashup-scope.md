@@ -9,7 +9,7 @@ Your pick: C + B leading into A, then the dashboard. Presentation name: **Scope*
 | **C. Night Watch** | 0:00 to 0:10 | A ship's office at 0200. One tired Sailor, a paper watch log, a clock. Voice, calm: "Every watch, the same hunt through the same paper." | The deckplate burden (30% of the score) |
 | **B. The Desk** | 0:10 to 0:24 | A developer on a locked-down endpoint types `python --version`, `git clone`, `terraform init`. Each fails: "not recognized," "Access denied." Voice, deadpan: "And the people who could fix it can't build on this machine." | The barrier (15%): developers with no development environment |
 | **The turn** | 0:24 to 0:26 | Hold on the failed terminal. Voice: "Now imagine it's not a quiet night." Hard cut. | Raises the stakes |
-| **A. The Boat** | 0:26 to 1:00 | Blast, red lights, alarm, "Report." Sullivan: "Helm's answering." DELGADO: "We've lost the uplink." The Captain walks to DELGADO: "Then we work with what's aboard. Bring up Scope." DELGADO: "Aye, Captain! Scope is up!" | The payoff: it works when everything else is gone |
+| **A. The Boat** | 0:26 to 1:00 | Blast, red lights, alarm, "Report." Sullivan: "Helm's answering." DELGADO: "We've lost the uplink." The Captain walks to DELGADO: "Then we work with what's aboard. Raise Periscope." DELGADO: "Aye, Captain! Periscope is up. SCOPE online!" | The payoff: it works when everything else is gone |
 | **Dashboard** | 1:00 | The zoom lands on Scope page (`overlay/scope-screen-real.png`), then the tour starts | Hand-off to the product |
 
 Trim if the slot is short: C to 6 s, B to 10 s, and cut the Sullivan beat. That gives about 45 s.
@@ -35,11 +35,11 @@ The repo and the real catalog page keep the name Edge-Ops, so the film shows the
 
 | Old | New |
 |---|---|
-| "Open Edge Ops." | "Bring up Scope." |
-| "Aye, Captain! Pulling up Edge Ops now!" | "Aye, Captain! Scope is up!" |
-| "Edge Ops is a home for tools." | "Scope is a home for tools." |
-| "All of them hosted inside Edge Ops. ..." | "All of them hosted in Scope. ..." |
-| Monitor screen, DELGADO's old audio | Scope screen still; "Aye, Captain! Scope is up!" |
+| "Open Edge Ops." | "Raise Periscope." |
+| "Aye, Captain! Pulling up Edge Ops now!" | "Aye, Captain! Periscope is up. SCOPE online!" |
+| "Edge Ops is a home for tools." | "SCOPE is a home for tools. This is Periscope." |
+| "All of them hosted inside Edge Ops. ..." | "All of them hosted in SCOPE. ..." |
+| Monitor screen, DELGADO's old audio | Scope screen still; "Aye, Captain! Periscope is up. SCOPE online!" |
 
 Some descriptive text in the older scripts still says "Edge Ops" as the product (headings, notes, the file names). That is the repo name, and it does not affect anything spoken or shown.
 
@@ -50,10 +50,12 @@ Some descriptive text in the older scripts still says "Edge Ops" as the product 
 3. Record the narration for C and B in the same voice as the tour.
 4. Check "Scope" is clear in the voice take; if a voice ever says "the Doc," re-record.
 
-## Notes on the name SCOPE
+## Notes on the names: SCOPE and Periscope
 
-- **Name:** SCOPE, spoken "scope". It stands for **S**hip **C**ontinuity **O**f o**P**erations **E**nvironment. The P comes from the second letter of "operations", so show the acronym with those letters highlighted (the overlay does) and be ready for a judge to notice. "Continuity of operations" is a real DoD planning term (COOP), which fits the disconnected-ship story.
-- **In the film:** the Captain says "Bring up Scope." DELGADO answers "Scope is up!" It echoes the real submarine order to raise the scope, so the name does double duty. Whether that wording is right aboard a boat is unverified; add it to the submariner review list.
-- **Voice scripts:** write it "Scope" in anything an AI voice reads, so it does not spell out S-C-O-P-E. On screen it is SCOPE.
-- **Repo name:** still `edge-ops`. Only the presentation name changed.
-- **Collision check, not done:** "scope" is a common word and the name of other products. I have not searched trademarks or existing products.
+- **SCOPE** is the system: **S**hip **C**ontinuity **O**f o**P**erations **E**nvironment. Say "scope". "Continuity of operations" is a real DoD planning term (COOP), which fits the disconnected-ship story. The P comes from the second letter of "operations", so be ready for a judge to notice.
+- **Periscope** is the title of the dashboard: the screen you raise to look into SCOPE. That is how the two names fit together, and it is how to say it if anyone asks: "SCOPE is the environment, Periscope is the window into it."
+- **In the film:** the Captain says "Raise Periscope." DELGADO: "Aye, Captain! Periscope is up. SCOPE online!" Raising the periscope is a real submarine order; whether the wording is right aboard a boat is unverified, so add it to the submariner review list. Your notes say a Virginia-class control room has no periscope through the hull (photonics masts), so a viewer who knows boats may smile.
+- **On screen:** the heading reads PERISCOPE, with "SCOPE" and the acronym under it, the first letters in brass.
+- **Voice scripts:** write "Periscope" and "scope" as words so an AI voice does not spell them out.
+- **Repo name:** still `edge-ops`. Only the presentation names changed.
+- **Collision check, not done:** both are common words used by other products; I have not searched trademarks.

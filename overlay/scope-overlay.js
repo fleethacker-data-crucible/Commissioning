@@ -8,7 +8,7 @@
    Set HIDE_PORTS to false to keep the port badges. */
 (function () {
   var HIDE_PORTS = true;   // catalog.json shows 8765 for several tools; PORTS.md assigns each its own block, so the badge is stale
-  var NAME = 'SCOPE';
+  var NAME = 'PERISCOPE';
   var ACRONYM = '<b style="color:#d6a948">S</b>hip <b style="color:#d6a948">C</b>ontinuity <b style="color:#d6a948">O</b>f o<b style="color:#d6a948">P</b>erations <b style="color:#d6a948">E</b>nvironment';
   var TAGLINE = 'Launch, deliver and run tools on the endpoint you already have.';
   var RE = /(fleethacker\s+)?edge[\s‐-―-]*ops/ig;
@@ -22,7 +22,7 @@
       h.style.letterSpacing = '.32em';
       h.style.color = '#d6a948';
       var p = h.nextElementSibling;
-      if (p && p.tagName === 'P') p.innerHTML = ACRONYM + '<br><span style="opacity:.8">' + TAGLINE + '</span>';
+      if (p && p.tagName === 'P') p.innerHTML = '<b style="color:#d6a948">SCOPE</b> &middot; ' + ACRONYM + '<br><span style="opacity:.8">' + TAGLINE + '</span>';
     }
   }
   function scrub(root) {
@@ -33,7 +33,7 @@
       if (RE.test(n.nodeValue)) todo.push(n);
       RE.lastIndex = 0;
     }
-    todo.forEach(function (t) { t.nodeValue = t.nodeValue.replace(RE, 'SCOPE'); });
+    todo.forEach(function (t) { t.nodeValue = t.nodeValue.replace(RE, 'Periscope'); });
   }
   function hideRepoLinks() {
     // The footer links name the repo. Hide them for the recording.
@@ -47,7 +47,7 @@
     });
   }
   function apply() {
-    document.title = 'SCOPE';
+    document.title = 'Periscope';
     skinHeading();
     hideRepoLinks();
     hidePorts();

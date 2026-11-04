@@ -13,8 +13,8 @@ Cast: Captain HARLAN (deep, flat, deadpan), Chief SULLIVAN (very low, gravelly),
 | 1 | 0:00 to 0:09 | North wall, calm, normal light. At about 3 s a thump, lights flicker out, red emergency lighting, dust. | Gong alarm. Ship's announcement: "Man battle stations." CAPTAIN (flat): "Report." | Clip A, cut at 9.04 s |
 | 2 | 0:09 to 0:14 | Sullivan, medium front shot, right hand on the joystick, left hand on the console panel. | SULLIVAN (gravelly): "Helm's answering, Captain. Holding depth and course." | A3 (task 413731) |
 | 3 | 0:14 to 0:19 | West wall, locked wide shot. DELGADO at the console, back to camera, turns toward the Captain. | DELGADO (fast, shaky): "Captain! We've lost the uplink. No internet!" | Reshoot B4a |
-| 4 | 0:19 to 0:25 | Captain close-up. Total stillness for one second. | CAPTAIN (deadpan, a beat first): "Then we work with what's aboard. Bring up Scope." | Reshoot B4b |
-| 5 | 0:25 to 0:31 | West wall, locked. DELGADO, back to camera, types fast. The centre monitor is a plain flat colour. | DELGADO (shaky, proud): "Aye, Captain! Scope is up!" (audio clipped in, lips not visible) | C v3 picture, or C4 at higher resolution |
+| 4 | 0:19 to 0:25 | Captain close-up. Total stillness for one second. | CAPTAIN (deadpan, a beat first): "Then we work with what's aboard. Raise Periscope." | Reshoot B4b |
+| 5 | 0:25 to 0:31 | West wall, locked. DELGADO, back to camera, types fast. The centre monitor is a plain flat colour. | DELGADO (shaky, proud): "Aye, Captain! Periscope is up. SCOPE online!" (audio clipped in, lips not visible) | C v3 picture, or C4 at higher resolution |
 | 6 | 0:31 to 0:38 | Zoom into the centre monitor until it fills the frame; the Edge Ops catalog is on screen. | Room tone. Keystroke, then a soft chime as the page opens. | Zoom composite |
 
 Hold the red lighting and the alarm bed under shots 3 to 5, and cut on the keystroke.
@@ -26,7 +26,7 @@ The Captain talks as he walks from his post beside the left screen to DELGADO's 
 | # | Time | Shot | Sound and dialogue |
 |---|---|---|---|
 | 3 | 0:14 to 0:22 | West wall, locked wide. DELGADO at the console, back to camera. The Captain stands left, arms folded, still. DELGADO turns to him. After a beat the Captain unfolds his arms and starts walking toward the seat, back and three-quarter profile to camera, never turning his face to the lens. | DELGADO: "Captain! We've lost the uplink. No internet!" Then CAPTAIN, walking, deadpan: "Then we work with what's aboard." |
-| 4 | 0:22 to 0:30 | Same locked frame, continuing from the last real frame of shot 3. The Captain arrives behind DELGADO's seat and rests a hand on its back. DELGADO's hands move over the keys. The centre monitor is a plain flat colour. | CAPTAIN, arriving: "Bring up Scope." DELGADO: "Aye, Captain! Scope is up!" |
+| 4 | 0:22 to 0:30 | Same locked frame, continuing from the last real frame of shot 3. The Captain arrives behind DELGADO's seat and rests a hand on its back. DELGADO's hands move over the keys. The centre monitor is a plain flat colour. | CAPTAIN, arriving: "Raise Periscope." DELGADO: "Aye, Captain! Periscope is up. SCOPE online!" |
 | 5 | 0:30 to 0:38 | Zoom into the centre monitor until the Edge Ops catalog fills the frame. | Room tone, keystroke, soft chime. |
 
 Why it works this way:
@@ -51,13 +51,13 @@ If you want the Captain's face while he walks (a camera moving toward or alongsi
 
 One calm voice. The page scrolls slowly so the audience sees how many tools there are, and each named tool gets a ring around its card and a caption.
 
-> Scope is a home for tools.
+> SCOPE is a home for tools. This is Periscope.
 > Halyard tidies a backlog, with your approval.
 > Eight Bells turns a watch log into a turnover.
 > Semaphore builds dashboards from plain English.
 > Fairlead puts every AI model behind one address.
 > Windlass runs giant models on an ordinary PC.
-> All of them hosted in Scope. That's five of sixteen. No admin. No install.
+> All of them hosted in SCOPE. That's five of sixteen. No admin. No install.
 
 Every card also carries a one-line tagline under its name. Save the voice as `interactive/intro-vo.mp3` and set the cue times in `interactive/index.html`.
 
@@ -124,13 +124,13 @@ Locked-off shot, the camera does not move, framed exactly as the reference. DELG
 ### B4b: Captain close-up (about 6 s)
 References: Captain sheet 413570 (or the plain-cap version), voice 394289 (trimmed before any tool name).
 
-Close-up of the Captain's face from the front, lit by screen glow and red lamps, deadpan and completely still. One full second of silence, then he says in his flat, calm voice: "Then we work with what's aboard. Bring up Scope." Plain navy cap, no lettering.
+Close-up of the Captain's face from the front, lit by screen glow and red lamps, deadpan and completely still. One full second of silence, then he says in his flat, calm voice: "Then we work with what's aboard. Raise Periscope." Plain navy cap, no lettering.
 
 ### C4: locked west shot (about 6 s), only if you re-render at higher resolution
-Same prompt as C v3, with DELGADO's spoken line changed to "Aye, Captain! Scope is up!" The centre monitor stays plain flat pale blue-grey and fully visible. His back is to the camera, so his lips are never visible, and the final audio is clipped in from separate audio.
+Same prompt as C v3, with DELGADO's spoken line changed to "Aye, Captain! Periscope is up. SCOPE online!" The centre monitor stays plain flat pale blue-grey and fully visible. His back is to the camera, so his lips are never visible, and the final audio is clipped in from separate audio.
 
 ### Dialogue audio (one multi-speaker Seed Audio pass)
-"Clean, dry, close-microphone dialogue recorded for a film, no background noise, no music, no room reverb." Lines: Captain "Report."; Sullivan "Helm's answering, Captain. Holding depth and course."; DELGADO "Captain! We've lost the uplink. No internet!"; Captain "Then we work with what's aboard. Bring up Scope."; DELGADO "Aye, Captain! Scope is up!" Describe each voice in the prompt rather than cloning (cloning lost the voices last time).
+"Clean, dry, close-microphone dialogue recorded for a film, no background noise, no music, no room reverb." Lines: Captain "Report."; Sullivan "Helm's answering, Captain. Holding depth and course."; DELGADO "Captain! We've lost the uplink. No internet!"; Captain "Then we work with what's aboard. Raise Periscope."; DELGADO "Aye, Captain! Periscope is up. SCOPE online!" Describe each voice in the prompt rather than cloning (cloning lost the voices last time).
 
 ## Part 7: Order of work
 
