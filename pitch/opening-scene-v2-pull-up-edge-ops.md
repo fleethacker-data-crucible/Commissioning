@@ -6,8 +6,8 @@ Keep the submarine cold open (already shot, 36.8 s). Change only the last line a
 
 | Where | Now | New |
 |---|---|---|
-| Captain's order (clip B v2) | "Then we get our inference local. Rig for ultra-quiet. Windlass and Fairlead. Bring them online now." | "Then we use what we've got. Pull up Edge Ops." |
-| DELGADO's last line (clip C v3, audio clipped in separately) | "Windlass online! Fairlead online!" | "Edge Ops online!" |
+| Captain's order (clip B v2) | "Then we get our inference local. Rig for ultra-quiet. Windlass and Fairlead. Bring them online now." | "Then we work with what's aboard. Open Edge Ops." |
+| DELGADO's last line (clip C v3, audio clipped in separately) | "Windlass online! Fairlead online!" | "Aye, Captain! Pulling up Edge Ops now!" |
 | Zoom target (the flat-colour monitor) | Fairlead screenshot | Screenshot of the Edge Ops catalog page (`interactive/index.html#tools`) |
 | End of video | Hand-off to a demo | Freeze on the catalog; the page unhides the cards |
 
