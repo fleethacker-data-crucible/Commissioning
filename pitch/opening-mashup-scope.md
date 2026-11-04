@@ -6,7 +6,7 @@ Your pick: C + B leading into A, then the dashboard. Presentation name: **Scope*
 
 | Part | Time | What the audience sees and hears | Job it does |
 |---|---|---|---|
-| **C. Night Watch** | 0:00 to 0:10 | A carrier workcenter at 0200. REYES, a crusty female second class, tired but watchful, a paper watch log, a clock, a distant jet whine. Voice, calm: "Every watch, the same hunt through the same paper." | The deckplate burden (30% of the score) |
+| **C. Night Watch** | 0:00 to 0:10 | A carrier workcenter at 0200. REYES, a tired but watchful female second class, tired but watchful, a paper watch log, a clock, a distant jet whine. Voice, calm: "Every watch, the same hunt through the same paper." | The deckplate burden (30% of the score) |
 | **B. The Desk** | 0:10 to 0:24 | Morgan, a civilian developer in a shore office the next morning, types `python --version`, `git clone`, `terraform init`. Each fails: "not recognized," "Access denied." Voice, deadpan: "And the people who could fix it can't build on this machine." | The barrier (15%): developers with no development environment |
 | **The turn** | 0:24 to 0:26 | Hold on the clock insert; the tick speeds from about 60 to 100 beats a minute. Voice: "Now imagine it's not a quiet night." Hard cut to the calm control room, tick still at 100, then the thump, the red alert and the gong take over the same beat. | Raises the stakes |
 | **A. The Boat** | 0:26 to 1:00 | The thump and the red alert land on the clock's beat. Alarm, "Report." Sullivan: "Helm's answering." DELGADO: "We've lost the uplink." The Captain walks to DELGADO: "Then we work with what's aboard. Raise Periscope." DELGADO: "Aye, Captain! Periscope is up. SCOPE online!" | The payoff: it works when everything else is gone |

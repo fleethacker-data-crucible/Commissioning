@@ -38,7 +38,7 @@ Keep the rest of the v2 prompt unchanged (gold officer dolphins, silver oak leaf
 ### REYES, carrier Sailor
 **Identity picks** (Seedream 5.0 Pro, 1k, 3:4, three candidates). The appearance block is yours to set; default shown. The uniform is a placeholder until a carrier Sailor confirms it.
 ```text
-Photorealistic full-body photograph of a female US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, [APPEARANCE: a woman in her mid-twenties, lean and weathered, dark hair pulled back in a regulation-neat bun, a hard tired face with deep eye bags and a squint, no makeup, looks older than her years, tired but watchful; uniform faded and worn, boots scuffed]. Plain working uniform [UNIFORM: confirm with a carrier Sailor], zipped or buttoned to the collar, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at her sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
+Photorealistic full-body photograph of a female US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, [APPEARANCE: a woman in her mid-twenties, lean and weathered, dark hair pulled back in a regulation-neat bun, a tired but steady face with light shadows under the eyes, no makeup, natural and approachable, watchful; uniform lightly worn, boots scuffed]. Plain working uniform [UNIFORM: confirm with a carrier Sailor], zipped or buttoned to the collar, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at her sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
 ```
 **Four-panel sheet** (GPT Image 2.5 Sunburst, 2k, 16:9; reference: the identity pick you choose):
 ```text
@@ -114,10 +114,10 @@ Clock close-up (same prompt as the carrier, referencing the shore north panel) a
 ```text
 Setting: clean, dry, close-microphone dialogue recorded for a film, no background noise, no music, no room reverb.
 Speaker MORGAN: [VOICE: even, a little weary, understated, neither hurried nor dramatic].
-Speaker REYES: [VOICE: a woman's voice, low and tired, rough and dry, a little crusty, never raised].
+Speaker REYES: [VOICE: a woman's voice, low, tired and dry, steady, never raised].
 Speaker NARRATOR: [VOICE: calm, level, slightly dry, neither hurried nor dramatic].
 ```
-Add a REYES line to the same pass (a woman's voice, low and tired, rough and dry, a little crusty, never raised). Describe the voices in the prompt and do not clone from a reference, because cloning did not keep the voices before. Write the lines once the lead-up scenes are scripted; test "Periscope" and "SCOPE" on a short clip first.
+Add a REYES line to the same pass (a woman's voice, low, tired and dry, steady, never raised). Describe the voices in the prompt and do not clone from a reference, because cloning did not keep the voices before. Write the lines once the lead-up scenes are scripted; test "Periscope" and "SCOPE" on a short clip first.
 
 ## 6. Local assets (no credits)
 
