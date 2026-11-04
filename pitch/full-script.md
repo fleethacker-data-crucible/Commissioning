@@ -19,6 +19,34 @@ Cast: Captain HARLAN (deep, flat, deadpan), Chief SULLIVAN (very low, gravelly),
 
 Hold the red lighting and the alarm bed under shots 3 to 5, and cut on the keystroke.
 
+### Revision: the Captain walks to DELGADO (replaces shots 3 to 5 above, and B4a, B4b and C4 in Part 6)
+
+The Captain talks as he walks from his post beside the left screen to DELGADO's seat. Two chained clips, one locked camera, no cut across the join.
+
+| # | Time | Shot | Sound and dialogue |
+|---|---|---|---|
+| 3 | 0:14 to 0:22 | West wall, locked wide. DELGADO at the console, back to camera. The Captain stands left, arms folded, still. DELGADO turns to him. After a beat the Captain unfolds his arms and starts walking toward the seat, back and three-quarter profile to camera, never turning his face to the lens. | DELGADO: "Captain! We've lost the uplink. No internet!" Then CAPTAIN, walking, deadpan: "Then we work with what's aboard." |
+| 4 | 0:22 to 0:30 | Same locked frame, continuing from the last real frame of shot 3. The Captain arrives behind DELGADO's seat and rests a hand on its back. DELGADO's hands move over the keys. The centre monitor is a plain flat colour. | CAPTAIN, arriving: "Open Edge Ops." DELGADO: "Aye, Captain! Pulling up Edge Ops now!" |
+| 5 | 0:30 to 0:38 | Zoom into the centre monitor until the Edge Ops catalog fills the frame. | Room tone, keystroke, soft chime. |
+
+Why it works this way:
+- **Back and three-quarter view, locked camera.** Locked wide shots are the only ones that have worked reliably so far. From behind, his lips are never visible, so the Captain's dialogue is clipped in from the clean audio pass, as with DELGADO. That avoids lip-sync trouble and the mispronounced names that burned you before.
+- **Chained clips.** Generate shot 3, extract its last real frame, and use that frame as the first-frame reference for shot 4. Your notes say a real frame keeps the seat and angle better than a new still.
+- **The walk path is a drawn line.** Describe it as a picture: start at the left screen, finish with his hand on the seat back, along the floor between the two. Do not write "he walks over."
+- **Keep the plain-colour monitor and the zoom exactly as before.** Re-run `find_quad.py` on shot 4's frames.
+
+Prompt for shot 3 (about 8 s). References: west wall red 413522, Captain sheet 413570, DELGADO sheet 413420, a real frame from C v3 as the first frame, DELGADO voice 394187.
+
+> Locked-off shot, the camera does not move, framed exactly as the reference frame. DELGADO sits in the black seat with his back to the camera, typing fast. The Captain stands behind him on the left of the frame beside the left screen, arms folded, not overlapping the centre monitor. DELGADO turns his head to his right toward the Captain and says quickly in his voice: "Captain! We've lost the uplink. No internet!" The Captain stays still for one second, then unfolds his arms and walks slowly and steadily across the floor toward DELGADO's seat, seen from behind and in three-quarter profile, his face never turned to the camera. He is still walking when the shot ends. Red emergency lighting, a faint haze of dust, only room sound.
+
+Prompt for shot 4 (about 8 s). Same references, with the real last frame of shot 3 as the first frame.
+
+> Locked-off shot, the camera does not move, continuing exactly from the reference frame. The Captain finishes his walk and stops directly behind DELGADO's seat, resting his right hand on the back of the seat, seen from behind. DELGADO sits with his back to the camera, typing fast. The large centre monitor stays plain, flat and fully visible for the whole shot, glowing a plain pale blue-grey, and nothing passes in front of it. No other camera movement. Red emergency lighting, a faint haze of dust, only room sound.
+
+Both prompts keep the shared STYLE and NEGATIVE blocks, with "no music and no musical score". The dialogue for both men goes in the separate audio pass and is clipped in over the picture.
+
+If you want the Captain's face while he walks (a camera moving toward or alongside him), that is the ambitious version. Nothing in your notes shows a moving camera working in this room, and Seedance would have to keep the cap, the face and the room consistent while both move. I would only try it as an extra take after the locked version is safe, and only if Renoise accepts a last-frame input, which I could not check from here. A cheaper cutaway that still shows his face: a 2-second close-up of him mid-stride from the front, inserted during shot 3, with the dialogue clipped over it.
+
 ## Part 2: The tour (about 35 s, on the catalog page)
 
 One calm voice. The page scrolls slowly so the audience sees how many tools there are, and each named tool gets a ring around its card and a caption.
