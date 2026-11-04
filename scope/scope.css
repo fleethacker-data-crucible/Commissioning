@@ -1,0 +1,66 @@
+:root{--bg:#0b1426;--bg2:#101c34;--panel:#121f38;--ink:#efe9d8;--muted:#9fb0cc;--brass:#d6a948;--line:#243556;--ok:#5fbf8f}
+@media (prefers-color-scheme:light){:root.auto{--bg:#f4f1e8;--bg2:#ece7d6;--panel:#fffdf7;--ink:#14213d;--muted:#55607a;--brass:#9a6b12;--line:#d8d2bf}}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:radial-gradient(1200px 700px at 50% -10%,var(--bg2),var(--bg));color:var(--ink);font:16px/1.5 system-ui,Segoe UI,sans-serif;min-height:100vh;padding:0 16px 56px}
+.hide{display:none!important}
+.top{max-width:1180px;margin:0 auto;display:flex;gap:16px;align-items:center;padding:16px 0 4px;flex-wrap:wrap}
+h1{margin:0;font-size:2rem;letter-spacing:.34em;color:var(--brass);line-height:1}
+.acr{margin:.3em 0 0;color:var(--muted)}
+.acr b{color:var(--brass)}
+.views{margin-left:auto;display:flex;gap:6px}
+.tagline{max-width:1180px;margin:0 auto 12px;color:var(--muted)}
+button,.btn{font:inherit;cursor:pointer;border:1px solid var(--brass);background:var(--brass);color:#0b1426;padding:.5rem .95rem;border-radius:8px;text-decoration:none;display:inline-block}
+button.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+button.ghost.on{border-color:var(--brass);color:var(--brass)}
+button:focus-visible,a:focus-visible,.contact:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+main{max-width:1180px;margin:0 auto}
+.radar-wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:20px;align-items:center}
+@media (max-width:860px){.radar-wrap{grid-template-columns:1fr}}
+.radar-col{background:radial-gradient(circle at 50% 50%,#0f2236 0,#0a1424 70%);border:1px solid var(--line);border-radius:50%;aspect-ratio:1;max-width:680px;width:100%;margin:0 auto;box-shadow:0 0 0 6px rgba(214,169,72,.08),inset 0 0 60px rgba(0,0,0,.5)}
+#radar{width:100%;height:100%;display:block}
+.ring{fill:none;stroke:var(--brass);stroke-opacity:.22;stroke-width:1}
+.axis{stroke:var(--brass);stroke-opacity:.18;stroke-width:1}
+.tick{stroke:var(--ink);stroke-opacity:.35;stroke-width:1.5}
+.sweep{transform-box:view-box;transform-origin:300px 300px;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.contact{cursor:pointer}
+.contact .dot{fill:var(--brass);transition:r .15s}
+.contact .halo{fill:none;stroke:var(--brass);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
+.contact .lab{fill:var(--ink);font-size:13px;paint-order:stroke;stroke:#0a1424;stroke-width:4px;stroke-linejoin:round}
+.contact.ping .halo{animation:ping 8s linear infinite;animation-delay:var(--d)}
+@keyframes ping{0%{opacity:.9;transform:scale(1)}12%{opacity:0;transform:scale(3.2)}100%{opacity:0;transform:scale(3.2)}}
+.contact.sel .dot{fill:#fff;r:9}
+.contact.sel .lab{font-weight:700;fill:var(--brass)}
+.contact.feat .dot{fill:var(--ok)}
+.contact:hover .dot{r:9}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.panel h2{margin:.1em 0 .2em;font-size:1.5rem;display:flex;align-items:center;gap:12px}
+.panel svg.glyph{width:44px;height:44px;stroke:var(--brass);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.panel .tg{color:var(--brass);font-weight:600;margin:0 0 .6rem}
+.panel .sm{color:var(--muted);font-size:.95rem}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:.8rem 0}
+.chip{font-size:.72rem;border:1px solid var(--line);border-radius:99px;padding:1px 9px;color:var(--muted)}
+.chip.f{border-color:var(--ok);color:var(--ok)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem}
+.actions button{font-size:1.05rem;padding:.7rem 1.2rem}
+.hint{color:var(--muted);font-size:.85rem;margin-top:.9rem}
+h3.grp{color:var(--brass);text-transform:uppercase;letter-spacing:.08em;font-size:1rem;margin:1.8rem 0 .6rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.card h4{margin:0;font-size:1.1rem;display:flex;gap:10px;align-items:center}
+.card svg.glyph{width:30px;height:30px;stroke:var(--brass);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.card .tg{margin:0;font-weight:600}
+.card .sm{margin:0;color:var(--muted);font-size:.9rem;flex:1}
+.card.hot{outline:3px solid var(--brass);box-shadow:0 0 0 6px rgba(214,169,72,.18)}
+#cap{position:fixed;left:0;right:0;bottom:0;background:rgba(11,20,38,.94);color:#efe9d8;padding:14px 18px;font-size:1.15rem;text-align:center;z-index:5}
+footer{max-width:1180px;margin:2rem auto 0;color:var(--muted);font-size:.85rem}
+dialog{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);padding:0;width:min(1000px,96vw)}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);gap:10px}
+.dh h3{margin:0}
+.dv{padding:12px 14px 16px}
+.dv video{width:100%;background:#000;border-radius:8px}
+.msg{padding:2.5rem 1rem;text-align:center;color:var(--muted)}
+.sub{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.sweep,.contact.ping .halo{animation:none}}

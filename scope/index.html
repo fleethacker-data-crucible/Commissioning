@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SCOPE: Ship Continuity Of oPerations Environment</title>
+<link rel="icon" href="art/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="scope.css">
+</head>
+<body>
+<header class="top">
+  <img src="art/scope-mark.svg" alt="" width="56" height="56">
+  <div>
+    <h1>SCOPE</h1>
+    <p id="acr" class="acr"></p>
+  </div>
+  <div class="views" role="group" aria-label="View">
+    <button id="vRadar" class="ghost on" type="button">Scope</button>
+    <button id="vGrid" class="ghost" type="button">List</button>
+    <button id="vTour" class="ghost" type="button">Tour</button>
+  </div>
+</header>
+<p id="tag" class="tagline"></p>
+
+<main>
+  <section id="radarView" class="radar-wrap" aria-label="Tools on the scope">
+    <div class="radar-col"><svg id="radar" viewBox="0 0 600 600" role="group" aria-label="Contacts"></svg></div>
+    <aside id="panel" class="panel" aria-live="polite"></aside>
+  </section>
+  <section id="gridView" class="hide" aria-label="Tool list"></section>
+</main>
+
+<footer>Demos use synthetic data only. Prototypes: not an accredited system. A team project, not a US Navy product and not endorsed by the Navy.</footer>
+
+<audio id="vo" src="intro-vo.mp3" preload="auto"></audio>
+<div id="cap" class="hide" role="status" aria-live="polite"></div>
+
+<dialog id="dlg" aria-labelledby="dtitle">
+  <div class="dh"><h3 id="dtitle"></h3><span><a id="live" class="btn hide" target="_blank" rel="noopener">Open live</a> <button class="ghost" id="close" type="button">Close</button></span></div>
+  <div class="dv"><video id="demoVid" controls playsinline preload="none"><track id="trk" kind="captions" srclang="en" label="English" default></video>
+  <div id="nomsg" class="msg hide">This demo has not been rendered yet.</div><p id="dsum" class="sub"></p></div>
+</dialog>
+
+<script src="config.js"></script>
+<script src="scope.js"></script>
+</body>
+</html>

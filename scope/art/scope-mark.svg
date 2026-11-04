@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="SCOPE mark: a periscope reticle with a radar sweep">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d6a948" stop-opacity="0"/><stop offset="1" stop-color="#d6a948" stop-opacity=".55"/></linearGradient></defs>
+  <circle cx="60" cy="60" r="54" fill="#0b1426" stroke="#d6a948" stroke-width="3"/>
+  <circle cx="60" cy="60" r="36" fill="none" stroke="#d6a948" stroke-opacity=".5" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="18" fill="none" stroke="#d6a948" stroke-opacity=".5" stroke-width="1.5"/>
+  <path d="M60 60 L60 6 A54 54 0 0 1 106 33 Z" fill="url(#g)"/>
+  <path d="M60 60 L60 6" stroke="#d6a948" stroke-width="2.5"/>
+  <path d="M60 2v14M60 104v14M2 60h14M104 60h14" stroke="#efe9d8" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="82" cy="40" r="4.5" fill="#efe9d8"/><circle cx="40" cy="78" r="3.5" fill="#d6a948"/><circle cx="76" cy="82" r="3" fill="#d6a948"/>
+</svg>
