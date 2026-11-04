@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edge Ops: Interactive Demo</title>
+<style>
+:root{--bg:#f4f1e8;--panel:#fffdf7;--ink:#14213d;--muted:#55607a;--brass:#9a6b12;--line:#d8d2bf;--accent:#14213d;--onaccent:#fffdf7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1426;--panel:#121f38;--ink:#efe9d8;--muted:#9fb0cc;--brass:#d6a948;--line:#243556;--accent:#d6a948;--onaccent:#0b1426}}
+:root[data-theme="dark"]{--bg:#0b1426;--panel:#121f38;--ink:#efe9d8;--muted:#9fb0cc;--brass:#d6a948;--line:#243556;--accent:#d6a948;--onaccent:#0b1426}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+h1{font-size:1.6rem;margin:.2em 0}
+h2{font-size:1.05rem;color:var(--brass);text-transform:uppercase;letter-spacing:.08em;margin:2rem 0 .6rem}
+.sub{color:var(--muted);margin:0 0 1rem}
+#stage{background:#000;border-radius:10px;overflow:hidden;position:relative;aspect-ratio:16/9}
+#stage video{width:100%;height:100%;display:block;background:#000}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+button{font:inherit;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--onaccent);padding:.5rem .9rem;border-radius:8px}
+button.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem;flex:1}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:.72rem;border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:var(--muted)}
+.status{font-size:.75rem;color:var(--brass)}
+dialog{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);padding:0;width:min(960px,96vw)}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+.dh h3{margin:0}
+.dv{padding:12px 14px 16px}
+.dv video{width:100%;background:#000;border-radius:8px}
+.msg{padding:2rem 1rem;text-align:center;color:var(--muted)}
+.hide{display:none}
+footer{margin:2rem 0 1rem;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Edge Ops</h1>
+<p class="sub">Any tool you want, built to one standard. Pick a tool to watch its demo.</p>
+
+<section id="intro" aria-label="Opening scene">
+  <div id="stage"><video id="openVid" preload="metadata" playsinline controls poster="opening-poster.jpg"><source src="opening.mp4" type="video/mp4"></video></div>
+  <div class="bar"><button id="skip" class="ghost" type="button">Skip to the tools</button></div>
+</section>
+
+<main id="tools"></main>
+<footer>Demos use synthetic data only. Prototypes: not an accredited system. Tools run locally; nothing here is sent anywhere.</footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dtitle">
+  <div class="dh"><h3 id="dtitle"></h3><button class="ghost" id="close" type="button">Close</button></div>
+  <div class="dv"><video id="demoVid" controls playsinline preload="none"><track id="trk" kind="captions" srclang="en" label="English" default></video><div id="nomsg" class="msg hide">This demo has not been rendered yet.</div><p id="dsum" class="sub"></p></div>
+</dialog>
+
+<script>
+var CATALOG=[{"id": "halyard", "name": "Halyard", "summary": "A product owner's assistant that works a backlog upward to leadership and downward to stories and tasks. It runs locally: a PowerShell launcher, one .NET library, and a browser UI on 127.0.0.1.", "group": "work-collaboration", "status": "unreleased", "port": 8773}, {"id": "lazarette", "name": "Lazarette", "summary": "Your credentials, stowed and locked aboard your own workstation. A Windows PowerShell 5.1 engine serves a local browser app on 127.0.0.1; the browser is the product.", "group": "secrets-security", "status": "unreleased", "port": 8765}, {"id": "gangplank", "name": "Gangplank", "summary": "A browser-first workspace that gets people without Git training safely onto GitHub and GitLab projects, from Windows PowerShell 5.1 and a browser; no git.exe, Node or Python on the workstation.", "group": "work-collaboration", "status": "preview", "port": 8769}, {"id": "packetrat", "name": "PacketRat", "summary": "Outlook triage into a human-reviewed action queue, run from a local Windows PowerShell 5.1 service with a browser UI.", "group": "work-collaboration", "status": "prototype", "port": 8766}, {"id": "shellback", "name": "Shellback", "summary": "Workforce capability intelligence: employee-attested skills, kept separate from claims, in a local-first browser app.", "group": "work-collaboration", "status": "prototype", "port": 8765}, {"id": "snapshackle", "name": "SnapShackle", "summary": "A local-first Windows screenshot and annotation studio using native Windows capture, a built-in PowerShell HTTP host, and an offline browser UI.", "group": "capture-media-files", "status": "prototype", "port": 8765}, {"id": "bowerbird", "name": "Bowerbird", "summary": "Local-first file intelligence and screenshot renaming for Windows PowerShell 5.1 and your existing web browser.", "group": "capture-media-files", "status": "unreleased", "port": 8767}, {"id": "eight-bells", "name": "Eight Bells", "summary": "Local-first watchstanding log intelligence: quality review, evidence-linked turnover and lessons learned (v2).", "group": "work-collaboration", "status": "prototype", "port": null}, {"id": "capstan", "name": "Capstan", "summary": "An open-source, local-first screen recorder and video editor for Windows.", "group": "capture-media-files", "status": "v0.1", "port": 8790}, {"id": "scrimshaw", "name": "Scrimshaw", "summary": "An open-source e-learning authoring tool.", "group": "voice-learning", "status": "unreleased", "port": null}, {"id": "semaphore", "name": "Semaphore", "summary": "Semaphore is an analyst workbench for building dashboards from plain-English briefs, CSV files and configured database sources, meant to replace Qlik on thin clients. It runs locally: a PowerShell launcher and a browser UI on 127.0.0.1. Engineering preview.", "group": "data-analytics", "status": "v0.3", "port": 8800}, {"id": "fairlead", "name": "Fairlead", "summary": "One local address for every model. Fairlead is the model router behind the Fleet tools: it speaks the OpenAI and Anthropic APIs on http://127.0.0.1:8776, sends each request to the right cloud or local model, and keeps answering from local models when the internet or a provider goes down.", "group": "local-ai", "status": "unreleased", "port": 8776}, {"id": "windlass", "name": "Windlass", "summary": "Run very large local GGUF models (70B and up) on an ordinary PC by streaming them one layer at a time, behind an OpenAI-compatible API.", "group": "local-ai", "status": "v0.2", "port": 8777}, {"id": "talkforge", "name": "TalkForge", "summary": "Client-side neural text-to-speech (Piper, ONNX Runtime Web/WASM) with offline local assets.", "group": "voice-learning", "status": "beta", "port": 25000}, {"id": "data-noodler", "name": "Data Noodler", "summary": "Self-contained flat-file analytics (CSV/Parquet/Arrow/SQLite) with dashboards.", "group": "data-analytics", "status": "beta", "port": 8079}, {"id": "phoenix-lai", "name": "Phoenix LAI", "summary": "Local Gemma models on your GPU behind an OpenAI-compatible API, plus a Chrome app-window client.", "group": "local-ai", "status": "beta", "port": 1234}];
+var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {"id": "work-collaboration", "name": "Work tracking and collaboration"}, {"id": "data-analytics", "name": "Data, dashboards and analytics"}, {"id": "local-ai", "name": "Local AI platform"}, {"id": "voice-learning", "name": "Voice and learning"}, {"id": "secrets-security", "name": "Secrets and security"}];
+(function(){
+  var main=document.getElementById('tools'),dlg=document.getElementById('dlg'),
+      dv=document.getElementById('demoVid'),trk=document.getElementById('trk'),
+      nomsg=document.getElementById('nomsg');
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  GROUPS.forEach(function(g){
+    var items=CATALOG.filter(function(t){return t.group===g.id});
+    if(!items.length)return;
+    main.appendChild(el('h2',null,g.name));
+    var grid=el('div','grid');
+    items.forEach(function(t){
+      var c=el('div','card');
+      c.appendChild(el('h3',null,t.name));
+      c.appendChild(el('p',null,t.summary));
+      var b=el('div','badges');
+      ['No admin','No install','Loopback only'].forEach(function(x){b.appendChild(el('span','badge',x))});
+      c.appendChild(b);
+      c.appendChild(el('div','status','Status: '+t.status));
+      var btn=el('button',null,'Watch demo');btn.type='button';
+      btn.addEventListener('click',function(){open(t)});
+      c.appendChild(btn);grid.appendChild(c);
+    });
+    main.appendChild(grid);
+  });
+  function open(t){
+    document.getElementById('dtitle').textContent=t.name+' demo';
+    document.getElementById('dsum').textContent=t.summary;
+    nomsg.classList.add('hide');dv.classList.remove('hide');
+    dv.onerror=function(){dv.classList.add('hide');nomsg.classList.remove('hide')};
+    trk.src='demos/'+t.id+'.vtt';
+    dv.src='demos/'+t.id+'.mp4';
+    if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
+    var p=dv.play();if(p&&p.catch)p.catch(function(){});
+  }
+  function shut(){dv.pause();dv.removeAttribute('src');dv.load();if(dlg.close)dlg.close();else dlg.removeAttribute('open')}
+  document.getElementById('close').addEventListener('click',shut);
+  dlg.addEventListener('close',function(){dv.pause()});
+  function toTools(){document.getElementById('openVid').pause();main.scrollIntoView({behavior:'smooth'})}
+  document.getElementById('skip').addEventListener('click',toTools);
+  document.getElementById('openVid').addEventListener('ended',toTools);
+  try{if(location.hash==='#tools')toTools()}catch(e){}
+})();
+</script>
+</body>
+</html>
