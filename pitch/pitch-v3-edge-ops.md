@@ -6,6 +6,23 @@ Supersedes the submarine opening and "The Request" skit as the main angle. Facts
 
 **Edge-Ops: a suite of self-contained tools that run on a locked-down Windows endpoint, with nothing to install.** Each tool is a zip. Unzip it, double-click one file, and it runs in your own user context on Windows PowerShell 5.1 and the Chrome-engine browser already on the machine. No admin, no installs, no Python, no Node, no git.exe. Servers listen on loopback only.
 
+## The real promise: any tool you want, with authority to operate
+
+Edge-Ops is not sixteen apps. It is a **standard plus a gate plus a release path**, so that any tool, built to the standard, can be fielded under one authorization boundary instead of one ATO per tool. (Name for voice and video: say "Edge Ops", two words. Spell-checkers keep turning "Edge-Ops" into "E-ops", so put the name on screen as an overlay.)
+
+What backs the promise today (from the repos):
+- **The standard:** `CONVENTIONS.md`, `STANDARDS.md`, the port registry, a shared `TechStack`.
+- **The gate:** the Fleet Gate CI fails non-loopback listeners, binaries, large files, military endpoints and sensitive markings on pull requests, and runs gitleaks.
+- **The release path:** hash-pinned zips verified by `Verify-FleetSnapshot.ps1`, failing closed.
+- **Proof it runs:** the team reports successful runs and working CAC processes on Nautilus devices.
+
+What the repos say is **not** true yet. The Fleet Readiness and ATO Feasibility Assessment (`fleethacker-comms-data-crucible/docs/reports/fleet-ato-feasibility-assessment-2026-11-03.md`) finds:
+- **There is no ATO.** No repo holds an authorization package, there is no sponsor, and no repo tracks an SBOM. Pitch the ATO as the ask, not a fact.
+- **17 of 31 repos compile C# at launch with `Add-Type`,** and our own `STANDARDS.md` mandates `-ExecutionPolicy Bypass`. The report says both would fail on an endpoint that enforces Constrained Language Mode or AllSigned, and that the standard itself must change first.
+- The recommended path is a **suite-level boundary** (one ATO for the pattern, not per tool), starting with a small first wave inside a sponsor's enclave, plus one ISSM-supervised test on each baseline.
+
+So the honest claim is: **"Build a tool to the Edge Ops standard and it rides one authorization. We have the standard, the gate and the release path. We need a sponsor and an ISSM to turn it into an ATO."** That is a strong ask for Speed to Fleet and Scalability. Saying "we already have authority to operate" would be false and a single question from a judge would break it.
+
 ## The problem (this is the heart of it)
 
 We are software developers on the Nautilus endpoint, and the endpoint has no development environment. We can't install Python. We can't install Git. We can't run the tools that infrastructure-as-code and data work depend on. The machine we're told to build on is the machine that won't let us build.
