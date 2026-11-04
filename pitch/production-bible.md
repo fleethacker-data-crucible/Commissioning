@@ -1,110 +1,108 @@
 # Production bible: sets, cast, props, look, sound
 
-Covers the lead-up scenes (Night Watch, The Desk) and ties them to the existing submarine scene. Defaults are marked **[DEFAULT]** where you have not decided yet; change them and everything below follows.
+Covers the lead-up scenes (Night Watch on a carrier, The Desk ashore) and ties them to the existing submarine scene. Defaults are marked **[DEFAULT]**; change them and everything below follows. Items marked [unverified] need a Sailor or a uniform-regulation check before you lock them. I did not look up Navy regulations in this session.
 
-## 1. Sets (two to build, one already built)
+## 1. Sets
 
-### S1. The office (new, **one set, two lighting states**)
-Night Watch (the Sailor) and The Desk (the civilian developer) share one room: a paper station on one side, a laptop station on the other. The Sailor works the log at 0200. The civilian works the laptop the next morning. Same walls, same props, **two lighting states**: *night* (cool, low, desk lamp on) and *day* (full fluorescent, cool white). That gives you one reference sheet and one set, as with the control room's white and red versions.
+Three sets, three different places, so the film travels: a carrier at night, a shore office in the morning, a submarine under attack.
 
+### S1. Night Watch: a workcenter office aboard a carrier (new, night only)
 Fixed inventory (write it into every prompt, word for word):
-- Small grey-painted steel-bulkhead office, low ceiling, a few exposed cable runs overhead, no windows.
-- A grey steel desk against the back wall. On its **left**: a thick bound paper watch log, open, filled with handwriting that is not readable; a pen; a white coffee mug. On its **right**: a plain black laptop (no logo), and next to it a small grey smart-card reader on a short cable, with a card in it.
-- A plain analog wall clock above the desk, no numerals, hands at about two o'clock.
-- A desk lamp, switched on, warm. The ceiling fluorescent is on but low and cool.
-- A grey steel chair with a worn seat, a stack of paper logs on a shelf at the left, a steel locker at the right.
-- No posters, no readable text, no screens other than the laptop, no logos.
+- Small haze-grey painted steel workcenter office, low ceiling, thick bundled cable runs and unlabeled painted pipes overhead, no windows.
+- A grey steel desk **bolted to the deck**, with a raised lip around its edge. On its **left**: a thick bound paper watch log, open, its pages covered in handwriting that is not readable; a black pen; a lidded steel mug [unverified detail]. A clipboard hung on a hook above the desk.
+- A plain analog wall clock, no numerals, hands near two o'clock.
+- A grey swivel chair secured to the deck, a heavy grey watertight door with a dogging wheel in one wall, scuffed grey non-skid deck.
+- Dim, cool-white night lighting and a single desk lamp, warm. **Not red**, so the cut to the submarine's red emergency light stays the visual jump. (Real carrier spaces do use red night lighting in places [unverified]; here it is a style choice.)
+- No windows, no posters, no readable text, no logos.
 
-Four-wall sheet (north, east, south, west) generated **once** as a 2x2 grid, as you did for the control room. Crop each wall as its own reference. The laptop screen in the Desk shots is a flat colour for compositing (as with the control-room monitor).
+How the audience knows it is a carrier without a hull shot:
+- The Sailor's cap and tapes carry a **fictional** carrier name and hull number, composited in the edit (suggested: "USS CRUCIBLE", "CVN 99"; there is no real CVN 99). Avoid real ship names and numbers.
+- Sound: a distant deep thump, a faint rumble, now and then a muffled jet whine through the structure.
+- **Optional establishing shot** (one generation): the flight deck at night, aircraft silhouettes, dim blue lights, seen from a distance. Keep it generic; do not reproduce a real ship's island.
 
-Camera: locked off in every shot. Planned frames:
-| Frame | Used for |
-|---|---|
-| Wide, front of the desk | Establishing both stations |
-| Medium on the left (log, hand, pen) | Night Watch |
-| Medium on the right (laptop, card reader) | The Desk |
-| Insert: clock | Sound bridge into the gong |
-| Insert: log page | Night Watch burden |
+### S2. The Desk: a shore office, morning (new, day only)
+Fixed inventory:
+- Small plain government office, grey-beige walls, ceiling fluorescent panels on and cool white, drop ceiling, no windows, a grey carpet or tile floor.
+- A beige laminate desk against the back wall. On it: a plain black laptop (lid open, screen a flat pale blue-grey), a small grey smart-card reader on a short cable beside it, a keyboard, a white coffee mug, a desk phone. A plain analog wall clock above the desk, no numerals, hands near nine.
+- A grey fabric office chair, a filing cabinet, a bare cork board with nothing pinned to it, a closed door.
+- No posters, no readable text, no logos.
 
-### S2. The control room (already built)
-Existing north, east, south, west sheet (task 413508; materials 394090 to 394093) and red emergency walls (413519 to 413522). Keep as is. West wall locked shot for the Captain's walk.
+Both rooms hold a plain analog clock, so the clock's tick can carry across the cuts.
 
-### S3. The screen (not generated)
+### S3. The control room (already built)
+Existing north, east, south, west sheet (task 413508; materials 394090 to 394093) and red emergency walls (413519 to 413522). West wall locked shot for the Captain's walk.
+
+### S4. The screen (not generated)
 The Periscope page, from the overlay (`overlay/scope-screen-real.png`), composited onto the monitor in the zoom.
+
+Camera: locked off in every shot. Frames per set: a wide, a medium on each station, and the inserts.
 
 ## 2. Cast
 
-| Role | Who | Notes |
-|---|---|---|
-| **DELGADO** | Petty officer second class, enlisted Sailor | Night Watch and the control room. Existing four-panel sheet (task 413420). Office: coverall sleeves rolled, no headset, no cap. Control room: headset. Young tenor, fast, tired and flat in the office. His rating wording is unverified: "radioman" may be out of date; a modern equivalent may be Information Systems Technician. |
-| **KESSLER, the CIV** | Government civilian software developer | New character, The Desk only. **[DEFAULT: mid-30s, calm, dry, dressed for an office.]** Needs a four-panel sheet (front, side, three-quarter, face), made the same way as the others. Business-casual: collared shirt, dark trousers, sensible shoes, a lanyard with an ID badge. Voice: even, a little weary, understated. Not a Sailor, not in uniform, and not in the control room. |
-| **Captain HARLAN** | Commander, commanding officer | Existing sheet (task 413570). Plain navy cap with gold visor leaves and no lettering **[DEFAULT]**. |
-| **Chief SULLIVAN** | Chief petty officer at the helm | Existing sheet (task 413550). Only in the Sullivan cut. |
-| **Second helm sailor** | Seen from behind only | No sheet needed if he never turns. |
-| **NARRATOR** | Off-screen voice | One calm voice for the lead-up, the tour and the demos. Described in the audio prompt; not cloned. |
+Different people in each scene. Four speaking characters plus an off-screen narrator.
 
-The civilian is a separate person on purpose: it makes the barrier a civilian developer's problem as well as a Sailor's, and "civilian" is how many Navy developers actually work. DELGADO is the Sailor who feels the paper burden; KESSLER is who the burden's fix has to come from; the control room links both back to the fleet.
+| Role | Scene | Who | Notes |
+|---|---|---|---|
+| **REYES** | Night Watch (carrier) | Petty officer second class, enlisted Sailor on watch | New. **[DEFAULT appearance: mid-twenties, lean, short hair, tired and watchful.]** Needs identity picks and a four-panel sheet. Uniform: see section 2a. Voice: tired, flat, dry. |
+| **KESSLER, the CIV** | The Desk (shore) | Government civilian software developer | New. **[DEFAULT: mid-thirties, medium build, dark hair tied back, calm, dry.]** Needs identity picks and a four-panel sheet. Business-casual, lanyard with a fictional ID badge. Voice: even, a little weary. |
+| **DELGADO** | Control room | Petty officer second class, radioman | Existing sheet 413420. Control room only now. Rating wording unverified; a modern equivalent may be Information Systems Technician. |
+| **Captain HARLAN** | Control room | Commander | Existing sheet 413570. **Cap decision: keep the boat name, the crest and the gold visor leaves; drop the hull number "SSN 999".** Needs a v3 sheet (section 2 of `asset-sheets-needed.md`). |
+| **Chief SULLIVAN** | Control room | Chief petty officer | Existing sheet 413550. Only in the Sullivan cut. |
+| **Second helm sailor** | Control room | Seen from behind only | No sheet needed. |
+| **NARRATOR** | Off-screen | Calm, level, slightly dry | One voice for the lead-up, the tour and the demos. |
 
 ## 2a. Uniform, badge and insignia details
 
-Lists what to show. Everything marked [unverified] comes from your own notes or my general knowledge and needs a submariner or a uniform regulation check before you lock it. I did not look up Navy uniform regulations in this session.
+**Control room (DELGADO, Captain, Sullivan):** from your existing sheets and notes: navy-blue submarine coverall; name tape right chest and "U.S. NAVY" tape left chest; silver (enlisted) or gold (officer) dolphins above the left chest; collar rank devices (E-5 eagle with two chevrons; Commander silver oak leaf; chief gold anchor with silver USN) [all unverified]; the Captain's navy cap with gold visor leaves, boat name and crest, no hull number.
 
-**Sailors (DELGADO, Captain, Sullivan), control room**
-- Navy-blue submarine coverall, zipped to the collar [unverified detail].
-- Name tape over the right chest pocket and "U.S. NAVY" tape over the left, each readable only as a composite [unverified placement].
-- Submarine warfare device (dolphins) over the left chest: gold for officers, silver for enlisted [unverified, from your notes].
-- Rank devices on the collar: Commander (silver oak leaf) [unverified], chief (gold anchor with silver USN) [unverified], E-5 (eagle with two chevrons) [unverified].
-- Captain's cap: navy, gold visor leaves, no lettering [your decision]. Submarine crews also wear tan caps [unverified which applies].
+**REYES, carrier:** a shipboard working uniform. Which one a carrier watchstander would wear (blue coverall, the green digital working uniform, or something else) is [unverified], so have a carrier Sailor confirm before generating. Whatever it is: name tape, "U.S. NAVY" tape, rank insignia for an E-5, and a ball cap with the fictional carrier name composited. A carrier Sailor may carry a warfare or qualification pin; leave it off rather than invent one.
 
-**DELGADO in the office**
-- Same coverall, sleeves rolled, name tape and "U.S. NAVY" tape, no cap.
+**KESSLER:** no insignia. A dark lanyard and a white badge holder with a **blank face**. The photo and a small tag reading "CIV" are composited, as a **fictional** badge. Do not copy a real government ID's layout, seal or colour bands.
 
-**KESSLER, the civilian**
-- Business-casual dress, no insignia.
-- A lanyard with an ID badge: a **fictional** badge with a blurred photo area and a small tag reading "CIV". The tag is composited. Do not use a real government ID's design, seal or colour bands.
-- Optional: the card sits in the reader on the desk while they work. That is the visual shorthand for CAC without showing a real card.
-
-**Rule for all small text and insignia:** generate the person with the patch or tape area blank and composite the real text in the edit, as with the cap lettering. Video models garble small lettering.
+**Rule for all small text and insignia:** generate the person with the tape or patch area blank, and composite the real text in the edit.
 
 ## 3. Props and continuity
 
-| Prop | Where it appears | Rule |
+| Prop | Where | Rule |
 |---|---|---|
-| Paper watch log | Night Watch | Handwriting unreadable. Never show a legible word. |
-| Pen, white mug | S1 | Same objects, same side of the desk each time. |
-| Wall clock | S1, insert | No numerals. Its tick is the sound bridge. |
-| Laptop and card reader | The Desk | No logos. The card reader suggests CAC without showing a real card. |
-| Terminal text and "Access denied" | The Desk | **Not generated.** Overlaid in the edit in a monospace face, so it stays crisp and accurate. |
+| Paper watch log | S1 | Handwriting unreadable; same side of the desk. |
+| Lidded mug, pen, clipboard | S1 | Same objects, same places every shot. |
+| Laptop, reader, keyboard, phone, mug | S2 | No logos; screen a flat colour for compositing. |
+| Wall clock | S1, S2 | No numerals. Its tick is the sound bridge. |
+| Fictional carrier name and hull number | Cap and tape | Composited. |
+| ID badge and "CIV" tag | S2 | Fictional, composited. |
+| Terminal text, "Access denied" | S2 | **Not generated.** Overlaid in a monospace face. |
 | Periscope page | Control-room monitor | Composited from the overlay still. |
-| KESSLER's ID badge on a lanyard | The Desk | **Fictional** badge, composited, never generated. Do not copy the layout, seal or colours of a real government ID. A small generic tag, readable "CIV", and a blurred photo area. |
-| Challenge coin | Close card, optionally on the desk | Real art, composited. Never generated. |
+| Challenge coin | Close card | Real art, composited. |
 
 ## 4. Look
 
 - **Style block, every prompt:** "Documentary realism, available light, natural color, mild film grain. Not a video game, not stylized. No subtitles, no captions, no logos, no watermark, no readable text on any screen, no music and no musical score, only room sound."
-- **Colour logic:** the office is cool and neutral, with a warm lamp. The control room is dim and red. The hard cut to red is the visual jump. Do not grade the office warm.
+- **Colour logic:** the carrier is dim and cool; the shore office is flat cool-white; the control room is dim and red. The red jump is the one that should hit hardest.
 - **Frame rate and shape:** 24 fps, 16:9. Generate at the highest resolution you can afford; the old clips were 480p.
-- **Camera:** locked off. No dolly or handheld in any shot. The only movement is people.
-- **Overlay type:** a monospace face for terminal text; the brass letterspaced face from the Periscope page for titles.
+- **Camera:** locked off. The only movement is people.
+- **Overlay type:** monospace for terminal text; the brass letterspaced face from the Periscope page for titles.
 
 ## 5. Sound
 
 | Where | Sound |
 |---|---|
-| Night Watch | Room tone, ventilation, a slow clock tick, a pen on paper. |
-| The Desk | Keyboard clatter, a short error chime for each failed command. |
-| The hinge | The wall clock's tick is the bridge. Under "Now imagine it's not a quiet night" the tick speeds from about 60 beats a minute to about 100 over two seconds, matching the gong alarm's pace in your notes (about 100 beats a minute). On the hard cut the tick is replaced by the gong. Mix the clock tick with a slightly metallic tone near the end of the ramp so the gong reads as the same sound turning dangerous. |
+| Night Watch (carrier) | Room tone, ventilation, deep rumble, a slow clock tick, pen on paper, a distant muffled jet whine or thump. |
+| The Desk | Keyboard clatter, a short error chime for each failed command, fluorescent hum. |
+| The hinge | The wall clock's tick is the bridge. Under "Now imagine it's not a quiet night" the tick speeds from about 60 beats a minute to about 100 over two seconds, matching the gong alarm's pace in your notes (about 100 beats a minute). On the hard cut the tick is replaced by the gong. Add a slightly metallic tone near the end of the ramp so the gong reads as the same sound turning dangerous. |
 | Control room | Real or licensed gong alarm (about 100 beats a minute for ten seconds), thump, ventilation, human-recorded "Man battle stations." |
 | Close | Soft chime as the Periscope page opens, then a held low note. |
 
-No music in any generated clip. Any music is added in the edit, once, over the whole film.
+No music in any generated clip. Any music is added once, in the edit, over the whole film.
 
 ## 6. Voices
 
 | Voice | Description for the audio prompt |
 |---|---|
 | NARRATOR | Calm, level, slightly dry, neither hurried nor dramatic. |
-| DELGADO | Young tenor, fast, breathless in the control room; tired and flat in the office. |
+| REYES | Tired, flat, dry. |
+| KESSLER | Even, a little weary, understated. |
+| DELGADO | Young tenor, fast, breathless in the control room. |
 | Captain HARLAN | Deep, calm, completely flat and deadpan. |
 | Chief SULLIVAN | Very low, gravelly, tired and dry. |
 
@@ -112,18 +110,18 @@ One multi-speaker audio pass for the dialogue, as the notes recommend.
 
 ## 7. Generation order (cheapest first)
 
-1. Office four-wall sheet (one generation).
-2. DELGADO office wardrobe check from his existing sheet (re-use; no new sheet unless the look is wrong).
-3. Night Watch and Desk clips from locked reference frames cropped from the sheet.
-4. Clock and log inserts.
+1. Captain v3 sheet (cap change only).
+2. REYES identity picks, then sheet. KESSLER identity picks, then sheet.
+3. Carrier workcenter north master, then 2x2 room sheet, then inserts. Shore office north master, then 2x2 room sheet, then inserts.
+4. Voices.
 5. Control-room reshoot for the Captain's walk.
-6. Dialogue and narration audio passes.
-7. Composites: terminal overlays, laptop screen, monitor zoom, coin.
+6. Composites: carrier name, badge, terminal overlays, laptop screen, monitor zoom, coin.
 
 ## 8. Open decisions
 
-1. KESSLER's look: age, build, dress. Default is a calm mid-30s office worker; change it to whatever you want the audience to see, or base it on a real person only with their permission and without using their likeness from photos.
-2. Captain's cap: plain or lettered? **[DEFAULT: plain]**
-3. Is the office aboard a ship or ashore? Written as a ship's office; with a civilian developer, shore is more realistic, so change the bulkhead details if you prefer.
-4. Rating wording for DELGADO and every insignia marked [unverified] (submariner review).
-5. Whether the lead-up scenes keep a spoken Narrator or run silent with on-screen text only.
+1. REYES and KESSLER: age, build, look.
+2. The carrier uniform for REYES (needs a carrier Sailor's check).
+3. The fictional carrier name and hull number ("USS CRUCIBLE", "CVN 99" is a placeholder).
+4. Whether to pay for the optional flight-deck establishing shot.
+5. Rating wording for DELGADO and every insignia marked [unverified].
+6. Whether the lead-up scenes keep a spoken Narrator or run silent with on-screen text only.
