@@ -31,3 +31,24 @@ Why the old line is a problem: the mispronounced "Windlass and Fairlead" in B v2
 1. **Per-tool demo videos.** None are rendered yet. Signal-Gun can generate 60 to 90 seconds per tool from the DEMO.md specs (needs Node, ffmpeg, Playwright and TalkForge on a dev machine). Start with the two you most want to show, and let the rest say "not rendered yet" until they are.
 2. **Hosting.** The submission form wants a Demo URL. A single page with relative video paths works on GitHub Pages or any static host. Confirm repo visibility rules first: repos are marked internal-only and visibility changes need Jeremy's yes.
 3. **Honesty line on the page.** The footer already says demos use synthetic data and the tools are prototypes. Keep it.
+
+## The tour: voiceover and slow scroll
+
+When the zoom lands on the catalog, an AI voice starts and the page scrolls slowly down through every card, so the audience sees how many tools there are. Five tools get a quick spoken line and a highlight ring. Every card carries a one-line tagline under its name, so even the unnamed ones read at a glance.
+
+Voiceover (about 35 s, one calm voice, no hype):
+
+> Edge Ops is a home for tools.
+> Halyard tidies a backlog, with your approval.
+> Eight Bells turns a watch log into a turnover.
+> Semaphore builds dashboards from plain English.
+> Fairlead puts every AI model behind one address.
+> Windlass runs giant models on an ordinary PC.
+> All of them hosted inside Edge Ops. That's five of sixteen. No admin. No install.
+
+Notes:
+- The five tools are in the order their cards appear on the page, so the scroll only moves down. If you change the five, keep them in page order or the page will scroll back up.
+- Say "Edge Ops" as two words. Pronounce Windlass "wind-luhs" and Fairlead "fehr-leed". Record the voice in one pass and save it as `interactive/intro-vo.mp3`.
+- Timings are in the `TOUR` list at the top of the tour code in `index.html`. After you record, adjust each `t` to when the line starts. With an audio file the scroll follows the audio clock. Without one it runs on a timer and shows the same words in a caption bar, which also works for viewers with the sound off.
+- Any click, scroll or key press stops the tour so a judge can take over. "Replay the tour" restarts it.
+- To go straight to the tour for testing, open `index.html#tour`.

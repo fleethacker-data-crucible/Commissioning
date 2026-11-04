@@ -26,6 +26,9 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--brass);outline-offs
 .card p{margin:0;color:var(--muted);font-size:.92rem;flex:1}
 .badges{display:flex;gap:6px;flex-wrap:wrap}
 .badge{font-size:.72rem;border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:var(--muted)}
+.tag{font-weight:600;color:var(--ink);margin:-4px 0 0;font-size:.95rem}
+.card.hot{outline:3px solid var(--brass);box-shadow:0 0 0 6px rgba(154,107,18,.18)}
+#cap{position:fixed;left:0;right:0;bottom:0;background:rgba(11,20,38,.92);color:#efe9d8;padding:14px 18px;font-size:1.15rem;text-align:center;z-index:5}
 .status{font-size:.75rem;color:var(--brass)}
 dialog{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);padding:0;width:min(960px,96vw)}
 dialog::backdrop{background:rgba(0,0,0,.7)}
@@ -45,10 +48,12 @@ footer{margin:2rem 0 1rem;color:var(--muted);font-size:.85rem}
 
 <section id="intro" aria-label="Opening scene">
   <div id="stage"><video id="openVid" preload="metadata" playsinline controls poster="opening-poster.jpg"><source src="opening.mp4" type="video/mp4"></video></div>
-  <div class="bar"><button id="skip" class="ghost" type="button">Skip to the tools</button></div>
+  <div class="bar"><button id="skip" class="ghost" type="button">Skip to the tools</button><button id="replay" class="ghost" type="button">Replay the tour</button></div>
 </section>
 
 <main id="tools"></main>
+<audio id="vo" src="intro-vo.mp3" preload="auto"></audio>
+<div id="cap" class="hide" role="status" aria-live="polite"></div>
 <footer>Demos use synthetic data only. Prototypes: not an accredited system. Tools run locally; nothing here is sent anywhere.</footer>
 </div>
 
@@ -58,7 +63,7 @@ footer{margin:2rem 0 1rem;color:var(--muted);font-size:.85rem}
 </dialog>
 
 <script>
-var CATALOG=[{"id": "halyard", "name": "Halyard", "summary": "A product owner's assistant that works a backlog upward to leadership and downward to stories and tasks. It runs locally: a PowerShell launcher, one .NET library, and a browser UI on 127.0.0.1.", "group": "work-collaboration", "status": "unreleased", "port": 8773}, {"id": "lazarette", "name": "Lazarette", "summary": "Your credentials, stowed and locked aboard your own workstation. A Windows PowerShell 5.1 engine serves a local browser app on 127.0.0.1; the browser is the product.", "group": "secrets-security", "status": "unreleased", "port": 8765}, {"id": "gangplank", "name": "Gangplank", "summary": "A browser-first workspace that gets people without Git training safely onto GitHub and GitLab projects, from Windows PowerShell 5.1 and a browser; no git.exe, Node or Python on the workstation.", "group": "work-collaboration", "status": "preview", "port": 8769}, {"id": "packetrat", "name": "PacketRat", "summary": "Outlook triage into a human-reviewed action queue, run from a local Windows PowerShell 5.1 service with a browser UI.", "group": "work-collaboration", "status": "prototype", "port": 8766}, {"id": "shellback", "name": "Shellback", "summary": "Workforce capability intelligence: employee-attested skills, kept separate from claims, in a local-first browser app.", "group": "work-collaboration", "status": "prototype", "port": 8765}, {"id": "snapshackle", "name": "SnapShackle", "summary": "A local-first Windows screenshot and annotation studio using native Windows capture, a built-in PowerShell HTTP host, and an offline browser UI.", "group": "capture-media-files", "status": "prototype", "port": 8765}, {"id": "bowerbird", "name": "Bowerbird", "summary": "Local-first file intelligence and screenshot renaming for Windows PowerShell 5.1 and your existing web browser.", "group": "capture-media-files", "status": "unreleased", "port": 8767}, {"id": "eight-bells", "name": "Eight Bells", "summary": "Local-first watchstanding log intelligence: quality review, evidence-linked turnover and lessons learned (v2).", "group": "work-collaboration", "status": "prototype", "port": null}, {"id": "capstan", "name": "Capstan", "summary": "An open-source, local-first screen recorder and video editor for Windows.", "group": "capture-media-files", "status": "v0.1", "port": 8790}, {"id": "scrimshaw", "name": "Scrimshaw", "summary": "An open-source e-learning authoring tool.", "group": "voice-learning", "status": "unreleased", "port": null}, {"id": "semaphore", "name": "Semaphore", "summary": "Semaphore is an analyst workbench for building dashboards from plain-English briefs, CSV files and configured database sources, meant to replace Qlik on thin clients. It runs locally: a PowerShell launcher and a browser UI on 127.0.0.1. Engineering preview.", "group": "data-analytics", "status": "v0.3", "port": 8800}, {"id": "fairlead", "name": "Fairlead", "summary": "One local address for every model. Fairlead is the model router behind the Fleet tools: it speaks the OpenAI and Anthropic APIs on http://127.0.0.1:8776, sends each request to the right cloud or local model, and keeps answering from local models when the internet or a provider goes down.", "group": "local-ai", "status": "unreleased", "port": 8776}, {"id": "windlass", "name": "Windlass", "summary": "Run very large local GGUF models (70B and up) on an ordinary PC by streaming them one layer at a time, behind an OpenAI-compatible API.", "group": "local-ai", "status": "v0.2", "port": 8777}, {"id": "talkforge", "name": "TalkForge", "summary": "Client-side neural text-to-speech (Piper, ONNX Runtime Web/WASM) with offline local assets.", "group": "voice-learning", "status": "beta", "port": 25000}, {"id": "data-noodler", "name": "Data Noodler", "summary": "Self-contained flat-file analytics (CSV/Parquet/Arrow/SQLite) with dashboards.", "group": "data-analytics", "status": "beta", "port": 8079}, {"id": "phoenix-lai", "name": "Phoenix LAI", "summary": "Local Gemma models on your GPU behind an OpenAI-compatible API, plus a Chrome app-window client.", "group": "local-ai", "status": "beta", "port": 1234}];
+var CATALOG=[{"id": "halyard", "name": "Halyard", "summary": "A product owner's assistant that works a backlog upward to leadership and downward to stories and tasks. It runs locally: a PowerShell launcher, one .NET library, and a browser UI on 127.0.0.1.", "group": "work-collaboration", "status": "unreleased", "port": 8773, "tagline": "A backlog that tidies itself, with your approval"}, {"id": "lazarette", "name": "Lazarette", "summary": "Your credentials, stowed and locked aboard your own workstation. A Windows PowerShell 5.1 engine serves a local browser app on 127.0.0.1; the browser is the product.", "group": "secrets-security", "status": "unreleased", "port": 8765, "tagline": "A credential vault on your workstation"}, {"id": "gangplank", "name": "Gangplank", "summary": "A browser-first workspace that gets people without Git training safely onto GitHub and GitLab projects, from Windows PowerShell 5.1 and a browser; no git.exe, Node or Python on the workstation.", "group": "work-collaboration", "status": "preview", "port": 8769, "tagline": "Git for people who never learned Git"}, {"id": "packetrat", "name": "PacketRat", "summary": "Outlook triage into a human-reviewed action queue, run from a local Windows PowerShell 5.1 service with a browser UI.", "group": "work-collaboration", "status": "prototype", "port": 8766, "tagline": "Inbox triage into an action queue"}, {"id": "shellback", "name": "Shellback", "summary": "Workforce capability intelligence: employee-attested skills, kept separate from claims, in a local-first browser app.", "group": "work-collaboration", "status": "prototype", "port": 8765, "tagline": "Skills your people attest to themselves"}, {"id": "snapshackle", "name": "SnapShackle", "summary": "A local-first Windows screenshot and annotation studio using native Windows capture, a built-in PowerShell HTTP host, and an offline browser UI.", "group": "capture-media-files", "status": "prototype", "port": 8765, "tagline": "Screenshots and annotation"}, {"id": "bowerbird", "name": "Bowerbird", "summary": "Local-first file intelligence and screenshot renaming for Windows PowerShell 5.1 and your existing web browser.", "group": "capture-media-files", "status": "unreleased", "port": 8767, "tagline": "Smart file and screenshot renaming"}, {"id": "eight-bells", "name": "Eight Bells", "summary": "Local-first watchstanding log intelligence: quality review, evidence-linked turnover and lessons learned (v2).", "group": "work-collaboration", "status": "prototype", "port": null, "tagline": "Watch logs into turnovers, with evidence"}, {"id": "capstan", "name": "Capstan", "summary": "An open-source, local-first screen recorder and video editor for Windows.", "group": "capture-media-files", "status": "v0.1", "port": 8790, "tagline": "Screen recorder and video editor"}, {"id": "scrimshaw", "name": "Scrimshaw", "summary": "An open-source e-learning authoring tool.", "group": "voice-learning", "status": "unreleased", "port": null, "tagline": "Build e-learning courses"}, {"id": "semaphore", "name": "Semaphore", "summary": "Semaphore is an analyst workbench for building dashboards from plain-English briefs, CSV files and configured database sources, meant to replace Qlik on thin clients. It runs locally: a PowerShell launcher and a browser UI on 127.0.0.1. Engineering preview.", "group": "data-analytics", "status": "v0.3", "port": 8800, "tagline": "Dashboards from plain English"}, {"id": "fairlead", "name": "Fairlead", "summary": "One local address for every model. Fairlead is the model router behind the Fleet tools: it speaks the OpenAI and Anthropic APIs on http://127.0.0.1:8776, sends each request to the right cloud or local model, and keeps answering from local models when the internet or a provider goes down.", "group": "local-ai", "status": "unreleased", "port": 8776, "tagline": "One address for every AI model"}, {"id": "windlass", "name": "Windlass", "summary": "Run very large local GGUF models (70B and up) on an ordinary PC by streaming them one layer at a time, behind an OpenAI-compatible API.", "group": "local-ai", "status": "v0.2", "port": 8777, "tagline": "Giant AI models on an ordinary PC"}, {"id": "talkforge", "name": "TalkForge", "summary": "Client-side neural text-to-speech (Piper, ONNX Runtime Web/WASM) with offline local assets.", "group": "voice-learning", "status": "beta", "port": 25000, "tagline": "Offline text to speech"}, {"id": "data-noodler", "name": "Data Noodler", "summary": "Self-contained flat-file analytics (CSV/Parquet/Arrow/SQLite) with dashboards.", "group": "data-analytics", "status": "beta", "port": 8079, "tagline": "Analyze CSV and Parquet files, no database"}, {"id": "phoenix-lai", "name": "Phoenix LAI", "summary": "Local Gemma models on your GPU behind an OpenAI-compatible API, plus a Chrome app-window client.", "group": "local-ai", "status": "beta", "port": 1234, "tagline": "A local AI model on your own GPU"}];
 var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {"id": "work-collaboration", "name": "Work tracking and collaboration"}, {"id": "data-analytics", "name": "Data, dashboards and analytics"}, {"id": "local-ai", "name": "Local AI platform"}, {"id": "voice-learning", "name": "Voice and learning"}, {"id": "secrets-security", "name": "Secrets and security"}];
 (function(){
   var main=document.getElementById('tools'),dlg=document.getElementById('dlg'),
@@ -73,6 +78,8 @@ var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {
     items.forEach(function(t){
       var c=el('div','card');
       c.appendChild(el('h3',null,t.name));
+      c.appendChild(el('p','tag',t.tagline));
+      c.setAttribute('data-id',t.id);
       c.appendChild(el('p',null,t.summary));
       var b=el('div','badges');
       ['No admin','No install','Loopback only'].forEach(function(x){b.appendChild(el('span','badge',x))});
@@ -97,10 +104,64 @@ var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {
   function shut(){dv.pause();dv.removeAttribute('src');dv.load();if(dlg.close)dlg.close();else dlg.removeAttribute('open')}
   document.getElementById('close').addEventListener('click',shut);
   dlg.addEventListener('close',function(){dv.pause()});
-  function toTools(){document.getElementById('openVid').pause();main.scrollIntoView({behavior:'smooth'})}
-  document.getElementById('skip').addEventListener('click',toTools);
+
+  /* ---- Guided tour: voiceover + slow scroll ----
+     Cues follow the order the cards appear on the page, so the scroll only moves down. Edit TOUR times to match the real voiceover (intro-vo.mp3). With no audio file the tour runs on a timer
+     and the caption bar shows the same words. */
+  var TOUR=[
+    {t:0,  text:"Edge Ops is a home for tools."},
+    {t:3,  id:"halyard",     text:"Halyard tidies a backlog, with your approval."},
+    {t:8,  id:"eight-bells", text:"Eight Bells turns a watch log into a turnover."},
+    {t:13, id:"semaphore",   text:"Semaphore builds dashboards from plain English."},
+    {t:18, id:"fairlead",    text:"Fairlead puts every AI model behind one address."},
+    {t:23, id:"windlass",    text:"Windlass runs giant models on an ordinary PC."},
+    {t:28, id:"lazarette", nohot:true, text:"All of them hosted inside Edge Ops. That's five of sixteen. No admin. No install."}
+  ];
+  var TOUR_END=38,vo=document.getElementById('vo'),cap=document.getElementById('cap'),
+      raf=0,t0=0,running=false,hasAudio=false;
+  function card(id){return id?document.querySelector('.card[data-id="'+id+'"]'):null}
+  function yFor(i){
+    var c=card(TOUR[i].id);
+    if(!c)return main.getBoundingClientRect().top+window.pageYOffset-20;
+    return c.getBoundingClientRect().top+window.pageYOffset-Math.max(60,(window.innerHeight-c.offsetHeight)/2);
+  }
+  function stopTour(){
+    running=false;cancelAnimationFrame(raf);cap.classList.add('hide');
+    var h=document.querySelector('.card.hot');if(h)h.classList.remove('hot');
+    try{vo.pause()}catch(e){}
+  }
+  function now(){return hasAudio&&!vo.paused?vo.currentTime:(performance.now()-t0)/1000}
+  function tick(){
+    if(!running)return;
+    var t=now(),i=0;
+    for(var k=0;k<TOUR.length;k++){if(t>=TOUR[k].t)i=k}
+    var a=TOUR[i],b=TOUR[i+1],ya=yFor(i),
+        yb=b?yFor(i+1):document.documentElement.scrollHeight-window.innerHeight,
+        tb=b?b.t:TOUR_END,f=Math.min(1,Math.max(0,(t-a.t)/Math.max(.1,tb-a.t)));
+    window.scrollTo(0,ya+(yb-ya)*f);
+    cap.textContent=a.text;cap.classList.remove('hide');
+    var hot=card(a.id),cur=document.querySelector('.card.hot');
+    if(cur&&cur!==hot)cur.classList.remove('hot');
+    if(hot&&!a.nohot)hot.classList.add('hot');else if(cur)cur.classList.remove('hot');
+    if(t>=TOUR_END){stopTour();return}
+    raf=requestAnimationFrame(tick);
+  }
+  function startTour(){
+    stopTour();running=true;t0=performance.now();
+    hasAudio=false;
+    try{vo.currentTime=0;var p=vo.play();hasAudio=true;if(p&&p.catch)p.catch(function(){hasAudio=false})}catch(e){}
+    vo.onerror=function(){hasAudio=false};
+    window.scrollTo(0,yFor(0));
+    raf=requestAnimationFrame(tick);
+  }
+  ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){
+    window.addEventListener(ev,function(e){if(running&&!(e.target&&e.target.id==='replay'))stopTour()},{passive:true});
+  });
+  document.getElementById('replay').addEventListener('click',function(){startTour()});
+  function toTools(){document.getElementById('openVid').pause();startTour()}
+  document.getElementById('skip').addEventListener('click',function(){document.getElementById('openVid').pause();stopTour();main.scrollIntoView({behavior:'smooth'})});
   document.getElementById('openVid').addEventListener('ended',toTools);
-  try{if(location.hash==='#tools')toTools()}catch(e){}
+  try{if(location.hash==='#tools')main.scrollIntoView();if(location.hash==='#tour')startTour()}catch(e){}
 })();
 </script>
 </body>
