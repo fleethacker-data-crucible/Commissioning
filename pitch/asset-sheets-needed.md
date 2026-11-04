@@ -13,12 +13,12 @@ Prompts below copy the structure of the ones you already used (`intro/prompts/pr
 | Control room red walls | **Have** | 413519 to 413522 | Control room |
 | Dialogue audio (Captain, Sullivan, DELGADO) | **Have**, lines change | 413603 | Control room |
 | **REYES (carrier Sailor) identity picks and sheet** | **Need** | | Night Watch |
-| **KESSLER (civilian) identity picks and sheet** | **Need** | | The Desk |
+| **MORGAN (civilian) identity picks and sheet** | **Need** | | The Desk |
 | **Captain sheet v3** (cap: boat name and crest kept, hull number dropped) | **Need** | reference 413570 | Control room |
 | **Carrier workcenter: north master, 2x2 sheet, inserts** | **Need** | | Night Watch |
 | **Shore office: north master, 2x2 sheet, inserts** | **Need** | | The Desk |
 | Flight-deck establishing shot | Optional | | Night Watch |
-| REYES, KESSLER and NARRATOR voices | **Need** | | Lead-up, tour, demos |
+| REYES, MORGAN and NARRATOR voices | **Need** | | Lead-up, tour, demos |
 | Reference frame from C v3 | **Need** (free, ffmpeg) | 413730 | Captain's walk |
 | ID badge and "CIV" tag art | **Need** (local, composited) | | The Desk |
 | Terminal text overlays | **Need** (local, composited) | | The Desk |
@@ -38,7 +38,7 @@ Keep the rest of the v2 prompt unchanged (gold officer dolphins, silver oak leaf
 ### REYES, carrier Sailor
 **Identity picks** (Seedream 5.0 Pro, 1k, 3:4, three candidates). The appearance block is yours to set; default shown. The uniform is a placeholder until a carrier Sailor confirms it.
 ```text
-Photorealistic full-body photograph of a US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, [APPEARANCE: mid-twenties, lean build, short dark hair, tired and watchful eyes]. Plain working uniform [UNIFORM: confirm with a carrier Sailor], zipped or buttoned to the collar, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at their sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
+Photorealistic full-body photograph of a US Navy enlisted Sailor standing a night watch aboard an aircraft carrier, [APPEARANCE: mid-twenties, lean and weathered, short dark hair, a hard tired face with deep eye bags and a squint, clean-shaven and regulation-neat, looks older than their years, tired but watchful; uniform faded and worn, boots scuffed]. Plain working uniform [UNIFORM: confirm with a carrier Sailor], zipped or buttoned to the collar, black safety boots, no cap. Standing relaxed facing the camera straight on, arms at their sides, whole body from head to boots in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
 ```
 **Four-panel sheet** (GPT Image 2.5 Sunburst, 2k, 16:9; reference: the identity pick you choose):
 ```text
@@ -50,7 +50,7 @@ EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "
 ```
 The carrier name and hull number on the cap are composited later.
 
-### KESSLER, civilian developer
+### MORGAN, civilian developer
 **Identity picks** (Seedream 5.0 Pro, 1k, 3:4, three candidates):
 ```text
 Photorealistic full-body photograph of a government civilian software developer, [APPEARANCE: mid-thirties, medium build, dark hair tied back, light olive skin, calm tired eyes, understated and dry]. Business-casual office clothing: a plain light-blue collared button-up shirt, dark trousers, flat dark shoes, and a plain white badge holder on a dark lanyard around their neck, the badge face blank. Standing relaxed facing the camera straight on, arms at their sides, whole body from head to shoes in frame, plain neutral mid-grey studio background, soft even lighting, one person only. No text, no labels, no captions, no watermark.
@@ -58,7 +58,7 @@ Photorealistic full-body photograph of a government civilian software developer,
 **Four-panel sheet** (GPT Image 2.5 Sunburst, 2k, 16:9; reference: the identity pick you choose):
 ```text
 USE: Photorealistic character turnaround reference sheet of one government civilian software developer, for keeping their face identical across many video shots.
-IDENTITY REFERENCE: @task:<KESSLER pick> is the identity reference. Keep this exact person's face, skin tone, hair, build and expression identical in every panel.
+IDENTITY REFERENCE: @task:<MORGAN pick> is the identity reference. Keep this exact person's face, skin tone, hair, build and expression identical in every panel.
 CHANGE ONLY their clothing, to: a plain light-blue collared button-up shirt, dark trousers, flat dark shoes, a plain white rectangular badge holder on a dark lanyard around their neck with a BLANK badge face (no photo, no text), no insignia of any kind.
 LAYOUT: four equal vertical panels side by side on a seamless pure white studio background, separated by thin grey vertical lines. Panel 1: full body, front view, standing relaxed, arms at their sides. Panel 2: full body, exact side profile facing right. Panel 3: full body, three-quarter view. Panel 4: extreme straight-on close-up of the face, head, collar and the lanyard, looking into the camera, neutral expression. Same person, same clothes, same proportions in all four panels. Soft even studio lighting, sharp focus, no shadows on the background.
 EXACT TEXT: bold black sans-serif labels centered at the bottom of each panel: "FRONT", "SIDE", "3-QUARTER", "FACE DETAIL". No other text, no watermark, no player controls.
@@ -113,11 +113,11 @@ Clock close-up (same prompt as the carrier, referencing the shore north panel) a
 ## 5. Voices (Seed Audio, one pass each, per the notes' lessons)
 ```text
 Setting: clean, dry, close-microphone dialogue recorded for a film, no background noise, no music, no room reverb.
-Speaker KESSLER: [VOICE: even, a little weary, understated, neither hurried nor dramatic].
-Speaker REYES: [VOICE: tired, flat, dry].
+Speaker MORGAN: [VOICE: even, a little weary, understated, neither hurried nor dramatic].
+Speaker REYES: [VOICE: tired, rough and dry, a little crusty, never raised].
 Speaker NARRATOR: [VOICE: calm, level, slightly dry, neither hurried nor dramatic].
 ```
-Add a REYES line to the same pass (tired, flat, dry). Describe the voices in the prompt and do not clone from a reference, because cloning did not keep the voices before. Write the lines once the lead-up scenes are scripted; test "Periscope" and "SCOPE" on a short clip first.
+Add a REYES line to the same pass (tired, rough and dry, a little crusty, never raised). Describe the voices in the prompt and do not clone from a reference, because cloning did not keep the voices before. Write the lines once the lead-up scenes are scripted; test "Periscope" and "SCOPE" on a short clip first.
 
 ## 6. Local assets (no credits)
 
@@ -128,7 +128,7 @@ Add a REYES line to the same pass (tired, flat, dry). Describe the voices in the
 ## 7. Order
 
 1. Captain v3 (cap only).
-2. REYES identity picks, choose one, then the sheet. KESSLER identity picks, choose one, then the sheet.
+2. REYES identity picks, choose one, then the sheet. MORGAN identity picks, choose one, then the sheet.
 3. Carrier north master, then the 2x2 sheet, then inserts. Shore office north master, then the 2x2 sheet, then inserts.
 4. Voices.
 5. Then the lead-up clips, using these as references.

@@ -43,8 +43,8 @@ Different people in each scene. Four speaking characters plus an off-screen narr
 
 | Role | Scene | Who | Notes |
 |---|---|---|---|
-| **REYES** | Night Watch (carrier) | Petty officer second class, enlisted Sailor on watch | New. **[DEFAULT appearance: mid-twenties, lean, short hair, tired and watchful.]** Needs identity picks and a four-panel sheet. Uniform: see section 2a. Voice: tired, flat, dry. |
-| **KESSLER, the CIV** | The Desk (shore) | Government civilian software developer | New. **[DEFAULT: mid-thirties, medium build, dark hair tied back, calm, dry.]** Needs identity picks and a four-panel sheet. Business-casual, lanyard with a fictional ID badge. Voice: even, a little weary. |
+| **REYES** | Night Watch (carrier) | Petty officer second class, enlisted Sailor on watch | New. **[DEFAULT appearance: a crusty second class in their mid-twenties: lean and weathered, a hard tired face with deep eye bags and a squint, clean-shaven and regulation-neat, uniform faded and worn, boots scuffed. Tired but watchful.]** Needs identity picks and a four-panel sheet. Uniform: see section 2a. Voice: tired, rough and dry, a little crusty, never raised. |
+| **MORGAN, the CIV** | The Desk (shore) | Government civilian software developer. **Civilians are addressed by first name**, so the dialogue and the badge use "Morgan" (first name), where Sailors are addressed by rank or last name. First name is a placeholder; change it. | New. **[DEFAULT: mid-thirties, medium build, dark hair tied back, calm, dry.]** Needs identity picks and a four-panel sheet. Business-casual, lanyard with a fictional ID badge. Voice: even, a little weary. |
 | **DELGADO** | Control room | Petty officer second class, radioman | Existing sheet 413420. Control room only now. Rating wording unverified; a modern equivalent may be Information Systems Technician. |
 | **Captain HARLAN** | Control room | Commander | Existing sheet 413570. **Cap decision: keep the boat name, the crest and the gold visor leaves; drop the hull number "SSN 999".** Needs a v3 sheet (section 2 of `asset-sheets-needed.md`). |
 | **Chief SULLIVAN** | Control room | Chief petty officer | Existing sheet 413550. Only in the Sullivan cut. |
@@ -57,7 +57,7 @@ Different people in each scene. Four speaking characters plus an off-screen narr
 
 **REYES, carrier:** a shipboard working uniform. Which one a carrier watchstander would wear (blue coverall, the green digital working uniform, or something else) is [unverified], so have a carrier Sailor confirm before generating. Whatever it is: name tape, "U.S. NAVY" tape, rank insignia for an E-5, and a ball cap with the fictional carrier name composited. A carrier Sailor may carry a warfare or qualification pin; leave it off rather than invent one.
 
-**KESSLER:** no insignia. A dark lanyard and a white badge holder with a **blank face**. The photo and a small tag reading "CIV" are composited, as a **fictional** badge. Do not copy a real government ID's layout, seal or colour bands.
+**MORGAN:** no insignia. A dark lanyard and a white badge holder with a **blank face**. The photo and a small tag reading "CIV" are composited, as a **fictional** badge. Do not copy a real government ID's layout, seal or colour bands.
 
 **Rule for all small text and insignia:** generate the person with the tape or patch area blank, and composite the real text in the edit.
 
@@ -89,7 +89,7 @@ Different people in each scene. Four speaking characters plus an off-screen narr
 |---|---|
 | Night Watch (carrier) | Room tone, ventilation, deep rumble, a slow clock tick, pen on paper, a distant muffled jet whine or thump. |
 | The Desk | Keyboard clatter, a short error chime for each failed command, fluorescent hum. |
-| The hinge | The wall clock's tick is the bridge. Under "Now imagine it's not a quiet night" the tick speeds from about 60 beats a minute to about 100 over two seconds, matching the gong alarm's pace in your notes (about 100 beats a minute). On the hard cut the tick is replaced by the gong. Add a slightly metallic tone near the end of the ramp so the gong reads as the same sound turning dangerous. |
+| The hinge | The wall clock's tick is the bridge. The Desk ends on the clock insert while the tick speeds from about 60 beats a minute to about 100 over two seconds, matching the gong alarm's pace in your notes. **Hard cut to the control room, calm and in normal light, with the tick still at 100.** About 1.5 seconds later the thump hits, the lights flicker to red, and the gong takes over the same beat. Trim clip A so it starts about 1.5 s before its thump (the thump is at about 3 s) and keep the normal-to-red flip visible. Add a slightly metallic tone near the end of the ramp so the gong reads as the same sound turning dangerous. |
 | Control room | Real or licensed gong alarm (about 100 beats a minute for ten seconds), thump, ventilation, human-recorded "Man battle stations." |
 | Close | Soft chime as the Periscope page opens, then a held low note. |
 
@@ -100,8 +100,8 @@ No music in any generated clip. Any music is added once, in the edit, over the w
 | Voice | Description for the audio prompt |
 |---|---|
 | NARRATOR | Calm, level, slightly dry, neither hurried nor dramatic. |
-| REYES | Tired, flat, dry. |
-| KESSLER | Even, a little weary, understated. |
+| REYES | Tired, rough and dry, a little crusty; watchful, never raised. |
+| MORGAN | Even, a little weary, understated. |
 | DELGADO | Young tenor, fast, breathless in the control room. |
 | Captain HARLAN | Deep, calm, completely flat and deadpan. |
 | Chief SULLIVAN | Very low, gravelly, tired and dry. |
@@ -111,7 +111,7 @@ One multi-speaker audio pass for the dialogue, as the notes recommend.
 ## 7. Generation order (cheapest first)
 
 1. Captain v3 sheet (cap change only).
-2. REYES identity picks, then sheet. KESSLER identity picks, then sheet.
+2. REYES identity picks, then sheet. MORGAN identity picks, then sheet.
 3. Carrier workcenter north master, then 2x2 room sheet, then inserts. Shore office north master, then 2x2 room sheet, then inserts.
 4. Voices.
 5. Control-room reshoot for the Captain's walk.
@@ -119,7 +119,7 @@ One multi-speaker audio pass for the dialogue, as the notes recommend.
 
 ## 8. Open decisions
 
-1. REYES and KESSLER: age, build, look.
+1. REYES and MORGAN: age, build, look.
 2. The carrier uniform for REYES (needs a carrier Sailor's check).
 3. The fictional carrier name and hull number ("USS CRUCIBLE", "CVN 99" is a placeholder).
 4. Whether to pay for the optional flight-deck establishing shot.
