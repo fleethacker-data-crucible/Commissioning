@@ -9,8 +9,8 @@ Builds on `opening-scene-v2-pull-up-edge-ops.md`. Keeps the Sullivan cut (A3). N
 | 0:00 to 0:09 | North wall, calm, thump, lights go red, gong alarm, "Man battle stations." Captain: "Report." | Keep clip A. |
 | 0:09 to 0:14 | Sullivan at the helm, gripping the joystick. | Keep A3 (task 413731). |
 | 0:14 to 0:22 | DELGADO: "Captain! We've lost the uplink. No internet!" | Keep the B v2 line. |
-| 0:22 to 0:28 | Captain, close-up, one second of silence, then deadpan: "Then we work with what's aboard. Open the Dock." | **Re-generate** this shot. |
-| 0:28 to 0:33 | DELGADO, hands on the console: "Aye, Captain! Pulling up the Dock now!" | New audio, clipped in over C. |
+| 0:22 to 0:28 | Captain, close-up, one second of silence, then deadpan: "Then we work with what's aboard. Raise Periscope." | **Re-generate** this shot. |
+| 0:28 to 0:33 | DELGADO, hands on the console: "Aye, Captain! Raising Periscope!" | New audio, clipped in over C. |
 | 0:33 to 0:38 | Zoom into the monitor, which fills the frame with the Edge Ops catalog. The tour voice starts. | Swap the screen picture. |
 
 To make it grip rather than just play: hold on the Captain's face for a beat before he speaks, keep the red light and the alarm bed under his line, and cut on the sound of DELGADO's keystroke.
