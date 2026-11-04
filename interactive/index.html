@@ -106,24 +106,62 @@ var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {
   dlg.addEventListener('close',function(){dv.pause()});
 
   /* ---- Guided tour: voiceover + slow scroll ----
-     Cues follow the order the cards appear on the page, so the scroll only moves down. Edit TOUR times to match the real voiceover (intro-vo.mp3). With no audio file the tour runs on a timer
-     and the caption bar shows the same words. */
-  var TOUR=[
-    {t:0,  text:"Edge Ops is a home for tools."},
-    {t:3,  id:"halyard",     text:"Halyard tidies a backlog, with your approval."},
-    {t:8,  id:"eight-bells", text:"Eight Bells turns a watch log into a turnover."},
-    {t:13, id:"semaphore",   text:"Semaphore builds dashboards from plain English."},
-    {t:18, id:"fairlead",    text:"Fairlead puts every AI model behind one address."},
-    {t:23, id:"windlass",    text:"Windlass runs giant models on an ordinary PC."},
-    {t:28, id:"lazarette", nohot:true, text:"All of them hosted inside Edge Ops. That's five of sixteen. No admin. No install."}
-  ];
-  var TOUR_END=38,vo=document.getElementById('vo'),cap=document.getElementById('cap'),
+     WHICH TOOLS TO FEATURE is the one line to change at the last minute:
+       FEATURED = ["tool-id", "tool-id", "tool-id"];
+     or open the page with  #tour&feature=id1,id2,id3  to try a set without editing.
+     One pass, top to bottom. A featured tool gets its full spoken line and a ring; every other
+     tool is just named, quickly, while its card scrolls past. Open  #script  to print the exact
+     words to record. With intro-vo.mp3 present the scroll follows the audio clock, so after you
+     record, nudge any cue with TIME_OVERRIDES (seconds, by tool id). Without audio it runs on a timer. */
+  var FEATURED=["halyard","eight-bells","semaphore"];   /* PLACEHOLDER: not decided yet */
+  var SPOKEN={
+    "snapshackle":"SnapShackle captures and annotates your screen.",
+    "bowerbird":"Bowerbird renames files and screenshots by what is in them.",
+    "capstan":"Capstan records your screen and edits the video.",
+    "halyard":"Halyard tidies a backlog, with your approval.",
+    "gangplank":"Gangplank puts people on Git projects without Git training.",
+    "packetrat":"PacketRat turns a noisy inbox into an action queue.",
+    "shellback":"Shellback tracks the skills your people attest to themselves.",
+    "eight-bells":"Eight Bells turns a watch log into a turnover.",
+    "semaphore":"Semaphore builds dashboards from plain English.",
+    "data-noodler":"Data Noodler analyzes CSV and Parquet files with no database.",
+    "fairlead":"Fairlead puts every AI model behind one address.",
+    "windlass":"Windlass runs giant models on an ordinary PC.",
+    "phoenix-lai":"Phoenix runs a local AI model on your own GPU.",
+    "talkforge":"TalkForge turns text into speech, offline.",
+    "scrimshaw":"Scrimshaw builds e-learning courses.",
+    "lazarette":"Lazarette keeps your credentials locked on your own workstation."
+  };
+  var NAMES={},TIME_OVERRIDES={};
+  CATALOG.forEach(function(t){NAMES[t.id]=t.name});
+  var NUM=["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen"];
+  var TOUR=[],TOUR_END=38;
+  function buildTour(){
+    var feat=FEATURED.slice();
+    try{var m=/[#&]feature=([^&]*)/.exec(location.hash);if(m)feat=m[1].split(',').filter(Boolean)}catch(e){}
+    var ids=[].map.call(document.querySelectorAll('.card'),function(c){return c.getAttribute('data-id')});
+    var t=0,out=[{t:0,text:"Edge Ops is a home for tools."}];t=3;
+    ids.forEach(function(id){
+      var isF=feat.indexOf(id)>-1,dur=isF?5:0.8;
+      out.push({t:TIME_OVERRIDES[id]!=null?TIME_OVERRIDES[id]:t,id:id,text:isF?SPOKEN[id]:NAMES[id]+".",full:isF});
+      t+=dur;
+    });
+    var n=feat.filter(function(x){return ids.indexOf(x)>-1}).length;
+    out.push({t:t,id:ids[ids.length-1],nohot:true,text:"All of them hosted inside Edge Ops. "+NUM[n]+" shown, "+NUM[ids.length]+" in all. No admin. No install."});
+    TOUR=out;TOUR_END=t+7;
+  }
+  function scriptText(){
+    buildTour();
+    return TOUR.map(function(c){return '['+c.t.toFixed(1)+'s] '+c.text}).join('\n');
+  }
+  var vo=document.getElementById('vo'),cap=document.getElementById('cap'),
       raf=0,t0=0,running=false,hasAudio=false;
   function card(id){return id?document.querySelector('.card[data-id="'+id+'"]'):null}
   function yFor(i){
-    var c=card(TOUR[i].id);
-    if(!c)return main.getBoundingClientRect().top+window.pageYOffset-20;
-    return c.getBoundingClientRect().top+window.pageYOffset-Math.max(60,(window.innerHeight-c.offsetHeight)/2);
+    var c=card(TOUR[i].id),y;
+    if(!c)y=main.getBoundingClientRect().top+window.pageYOffset-20;
+    else y=c.getBoundingClientRect().top+window.pageYOffset-Math.max(60,(window.innerHeight-c.offsetHeight)/2);
+    return i>0?Math.max(y,yFor(i-1)):y;   /* never scroll back up */
   }
   function stopTour(){
     running=false;cancelAnimationFrame(raf);cap.classList.add('hide');
@@ -147,7 +185,7 @@ var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {
     raf=requestAnimationFrame(tick);
   }
   function startTour(){
-    stopTour();running=true;t0=performance.now();
+    stopTour();buildTour();running=true;t0=performance.now();
     hasAudio=false;
     try{vo.currentTime=0;var p=vo.play();hasAudio=true;if(p&&p.catch)p.catch(function(){hasAudio=false})}catch(e){}
     vo.onerror=function(){hasAudio=false};
@@ -161,7 +199,7 @@ var GROUPS=[{"id": "capture-media-files", "name": "Capture, media and files"}, {
   function toTools(){document.getElementById('openVid').pause();startTour()}
   document.getElementById('skip').addEventListener('click',function(){document.getElementById('openVid').pause();stopTour();main.scrollIntoView({behavior:'smooth'})});
   document.getElementById('openVid').addEventListener('ended',toTools);
-  try{if(location.hash==='#tools')main.scrollIntoView();if(location.hash==='#tour')startTour()}catch(e){}
+  try{if(location.hash==='#tools')main.scrollIntoView();if(/^#tour/.test(location.hash))startTour();if(/^#script/.test(location.hash)){var pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0';pre.textContent=scriptText();main.parentNode.insertBefore(pre,main)}}catch(e){}
 })();
 </script>
 </body>
