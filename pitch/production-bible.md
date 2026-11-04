@@ -4,8 +4,8 @@ Covers the lead-up scenes (Night Watch, The Desk) and ties them to the existing 
 
 ## 1. Sets (two to build, one already built)
 
-### S1. The ship's office, 0200 (new, **one set serves both lead-up scenes**)
-Night Watch and The Desk happen in the same room: a paper station on one side, a laptop station on the other. One set means one reference sheet, one lighting setup and no matching problems between scenes.
+### S1. The office (new, **one set, two lighting states**)
+Night Watch (the Sailor) and The Desk (the civilian developer) share one room: a paper station on one side, a laptop station on the other. The Sailor works the log at 0200. The civilian works the laptop the next morning. Same walls, same props, **two lighting states**: *night* (cool, low, desk lamp on) and *day* (full fluorescent, cool white). That gives you one reference sheet and one set, as with the control room's white and red versions.
 
 Fixed inventory (write it into every prompt, word for word):
 - Small grey-painted steel-bulkhead office, low ceiling, a few exposed cable runs overhead, no windows.
@@ -36,13 +36,35 @@ The Periscope page, from the overlay (`overlay/scope-screen-real.png`), composit
 
 | Role | Who | Notes |
 |---|---|---|
-| **DELGADO** | Petty officer second class, the Sailor and the developer **[DEFAULT: one character across all scenes]** | Tall, wiry, short black hair. Existing four-panel sheet (task 413420). In the office: coverall sleeves rolled, no headset. In the control room: headset. Young tenor, fast. Rating wording is unverified: "radioman" may be out of date, and a modern equivalent may be Information Systems Technician. Have a submariner check. |
-| **Captain HARLAN** | Commander, commanding officer | Existing sheet (task 413570). Decide the cap: plain navy cap with gold visor leaves and no lettering **[DEFAULT]**. |
-| **Chief SULLIVAN** | Chief petty officer at the helm | Existing sheet (task 413550). Only appears in the Sullivan cut. |
+| **DELGADO** | Petty officer second class, enlisted Sailor | Night Watch and the control room. Existing four-panel sheet (task 413420). Office: coverall sleeves rolled, no headset, no cap. Control room: headset. Young tenor, fast, tired and flat in the office. His rating wording is unverified: "radioman" may be out of date; a modern equivalent may be Information Systems Technician. |
+| **KESSLER, the CIV** | Government civilian software developer | New character, The Desk only. **[DEFAULT: mid-30s, calm, dry, dressed for an office.]** Needs a four-panel sheet (front, side, three-quarter, face), made the same way as the others. Business-casual: collared shirt, dark trousers, sensible shoes, a lanyard with an ID badge. Voice: even, a little weary, understated. Not a Sailor, not in uniform, and not in the control room. |
+| **Captain HARLAN** | Commander, commanding officer | Existing sheet (task 413570). Plain navy cap with gold visor leaves and no lettering **[DEFAULT]**. |
+| **Chief SULLIVAN** | Chief petty officer at the helm | Existing sheet (task 413550). Only in the Sullivan cut. |
 | **Second helm sailor** | Seen from behind only | No sheet needed if he never turns. |
-| **NARRATOR** | Off-screen voice | One calm voice for the lead-up, the tour and the demos so the whole piece sounds like one film. Describe it in the audio prompt; do not clone. |
+| **NARRATOR** | Off-screen voice | One calm voice for the lead-up, the tour and the demos. Described in the audio prompt; not cloned. |
 
-Using DELGADO in every scene saves casting and gives the audience one person to follow from the paper log to the control room. If you'd rather use a different Desk developer, add a sheet for him (about as much as the Captain's sheet) and keep him out of the control room.
+The civilian is a separate person on purpose: it makes the barrier a civilian developer's problem as well as a Sailor's, and "civilian" is how many Navy developers actually work. DELGADO is the Sailor who feels the paper burden; KESSLER is who the burden's fix has to come from; the control room links both back to the fleet.
+
+## 2a. Uniform, badge and insignia details
+
+Lists what to show. Everything marked [unverified] comes from your own notes or my general knowledge and needs a submariner or a uniform regulation check before you lock it. I did not look up Navy uniform regulations in this session.
+
+**Sailors (DELGADO, Captain, Sullivan), control room**
+- Navy-blue submarine coverall, zipped to the collar [unverified detail].
+- Name tape over the right chest pocket and "U.S. NAVY" tape over the left, each readable only as a composite [unverified placement].
+- Submarine warfare device (dolphins) over the left chest: gold for officers, silver for enlisted [unverified, from your notes].
+- Rank devices on the collar: Commander (silver oak leaf) [unverified], chief (gold anchor with silver USN) [unverified], E-5 (eagle with two chevrons) [unverified].
+- Captain's cap: navy, gold visor leaves, no lettering [your decision]. Submarine crews also wear tan caps [unverified which applies].
+
+**DELGADO in the office**
+- Same coverall, sleeves rolled, name tape and "U.S. NAVY" tape, no cap.
+
+**KESSLER, the civilian**
+- Business-casual dress, no insignia.
+- A lanyard with an ID badge: a **fictional** badge with a blurred photo area and a small tag reading "CIV". The tag is composited. Do not use a real government ID's design, seal or colour bands.
+- Optional: the card sits in the reader on the desk while they work. That is the visual shorthand for CAC without showing a real card.
+
+**Rule for all small text and insignia:** generate the person with the patch or tape area blank and composite the real text in the edit, as with the cap lettering. Video models garble small lettering.
 
 ## 3. Props and continuity
 
@@ -54,6 +76,7 @@ Using DELGADO in every scene saves casting and gives the audience one person to 
 | Laptop and card reader | The Desk | No logos. The card reader suggests CAC without showing a real card. |
 | Terminal text and "Access denied" | The Desk | **Not generated.** Overlaid in the edit in a monospace face, so it stays crisp and accurate. |
 | Periscope page | Control-room monitor | Composited from the overlay still. |
+| KESSLER's ID badge on a lanyard | The Desk | **Fictional** badge, composited, never generated. Do not copy the layout, seal or colours of a real government ID. A small generic tag, readable "CIV", and a blurred photo area. |
 | Challenge coin | Close card, optionally on the desk | Real art, composited. Never generated. |
 
 ## 4. Look
@@ -70,7 +93,7 @@ Using DELGADO in every scene saves casting and gives the audience one person to 
 |---|---|
 | Night Watch | Room tone, ventilation, a slow clock tick, a pen on paper. |
 | The Desk | Keyboard clatter, a short error chime for each failed command. |
-| The hinge | The clock tick continues under "Now imagine it's not a quiet night," then becomes the **gong alarm** on the hard cut. |
+| The hinge | The wall clock's tick is the bridge. Under "Now imagine it's not a quiet night" the tick speeds from about 60 beats a minute to about 100 over two seconds, matching the gong alarm's pace in your notes (about 100 beats a minute). On the hard cut the tick is replaced by the gong. Mix the clock tick with a slightly metallic tone near the end of the ramp so the gong reads as the same sound turning dangerous. |
 | Control room | Real or licensed gong alarm (about 100 beats a minute for ten seconds), thump, ventilation, human-recorded "Man battle stations." |
 | Close | Soft chime as the Periscope page opens, then a held low note. |
 
@@ -99,8 +122,8 @@ One multi-speaker audio pass for the dialogue, as the notes recommend.
 
 ## 8. Open decisions
 
-1. One character across all scenes, or a separate Desk developer? **[DEFAULT: one]**
+1. KESSLER's look: age, build, dress. Default is a calm mid-30s office worker; change it to whatever you want the audience to see, or base it on a real person only with their permission and without using their likeness from photos.
 2. Captain's cap: plain or lettered? **[DEFAULT: plain]**
-3. Is the office aboard a ship or ashore? Written as a ship's office; change the bulkhead details if it is shore.
-4. Rating wording for DELGADO (submariner review).
+3. Is the office aboard a ship or ashore? Written as a ship's office; with a civilian developer, shore is more realistic, so change the bulkhead details if you prefer.
+4. Rating wording for DELGADO and every insignia marked [unverified] (submariner review).
 5. Whether the lead-up scenes keep a spoken Narrator or run silent with on-screen text only.
