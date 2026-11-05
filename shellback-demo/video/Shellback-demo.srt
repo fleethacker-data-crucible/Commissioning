@@ -1,0 +1,275 @@
+1
+00:00:00,000 --> 00:00:04,510
+A supervisor has to staff a mission and see where the team is thin.
+
+2
+00:00:04,510 --> 00:00:09,289
+Nobody wants a hidden skills score, and a résumé is a claim, not proof.
+
+3
+00:00:09,289 --> 00:00:13,462
+Shellback shows only what people confirmed and chose to share.
+
+4
+00:00:13,462 --> 00:00:15,886
+Everyone in this video is fictional.
+
+5
+00:00:16,446 --> 00:00:17,648
+Here is how it works.
+
+6
+00:00:17,648 --> 00:00:26,378
+It all runs on this one computer: a small PowerShell server on loopback serves the app, and the app runs in your browser.
+
+7
+00:00:27,078 --> 00:00:31,038
+Your workspace is stored in the browser, and exports can be encrypted.
+
+8
+00:00:31,738 --> 00:00:36,525
+A résumé goes in as pasted text, a text file, a Word file, or the text layer of a PDF.
+
+9
+00:00:36,525 --> 00:00:38,909
+Peer cards and an HR feed come in as files.
+
+10
+00:00:39,609 --> 00:00:46,954
+Out come suggestions you confirm, and team coverage from three or more people who opted in.
+
+11
+00:00:46,954 --> 00:00:49,313
+All of it works offline, with no AI.
+
+12
+00:00:50,154 --> 00:00:51,028
+AI is optional.
+
+13
+00:00:51,028 --> 00:00:55,701
+The model key sits in Lazarette, shared to Fairlead.
+
+14
+00:00:55,701 --> 00:01:03,614
+Shellback has its own Fairlead key, sealed in the browser with your passphrase, and it calls Fairlead directly.
+
+15
+00:01:04,177 --> 00:01:08,650
+An opt-in peer card is a plain file Halyard can read for planning.
+
+16
+00:01:08,650 --> 00:01:13,546
+A live Halyard link, and a git or CI runner, are planned, not built.
+
+17
+00:01:14,125 --> 00:01:25,805
+And the guardrails: loopback and a strict content policy, nothing shared without opt-in, three people before any aggregate, and you confirm every skill.
+
+18
+00:01:26,202 --> 00:01:29,993
+The model key lives in Lazarette, the encrypted vault on this machine.
+
+19
+00:01:29,993 --> 00:01:36,177
+This footage is from the Halyard demo: it is the same key, set up once for every tool.
+
+20
+00:01:36,578 --> 00:01:39,400
+Test credential checks it against OpenAI's read-only endpoint.
+
+21
+00:01:40,100 --> 00:01:42,323
+HTTP two hundred, so the key is good.
+
+22
+00:01:42,801 --> 00:01:45,863
+Then share it with Fairlead by name.
+
+23
+00:01:45,863 --> 00:01:47,659
+Fairlead sees only what you share.
+
+24
+00:01:48,359 --> 00:01:51,847
+Fairlead reads it from the vault and connects.
+
+25
+00:01:51,847 --> 00:01:55,470
+Every model call Shellback makes goes through here.
+
+26
+00:01:55,720 --> 00:01:59,793
+Shellback gets its own Fairlead client key, so its calls can be told apart in the log.
+
+27
+00:02:00,493 --> 00:02:03,376
+Fairlead keeps only a hash and shows the key once.
+
+28
+00:02:04,018 --> 00:02:05,862
+Here is the Shellback client in the list.
+
+29
+00:02:06,562 --> 00:02:11,437
+The page calls Fairlead directly, so Shellback's address is allowed as a browser origin.
+
+30
+00:02:12,137 --> 00:02:15,200
+In Shellback, open Program, then Intelligence.
+
+31
+00:02:15,200 --> 00:02:18,129
+Choose the Fairlead router on this computer.
+
+32
+00:02:18,829 --> 00:02:20,790
+By default it asks for local engines only.
+
+33
+00:02:21,656 --> 00:02:24,828
+This demo machine has no local model, so I allow cloud engines.
+
+34
+00:02:25,634 --> 00:02:27,135
+Only synthetic text goes through.
+
+35
+00:02:27,835 --> 00:02:28,825
+Paste the client key.
+
+36
+00:02:28,825 --> 00:02:33,695
+It is sealed with a passphrase in the browser and never stored in the clear.
+
+37
+00:02:34,395 --> 00:02:36,032
+Test connection.
+
+38
+00:02:36,032 --> 00:02:40,617
+Fairlead answers, ninety-two models are available, and Shellback is using GPT-5 mini.
+
+39
+00:02:41,367 --> 00:02:42,367
+Meet the employee.
+
+40
+00:02:42,367 --> 00:02:46,395
+Priya Natarajan is fictional, and so is her résumé.
+
+41
+00:02:46,395 --> 00:02:50,009
+The file is read in the browser and nothing is stored.
+
+42
+00:02:50,709 --> 00:02:54,413
+Find skill suggestions sends the text to a real model through Fairlead.
+
+43
+00:02:54,413 --> 00:02:57,395
+This is the live wait, sped up.
+
+44
+00:02:58,095 --> 00:03:00,760
+These are suggestions, not facts.
+
+45
+00:03:00,760 --> 00:03:04,049
+Priya confirms two and dismisses one.
+
+46
+00:03:04,049 --> 00:03:06,733
+Nothing counts until she says so.
+
+47
+00:03:07,433 --> 00:03:09,267
+Her confirmed skills form her web.
+
+48
+00:03:09,267 --> 00:03:14,628
+Everything else stays a suggestion, and dismissed ones never come back.
+
+49
+00:03:15,231 --> 00:03:20,206
+Now the supervisor's view: a synthetic team of twenty people who chose to share.
+
+50
+00:03:20,906 --> 00:03:24,543
+Coverage by domain comes only from shared, confirmed skills.
+
+51
+00:03:24,543 --> 00:03:27,553
+With fewer than three people, nothing shows.
+
+52
+00:03:28,253 --> 00:03:34,106
+The supervisor brief shows exactly what it is built from: counts and skill names, never people.
+
+53
+00:03:34,806 --> 00:03:39,646
+Write the brief, and those aggregate numbers go to the model through Fairlead.
+
+54
+00:03:39,646 --> 00:03:40,595
+Live again, sped up.
+
+55
+00:03:41,295 --> 00:03:46,043
+Plain language, no names, no scores, and it says it is aggregate.
+
+56
+00:03:46,743 --> 00:03:49,528
+A mission needs AWS architecture from two people.
+
+57
+00:03:50,139 --> 00:03:53,433
+Shellback checks that requirement against the people who opted in.
+
+58
+00:03:53,683 --> 00:03:57,258
+Trust and data lists what leaves this computer.
+
+59
+00:03:57,258 --> 00:04:01,697
+With the router selected it says so, and names what is never sent.
+
+60
+00:04:02,397 --> 00:04:04,515
+Sharing is a choice, card by card.
+
+61
+00:04:05,215 --> 00:04:12,289
+Export asks twice: how many skills will leave, and that the file cannot be recalled, then whether to encrypt it.
+
+62
+00:04:12,989 --> 00:04:14,817
+The card holds confirmed skills only.
+
+63
+00:04:15,482 --> 00:04:17,569
+This is the file Halyard planning reads today.
+
+64
+00:04:18,236 --> 00:04:19,245
+A live link is planned.
+
+65
+00:04:19,945 --> 00:04:28,876
+And the evidence trail for the AI is Fairlead's own request log: client Shellback, model GPT-5 mini, status two hundred.
+
+66
+00:04:28,876 --> 00:04:30,591
+Claims stay claims.
+
+67
+00:04:30,591 --> 00:04:37,992
+Everything here was synthetic, and a skill counts only when its owner confirms it.
+
+68
+00:04:37,992 --> 00:04:44,851
+Not built yet: a live Halyard link, and the consent ledger in the interface.
+
+69
+00:04:44,851 --> 00:04:46,927
+No scores, no rankings.
