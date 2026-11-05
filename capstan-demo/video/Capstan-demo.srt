@@ -1,223 +1,300 @@
 1
-00:00:00,250 --> 00:00:02,547
+00:00:00,250 --> 00:00:02,527
 Training videos leak.
 
 2
-00:00:02,547 --> 00:00:09,328
-A customer's email, a phone number, an API key left on screen.
+00:00:02,547 --> 00:00:06,418
+A customer's email, a phone number,
 
 3
-00:00:09,328 --> 00:00:19,172
-Capstan is the screen recorder and editor that hides them before the video leaves your PC.
+00:00:06,438 --> 00:00:09,308
+an API key left on screen.
 
 4
-00:00:19,172 --> 00:00:25,516
-Record a tab, cut it, blur it, caption it, export the MP4.
+00:00:09,328 --> 00:00:15,060
+Capstan is the screen recorder
+and editor that hides
 
 5
+00:00:15,080 --> 00:00:19,152
+them before the video leaves your PC.
+
+6
+00:00:19,172 --> 00:00:21,489
+Record a tab, cut it,
+
+7
+00:00:21,509 --> 00:00:25,496
+blur it, caption it, export the MP4.
+
+8
 00:00:25,516 --> 00:00:28,031
 No installer, no cloud.
 
-6
-00:00:28,031 --> 00:00:30,297
+9
+00:00:28,281 --> 00:00:30,793
 Here is how Capstan fits together.
 
-7
-00:00:30,297 --> 00:00:36,499
-A PowerShell launcher serves the editor on localhost, and the editor runs in your browser window.
-
-8
-00:00:36,924 --> 00:00:44,068
-Inside, four stages: record, edit, redact and caption, export.
-
-9
-00:00:44,068 --> 00:00:50,268
-One compositor draws both the preview and the export, so what you see is what you get.
-
 10
-00:00:50,968 --> 00:00:53,618
-Fleet connections are plain files.
+00:00:30,813 --> 00:00:34,281
+A PowerShell launcher serves
+the editor on localhost,
 
 11
-00:00:53,618 --> 00:00:55,960
-SnapShackle captures come in.
+00:00:34,301 --> 00:00:37,130
+and the editor runs in
+your browser window.
 
 12
-00:00:55,960 --> 00:00:58,712
-MP4, captions and chapters go out for Scrimshaw.
+00:00:37,592 --> 00:00:39,544
+Inside, four stages:
 
 13
-00:00:58,712 --> 00:01:00,708
-The Fleet CLI drives it.
+00:00:39,564 --> 00:00:43,587
+record, edit, redact and caption, export.
 
 14
-00:01:00,708 --> 00:01:05,355
-There is no model, so no Fairlead or Lazarette.
+00:00:43,607 --> 00:00:46,939
+One compositor draws both
+the preview and the export,
 
 15
-00:01:05,355 --> 00:01:08,222
-Speech to text is Windows' own offline recogniser.
+00:00:46,959 --> 00:00:48,983
+so what you see is what you get.
 
 16
-00:01:08,922 --> 00:01:13,668
-Planned: background removal, and a Capstan CLI launcher.
+00:00:49,683 --> 00:00:51,460
+Fleet connections are plain files.
 
 17
-00:01:13,668 --> 00:01:18,016
-And the one rule that matters: media never leaves this PC.
+00:00:51,828 --> 00:00:53,333
+SnapShackle captures come in.
 
 18
-00:01:18,016 --> 00:01:20,291
-Nothing is uploaded, ever.
+00:00:53,740 --> 00:00:57,175
+MP4, captions and chapters
+go out for Scrimshaw.
 
 19
-00:01:20,541 --> 00:01:22,239
-Capstan records one browser tab.
+00:00:57,489 --> 00:00:58,740
+The Fleet CLI drives it.
 
 20
-00:01:22,239 --> 00:01:28,630
-Choose Record screen, then A browser tab, and switch the microphone and computer sound off.
+00:00:59,109 --> 00:01:01,402
+There is no model,
+so no Fairlead or Lazarette.
 
 21
-00:01:29,330 --> 00:01:30,845
-Start recording.
+00:01:01,735 --> 00:01:04,616
+Speech to text is Windows'
+own offline recogniser.
 
 22
-00:01:30,845 --> 00:01:35,509
-Capstan captures only the tab we choose; screens and other windows are refused.
+00:01:05,316 --> 00:01:10,089
+Planned: background removal,
+and a Capstan CLI launcher.
 
 23
-00:01:35,509 --> 00:01:41,181
-This is a synthetic support console, with a made-up customer, working a ticket.
+00:01:10,109 --> 00:01:13,905
+And the one rule that matters:
+media never leaves this PC.
 
 24
-00:01:41,881 --> 00:01:42,788
-Stop and save.
+00:01:13,925 --> 00:01:16,495
+Nothing is uploaded, ever.
 
 25
-00:01:43,488 --> 00:01:44,883
-The clip is on the timeline.
+00:01:17,156 --> 00:01:18,833
+Capstan records one browser tab.
 
 26
-00:01:45,633 --> 00:01:47,076
-Play it back.
+00:01:18,853 --> 00:01:21,745
+Choose Record screen, then A browser tab,
 
 27
-00:01:47,076 --> 00:01:51,634
-This is the real recording, with a customer's details and an API key in plain view.
+00:01:21,765 --> 00:01:25,245
+and switch the microphone
+and computer sound off.
 
 28
-00:01:52,334 --> 00:01:54,640
-Split off the dead start and ripple delete it.
+00:01:25,945 --> 00:01:27,440
+Start recording.
 
 29
-00:01:55,181 --> 00:01:57,066
-Then add a blur region at the playhead.
+00:01:27,460 --> 00:01:29,831
+Capstan captures only the tab we choose;
 
 30
-00:01:57,766 --> 00:02:00,320
-Place it over the email, the phone number and the API key.
+00:01:29,851 --> 00:01:32,103
+screens and other windows are refused.
 
 31
-00:02:00,320 --> 00:02:04,284
-It covers every track beneath it, for the whole clip.
+00:01:32,123 --> 00:01:34,721
+This is a synthetic support console,
 
 32
-00:02:04,284 --> 00:02:08,989
-Scrub forward, and the blur holds as the agent resolves the ticket and opens the next one.
+00:01:34,741 --> 00:01:37,796
+with a made-up customer, working a ticket.
 
 33
-00:02:09,689 --> 00:02:12,296
-Import the training captions from an SRT file.
+00:01:38,496 --> 00:01:41,497
+Stop and save. The clip
+is on the timeline.
 
 34
-00:02:12,953 --> 00:02:14,866
-They are drawn on the video at export.
+00:01:42,247 --> 00:01:43,671
+Play it back.
 
 35
-00:02:14,866 --> 00:02:15,666
-Export.
+00:01:43,691 --> 00:01:46,617
+This is the real recording,
+with a customer's details
 
 36
-00:02:15,311 --> 00:02:16,111
-H.
+00:01:46,637 --> 00:01:48,248
+and an API key in plain view.
 
 37
-00:02:15,438 --> 00:02:19,003
-264 MP4, rendered on this PC, frame by frame.
+00:01:48,948 --> 00:01:51,254
+Split off the dead start
+and ripple delete it.
 
 38
-00:02:19,003 --> 00:02:24,067
-A software encoder takes over if the hardware one stalls.
+00:01:51,795 --> 00:01:53,681
+Then add a blur region at the playhead.
 
 39
-00:02:24,067 --> 00:02:28,775
-Under four seconds here, for fifteen seconds of video.
+00:01:54,381 --> 00:01:56,915
+Place it over the email,
+the phone number and the API key.
 
 40
-00:02:29,475 --> 00:02:32,617
-Now check the file, not the screen.
+00:01:56,935 --> 00:02:00,879
+It covers every track beneath it,
+for the whole clip.
 
 41
-00:02:32,617 --> 00:02:33,654
-ffprobe reports H.
+00:02:00,899 --> 00:02:03,786
+Scrub forward, and the blur
+holds as the agent resolves
 
 42
-00:02:33,654 --> 00:02:37,487
-264, 1920 by 1080, about fifteen seconds, and no audio track.
+00:02:03,806 --> 00:02:05,604
+the ticket and opens the next one.
 
 43
-00:02:37,487 --> 00:02:40,653
-The microphone was off, so there is none.
+00:02:06,304 --> 00:02:08,910
+Import the training
+captions from an SRT file.
 
 44
-00:02:41,353 --> 00:02:43,794
-Same frame, before and after.
+00:02:09,568 --> 00:02:11,460
+They are drawn on the video at export.
 
 45
-00:02:43,794 --> 00:02:48,238
-The email, the phone and the key are gone from the pixels.
+00:02:11,480 --> 00:02:15,597
+Export. H.264 MP4, rendered
+on this PC, frame by frame.
 
 46
-00:02:48,238 --> 00:02:51,022
-The blur is baked into the export.
+00:02:15,617 --> 00:02:20,661
+A software encoder takes over
+if the hardware one stalls.
 
 47
-00:02:51,022 --> 00:02:53,946
-It is not an overlay anyone can lift.
+00:02:20,681 --> 00:02:25,389
+Under four seconds here,
+for fifteen seconds of video.
 
 48
-00:02:54,646 --> 00:03:02,425
-The saved project hands its captions to the next tool through the Fleet CLI: four captions, ready for Scrimshaw.
+00:02:26,089 --> 00:02:29,211
+Now check the file, not the screen.
 
 49
-00:03:02,425 --> 00:03:06,398
-Plain files, nothing pushed, nothing uploaded.
+00:02:29,231 --> 00:02:31,459
+ffprobe reports H.264, 1920 by 1080,
 
 50
-00:03:07,211 --> 00:03:11,492
-To be candid: the console and its customers are synthetic.
+00:02:31,479 --> 00:02:34,082
+about fifteen seconds, and no audio track.
 
 51
-00:03:11,492 --> 00:03:17,288
-Capstan has no model, so no Fairlead, and no approval queue.
+00:02:34,102 --> 00:02:37,268
+The microphone was off, so there is none.
 
 52
-00:03:17,288 --> 00:03:23,627
-It is a single user local tool, and its trust is in what it refuses and what stays on this PC.
+00:02:37,968 --> 00:02:40,388
+Same frame, before and after.
 
 53
-00:03:23,627 --> 00:03:27,537
-Close the window and the host stops itself.
+00:02:40,408 --> 00:02:44,832
+The email, the phone and the
+key are gone from the pixels.
 
 54
-00:03:27,537 --> 00:03:33,960
-Capstan records locally, hides what must not show, and exports a file you can check.
+00:02:44,852 --> 00:02:47,617
+The blur is baked into the export.
 
 55
-00:03:33,960 --> 00:03:35,719
-Nothing leaves this PC.
+00:02:47,637 --> 00:02:50,561
+It is not an overlay anyone can lift.
 
 56
-00:03:35,719 --> 00:03:39,083
-Compute and creativity are the new frontier.
+00:02:51,261 --> 00:02:55,796
+The saved project hands its captions
+to the next tool through the
+
+57
+00:02:55,816 --> 00:02:59,019
+Fleet CLI: four captions,
+ready for Scrimshaw.
+
+58
+00:02:59,039 --> 00:03:03,013
+Plain files, nothing pushed,
+nothing uploaded.
+
+59
+00:03:03,826 --> 00:03:08,086
+To be candid: the console
+and its customers are synthetic.
+
+60
+00:03:08,106 --> 00:03:10,149
+Capstan has no model,
+
+61
+00:03:10,169 --> 00:03:13,883
+so no Fairlead, and no approval queue.
+
+62
+00:03:13,903 --> 00:03:17,700
+It is a single user local tool,
+and its trust is in what
+
+63
+00:03:17,720 --> 00:03:20,222
+it refuses and what stays on this PC.
+
+64
+00:03:20,242 --> 00:03:24,132
+Close the window and
+the host stops itself.
+
+65
+00:03:24,152 --> 00:03:28,001
+Capstan records locally,
+hides what must not show,
+
+66
+00:03:28,021 --> 00:03:30,555
+and exports a file you can check.
+
+67
+00:03:30,575 --> 00:03:32,314
+Nothing leaves this PC.
+
+68
+00:03:32,334 --> 00:03:35,698
+Compute and creativity
+are the new frontier.
