@@ -38,51 +38,60 @@
           "who": "R",
           "clip": "arch",
           "from": 0.01,
-          "to": 10.21,
+          "to": 10.91,
           "text": "Here is how Halyard fits together. Everything runs on one machine. A PowerShell launcher compiles the engine in memory, and the browser talks to it on localhost."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 10.21,
-          "to": 19.21,
+          "from": 10.91,
+          "to": 20.41,
           "text": "Inside the engine: review, intelligence for drafting and sizing, planning, and a proposal store. Every change starts as a proposal."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 19.21,
-          "to": 28.11,
-          "text": "Halyard reads your backlog from GitHub, read only. The write gateway lets it touch exactly one place, the backlog repository."
+          "from": 20.41,
+          "to": 29.21,
+          "text": "Halyard reads your backlog from GitHub, read only. The write gateway lets it write to one place: the sandbox backlog you configure."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 28.11,
-          "to": 39.01,
+          "from": 29.21,
+          "to": 40.51,
           "text": "Model calls go through Fairlead and nowhere else. Halyard's own key sits in Windows Credential Manager. The OpenAI key stays in Lazarette, shared to Fairlead."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 39.01,
-          "to": 45.21,
+          "from": 40.51,
+          "to": 46.61,
           "text": "Out the other side: four tables for Semaphore, and the weekly dashboard as an Outlook draft."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 45.21,
-          "to": 50.81,
+          "from": 46.61,
+          "to": 53.41,
           "text": "Dashed means planned: live Shellback skills, and a runner on your repositories."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 50.81,
-          "to": 55.51,
+          "from": 53.41,
+          "to": 59.21,
           "text": "One rule holds it together. Nothing is written until a person approves."
         }
+      ],
+      "starts": [
+        0,
+        4,
+        10,
+        13,
+        17,
+        20,
+        24
       ]
     },
     {

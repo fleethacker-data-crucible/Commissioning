@@ -17,7 +17,7 @@ const FONT = 'C\\:/Windows/Fonts/segoeui.ttf', FONTB = 'C\\:/Windows/Fonts/segoe
 const W = join(here, 'build'); mkdirSync(W, { recursive: true });
 const CACHE = join(here, 'cache'); mkdirSync(CACHE, { recursive: true });
 
-const IDS = { 't00-open': 444045, 't00b-arch': 444400, 't01-key': 444066, 't02-lazarette': 444067, 't03-config': 444068, 't04-seed': 444069, 't05-drift': 444061, 't06-draft': 444070, 't07-undo': 444071, 't08-intake': 444072, 't09-plan': 444073, 't10-vision': 444074, 't11-integrations': 444075, 't12-safety': 444078, 't13-close': 444046 };
+const IDS = { 't00-open': 444045, 't00b-arch': 444508, 't01-key': 444066, 't02-lazarette': 444067, 't03-config': 444068, 't04-seed': 444069, 't05-drift': 444061, 't06-draft': 444070, 't07-undo': 444071, 't08-intake': 444072, 't09-plan': 444073, 't10-vision': 444074, 't11-integrations': 444075, 't12-safety': 444078, 't13-close': 444046 };
 const LABELS = { 't01-key': 'A model key for the fleet', 't02-lazarette': 'Stow it in Lazarette', 't03-config': 'Configure Halyard', 't04-seed': 'Seed the backlog', 't05-drift': 'See the drift', 't06-draft': 'Draft, approve, apply', 't07-undo': 'Undo', 't08-intake': 'Intake', 't09-plan': 'Plan the sprint', 't10-vision': 'Vision and leadership', 't11-integrations': 'Integrations', 't12-safety': 'Safety and audit' };
 const STILLS = {
   c02: { ids: ['bqxogj', 'znybz1', 'qutyhm', 'q6sdhr', '57ef5g'], blur: [[556, 178, 244, 255]] },
@@ -99,7 +99,7 @@ function trimPlan(a, starts) {
   return { segs, nt, total: off };
 }
 // Tasks whose generated audio ends right on the last word: keep this much silence after it so the next chapter does not start on top of it
-const PADTAIL = { 444400: 0.5 };
+const PADTAIL = { 444508: 0.5 };
 function trimAudio(id, plan, out) {
   const mp3 = srcAudio(id), F = 0.03;
   const parts = plan.segs.map(([s, e], k) => `[0:a]atrim=start=${fmt(s)}:end=${fmt(e)},asetpts=PTS-STARTPTS,afade=t=in:d=${F},afade=t=out:st=${fmt(Math.max(0, e - s - F))}:d=${F}[a${k}]`).join(';');
@@ -156,7 +156,7 @@ const taskFiles = [], captions = []; let clock = 0; const report = [];
 for (const task of dlg.tasks) {
   if (only && task.id !== only) continue;
   const id = IDS[task.id]; const a = analyze(id);
-  const starts = turnStarts(a, task.turns), plan = trimPlan(a, starts); if (PADTAIL[id]) plan.total += PADTAIL[id];
+  const starts = task.starts || turnStarts(a, task.turns), plan = trimPlan(a, starts); if (PADTAIL[id]) plan.total += PADTAIL[id];
   const onset = starts.map((c) => a.chunks[c][0]);
   const tb = task.turns.map((_, k) => (k === 0 ? 0 : Math.max(0.2, plan.nt(onset[k]) - 0.2)));
   const D = task.turns.map((_, k) => (k + 1 < task.turns.length ? tb[k + 1] : plan.total) - tb[k]);
