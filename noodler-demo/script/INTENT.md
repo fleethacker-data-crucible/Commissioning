@@ -1,5 +1,9 @@
 # Data Noodler: intent note
 
+**Summary.** Data Noodler is for an analyst on a locked-down Windows PC who has a flat file too big for a spreadsheet. The demo takes a synthetic 1.5-million-row fuel log through the whole path on one machine: import, a SQL question in Transform, a Dashboard Studio chart, publishing as web page, PDF and CSV, then an Update when a new file arrives, ending on the project log, snapshots and a record that the browser made no non-local requests. It claims no minutes-saved figure; the data is synthetic and timings are from one PC.
+
+## Detail
+
 ## What it is
 Data Noodler is a local, self-contained flat-file analytics tool for locked-down Windows PCs. It reads big CSV, Parquet, Arrow and SQLite files, lets an analyst ask questions in plain SQL, builds dashboards from the answers, and publishes them as files. It is served by its own PowerShell 5.1 server and runs in Edge or Chrome. The data engine is C# compiled in memory at start (no DuckDB, no WebAssembly, no third-party DLLs, no installs, no admin rights). Source: `README.md`, `CHANGELOG.md`, `NEXT-PASS.md`, `server/`, `ui/`.
 
