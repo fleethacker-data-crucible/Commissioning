@@ -17,7 +17,7 @@ const FONT = 'C\\:/Windows/Fonts/segoeui.ttf', FONTB = 'C\\:/Windows/Fonts/segoe
 const W = join(here, 'build'); mkdirSync(W, { recursive: true });
 const CACHE = join(here, 'cache'); mkdirSync(CACHE, { recursive: true });
 
-const IDS = { 't00-open': 444045, 't00b-arch': 444508, 't01-key': 444066, 't02-lazarette': 444067, 't03-config': 444068, 't04-seed': 444069, 't05-drift': 444061, 't06-draft': 444070, 't07-undo': 444071, 't08-intake': 444072, 't09-plan': 444073, 't10-vision': 444074, 't11-integrations': 444075, 't12-safety': 444078, 't13-close': 444615 };
+const IDS = { 't00-open': 444045, 't00b-arch': 444508, 't01-key': 444066, 't02-lazarette': 444692, 't03-config': 444068, 't04-seed': 444069, 't05-drift': 444061, 't06-draft': 444070, 't07-undo': 444071, 't08-intake': 444072, 't09-plan': 444073, 't10-vision': 444074, 't11-integrations': 444075, 't12-safety': 444078, 't13-close': 444769 };
 const LABELS = { 't01-key': 'A model key for the fleet', 't02-lazarette': 'Stow it in Lazarette', 't03-config': 'Configure Halyard', 't04-seed': 'Seed the backlog', 't05-drift': 'See the drift', 't06-draft': 'Draft, approve, apply', 't07-undo': 'Undo', 't08-intake': 'Intake', 't09-plan': 'Plan the sprint', 't10-vision': 'Vision and leadership', 't11-integrations': 'Integrations', 't12-safety': 'Safety and audit' };
 const STILLS = {
   c02: { ids: ['bqxogj', 'znybz1', 'qutyhm', 'q6sdhr', '57ef5g'], blur: [[556, 178, 244, 255]] },
@@ -25,7 +25,7 @@ const STILLS = {
 };
 const CARDS = {
   open: { kicker: 'FLEET \u00b7 HALYARD', title: 'Halyard', lines: ["A product owner's mate for the backlog"] },
-  close: { kicker: 'FLEET \u00b7 HALYARD', title: 'Halyard proposes. People decide.', lines: ["SaaS is dead.", "Compute and creativity is the new frontier."] },
+  close: { kicker: 'FLEET \u00b7 HALYARD', title: 'Halyard proposes. People decide.', lines: ["Compute and creativity are the new frontier."] },
   runner: { kicker: 'NEXT \u00b7 PLANNED', title: 'A runner that watches the work', lines: ['Watches commits and pull requests', 'Writes the story for the work it sees', 'You approve it: same diff, same gate'] },
 };
 

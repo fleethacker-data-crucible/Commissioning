@@ -130,37 +130,31 @@
       "turns": [
         {
           "who": "S",
-          "clip": "c03",
-          "stills": [
-            0,
-            1
-          ],
-          "text": "The key goes into Lazarette, the encrypted vault on this machine."
+          "clip": "c03r",
+          "text": "The key goes into Lazarette, the encrypted vault on this machine.",
+          "from": 1.5,
+          "to": 9.9
         },
         {
           "who": "R",
-          "clip": "c03",
-          "stills": [
-            2,
-            3
-          ],
-          "text": "Test credential checks it against OpenAI's read-only endpoint. HTTP two hundred. The key is good."
+          "clip": "c03r",
+          "text": "Test credential checks it against OpenAI's read-only endpoint. HTTP two hundred. The key is good.",
+          "from": 16.2,
+          "to": 25.9
         },
         {
           "who": "S",
-          "clip": "c03",
-          "stills": [
-            4
-          ],
-          "text": "Share it with Fairlead by name, and Fairlead sees only what you share."
+          "clip": "c03r",
+          "text": "Share it with Fairlead by name, and Fairlead sees only what you share.",
+          "from": 25.95,
+          "to": 33.6
         },
         {
           "who": "R",
-          "clip": "c03",
-          "stills": [
-            5
-          ],
-          "text": "Fairlead reads it from the vault and connects. Eighty-three models, in under a second."
+          "clip": "c03r",
+          "text": "Fairlead reads it from the vault and connects. Fifty-three models, in about a second.",
+          "from": 36.4,
+          "to": 48.6
         }
       ]
     },
@@ -412,7 +406,7 @@
         {
           "who": "H",
           "card": "close",
-          "text": "Halyard proposes. People decide. That's the watch. This demo took longer than it actually took to build the tool. So why would you pay for ADO Boards or Jira? SaaS is dead. Compute and creativity is the new frontier."
+          "text": "Halyard proposes. People decide. That's the watch. This demo took longer to make than the tool took to build. So why would you pay for ADO Boards or Jira? The tools are changing, and compute and creativity are the new frontier."
         }
       ]
     }

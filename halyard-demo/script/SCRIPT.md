@@ -133,7 +133,7 @@ browser pane in the edit. One clip per chapter; Ctrl+Shift+F11 drops a marker at
 - **XO:** "Production stays shut: it needs a production write mode, an explicit allow flag, a typed phrase and
   a diff. None of that can be switched on from the browser."
 - **Shot:** Diagnostics → Write audit: every write, all to the backlog repository. Sandbox → **Delete run**.
-- **CO:** "Halyard proposes. People decide. That's the watch. Fair winds."
+- **CO:** "Halyard proposes. People decide. That's the watch. This demo took longer to make than the tool took to build. So why would you pay for ADO Boards or Jira? The tools are changing, and compute and creativity are the new frontier."
 
 ## 14. "Found it, fixed it" segment (optional, 60–90 s)
 Bugs found during the live dry run and fixed on the spot (each its own PR):
