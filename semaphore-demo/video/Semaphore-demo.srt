@@ -1,0 +1,339 @@
+1
+00:00:00,250 --> 00:00:06,249
+Every dashboard starts with a question that someone has to translate into a tool.
+
+2
+00:00:06,249 --> 00:00:08,619
+Semaphore skips the translation.
+
+3
+00:00:08,619 --> 00:00:18,173
+You describe the page in plain English, you review what it drafts, and leadership asks questions that your reviewed work answers.
+
+4
+00:00:18,173 --> 00:00:20,543
+All of it runs on this computer.
+
+5
+00:00:20,793 --> 00:00:26,050
+Semaphore is a dashboard workbench for analysts, and a question box for leadership.
+
+6
+00:00:26,050 --> 00:00:32,272
+Three pieces: a launcher, a small server on this computer, and the web page.
+
+7
+00:00:32,272 --> 00:00:38,814
+Double-click the launcher, and it starts the server, which hands your browser a one-time link.
+
+8
+00:00:39,583 --> 00:00:44,497
+The server listens on loopback only, and keeps hoists, the catalog and the playbook as plain files in one home folder.
+
+9
+00:00:45,197 --> 00:00:49,373
+Halyard feeds it backlog health as four CSV files, read in the browser.
+
+10
+00:00:49,373 --> 00:00:55,352
+PacketRat and Eight Bells exports load the same way, tested so far on sample files.
+
+11
+00:00:56,052 --> 00:01:00,746
+For drafting, the server calls Fairlead with its own key from Credential Manager.
+
+12
+00:01:00,746 --> 00:01:05,423
+Fairlead routes to the model, and gets its model keys from Lazarette.
+
+13
+00:01:05,423 --> 00:01:07,392
+The page never sees a key.
+
+14
+00:01:08,092 --> 00:01:13,620
+Databases and the data lake use Semaphore's own connectors, and still need validation.
+
+15
+00:01:13,620 --> 00:01:16,463
+Routing them through Fairlead is planned.
+
+16
+00:01:17,074 --> 00:01:24,282
+Safety: one read-only select per query, an analyst accepts every draft, and leadership sees reviewed answers only.
+
+17
+00:01:24,282 --> 00:01:25,696
+Semaphore ships as one folder.
+
+18
+00:01:25,696 --> 00:01:32,642
+Download the zip, unblock it, extract it, and double-click Launch-Semaphore.
+
+19
+00:01:32,642 --> 00:01:35,039
+Nothing to install, no admin rights.
+
+20
+00:01:35,739 --> 00:01:42,546
+It starts a small server on this computer, on a loopback port, and gives your browser a one-time session link.
+
+21
+00:01:42,546 --> 00:01:44,806
+Nothing leaves the machine.
+
+22
+00:01:45,506 --> 00:01:52,615
+Four ways in: continue the example, a new page, your own data, or the leadership view.
+
+23
+00:01:52,865 --> 00:01:55,296
+Models come through Fairlead.
+
+24
+00:01:55,296 --> 00:02:01,113
+Its OpenAI key sits in Lazarette, the vault, and Fairlead only sees what you share.
+
+25
+00:02:01,813 --> 00:02:04,933
+On Fairlead's Clients page, pick Semaphore and install.
+
+26
+00:02:04,933 --> 00:02:09,949
+The key lands in Windows Credential Manager, and the page never holds it.
+
+27
+00:02:10,649 --> 00:02:12,879
+A config file picks the route.
+
+28
+00:02:12,879 --> 00:02:17,127
+This demo data is synthetic, so it uses the smart route.
+
+29
+00:02:17,127 --> 00:02:21,627
+Remove these two lines and drafts stay on the local route, on this computer.
+
+30
+00:02:21,877 --> 00:02:24,393
+This is a hoist: one page of flags.
+
+31
+00:02:24,393 --> 00:02:29,853
+The brief across the top is plain English, and Semaphore highlights what it understood.
+
+32
+00:02:30,724 --> 00:02:32,842
+Click Gulf and the whole page filters.
+
+33
+00:02:33,542 --> 00:02:35,559
+The monthly trend ignores it on purpose.
+
+34
+00:02:36,259 --> 00:02:41,742
+Flip a flag over to read what it shows in plain English, and the exact SQL behind the number.
+
+35
+00:02:42,358 --> 00:02:46,563
+The AI switch is on, so drafts go through Fairlead.
+
+36
+00:02:46,563 --> 00:02:51,032
+Describe a flag in plain English: top ten hulls by labor cost.
+
+37
+00:02:51,732 --> 00:02:56,457
+A few seconds later: a table, a confidence figure, and a note that Fairlead drafted it.
+
+38
+00:02:56,457 --> 00:03:00,040
+Every key the model used was checked against the catalog.
+
+39
+00:03:00,740 --> 00:03:03,701
+Accept it, and the playbook keeps it.
+
+40
+00:03:03,701 --> 00:03:06,880
+Brief me reads the page back, every sentence tied to a flag.
+
+41
+00:03:07,130 --> 00:03:11,359
+Halyard writes backlog health for Semaphore as four CSV files.
+
+42
+00:03:12,059 --> 00:03:14,391
+This is the real export from the Halyard demo.
+
+43
+00:03:15,091 --> 00:03:16,910
+Add them under Data.
+
+44
+00:03:16,910 --> 00:03:24,092
+Semaphore recognises Halyard's schema and proposes measures and fields: thirty-four measures, sixty-three fields.
+
+45
+00:03:24,792 --> 00:03:25,977
+Now describe flags.
+
+46
+00:03:25,977 --> 00:03:29,428
+Items needing review: seven.
+
+47
+00:03:29,428 --> 00:03:34,519
+Items by type: twenty stories, seven tasks, four features.
+
+48
+00:03:34,519 --> 00:03:35,319
+Items by state.
+
+49
+00:03:35,297 --> 00:03:39,968
+Features by status: three on track, one at risk.
+
+50
+00:03:39,968 --> 00:03:43,187
+Sprint velocity, planned against done.
+
+51
+00:03:43,530 --> 00:03:45,749
+A person accepts each draft.
+
+52
+00:03:45,749 --> 00:03:49,176
+Accepted flags are what leadership can ask about.
+
+53
+00:03:49,876 --> 00:03:55,656
+In the Ask view, the same numbers answer questions, labelled as reviewed.
+
+54
+00:03:55,970 --> 00:03:59,420
+The decision: can we commit the next sprint?
+
+55
+00:03:59,420 --> 00:04:06,331
+Four numbers decide it: items needing review, ready stories, blockers, and features at risk.
+
+56
+00:04:06,750 --> 00:04:09,319
+First, the raw export in PowerShell.
+
+57
+00:04:09,319 --> 00:04:13,148
+Four commands, typed at a steady pace: about eleven seconds.
+
+58
+00:04:19,100 --> 00:04:22,056
+Now Semaphore, same four questions, same typing speed.
+
+59
+00:04:22,056 --> 00:04:28,258
+One import, four plain-English briefs, four accepts: about twenty seconds.
+
+60
+00:04:28,258 --> 00:04:31,269
+For one analyst and four numbers, PowerShell is faster.
+
+61
+00:04:41,550 --> 00:04:48,522
+But now a leader can ask the question themselves, and the answer comes back in under a second, labelled reviewed.
+
+62
+00:04:49,222 --> 00:04:51,521
+The answer: not yet.
+
+63
+00:04:51,521 --> 00:04:57,627
+Nothing is ready, seven items need review, there is one blocker and one feature at risk.
+
+64
+00:04:57,627 --> 00:05:00,443
+Sample data: the Halyard demo backlog.
+
+65
+00:05:00,443 --> 00:05:02,975
+Semaphore reads more than CSV.
+
+66
+00:05:02,975 --> 00:05:08,464
+Here is what connects, and how well each one is proven.
+
+67
+00:05:08,899 --> 00:05:16,326
+In the browser: CSV, Halyard exports, PacketRat and Eight Bells exports, and Qlik load scripts.
+
+68
+00:05:16,326 --> 00:05:21,178
+A QVD is Qlik's own format, so export it to CSV first.
+
+69
+00:05:21,498 --> 00:05:28,803
+Through the server: databases over ODBC or OLE DB, including Postgres on AWS RDS, Oracle, SQL Server and Access.
+
+70
+00:05:28,803 --> 00:05:32,539
+Plus an S3 data lake through Athena, with a cost guard.
+
+71
+00:05:32,539 --> 00:05:36,502
+The AWS paths are built and tested against simulated AWS.
+
+72
+00:05:36,502 --> 00:05:38,062
+Live validation is pending.
+
+73
+00:05:38,420 --> 00:05:40,509
+Here is a real database.
+
+74
+00:05:40,509 --> 00:05:43,700
+This Access file holds the Halyard backlog.
+
+75
+00:05:43,700 --> 00:05:47,978
+One entry in sources.json, then pick the table, profile and add.
+
+76
+00:05:48,563 --> 00:05:57,345
+Now the same plain-English brief runs a real query through the server, and the SQL is shown.
+
+77
+00:05:57,595 --> 00:06:05,798
+Share as a report saves one HTML file with working filters, summarised numbers only, optionally locked with a passphrase.
+
+78
+00:06:06,498 --> 00:06:12,754
+It also reads PacketRat and Eight Bells exports, tested so far on synthetic files.
+
+79
+00:06:13,254 --> 00:06:14,854
+Semaphore drafts.
+
+80
+00:06:14,854 --> 00:06:16,171
+People review.
+
+81
+00:06:16,171 --> 00:06:17,677
+Leadership asks.
+
+82
+00:06:17,677 --> 00:06:26,897
+And a thought for your team: before you rent a dashboard tool, ask what you could build in a week.
+
+83
+00:06:26,897 --> 00:06:30,943
+The new frontier is compute and creativity.
+
+84
+00:06:30,943 --> 00:06:32,543
+That's the watch.
+
+85
+00:06:32,543 --> 00:06:33,578
+Fair winds.
