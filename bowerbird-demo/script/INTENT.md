@@ -1,0 +1,3 @@
+# Bowerbird demo: intent
+
+For an operator whose screenshots pile up as Screenshot_date_time.png and who cannot find the one they need: it shows Bowerbird, a local-first file mate, reading seven invented screenshots with live AI vision through Fairlead, proposing honest names with reasons and confidence, renaming only after the typed phrase APPLY, and restoring every original name after the typed phrase UNDO. The screenshots are synthetic, vision used the cloud route (Fairlead had no local vision model), Semaphore export and SnapShackle appear only in the architecture diagram, and no minutes-saved figure is claimed.

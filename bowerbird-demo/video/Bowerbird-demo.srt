@@ -1,131 +1,172 @@
 1
-00:00:00,000 --> 00:00:06,363
-Screenshots pile up as Screenshot, date, time, and nobody can find the one they need.
+00:00:00,000 --> 00:00:02,638
+Screenshots pile up as Screenshot,
 
 2
+00:00:02,638 --> 00:00:06,363
+date, time, and nobody can
+find the one they need.
+
+3
 00:00:06,363 --> 00:00:08,384
 Bowerbird is the file mate.
 
-3
-00:00:08,384 --> 00:00:13,923
-It reads them, proposes honest names, and moves nothing until you approve.
-
 4
-00:00:14,173 --> 00:00:15,547
-Bowerbird runs on one PC.
+00:00:08,384 --> 00:00:13,923
+It reads them, proposes honest names,
+and moves nothing until you approve.
 
 5
-00:00:15,547 --> 00:00:21,123
-A PowerShell launcher starts the engine, and your browser talks to it on localhost.
+00:00:13,923 --> 00:00:15,258
+Bowerbird runs on one PC.
 
 6
-00:00:21,823 --> 00:00:28,122
-The engine indexes and searches, proposes renames, and organizes by rules.
+00:00:15,258 --> 00:00:21,040
+A PowerShell launcher starts the engine,
+and your browser talks to it on localhost.
 
 7
-00:00:28,122 --> 00:00:30,974
-The index is encrypted on disk.
+00:00:21,740 --> 00:00:26,930
+The engine indexes and searches, proposes
+renames, and organizes by rules.
 
 8
-00:00:31,674 --> 00:00:37,426
-Model calls go through Fairlead, with Bowerbird's own key from Credential Manager.
+00:00:26,930 --> 00:00:29,218
+The index is encrypted on disk.
 
 9
-00:00:37,426 --> 00:00:39,279
-The OpenAI key stays in Lazarette.
+00:00:29,585 --> 00:00:31,695
+Model calls go through Fairlead,
 
 10
-00:00:39,279 --> 00:00:44,673
-Semaphore export and SnapShackle names exist in the code, but aren't shown here.
+00:00:31,695 --> 00:00:34,925
+with Bowerbird's own key from
+Credential Manager.
 
 11
-00:00:45,373 --> 00:00:47,670
-One rule holds it together.
+00:00:34,925 --> 00:00:37,548
+The OpenAI key stays in Lazarette.
 
 12
-00:00:47,670 --> 00:00:52,333
-Nothing is renamed until you type APPLY, and a journal can undo it.
+00:00:37,548 --> 00:00:42,051
+Semaphore export and SnapShackle
+names exist in the code,
 
 13
-00:00:53,030 --> 00:00:57,569
-The OpenAI key is already in Lazarette, shared to Fairlead by name.
+00:00:42,051 --> 00:00:43,789
+but aren't shown here.
 
 14
-00:00:57,569 --> 00:01:00,253
-Fairlead sees only what you share.
+00:00:44,489 --> 00:00:46,859
+One rule holds it together.
 
 15
-00:01:00,953 --> 00:01:02,648
-Fairlead gives Bowerbird its own key.
+00:00:46,859 --> 00:00:51,948
+Nothing is renamed until you type
+APPLY, and a journal can undo it.
 
 16
-00:01:02,648 --> 00:01:07,662
-Pick Bowerbird, install, and it lands in Windows Credential Manager.
+00:00:52,198 --> 00:00:56,737
+The OpenAI key is already in
+Lazarette, shared to Fairlead by name.
 
 17
-00:01:08,292 --> 00:01:12,955
-Seven invented screenshots, every one named Screenshot, date, time.
+00:00:56,737 --> 00:00:59,421
+Fairlead sees only what you share.
 
 18
-00:01:13,655 --> 00:01:14,683
-In Smart Rename, tick AI vision.
+00:01:00,121 --> 00:01:01,816
+Fairlead gives Bowerbird its own key.
 
 19
-00:01:15,425 --> 00:01:19,074
-Bowerbird asks before any image leaves this PC.
+00:01:01,816 --> 00:01:06,830
+Pick Bowerbird, install, and it
+lands in Windows Credential Manager.
 
 20
-00:01:19,074 --> 00:01:21,645
-These are synthetic, so send them.
+00:01:07,460 --> 00:01:12,123
+Seven invented screenshots, every
+one named Screenshot, date, time.
 
 21
-00:01:21,645 --> 00:01:28,936
-Seven live vision calls go through Fairlead to the cloud route, because Fairlead has no local vision model here.
+00:01:12,823 --> 00:01:13,852
+In Smart Rename, tick AI vision.
 
 22
-00:01:29,636 --> 00:01:33,997
-Seven proposals, each with its reason and a confidence.
+00:01:14,593 --> 00:01:18,242
+Bowerbird asks before any
+image leaves this PC.
 
 23
-00:01:33,997 --> 00:01:35,956
-Nothing has moved yet.
+00:01:18,242 --> 00:01:20,813
+These are synthetic, so send them.
 
 24
-00:01:36,656 --> 00:01:38,230
-To apply, type APPLY.
+00:01:20,813 --> 00:01:24,951
+Seven live vision calls go through
+Fairlead to the cloud route,
 
 25
-00:01:38,230 --> 00:01:41,169
-The files are renamed exactly as previewed.
+00:01:24,951 --> 00:01:28,104
+because Fairlead has no local
+vision model here.
 
 26
-00:01:41,869 --> 00:01:43,649
-Explorer shows the new names.
+00:01:28,804 --> 00:01:33,165
+Seven proposals, each with its
+reason and a confidence.
 
 27
-00:01:44,296 --> 00:01:45,281
-Nothing was deleted.
+00:01:33,165 --> 00:01:35,124
+Nothing has moved yet.
 
 28
-00:01:45,981 --> 00:01:47,091
-Undo has its own gate.
+00:01:35,824 --> 00:01:37,398
+To apply, type APPLY.
 
 29
-00:01:47,720 --> 00:01:49,921
-Type UNDO, and every original name comes back.
+00:01:37,398 --> 00:01:40,337
+The files are renamed exactly
+as previewed.
 
 30
-00:01:50,171 --> 00:01:51,354
-Bowerbird proposes.
+00:01:41,037 --> 00:01:42,817
+Explorer shows the new names.
 
 31
-00:01:51,354 --> 00:01:52,926
-People decide.
+00:01:43,464 --> 00:01:44,464
+Nothing was deleted.
 
 32
-00:01:52,926 --> 00:02:00,131
-The names are better, the moves are reversible, and the model only ever saw what you let it see.
+00:01:45,149 --> 00:01:46,259
+Undo has its own gate.
 
 33
-00:02:00,131 --> 00:02:01,890
+00:01:46,888 --> 00:01:49,089
+Type UNDO, and every original
+name comes back.
+
+34
+00:01:49,339 --> 00:01:50,522
+Bowerbird proposes.
+
+35
+00:01:50,522 --> 00:01:52,094
+People decide.
+
+36
+00:01:52,094 --> 00:01:53,704
+The names are better,
+
+37
+00:01:53,704 --> 00:01:55,620
+the moves are reversible,
+
+38
+00:01:55,620 --> 00:01:59,299
+and the model only ever saw
+what you let it see.
+
+39
+00:01:59,299 --> 00:02:01,058
 That's the watch.

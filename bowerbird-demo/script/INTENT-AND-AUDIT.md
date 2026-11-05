@@ -24,3 +24,7 @@ Style deviations from the Fleet spec (section 7c), not fixed:
 - The footer "Speak progress" control overflows the status bar at 1920x1080 (small layout bug).
 - The "Done / Working..." toast sits bottom right over the content.
 - Remaining native `confirm()` calls: content-index warning and End session.
+
+## Privacy pass (2026-11-05)
+- The recorded app chapters showed the Windows user name in full paths (status bar, scan-location field, applied list). They are covered with solid boxes in the final cut and the Fairlead key-prefix column is blurred. Frames were checked at the affected times.
+- A clean re-record through a neutral drive letter was tried, but Fairlead no longer had its cloud provider, so live vision returned 502. The original live-vision recording was kept and masked instead.
