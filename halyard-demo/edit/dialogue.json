@@ -38,49 +38,49 @@
           "who": "R",
           "clip": "arch",
           "from": 0.01,
-          "to": 10.91,
+          "to": 11.41,
           "text": "Here is how Halyard fits together. Everything runs on one machine. A PowerShell launcher compiles the engine in memory, and the browser talks to it on localhost."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 10.91,
-          "to": 20.41,
+          "from": 11.41,
+          "to": 20.91,
           "text": "Inside the engine: review, intelligence for drafting and sizing, planning, and a proposal store. Every change starts as a proposal."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 20.41,
-          "to": 29.21,
+          "from": 20.91,
+          "to": 29.71,
           "text": "Halyard reads your backlog from GitHub, read only. The write gateway lets it write to one place: the sandbox backlog you configure."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 29.21,
-          "to": 40.51,
+          "from": 29.71,
+          "to": 41.01,
           "text": "Model calls go through Fairlead and nowhere else. Halyard's own key sits in Windows Credential Manager. The OpenAI key stays in Lazarette, shared to Fairlead."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 40.51,
-          "to": 46.61,
+          "from": 41.01,
+          "to": 47.11,
           "text": "Out the other side: four tables for Semaphore, and the weekly dashboard as an Outlook draft."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 46.61,
-          "to": 53.41,
+          "from": 47.11,
+          "to": 54.01,
           "text": "Dashed means planned: live Shellback skills, and a runner on your repositories."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 53.41,
-          "to": 59.21,
+          "from": 54.01,
+          "to": 59.71,
           "text": "One rule holds it together. Nothing is written until a person approves."
         }
       ],
