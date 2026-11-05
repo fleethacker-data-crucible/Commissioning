@@ -235,89 +235,93 @@ A small model can get this wrong, so the backup is the point.
 Safety.
 
 60
-00:04:31,750 --> 00:04:34,717
-The model never runs anything.
+00:04:31,772 --> 00:04:35,086
+I ask the model to run the script.
 
 61
-00:04:34,717 --> 00:04:40,152
-I ask it to run the script, and all it does is give me the command to run myself.
+00:04:35,086 --> 00:04:40,455
+It cannot: Phoenix never runs a command, so all it can do is answer in text.
 
 62
-00:04:40,912 --> 00:04:45,125
-Ask again, even with permission, and the run guard steps in.
+00:04:40,885 --> 00:04:43,564
+I ask again, this time with permission.
 
 63
-00:04:45,638 --> 00:04:50,240
-A red warning, and the chat says this is the third request to run something.
+00:04:43,564 --> 00:04:47,811
+It still declines, and offers a script for me to run myself.
 
 64
-00:04:50,240 --> 00:04:55,529
-The sixth locks chat input for five minutes, and the lockout survives a restart.
+00:04:48,127 --> 00:04:50,334
+A third try, and the run guard steps in.
 
 65
-00:04:55,529 --> 00:04:57,204
-I will not push it.
+00:04:50,334 --> 00:04:56,497
+Chat is suspended for five minutes, with a countdown, and by design the lockout survives a restart.
 
 66
-00:04:58,095 --> 00:05:02,183
-The project jail: I try to open a folder outside Phoenix projects.
+00:04:56,497 --> 00:04:59,566
+That is a safety stop, not a bug.
 
 67
-00:05:02,183 --> 00:05:09,115
-Dots in the path are refused, and the message says folders are always inside the projects folder, fixed and unchangeable.
+00:05:00,266 --> 00:05:04,577
+The project jail: I try to open a folder outside Phoenix projects.
 
 68
-00:05:09,815 --> 00:05:13,347
-Same answer for a project path that tries to climb out with dot dot.
+00:05:04,577 --> 00:05:13,471
+Dots in the path are refused, and the message says folders are always inside the projects folder, fixed and unchangeable.
 
 69
-00:05:13,347 --> 00:05:17,233
-Everything in the client is a slash command, no menus.
+00:05:14,171 --> 00:05:17,900
+Same answer for a project path that tries to climb out with dot dot.
 
 70
-00:05:17,233 --> 00:05:25,263
-Help lists them all: connect a project, switch provider, compact a long chat, accept mode to approve each file action.
+00:05:17,900 --> 00:05:21,786
+Everything in the client is a slash command, no menus.
 
 71
-00:05:25,963 --> 00:05:32,058
-Skills are reusable instructions in plain files, matched to what you type or called by name.
+00:05:21,786 --> 00:05:29,815
+Help lists them all: connect a project, switch provider, compact a long chat, accept mode to approve each file action.
 
 72
-00:05:32,058 --> 00:05:35,006
-The Skill Builder drafts and tests them.
+00:05:30,515 --> 00:05:36,610
+Skills are reusable instructions in plain files, matched to what you type or called by name.
 
 73
-00:05:35,256 --> 00:05:36,762
-The evidence trail.
+00:05:36,610 --> 00:05:39,559
+The Skill Builder drafts and tests them.
 
 74
-00:05:36,762 --> 00:05:42,629
-The chat is saved with the project, and the edit line names the exact backup folder holding the version from before the change.
+00:05:39,809 --> 00:05:41,315
+The evidence trail.
 
 75
-00:05:43,329 --> 00:05:49,542
-Open the saved chat and every step is there: the list, the diff, the write and the backup path.
+00:05:41,315 --> 00:05:47,181
+The chat is saved with the project, and the edit line names the exact backup folder holding the version from before the change.
 
 76
-00:05:50,242 --> 00:05:54,127
-Back on the server dashboard, the only requests are the client's embedding checks.
+00:05:47,881 --> 00:05:54,095
+Open the saved chat and every step is there: the list, the diff, the write and the backup path.
 
 77
-00:05:54,127 --> 00:05:56,506
-The chat itself went through Fairlead.
+00:05:54,795 --> 00:05:58,680
+Back on the server dashboard, the only requests are the client's embedding checks.
 
 78
-00:05:57,006 --> 00:06:00,616
-Phoenix LAi keeps the work on the machine.
+00:05:58,680 --> 00:06:01,059
+The chat itself went through Fairlead.
 
 79
-00:06:00,616 --> 00:06:09,211
-Your files go only where you allow, the model never runs a command, and every edit keeps its backup.
+00:06:01,559 --> 00:06:05,169
+Phoenix LAi keeps the work on the machine.
 
 80
-00:06:09,211 --> 00:06:15,485
-Today's model came through Fairlead, because this PC has no Gemma 4 file.
+00:06:05,169 --> 00:06:13,764
+Your files go only where you allow, the model never runs a command, and every edit keeps its backup.
 
 81
-00:06:15,485 --> 00:06:18,322
+00:06:13,764 --> 00:06:20,038
+Today's model came through Fairlead, because this PC has no Gemma 4 file.
+
+82
+00:06:20,038 --> 00:06:22,874
 Everything else you saw was live.
