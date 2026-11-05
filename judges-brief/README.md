@@ -8,6 +8,9 @@ The infographic slide deck that positions the whole Data Crucible suite against 
 
 | Path | What it is |
 |---|---|
+| `export/Data-Crucible-Judges-Brief.pptx` | PowerPoint: one picture per slide, speaker notes, and the demo clips embedded as playable movies where they sit on the slide. |
+| `export/Data-Crucible-Judges-Brief.pdf` | PDF of the 23 slides (clips show their poster frame). |
+| `index.html` | Redirects to `judges-brief.html`, so the folder works as a GitHub Pages URL: `https://fleethacker-data-crucible.github.io/Commissioning/judges-brief/` once Pages is enabled on `main`. |
 | `judges-brief.html` | Self-contained viewer: all 23 slides, scaled to the window, videos playable. Download it with the `assets/` folder beside it and open it in a browser; GitHub shows only its source. |
 | `SPEAKER-NOTES.md` | The speaker notes, one entry per slide. |
 | `deck.json` | The slide order, sections and typefaces (Exo 2 and IBM Plex Sans, from Google Fonts). |
