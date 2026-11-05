@@ -3,7 +3,7 @@ import { createRequire } from 'node:module';
 import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-const require = createRequire('C:/Users/Anthony/Projects/Capstan/package.json');
+const require = createRequire('C:/Users/you/Projects/Capstan/package.json');
 const { chromium } = require('playwright');
 const here = dirname(fileURLToPath(import.meta.url));
 const out = join(here, '..');

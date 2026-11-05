@@ -10,9 +10,9 @@ import { fileURLToPath } from 'node:url';
 const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(here, '..');
 const VO = join(ROOT, 'voiceover-renoise');
-const bin = 'C:/Users/Anthony/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0.2-full_build/bin/';
+const bin = 'C:/Users/you/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0.2-full_build/bin/';
 const FF = bin + 'ffmpeg.exe', FP = bin + 'ffprobe.exe';
-const shots = 'C:/Users/Anthony/.claude/projects/C--Users-Anthony-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-64ef0a62-6657-4210-9062-b9f4fe34f2d2-3730a8e3-69c5-48b5-ab6e-b38a3899e4a9-scratch-2026-11-04-3d0956/0f7dd306-73b3-4fb8-9026-e90af44fdfa7/tool-results';
+const shots = 'C:/Users/you/Videos/Fleet-Demos/Halyard/shots'; // set to the folder that holds the recorded shots
 const FONT = 'C\\:/Windows/Fonts/segoeui.ttf', FONTB = 'C\\:/Windows/Fonts/segoeuib.ttf';
 const W = join(here, 'build'); mkdirSync(W, { recursive: true });
 const CACHE = join(here, 'cache'); mkdirSync(CACHE, { recursive: true });
