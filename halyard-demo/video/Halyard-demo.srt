@@ -1,0 +1,323 @@
+1
+00:00:00,250 --> 00:00:01,533
+Every backlog drifts.
+
+2
+00:00:01,533 --> 00:00:04,432
+Stories without acceptance criteria.
+
+3
+00:00:04,432 --> 00:00:06,720
+Features without a parent.
+
+4
+00:00:06,720 --> 00:00:08,291
+Sizes nobody agreed.
+
+5
+00:00:08,291 --> 00:00:11,190
+Halyard is the product owner's mate.
+
+6
+00:00:11,190 --> 00:00:17,510
+It reads the backlog, finds the drift, drafts the fix, and waits for a person to approve it.
+
+7
+00:00:17,510 --> 00:00:19,404
+Nothing moves without your say.
+
+8
+00:00:19,654 --> 00:00:22,743
+Every tool in the fleet needs a model key.
+
+9
+00:00:22,743 --> 00:00:25,333
+At OpenAI, create a new secret key.
+
+10
+00:00:26,092 --> 00:00:28,349
+Name it something generic.
+
+11
+00:00:28,349 --> 00:00:30,216
+I call mine fleet-tools.
+
+12
+00:00:30,216 --> 00:00:32,174
+Seven days is plenty.
+
+13
+00:00:32,998 --> 00:00:33,994
+Copy it once.
+
+14
+00:00:34,554 --> 00:00:36,122
+OpenAI never shows it again.
+
+15
+00:00:36,372 --> 00:00:40,775
+The key goes into Lazarette, the encrypted vault on this machine.
+
+16
+00:00:41,475 --> 00:00:44,629
+Test credential checks it against OpenAI's read-only endpoint.
+
+17
+00:00:45,216 --> 00:00:46,553
+HTTP two hundred.
+
+18
+00:00:47,329 --> 00:00:48,129
+The key is good.
+
+19
+00:00:48,695 --> 00:00:53,131
+Share it with Fairlead by name, and Fairlead sees only what you share.
+
+20
+00:00:53,831 --> 00:00:57,011
+Fairlead reads it from the vault and connects.
+
+21
+00:00:57,011 --> 00:00:59,384
+Eighty-three models, in under a second.
+
+22
+00:00:59,634 --> 00:01:01,688
+Fairlead gives each tool its own key.
+
+23
+00:01:02,388 --> 00:01:03,764
+Pick Halyard and install it.
+
+24
+00:01:04,464 --> 00:01:06,467
+It lands in Windows Credential Manager.
+
+25
+00:01:07,167 --> 00:01:12,852
+Halyard's config file names the backlog it reads, the backlog it may write to, and the write mode.
+
+26
+00:01:12,852 --> 00:01:15,299
+The browser can't change any of it.
+
+27
+00:01:15,999 --> 00:01:17,519
+Test the model.
+
+28
+00:01:17,519 --> 00:01:19,912
+Under two seconds, end to end.
+
+29
+00:01:20,662 --> 00:01:24,481
+For this walkthrough we seed a synthetic backlog.
+
+30
+00:01:24,481 --> 00:01:27,851
+Thirty items, a quarter of them with deliberate gaps.
+
+31
+00:01:28,551 --> 00:01:33,865
+Each one is a real GitHub issue with a run label, so the whole run comes out again in one click.
+
+32
+00:01:33,865 --> 00:01:37,472
+It takes about two minutes, paced for the rate limits.
+
+33
+00:01:38,172 --> 00:01:40,140
+Thirty of thirty.
+
+34
+00:01:40,140 --> 00:01:42,330
+The backlog is live.
+
+35
+00:01:42,711 --> 00:01:50,491
+The overview shows the shape of the backlog and what needs attention: items to review, missing parents, topology errors.
+
+36
+00:01:50,491 --> 00:01:55,101
+Scroll down for the findings by severity, and the next actions.
+
+37
+00:01:55,801 --> 00:01:59,916
+Review checks every item against its level's definition of ready and the parent chain.
+
+38
+00:02:00,497 --> 00:02:02,683
+Each finding names the fix that closes it.
+
+39
+00:02:03,383 --> 00:02:06,290
+Hierarchy shows the tree, theme to task.
+
+40
+00:02:06,540 --> 00:02:10,560
+Draft missing sections sends each gap to the model through Fairlead.
+
+41
+00:02:10,560 --> 00:02:13,033
+Real model, a few seconds per item.
+
+42
+00:02:13,733 --> 00:02:15,700
+Six drafts, all high confidence.
+
+43
+00:02:15,700 --> 00:02:18,099
+Each is a proposal with a reason.
+
+44
+00:02:18,099 --> 00:02:23,769
+Open one and read the diff: the model adds what's missing and leaves the rest alone.
+
+45
+00:02:23,769 --> 00:02:28,137
+And if it ever drops a section, Halyard puts it back word for word.
+
+46
+00:02:28,837 --> 00:02:32,344
+Approve the high-confidence drafts, then apply.
+
+47
+00:02:32,344 --> 00:02:36,177
+Six written to the backlog on GitHub, and the apply is recorded.
+
+48
+00:02:36,177 --> 00:02:39,201
+Every apply is recorded with what it replaced.
+
+49
+00:02:39,757 --> 00:02:42,698
+Undo previews first, then restores the earlier text.
+
+50
+00:02:43,019 --> 00:02:44,149
+Six items restored.
+
+51
+00:02:44,849 --> 00:02:47,955
+Anything a person edited since is left alone.
+
+52
+00:02:47,955 --> 00:02:52,930
+The proposals go back to pending, so approve and apply again when you're ready.
+
+53
+00:02:53,180 --> 00:02:55,095
+Work comes in from anywhere.
+
+54
+00:02:55,095 --> 00:02:59,017
+A raw ticket, or a note typed straight into Intake.
+
+55
+00:02:59,017 --> 00:03:01,331
+Two loose notes, no structure at all.
+
+56
+00:03:01,943 --> 00:03:02,835
+Preview the drafts.
+
+57
+00:03:02,835 --> 00:03:09,942
+Halyard turns each note into a structured work item and copies it into the backlog, with a link back to where it started.
+
+58
+00:03:10,321 --> 00:03:12,650
+Plan fills the next sprints from ready stories.
+
+59
+00:03:13,350 --> 00:03:15,167
+Capacity comes from the team file.
+
+60
+00:03:15,167 --> 00:03:20,436
+Owners are matched on skills, and anything that slipped last sprint goes first.
+
+61
+00:03:21,136 --> 00:03:23,477
+Skills come from Shellback peer cards today.
+
+62
+00:03:24,163 --> 00:03:25,784
+A live Shellback link is planned.
+
+63
+00:03:26,284 --> 00:03:29,757
+Upward, Halyard drafts the portfolio story for leadership.
+
+64
+00:03:29,757 --> 00:03:31,926
+This one is the live model, thinking.
+
+65
+00:03:32,626 --> 00:03:38,202
+Themes, priorities, risks and the next quarter, with the facts every claim rests on.
+
+66
+00:03:38,202 --> 00:03:41,798
+Everything it says about the backlog, it can point to.
+
+67
+00:03:42,540 --> 00:03:51,714
+The leadership page puts features on track, velocity, ready backlog, capacity and blockers on one screen.
+
+68
+00:03:51,714 --> 00:03:55,558
+One click exports backlog health for Semaphore, as four tables ready to chart.
+
+69
+00:03:56,154 --> 00:04:00,987
+The weekly dashboard opens in Outlook as a draft, so a person reviews it and presses send.
+
+70
+00:04:01,672 --> 00:04:05,923
+Next on the chart: a runner on the team's repositories.
+
+71
+00:04:05,923 --> 00:04:10,532
+It watches commits and pull requests, and writes the story for the work it sees.
+
+72
+00:04:11,030 --> 00:04:13,013
+Developers stop doing the admin.
+
+73
+00:04:13,013 --> 00:04:20,611
+The product owner approves what the runner proposes, through the same diff and the same gate.
+
+74
+00:04:20,611 --> 00:04:21,549
+Production stays shut.
+
+75
+00:04:21,549 --> 00:04:29,330
+Promote needs a production write mode, an explicit allow flag, a typed phrase and a diff, and none of it can be switched on from the browser.
+
+76
+00:04:30,030 --> 00:04:33,136
+The write audit lists every write Halyard made.
+
+77
+00:04:33,663 --> 00:04:35,506
+Every one went to the backlog.
+
+78
+00:04:35,506 --> 00:04:37,824
+Halyard proposes.
+
+79
+00:04:37,824 --> 00:04:39,733
+People decide.
+
+80
+00:04:39,733 --> 00:04:42,051
+That's the watch.
+
+81
+00:04:42,051 --> 00:04:43,551
+Fair winds.
