@@ -1,0 +1,3 @@
+# Intent
+
+This walkthrough is for a watchstander, a watch officer or a reviewer who needs to see how several AI agents on a ship can be kept in check. It shows Bridge Warden, the governance layer between the ship's AI agents and the ship, on a simulated ship (synthetic contacts and faults, nothing real): two agents asking for the same rudder, a violated boundary that needs a human, the operator deciding, a typed SAFE-STOP, and the hash-chained audit record. It also shows how the agents reach a real model through Fairlead, the governance tests that run in CI, and that the key stays in Lazarette.
