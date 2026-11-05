@@ -14,5 +14,8 @@
 
 **Definition of done (docs).** Gemma 4 output matches llama.cpp logprobs as closely as the CPU reference; client features pass `client-e2e.py`; security rules enforced by `run.ps1`.
 
+## Build notes (2026-11-05)
+Client chapters were re-recorded after a fix to docs search (a server with no embedding model now means keywords only, so the status bar no longer shows "rag error"). The run-guard take was redone so the lockout lands on the third visible request. Captions: at most two rows of 42 characters, 1-6 s per cue. Audio true peak -2.0 dBTP. Phone copy: 720p, 1.5 Mb/s video, soft subtitle track.
+
 ## Audit status
 Static review only so far. Code and docs show the tool is feature-complete; it could not be run because no Gemma 4 GGUF exists on this PC (only Llama-3.2-3B, Qwen3.8-27B, Qwen3-1.7B, all refused by Phoenix). Live audit pending a model file.
