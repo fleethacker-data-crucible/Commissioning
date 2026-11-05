@@ -1,251 +1,390 @@
 1
-00:00:00,250 --> 00:00:06,346
-A fuel log with a million and a half rows will not open in a spreadsheet.
+00:00:00,250 --> 00:00:03,278
+A fuel log with a million and a half
 
 2
-00:00:06,346 --> 00:00:08,768
-Data Noodler is for that job.
+00:00:03,298 --> 00:00:06,326
+rows will not open in a spreadsheet.
 
 3
-00:00:08,768 --> 00:00:20,460
-It reads big flat files on a locked-down PC, answers questions in plain SQL, and turns the answer into a dashboard, all on your own machine.
+00:00:06,346 --> 00:00:08,748
+Data Noodler is for that job.
 
 4
-00:00:20,460 --> 00:00:22,799
-The data today is synthetic.
+00:00:08,768 --> 00:00:12,476
+It reads big flat files
+on a locked-down PC,
 
 5
-00:00:23,049 --> 00:00:25,611
-Here is how it fits together.
+00:00:12,496 --> 00:00:16,288
+answers questions in
+plain SQL, and turns the
 
 6
-00:00:25,611 --> 00:00:28,619
-You double-click Data_Noodler.
+00:00:16,308 --> 00:00:20,440
+answer into a dashboard,
+all on your own machine.
 
 7
-00:00:28,619 --> 00:00:28,876
-bat.
+00:00:20,460 --> 00:00:22,779
+The data today is synthetic.
 
 8
-00:00:28,876 --> 00:00:36,826
-That starts a small PowerShell server that listens on localhost only, and your browser shows the pages.
+00:00:23,049 --> 00:00:25,460
+Here is how it fits together.
 
 9
-00:00:37,225 --> 00:00:43,016
-Behind it is the data engine, written in C and compiled in memory at start.
+00:00:25,480 --> 00:00:27,994
+You double-click Data_Noodler. bat.
 
 10
-00:00:43,016 --> 00:00:51,747
-Tables sit in memory as Arrow, queries spill to disk when memory runs short, and each project is a folder on disk.
+00:00:28,014 --> 00:00:31,694
+That starts a small
+PowerShell server that listens
 
 11
-00:00:52,447 --> 00:00:59,069
-Raw files go in: CSV, Parquet, Arrow or SQLite, copied into the project or read in place.
+00:00:31,714 --> 00:00:35,543
+on localhost only,
+and your browser shows the pages.
 
 12
-00:00:59,769 --> 00:01:03,435
-The work in the middle is plain SQL, saved with the project.
+00:00:36,263 --> 00:00:41,323
+Behind it is the data engine, written
+in C and compiled in memory at start.
 
 13
-00:01:04,177 --> 00:01:06,160
-Each query builds a clean table.
+00:00:41,343 --> 00:00:45,502
+Tables sit in memory as Arrow,
+queries spill to disk when
 
 14
-00:01:06,860 --> 00:01:16,268
-Out come dashboards as an image, PDF, PowerPoint slide or a one-file web page, and any table as CSV, Parquet or SQLite.
+00:00:45,522 --> 00:00:49,607
+memory runs short, and each
+project is a folder on disk.
 
 15
-00:01:16,968 --> 00:01:19,708
-Semaphore can take that CSV as a plain file.
+00:00:50,180 --> 00:00:53,751
+Raw files go in: CSV,
+Parquet, Arrow or SQLite,
 
 16
-00:01:19,708 --> 00:01:26,204
-Fairlead and Lazarette are not used: Noodler makes no model calls and holds no keys.
+00:00:53,771 --> 00:00:56,883
+copied into the project or read in place.
 
 17
-00:01:26,904 --> 00:01:39,175
-And the guardrails: localhost only with a session token, file access confined to the project, trash and snapshot archives, and a label on every project.
+00:00:57,603 --> 00:01:02,435
+The work in the middle is plain SQL,
+saved with the project.
 
 18
-00:01:39,175 --> 00:01:42,010
-Starting it needs no install and no admin rights.
+00:01:02,455 --> 00:01:05,284
+Each query builds a clean table.
 
 19
-00:01:42,710 --> 00:01:45,637
-The control panel shows the web server and the data engine both online.
+00:01:05,614 --> 00:01:10,516
+Out come dashboards as an image,
+PDF, PowerPoint slide or a
 
 20
-00:01:46,337 --> 00:01:51,104
-Every request is listed as it happens, and Stop Server is one click.
+00:01:10,536 --> 00:01:15,438
+one-file web page, and any
+table as CSV, Parquet or SQLite.
 
 21
-00:01:51,104 --> 00:01:54,825
-If every window is closed, it stops itself after two minutes.
+00:01:16,158 --> 00:01:19,244
+Semaphore can take that
+CSV as a plain file.
 
 22
-00:01:54,825 --> 00:01:59,403
-Make a project: a name, a description, and a classification label.
+00:01:19,264 --> 00:01:21,974
+Fairlead and Lazarette are not used:
 
 23
-00:01:59,403 --> 00:02:04,223
-This one is Internal, and the label travels with everything the project publishes.
+00:01:21,994 --> 00:01:25,538
+Noodler makes no model
+calls and holds no keys.
 
 24
-00:02:04,923 --> 00:02:05,746
-Import opens next.
+00:01:26,199 --> 00:01:29,865
+And the guardrails:
+localhost only with a session token,
 
 25
-00:02:05,746 --> 00:02:08,130
-Point it at the CSV on a local drive.
+00:01:29,885 --> 00:01:32,235
+file access confined to the project,
 
 26
-00:02:08,130 --> 00:02:09,273
-A network path works too.
+00:01:32,255 --> 00:01:36,053
+trash and snapshot archives,
+and a label on every project.
 
 27
-00:02:10,172 --> 00:02:14,873
-One and a half million rows, a hundred and fourteen megabytes, counted in under a second.
+00:01:36,419 --> 00:01:39,234
+Starting it needs no
+install and no admin rights.
 
 28
-00:02:14,873 --> 00:02:19,498
-The columns and their types are detected, and you can change them.
+00:01:39,954 --> 00:01:42,861
+The control panel shows the web server
+and the data engine both online.
 
 29
-00:02:20,198 --> 00:02:28,072
-Import writes it as an Arrow dataset in a couple of seconds, then checks the row count and the column names against the source before it says done.
+00:01:43,581 --> 00:01:48,328
+Every request is listed as it happens,
+and Stop Server is one click.
 
 30
-00:02:28,783 --> 00:02:30,339
-Transform is a SQL editor.
+00:01:48,348 --> 00:01:52,049
+If every window is closed,
+it stops itself after two minutes.
 
 31
-00:02:30,339 --> 00:02:36,309
-The question: fuel per nautical mile, by vessel class and month.
+00:01:52,069 --> 00:01:56,626
+Make a project: a name, a description,
+and a classification label.
 
 32
-00:02:37,009 --> 00:02:44,550
-The first try fails, and the error says why: this dialect has no DATE_TRUNC, use TRUNC with MM instead.
+00:01:56,646 --> 00:01:59,185
+This one is Internal,
+and the label travels
 
 33
-00:02:44,550 --> 00:02:46,450
-So we make that change.
+00:01:59,205 --> 00:02:01,447
+with everything the project publishes.
 
 34
-00:02:47,150 --> 00:02:47,636
-Run again.
+00:02:02,167 --> 00:02:05,354
+Import opens next.
+Point it at the CSV on a local drive.
 
 35
-00:02:47,636 --> 00:02:53,561
-One and a half million rows grouped in under two seconds, and a clean table of eighty-eight rows is saved next to the SQL.
+00:02:05,374 --> 00:02:06,497
+A network path works too.
 
 36
-00:02:53,811 --> 00:02:54,768
-Dashboard Studio.
+00:02:07,416 --> 00:02:09,640
+One and a half million rows, a hundred and
 
 37
-00:02:54,768 --> 00:02:58,786
-Add a line chart, open its settings, and click Data.
+00:02:09,660 --> 00:02:12,097
+fourteen megabytes,
+counted in under a second.
 
 38
-00:02:59,615 --> 00:03:05,831
-You build the chart by dragging fields: month onto the X axis, litres per nautical mile onto Y.
+00:02:12,117 --> 00:02:16,721
+The columns and their types are
+detected, and you can change them.
 
 39
-00:03:06,218 --> 00:03:09,291
-Then class, to split the lines.
+00:02:17,441 --> 00:02:20,680
+Import writes it as an Arrow
+dataset in a couple of seconds,
 
 40
-00:03:09,291 --> 00:03:12,782
-The chart reads the clean table through the engine.
+00:02:20,700 --> 00:02:22,852
+then checks the row count and the column
 
 41
-00:03:13,406 --> 00:03:16,526
-Every class burns more per mile from December to February.
+00:02:22,872 --> 00:02:25,296
+names against the source
+before it says done.
 
 42
-00:03:16,526 --> 00:03:21,551
-That winter bump is baked into the synthetic data, and the chart finds it.
+00:02:26,027 --> 00:02:27,563
+Transform is a SQL editor.
 
 43
-00:03:21,551 --> 00:03:24,511
-Publish writes the dashboard as a web page and a PDF.
+00:02:27,583 --> 00:02:31,069
+The question: fuel per nautical mile,
 
 44
-00:03:24,511 --> 00:03:27,563
-Image and PowerPoint slide are one tick away.
+00:02:31,089 --> 00:02:33,533
+by vessel class and month.
 
 45
-00:03:28,263 --> 00:03:30,803
-Any table can be exported too.
+00:02:34,253 --> 00:02:37,486
+The first try fails,
+and the error says why:
 
 46
-00:03:30,803 --> 00:03:36,277
-Here the clean table goes out as CSV, ready to hand to Semaphore as a plain file.
+00:02:37,506 --> 00:02:41,774
+this dialect has no DATE_TRUNC,
+use TRUNC with MM instead.
 
 47
-00:03:36,977 --> 00:03:42,918
-And the web page opens straight from the file, with no server and no data behind it.
+00:02:41,794 --> 00:02:43,674
+So we make that change.
 
 48
-00:03:42,918 --> 00:03:44,636
-Its header carries the Internal label.
+00:02:44,394 --> 00:02:47,677
+Run again. One and a half million
+rows grouped in under two seconds,
 
 49
-00:03:45,386 --> 00:03:50,425
-Next month's log arrives, and nobody wants to repeat all of this.
+00:02:47,697 --> 00:02:50,785
+and a clean table of eighty-eight
+rows is saved next to the SQL.
 
 50
-00:03:50,425 --> 00:03:54,816
-Update re-runs the project's saved setup, in order.
+00:02:51,055 --> 00:02:56,010
+Dashboard Studio. Add a line chart,
+open its settings, and click Data.
 
 51
-00:03:55,471 --> 00:04:02,018
-The first run sets the baseline: import, transform, dashboard, publish, and a zipped snapshot, in about twenty seconds.
+00:02:56,858 --> 00:02:59,417
+You build the chart by dragging fields:
 
 52
-00:04:02,718 --> 00:04:05,324
-Now fifty thousand new rows land in the source file.
+00:02:59,437 --> 00:03:03,055
+month onto the X axis,
+litres per nautical mile onto Y.
 
 53
-00:04:05,874 --> 00:04:09,699
-Update compares the original file's size and date with what it last read.
+00:03:03,462 --> 00:03:06,515
+Then class, to split the lines.
 
 54
-00:04:10,399 --> 00:04:18,624
-It sees the change, reads the file again, rebuilds the table, and republishes, in about eleven seconds.
+00:03:06,535 --> 00:03:10,006
+The chart reads the clean
+table through the engine.
 
 55
-00:04:18,624 --> 00:04:21,723
-Ninety-two rows now, up from eighty-eight.
+00:03:10,650 --> 00:03:13,750
+Every class burns more per
+mile from December to February.
 
 56
-00:04:21,973 --> 00:04:24,075
-Here is the evidence trail.
+00:03:13,770 --> 00:03:18,775
+That winter bump is baked into the
+synthetic data, and the chart finds it.
 
 57
-00:04:24,075 --> 00:04:30,550
-The project log lists every step with a time: the import, the update, each file published.
+00:03:18,795 --> 00:03:21,735
+Publish writes the dashboard
+as a web page and a PDF.
 
 58
-00:04:31,319 --> 00:04:33,357
-Snapshots are zipped copies you can restore.
+00:03:21,755 --> 00:03:24,787
+Image and PowerPoint
+slide are one tick away.
 
 59
-00:04:34,045 --> 00:04:38,096
-And in this whole recording the browser made no request to any host but this computer.
+00:03:25,507 --> 00:03:28,027
+Any table can be exported too.
 
 60
-00:04:38,654 --> 00:04:46,937
-Data Noodler does one job: it makes a file too big for a spreadsheet answerable, on your own computer.
+00:03:28,047 --> 00:03:30,559
+Here the clean table goes out as CSV,
 
 61
-00:04:46,937 --> 00:04:50,023
-It proposes nothing and sends nothing.
+00:03:30,579 --> 00:03:33,501
+ready to hand to
+Semaphore as a plain file.
 
 62
-00:04:50,023 --> 00:04:55,383
-The data was synthetic, and the timings are from this one machine.
+00:03:34,221 --> 00:03:37,494
+And the web page opens
+straight from the file,
 
 63
-00:04:55,383 --> 00:04:59,362
-The SQL, the log and the snapshots are the trail.
+00:03:37,514 --> 00:03:40,142
+with no server and no data behind it.
+
+64
+00:03:40,162 --> 00:03:41,860
+Its header carries the Internal label.
+
+65
+00:03:42,630 --> 00:03:47,649
+Next month's log arrives,
+and nobody wants to repeat all of this.
+
+66
+00:03:47,669 --> 00:03:52,040
+Update re-runs the project's
+saved setup, in order.
+
+67
+00:03:52,714 --> 00:03:56,134
+The first run sets the baseline:
+import, transform, dashboard,
+
+68
+00:03:56,154 --> 00:03:59,242
+publish, and a zipped snapshot,
+in about twenty seconds.
+
+69
+00:03:59,962 --> 00:04:02,548
+Now fifty thousand new rows
+land in the source file.
+
+70
+00:04:03,118 --> 00:04:06,923
+Update compares the original file's
+size and date with what it last read.
+
+71
+00:04:07,643 --> 00:04:10,929
+It sees the change, reads the file again,
+
+72
+00:04:10,949 --> 00:04:15,848
+rebuilds the table, and republishes,
+in about eleven seconds.
+
+73
+00:04:15,868 --> 00:04:18,947
+Ninety-two rows now, up from eighty-eight.
+
+74
+00:04:19,217 --> 00:04:21,299
+Here is the evidence trail.
+
+75
+00:04:21,319 --> 00:04:24,573
+The project log lists
+every step with a time:
+
+76
+00:04:24,593 --> 00:04:27,774
+the import, the update,
+each file published.
+
+77
+00:04:28,563 --> 00:04:30,580
+Snapshots are zipped
+copies you can restore.
+
+78
+00:04:31,289 --> 00:04:33,366
+And in this whole
+recording the browser made
+
+79
+00:04:33,386 --> 00:04:35,320
+no request to any host but this computer.
+
+80
+00:04:35,898 --> 00:04:39,978
+Data Noodler does one job:
+it makes a file too big
+
+81
+00:04:39,998 --> 00:04:44,161
+for a spreadsheet answerable,
+on your own computer.
+
+82
+00:04:44,181 --> 00:04:47,247
+It proposes nothing and sends nothing.
+
+83
+00:04:47,267 --> 00:04:52,607
+The data was synthetic, and the
+timings are from this one machine.
+
+84
+00:04:52,627 --> 00:04:56,606
+The SQL, the log and the
+snapshots are the trail.
