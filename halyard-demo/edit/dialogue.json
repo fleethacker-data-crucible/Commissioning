@@ -1,60 +1,411 @@
 {
   "cast": {
-    "H": { "name": "HARLAN", "refs": ["material:394188"] },
-    "S": { "name": "SULLIVAN", "refs": ["material:394197", "material:394186"] },
-    "R": { "name": "REYES", "refs": ["material:426404"] }
+    "H": {
+      "name": "HARLAN",
+      "refs": [
+        "material:394188"
+      ]
+    },
+    "S": {
+      "name": "SULLIVAN",
+      "refs": [
+        "material:394197",
+        "material:394186"
+      ]
+    },
+    "R": {
+      "name": "REYES",
+      "refs": [
+        "material:426404"
+      ]
+    }
   },
   "tasks": [
-    { "id": "t00-open", "turns": [
-      { "who": "H", "card": "open", "text": "Every backlog drifts. Stories without acceptance criteria. Features without a parent. Sizes nobody agreed. Halyard is the product owner's mate. It reads the backlog, finds the drift, drafts the fix, and waits for a person to approve it. Nothing moves without your say." } ] },
-    { "id": "t01-key", "turns": [
-      { "who": "R", "clip": "c02", "stills": [0, 1], "text": "Every tool in the fleet needs a model key. At OpenAI, create a new secret key." },
-      { "who": "S", "clip": "c02", "stills": [2, 3], "text": "Name it something generic. I call mine fleet-tools. Seven days is plenty." },
-      { "who": "R", "clip": "c02", "stills": [4], "text": "Copy it once. OpenAI never shows it again." } ] },
-    { "id": "t02-lazarette", "turns": [
-      { "who": "S", "clip": "c03", "stills": [0, 1], "text": "The key goes into Lazarette, the encrypted vault on this machine." },
-      { "who": "R", "clip": "c03", "stills": [2, 3], "text": "Test credential checks it against OpenAI's read-only endpoint. HTTP two hundred. The key is good." },
-      { "who": "S", "clip": "c03", "stills": [4], "text": "Share it with Fairlead by name, and Fairlead sees only what you share." },
-      { "who": "R", "clip": "c03", "stills": [5], "text": "Fairlead reads it from the vault and connects. Eighty-three models, in under a second." } ] },
-    { "id": "t03-config", "turns": [
-      { "who": "R", "clip": "c04", "from": 0.1, "to": 10.4, "text": "Fairlead gives each tool its own key. Pick Halyard and install it. It lands in Windows Credential Manager." },
-      { "who": "S", "clip": "c04", "from": 10.4, "to": 23.1, "text": "Halyard's config file names the backlog it reads, the backlog it may write to, and the write mode. The browser can't change any of it." },
-      { "who": "R", "clip": "c04", "from": 23.1, "to": 27.6, "text": "Test the model. Under two seconds, end to end." } ] },
-    { "id": "t04-seed", "turns": [
-      { "who": "S", "clip": "c05", "from": 0.2, "to": 9.9, "text": "For this walkthrough we seed a synthetic backlog. Thirty items, a quarter of them with deliberate gaps." },
-      { "who": "R", "clip": "c05", "from": 9.9, "to": 128.3, "text": "Each one is a real GitHub issue with a run label, so the whole run comes out again in one click. It takes about two minutes, paced for the rate limits." },
-      { "who": "S", "clip": "c05", "from": 128.3, "to": 131.8, "text": "Thirty of thirty. The backlog is live." } ] },
-    { "id": "t05-drift", "turns": [
-      { "who": "S", "clip": "c06", "from": 0.2, "to": 15.8, "text": "The overview shows the shape of the backlog and what needs attention: items to review, missing parents, topology errors. Scroll down for the findings by severity, and the next actions." },
-      { "who": "R", "clip": "c06", "from": 15.8, "to": 26.4, "text": "Review checks every item against its level's definition of ready and the parent chain. Each finding names the fix that closes it." },
-      { "who": "S", "clip": "c06", "from": 26.4, "to": 31.9, "text": "Hierarchy shows the tree, theme to task." } ] },
-    { "id": "t06-draft", "turns": [
-      { "who": "R", "clip": "c07", "from": 0.2, "to": 18.3, "text": "Draft missing sections sends each gap to the model through Fairlead. Real model, a few seconds per item." },
-      { "who": "S", "clip": "c07", "from": 18.3, "to": 40.6, "text": "Six drafts, all high confidence. Each is a proposal with a reason. Open one and read the diff: the model adds what's missing and leaves the rest alone. And if it ever drops a section, Halyard puts it back word for word." },
-      { "who": "R", "clip": "c07", "from": 40.6, "to": 59.1, "text": "Approve the high-confidence drafts, then apply. Six written to the backlog on GitHub, and the apply is recorded." } ] },
-    { "id": "t07-undo", "turns": [
-      { "who": "R", "clip": "c08", "from": 0.2, "to": 12.0, "text": "Every apply is recorded with what it replaced. Undo previews first, then restores the earlier text. Six items restored." },
-      { "who": "S", "clip": "c08", "from": 12.0, "to": 40.9, "text": "Anything a person edited since is left alone. The proposals go back to pending, so approve and apply again when you're ready." } ] },
-    { "id": "t08-intake", "turns": [
-      { "who": "S", "clip": "c09", "from": 0.1, "to": 10.3, "text": "Work comes in from anywhere. A raw ticket, or a note typed straight into Intake. Two loose notes, no structure at all." },
-      { "who": "R", "clip": "c09", "from": 10.3, "to": 23.2, "text": "Preview the drafts. Halyard turns each note into a structured work item and copies it into the backlog, with a link back to where it started." } ] },
-    { "id": "t09-plan", "turns": [
-      { "who": "R", "clip": "c10", "from": 0.2, "to": 5.0, "text": "Plan fills the next sprints from ready stories." },
-      { "who": "S", "clip": "c10", "from": 5.0, "to": 13.0, "text": "Capacity comes from the team file. Owners are matched on skills, and anything that slipped last sprint goes first." },
-      { "who": "R", "clip": "c10", "from": 13.0, "to": 21.1, "text": "Skills come from Shellback peer cards today. A live Shellback link is planned." } ] },
-    { "id": "t10-vision", "turns": [
-      { "who": "R", "clip": "c11", "from": 0.2, "to": 7.6, "text": "Upward, Halyard drafts the portfolio story for leadership. This one is the live model, thinking." },
-      { "who": "S", "clip": "c11", "from": 7.6, "to": 23.2, "text": "Themes, priorities, risks and the next quarter, with the facts every claim rests on. Everything it says about the backlog, it can point to." },
-      { "who": "R", "clip": "c11", "from": 23.2, "to": 34.8, "text": "The leadership page puts features on track, velocity, ready backlog, capacity and blockers on one screen." } ] },
-    { "id": "t11-integrations", "turns": [
-      { "who": "S", "clip": "c12", "from": 0.2, "to": 8.6, "text": "One click exports backlog health for Semaphore, as four tables ready to chart." },
-      { "who": "R", "clip": "c12", "from": 8.6, "to": 19.0, "text": "The weekly dashboard opens in Outlook as a draft, so a person reviews it and presses send." },
-      { "who": "S", "card": "runner", "text": "Next on the chart: a runner on the team's repositories. It watches commits and pull requests, and writes the story for the work it sees." },
-      { "who": "R", "card": "runner", "text": "Developers stop doing the admin. The product owner approves what the runner proposes, through the same diff and the same gate." } ] },
-    { "id": "t12-safety", "turns": [
-      { "who": "R", "clip": "c13", "from": 0.2, "to": 10.2, "text": "Production stays shut. Promote needs a production write mode, an explicit allow flag, a typed phrase and a diff, and none of it can be switched on from the browser." },
-      { "who": "S", "clip": "c13", "from": 10.2, "to": 22.7, "text": "The write audit lists every write Halyard made. Every one went to the backlog." } ] },
-    { "id": "t13-close", "turns": [
-      { "who": "H", "card": "close", "text": "Halyard proposes. People decide. That's the watch. Fair winds." } ] }
+    {
+      "id": "t00-open",
+      "turns": [
+        {
+          "who": "H",
+          "card": "open",
+          "text": "Every backlog drifts. Stories without acceptance criteria. Features without a parent. Sizes nobody agreed. Halyard is the product owner's mate. It reads the backlog, finds the drift, drafts the fix, and waits for a person to approve it. Nothing moves without your say."
+        }
+      ]
+    },
+    {
+      "id": "t00b-arch",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "arch",
+          "from": 0.01,
+          "to": 10.21,
+          "text": "Here is how Halyard fits together. Everything runs on one machine. A PowerShell launcher compiles the engine in memory, and the browser talks to it on localhost."
+        },
+        {
+          "who": "S",
+          "clip": "arch",
+          "from": 10.21,
+          "to": 19.21,
+          "text": "Inside the engine: review, intelligence for drafting and sizing, planning, and a proposal store. Every change starts as a proposal."
+        },
+        {
+          "who": "R",
+          "clip": "arch",
+          "from": 19.21,
+          "to": 28.11,
+          "text": "Halyard reads your backlog from GitHub, read only. The write gateway lets it touch exactly one place, the backlog repository."
+        },
+        {
+          "who": "S",
+          "clip": "arch",
+          "from": 28.11,
+          "to": 39.01,
+          "text": "Model calls go through Fairlead and nowhere else. Halyard's own key sits in Windows Credential Manager. The OpenAI key stays in Lazarette, shared to Fairlead."
+        },
+        {
+          "who": "R",
+          "clip": "arch",
+          "from": 39.01,
+          "to": 45.21,
+          "text": "Out the other side: four tables for Semaphore, and the weekly dashboard as an Outlook draft."
+        },
+        {
+          "who": "S",
+          "clip": "arch",
+          "from": 45.21,
+          "to": 50.81,
+          "text": "Dashed means planned: live Shellback skills, and a runner on your repositories."
+        },
+        {
+          "who": "R",
+          "clip": "arch",
+          "from": 50.81,
+          "to": 55.51,
+          "text": "One rule holds it together. Nothing is written until a person approves."
+        }
+      ]
+    },
+    {
+      "id": "t01-key",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "c02",
+          "stills": [
+            0,
+            1
+          ],
+          "text": "Every tool in the fleet needs a model key. At OpenAI, create a new secret key."
+        },
+        {
+          "who": "S",
+          "clip": "c02",
+          "stills": [
+            2,
+            3
+          ],
+          "text": "Name it something generic. I call mine fleet-tools. Seven days is plenty."
+        },
+        {
+          "who": "R",
+          "clip": "c02",
+          "stills": [
+            4
+          ],
+          "text": "Copy it once. OpenAI never shows it again."
+        }
+      ]
+    },
+    {
+      "id": "t02-lazarette",
+      "turns": [
+        {
+          "who": "S",
+          "clip": "c03",
+          "stills": [
+            0,
+            1
+          ],
+          "text": "The key goes into Lazarette, the encrypted vault on this machine."
+        },
+        {
+          "who": "R",
+          "clip": "c03",
+          "stills": [
+            2,
+            3
+          ],
+          "text": "Test credential checks it against OpenAI's read-only endpoint. HTTP two hundred. The key is good."
+        },
+        {
+          "who": "S",
+          "clip": "c03",
+          "stills": [
+            4
+          ],
+          "text": "Share it with Fairlead by name, and Fairlead sees only what you share."
+        },
+        {
+          "who": "R",
+          "clip": "c03",
+          "stills": [
+            5
+          ],
+          "text": "Fairlead reads it from the vault and connects. Eighty-three models, in under a second."
+        }
+      ]
+    },
+    {
+      "id": "t03-config",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "c04",
+          "from": 0.1,
+          "to": 10.4,
+          "text": "Fairlead gives each tool its own key. Pick Halyard and install it. It lands in Windows Credential Manager."
+        },
+        {
+          "who": "S",
+          "clip": "c04",
+          "from": 10.4,
+          "to": 23.1,
+          "text": "Halyard's config file names the backlog it reads, the backlog it may write to, and the write mode. The browser can't change any of it."
+        },
+        {
+          "who": "R",
+          "clip": "c04",
+          "from": 23.1,
+          "to": 27.6,
+          "text": "Test the model. Under two seconds, end to end."
+        }
+      ]
+    },
+    {
+      "id": "t04-seed",
+      "turns": [
+        {
+          "who": "S",
+          "clip": "c05",
+          "from": 0.2,
+          "to": 9.9,
+          "text": "For this walkthrough we seed a synthetic backlog. Thirty items, a quarter of them with deliberate gaps."
+        },
+        {
+          "who": "R",
+          "clip": "c05",
+          "from": 9.9,
+          "to": 128.3,
+          "text": "Each one is a real GitHub issue with a run label, so the whole run comes out again in one click. It takes about two minutes, paced for the rate limits."
+        },
+        {
+          "who": "S",
+          "clip": "c05",
+          "from": 128.3,
+          "to": 131.8,
+          "text": "Thirty of thirty. The backlog is live."
+        }
+      ]
+    },
+    {
+      "id": "t05-drift",
+      "turns": [
+        {
+          "who": "S",
+          "clip": "c06",
+          "from": 0.2,
+          "to": 15.8,
+          "text": "The overview shows the shape of the backlog and what needs attention: items to review, missing parents, topology errors. Scroll down for the findings by severity, and the next actions."
+        },
+        {
+          "who": "R",
+          "clip": "c06",
+          "from": 15.8,
+          "to": 26.4,
+          "text": "Review checks every item against its level's definition of ready and the parent chain. Each finding names the fix that closes it."
+        },
+        {
+          "who": "S",
+          "clip": "c06",
+          "from": 26.4,
+          "to": 31.9,
+          "text": "Hierarchy shows the tree, theme to task."
+        }
+      ]
+    },
+    {
+      "id": "t06-draft",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "c07",
+          "from": 0.2,
+          "to": 18.3,
+          "text": "Draft missing sections sends each gap to the model through Fairlead. Real model, a few seconds per item."
+        },
+        {
+          "who": "S",
+          "clip": "c07",
+          "from": 18.3,
+          "to": 40.6,
+          "text": "Six drafts, all high confidence. Each is a proposal with a reason. Open one and read the diff: the model adds what's missing and leaves the rest alone. And if it ever drops a section, Halyard puts it back word for word."
+        },
+        {
+          "who": "R",
+          "clip": "c07",
+          "from": 40.6,
+          "to": 59.1,
+          "text": "Approve the high-confidence drafts, then apply. Six written to the backlog on GitHub, and the apply is recorded."
+        }
+      ]
+    },
+    {
+      "id": "t07-undo",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "c08",
+          "from": 0.2,
+          "to": 12.0,
+          "text": "Every apply is recorded with what it replaced. Undo previews first, then restores the earlier text. Six items restored."
+        },
+        {
+          "who": "S",
+          "clip": "c08",
+          "from": 12.0,
+          "to": 40.9,
+          "text": "Anything a person edited since is left alone. The proposals go back to pending, so approve and apply again when you're ready."
+        }
+      ]
+    },
+    {
+      "id": "t08-intake",
+      "turns": [
+        {
+          "who": "S",
+          "clip": "c09",
+          "from": 0.1,
+          "to": 10.3,
+          "text": "Work comes in from anywhere. A raw ticket, or a note typed straight into Intake. Two loose notes, no structure at all."
+        },
+        {
+          "who": "R",
+          "clip": "c09",
+          "from": 10.3,
+          "to": 23.2,
+          "text": "Preview the drafts. Halyard turns each note into a structured work item and copies it into the backlog, with a link back to where it started."
+        }
+      ]
+    },
+    {
+      "id": "t09-plan",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "c10",
+          "from": 0.2,
+          "to": 5.0,
+          "text": "Plan fills the next sprints from ready stories."
+        },
+        {
+          "who": "S",
+          "clip": "c10",
+          "from": 5.0,
+          "to": 13.0,
+          "text": "Capacity comes from the team file. Owners are matched on skills, and anything that slipped last sprint goes first."
+        },
+        {
+          "who": "R",
+          "clip": "c10",
+          "from": 13.0,
+          "to": 21.1,
+          "text": "Skills come from Shellback peer cards today. A live Shellback link is planned."
+        }
+      ]
+    },
+    {
+      "id": "t10-vision",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "c11",
+          "from": 0.2,
+          "to": 7.6,
+          "text": "Upward, Halyard drafts the portfolio story for leadership. This one is the live model, thinking."
+        },
+        {
+          "who": "S",
+          "clip": "c11",
+          "from": 7.6,
+          "to": 23.2,
+          "text": "Themes, priorities, risks and the next quarter, with the facts every claim rests on. Everything it says about the backlog, it can point to."
+        },
+        {
+          "who": "R",
+          "clip": "c11",
+          "from": 23.2,
+          "to": 34.8,
+          "text": "The leadership page puts features on track, velocity, ready backlog, capacity and blockers on one screen."
+        }
+      ]
+    },
+    {
+      "id": "t11-integrations",
+      "turns": [
+        {
+          "who": "S",
+          "clip": "c12",
+          "from": 0.2,
+          "to": 8.6,
+          "text": "One click exports backlog health for Semaphore, as four tables ready to chart."
+        },
+        {
+          "who": "R",
+          "clip": "c12",
+          "from": 8.6,
+          "to": 19.0,
+          "text": "The weekly dashboard opens in Outlook as a draft, so a person reviews it and presses send."
+        },
+        {
+          "who": "S",
+          "card": "runner",
+          "text": "Next on the chart: a runner on the team's repositories. It watches commits and pull requests, and writes the story for the work it sees."
+        },
+        {
+          "who": "R",
+          "card": "runner",
+          "text": "Developers stop doing the admin. The product owner approves what the runner proposes, through the same diff and the same gate."
+        }
+      ]
+    },
+    {
+      "id": "t12-safety",
+      "turns": [
+        {
+          "who": "R",
+          "clip": "c13",
+          "from": 0.2,
+          "to": 10.2,
+          "text": "Production stays shut. Promote needs a production write mode, an explicit allow flag, a typed phrase and a diff, and none of it can be switched on from the browser."
+        },
+        {
+          "who": "S",
+          "clip": "c13",
+          "from": 10.2,
+          "to": 22.7,
+          "text": "The write audit lists every write Halyard made. Every one went to the backlog."
+        }
+      ]
+    },
+    {
+      "id": "t13-close",
+      "turns": [
+        {
+          "who": "H",
+          "card": "close",
+          "text": "Halyard proposes. People decide. That's the watch. Fair winds."
+        }
+      ]
+    }
   ]
 }

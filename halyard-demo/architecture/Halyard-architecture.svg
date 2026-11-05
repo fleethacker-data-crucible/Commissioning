@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="arch" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" class="static">
+<style>
+  .bg{fill:url(#g)}
+  .kick{fill:#E2B04A;font-size:26px;font-weight:600;letter-spacing:5px}
+  .head{fill:#E8EDF5;font-size:58px;font-weight:700}
+  .frame{fill:rgba(255,255,255,0.025);stroke:#5b6b86;stroke-width:2;stroke-dasharray:3 9;stroke-linecap:round}
+  .ftag{fill:#8FA0BB;font-size:24px;letter-spacing:2px;font-weight:600}
+  .box{fill:#12203d;stroke:#3d527a;stroke-width:2.5}
+  .eng{fill:#0f1c38;stroke:#E2B04A;stroke-width:3}
+  .gold{fill:#2a2412;stroke:#E2B04A;stroke-width:3}
+  .plan{fill:rgba(255,255,255,0.03);stroke:#E2B04A;stroke-width:2.5;stroke-dasharray:10 8}
+  .t{fill:#E8EDF5;font-size:32px;font-weight:700}
+  .tg{fill:#E2B04A;font-size:32px;font-weight:700}
+  .s{fill:#AAB7CA;font-size:24px}
+  .sg{fill:#E9C77A;font-size:24px}
+  .tag{fill:#E2B04A;font-size:22px;font-weight:700;letter-spacing:1px}
+  .ln{fill:none;stroke:#8FA0BB;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  .lg{fill:none;stroke:#E2B04A;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .ld{fill:none;stroke:#E2B04A;stroke-width:4;stroke-linecap:round;stroke-dasharray:3 12;opacity:.9}
+  .banner{fill:#E2B04A}
+  .bt{fill:#0A1428;font-size:34px;font-weight:700}
+  .st{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+  .st.on{opacity:1;transform:none}
+  .st .dash{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s ease .25s}
+  .st.on .dash{stroke-dashoffset:0}
+  .st.on.cur .box,.st.on.cur .eng,.st.on.cur .plan{stroke:#F3CB72;filter:drop-shadow(0 0 12px rgba(226,176,74,.55))}
+  .st.on.cur .gold{filter:drop-shadow(0 0 16px rgba(226,176,74,.7))}
+  @keyframes pulse{0%,100%{filter:drop-shadow(0 0 4px rgba(226,176,74,.3))}50%{filter:drop-shadow(0 0 22px rgba(226,176,74,.95))}}
+  .pulse .gold{animation:pulse 1.8s ease-in-out infinite}
+  .static .st{opacity:1;transform:none;transition:none}
+  .static .st .dash{stroke-dashoffset:0;transition:none}
+  .static .st.cur .box{filter:none}
+</style>
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1428"></stop><stop offset="1" stop-color="#0d1a33"></stop></linearGradient>
+  <marker id="ah" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="5.2" markerHeight="5.2" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#8FA0BB"></path></marker>
+  <marker id="ag" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="5.2" markerHeight="5.2" orient="auto-start-reverse"><path d="M1 1 L11 6 L1 11 z" fill="#E2B04A"></path></marker>
+</defs>
+<rect class="bg" width="1920" height="1080"></rect>
+
+<text class="kick" x="80" y="70">HALYARD · ARCHITECTURE AT A GLANCE</text>
+<text class="head" x="80" y="130">Proposes. A person decides.</text>
+
+<!-- step 1: the machine -->
+<g class="st on" data-s="1">
+  <rect class="frame" x="60" y="165" width="1190" height="830" rx="30"></rect>
+  <text class="ftag" x="92" y="207">ON YOUR PC · 127.0.0.1</text>
+  <rect class="box" x="96" y="240" width="300" height="170" rx="18"></rect>
+  <text class="t" x="120" y="290">Browser UI</text>
+  <text class="s" x="120" y="330">React · 127.0.0.1:8773</text>
+  <text class="s" x="120" y="366">per-session token</text>
+  <rect class="box" x="96" y="450" width="300" height="190" rx="18"></rect>
+  <text class="t" x="120" y="500">PowerShell 5.1</text>
+  <text class="s" x="120" y="540">launcher compiles the</text>
+  <text class="s" x="120" y="572">C# engine in memory</text>
+  <text class="s" x="120" y="604">at every start</text>
+  <rect class="box" x="96" y="680" width="300" height="130" rx="18"></rect>
+  <text class="t" x="120" y="730">output/ files</text>
+  <text class="s" x="120" y="768">snapshots · proposals</text>
+  <text class="s" x="120" y="800">audit log</text>
+  <rect class="eng" x="470" y="240" width="740" height="660" rx="24"></rect>
+  <text class="tg" x="506" y="288">Halyard engine · C#</text>
+  <path class="ln dash" pathLength="1" d="M400 325 H466" marker-start="url(#ah)" marker-end="url(#ah)"></path>
+  <path class="ln dash" pathLength="1" d="M400 545 H466" marker-end="url(#ah)"></path>
+  <path class="ln dash" pathLength="1" d="M400 745 H466" marker-start="url(#ah)" marker-end="url(#ah)"></path>
+</g>
+
+<!-- step 2: inside the engine -->
+<g class="st on" data-s="2">
+  <rect class="box" x="506" y="320" width="330" height="110" rx="16"></rect>
+  <text class="t" x="528" y="365">Review</text>
+  <text class="s" x="528" y="402">ready checks · parents</text>
+  <rect class="box" x="860" y="320" width="330" height="110" rx="16"></rect>
+  <text class="t" x="882" y="365">Intelligence</text>
+  <text class="s" x="882" y="402">draft · size · intake · vision</text>
+  <rect class="box" x="506" y="455" width="330" height="110" rx="16"></rect>
+  <text class="t" x="528" y="500">Planning</text>
+  <text class="s" x="528" y="537">capacity · skills · sprints</text>
+  <rect class="box" x="860" y="455" width="330" height="110" rx="16"></rect>
+  <text class="t" x="882" y="500">Proposals</text>
+  <text class="s" x="882" y="537">approve → apply → undo</text>
+</g>
+
+<!-- step 3: GitHub and the write gateway -->
+<g class="st on" data-s="3">
+  <rect class="gold" x="506" y="612" width="684" height="118" rx="16"></rect>
+  <text class="tg" x="528" y="658">Write gateway</text>
+  <text class="sg" x="528" y="698">sandbox allow-list · the only way to a write</text>
+  <rect class="box" x="1330" y="500" width="530" height="260" rx="22"></rect>
+  <text class="t" x="1356" y="548">GitHub</text>
+  <rect class="box" x="1356" y="568" width="478" height="68" rx="12"></rect>
+  <text class="s" x="1376" y="610">Source backlog · read only</text>
+  <rect class="gold" x="1356" y="654" width="478" height="84" rx="12"></rect>
+  <text class="sg" x="1376" y="690">Halyard-Ballast backlog</text>
+  <text class="sg" x="1376" y="722">the only place it writes</text>
+  <path class="ln dash" pathLength="1" d="M1330 598 L1214 586" marker-end="url(#ah)"></path>
+  <path class="lg dash" pathLength="1" d="M1194 696 H1326" marker-end="url(#ag)"></path>
+</g>
+
+<!-- step 4: Fairlead and Lazarette -->
+<g class="st on" data-s="4">
+  <rect class="box" x="1330" y="165" width="530" height="150" rx="22"></rect>
+  <text class="t" x="1356" y="213">Fairlead</text>
+  <text class="tag" x="1536" y="212">127.0.0.1:8776</text>
+  <text class="s" x="1356" y="252">model router · only way to a model</text>
+  <text class="s" x="1356" y="288">Halyard's key: Credential Manager</text>
+  <rect class="box" x="1330" y="365" width="530" height="110" rx="22"></rect>
+  <text class="t" x="1356" y="413">Lazarette vault</text>
+  <text class="s" x="1356" y="452">holds the OpenAI key, shared by name</text>
+  <path class="ln dash" pathLength="1" d="M1214 380 L1326 262" marker-end="url(#ah)"></path>
+  <path class="lg dash" pathLength="1" d="M1595 361 V321" marker-end="url(#ag)"></path>
+</g>
+
+<!-- step 5: exports -->
+<g class="st on" data-s="5">
+  <rect class="box" x="506" y="752" width="684" height="100" rx="16"></rect>
+  <text class="t" x="528" y="797">Exports &amp; reports</text>
+  <text class="s" x="528" y="831">CSV tables · weekly dashboard</text>
+  <rect class="box" x="1330" y="785" width="250" height="100" rx="18"></rect>
+  <text class="t" x="1352" y="830">Semaphore</text>
+  <text class="s" x="1352" y="864">4 CSV tables</text>
+  <rect class="box" x="1610" y="785" width="250" height="100" rx="18"></rect>
+  <text class="t" x="1632" y="830">Outlook</text>
+  <text class="s" x="1632" y="864">draft to send</text>
+  <path class="ln dash" pathLength="1" d="M1194 815 L1326 832" marker-end="url(#ah)"></path>
+  <path class="ln dash" pathLength="1" d="M1214 842 C1290 925 1520 918 1700 890" marker-end="url(#ah)"></path>
+</g>
+
+<!-- step 6: planned -->
+<g class="st on" data-s="6">
+  <rect class="plan" x="1330" y="925" width="530" height="90" rx="18"></rect>
+  <text class="tag" x="1352" y="958">PLANNED</text>
+  <text class="s" x="1352" y="990">Shellback live skills · git runner</text>
+  <path class="ld" d="M1326 968 C1280 968 1250 900 1214 872"></path>
+</g>
+
+<!-- step 7: the rule -->
+<g class="st on" data-s="7">
+  <rect class="banner" x="950" y="42" width="900" height="100" rx="50"></rect>
+  <text class="bt" x="1400" y="105" text-anchor="middle">Nothing is written until a person approves.</text>
+</g>
+</svg>
