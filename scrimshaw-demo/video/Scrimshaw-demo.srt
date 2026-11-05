@@ -1,0 +1,171 @@
+1
+00:00:00,250 --> 00:00:09,862
+A trainer has to turn a procedure into a graded course the LMS can track, and know the package works before anyone uploads it.
+
+2
+00:00:09,862 --> 00:00:17,414
+Scrimshaw builds the course, drafts the first quiz through Fairlead, and publishes a SCORM package.
+
+3
+00:00:17,414 --> 00:00:22,831
+The procedure and the learner are synthetic, and the LMS is a stand-in.
+
+4
+00:00:23,081 --> 00:00:24,912
+It all runs on this one computer.
+
+5
+00:00:24,912 --> 00:00:32,112
+Launch dot bat starts a small PowerShell server on loopback, and the editor and player run in your browser.
+
+6
+00:00:32,812 --> 00:00:38,630
+Courses autosave in browser storage, with a dot scrim file for backup.
+
+7
+00:00:39,130 --> 00:00:47,763
+In: slides you build, PowerPoint, and media files from Capstan, SnapShackle and TalkForge.
+
+8
+00:00:48,223 --> 00:00:53,039
+Out: SCORM, xAPI, cmi5, a web page, a storyboard and a Word handout.
+
+9
+00:00:53,739 --> 00:00:54,646
+AI is optional.
+
+10
+00:00:54,646 --> 00:01:03,350
+The model key sits in Lazarette, shared to Fairlead, and Scrimshaw asks Fairlead for a draft with its own client key.
+
+11
+00:01:04,050 --> 00:01:06,599
+There is also a command line and a loopback API.
+
+12
+00:01:06,599 --> 00:01:11,543
+Planned: handing the key over from Lazarette directly.
+
+13
+00:01:12,107 --> 00:01:20,673
+Guardrails: loopback only, drafts are opt-in and reviewed by you, publishing is checked, and the server stops when the tab closes.
+
+14
+00:01:20,923 --> 00:01:27,717
+The model key lives in Lazarette, the encrypted vault, and is shared once with Fairlead.
+
+15
+00:01:27,717 --> 00:01:33,303
+This footage is from the Halyard demo: the same key, set up once for every tool.
+
+16
+00:01:34,003 --> 00:01:39,589
+Launch dot bat starts Scrimshaw on port eighty-seven seventy-five, its place in the Fleet port registry.
+
+17
+00:01:40,289 --> 00:01:44,636
+Fairlead has a client named Scrimshaw, so its calls can be told apart in the log.
+
+18
+00:01:45,336 --> 00:01:50,614
+And the page address is allowed as a browser origin, because the page calls Fairlead directly.
+
+19
+00:01:51,114 --> 00:01:52,272
+Start a new course and name it.
+
+20
+00:01:52,632 --> 00:01:54,045
+The passing score is eighty percent.
+
+21
+00:01:54,745 --> 00:01:57,436
+Drafting is off until you turn it on.
+
+22
+00:01:57,436 --> 00:02:03,478
+This PC has no local model, so I allow a cloud engine, and only a made-up procedure goes through.
+
+23
+00:02:03,478 --> 00:02:06,761
+The client key stays in memory for this session.
+
+24
+00:02:07,461 --> 00:02:09,448
+Draft asks the model through Fairlead.
+
+25
+00:02:10,332 --> 00:02:12,172
+This is the live wait, sped up.
+
+26
+00:02:12,872 --> 00:02:17,397
+Three questions come back, but nothing is in the course until I add them.
+
+27
+00:02:17,397 --> 00:02:21,652
+Then I review each question and the answer it marks correct.
+
+28
+00:02:21,652 --> 00:02:24,699
+The model can be wrong, so the author decides.
+
+29
+00:02:25,399 --> 00:02:31,704
+Fairlead keeps its own log: client Scrimshaw, model GPT-5 mini, status two hundred.
+
+30
+00:02:31,954 --> 00:02:36,510
+Publish offers SCORM, xAPI, a web page or the project file.
+
+31
+00:02:36,510 --> 00:02:39,067
+I take SCORM one point two.
+
+32
+00:02:39,767 --> 00:02:41,888
+Inside are the manifest and the player, one file.
+
+33
+00:02:42,429 --> 00:02:45,863
+The eighty percent pass mark travels in the manifest.
+
+34
+00:02:46,373 --> 00:02:50,027
+Now a learner takes it in a stand-in LMS I wrote for this video.
+
+35
+00:02:50,027 --> 00:02:58,577
+It is not a real LMS, but it speaks the SCORM calls, and every call the package makes is logged on the right.
+
+36
+00:02:58,577 --> 00:03:01,732
+First attempt: one answer wrong on purpose.
+
+37
+00:03:02,432 --> 00:03:06,000
+Sixty-seven percent, under the pass mark, so the LMS is told failed.
+
+38
+00:03:06,654 --> 00:03:11,939
+Retry with every answer right: a hundred percent, and the status is passed.
+
+39
+00:03:12,458 --> 00:03:14,637
+That record is the evidence.
+
+40
+00:03:14,637 --> 00:03:19,826
+A real LMS is the final check: this proves the package, not any one vendor.
+
+41
+00:03:20,131 --> 00:03:28,564
+The model drafted, a person checked every answer, and the result was recorded by the LMS, here a stand-in.
+
+42
+00:03:28,564 --> 00:03:33,497
+Not shown: PowerPoint import, xAPI, cmi5 and the command line.
+
+43
+00:03:33,497 --> 00:03:36,876
+No minutes-saved number is claimed.
