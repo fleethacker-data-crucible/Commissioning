@@ -1,0 +1,300 @@
+1
+00:00:00,800 --> 00:00:04,300
+Future ships will run many AI systems at once.
+
+2
+00:00:04,350 --> 00:00:08,313
+Bridge Warden is the layer every AI order must pass.
+
+3
+00:00:08,363 --> 00:00:10,782
+No AI touches the ship directly.
+
+4
+00:00:18,800 --> 00:00:20,921
+There is nothing to install.
+
+5
+00:00:20,971 --> 00:00:24,177
+Clone the repository and run the launcher.
+
+6
+00:00:24,227 --> 00:00:32,860
+Windows PowerShell five point one compiles the engine from source at start, with no admin rights and no network.
+
+7
+00:00:32,910 --> 00:00:34,488
+It opens two windows.
+
+8
+00:00:34,538 --> 00:00:37,201
+Warden Control is for the operator.
+
+9
+00:00:37,251 --> 00:00:39,527
+The main app is for the watch.
+
+10
+00:00:39,577 --> 00:00:43,868
+The first time, a launch page explains it in four steps.
+
+11
+00:00:43,918 --> 00:00:49,527
+Close it once and it stays closed, and the Welcome button brings it back.
+
+12
+00:00:58,867 --> 00:01:00,532
+First, a model key.
+
+13
+00:01:00,582 --> 00:01:07,485
+One key serves the whole fleet, so give it a generic name and a short expiry.
+
+14
+00:01:07,535 --> 00:01:09,381
+Seven days is plenty.
+
+15
+00:01:09,431 --> 00:01:10,555
+Copy it once.
+
+16
+00:01:10,605 --> 00:01:13,715
+OpenAI shows it only this one time.
+
+17
+00:01:15,427 --> 00:01:18,806
+The key goes into Lazarette, the encrypted vault on this machine.
+
+18
+00:01:18,856 --> 00:01:23,764
+Lazarette checks it against OpenAI's read only endpoint, then shares it with Fairlead by name.
+
+19
+00:01:23,814 --> 00:01:25,822
+Fairlead sees only the names you share.
+
+20
+00:01:25,872 --> 00:01:28,249
+Everything else in the vault stays dark to it.
+
+21
+00:01:37,187 --> 00:01:39,328
+Bridge Warden never holds a model key.
+
+22
+00:01:39,378 --> 00:01:43,364
+Lazarette holds the provider key, and shares it with Fairlead by name.
+
+23
+00:01:43,414 --> 00:01:47,284
+Here on Fairlead's provider page you can see which names are shared.
+
+24
+00:01:47,334 --> 00:01:48,726
+Names only, never values.
+
+25
+00:01:48,776 --> 00:01:51,320
+Then give Bridge Warden its own Fairlead key.
+
+26
+00:01:51,370 --> 00:01:56,567
+Fairlead makes it and saves it to Windows Credential Manager, where Bridge Warden reads it.
+
+27
+00:01:56,617 --> 00:01:59,046
+Back in Warden Control, press Use Fairlead.
+
+28
+00:01:59,096 --> 00:02:04,005
+It finds the gateway on its own, reports which key it is using, and lists every route.
+
+29
+00:02:04,055 --> 00:02:05,734
+Pick the fast route and apply.
+
+30
+00:02:05,784 --> 00:02:07,695
+The model loads in about a second.
+
+31
+00:02:07,745 --> 00:02:10,116
+The setting is saved to a plain text file.
+
+32
+00:02:32,153 --> 00:02:32,888
+Two windows.
+
+33
+00:02:32,938 --> 00:02:37,662
+On the main app, the left panel is the chain of command for this picture.
+
+34
+00:02:37,712 --> 00:02:43,745
+One Tactical Action Officer, the language model, and six lookouts that watch and do the math.
+
+35
+00:02:43,795 --> 00:02:48,716
+On the right, the decisions column, where anything that needs a human waits.
+
+36
+00:02:48,766 --> 00:02:52,771
+Warden Control shows every agent, the live log, and SAFE-STOP.
+
+37
+00:02:52,821 --> 00:02:54,276
+Press Start Operations.
+
+38
+00:03:02,719 --> 00:03:04,341
+Inject a crossing contact.
+
+39
+00:03:04,391 --> 00:03:09,679
+Collision Avoidance reports the closest point of approach, with ready-made options.
+
+40
+00:03:09,729 --> 00:03:15,724
+The Tactical Action Officer picks one in about a second, here a turn to the right to give way.
+
+41
+00:03:15,774 --> 00:03:18,104
+Warden checks it, and the ship turns.
+
+42
+00:03:18,154 --> 00:03:20,355
+Open the intent for its provenance.
+
+43
+00:03:20,405 --> 00:03:29,038
+It shows who decided, the lookout's report, the option chosen, the model's reason, the model name, the latency and a hash of the reply.
+
+44
+00:03:29,088 --> 00:03:33,347
+Press Explain and the model tells it in plain words, streamed live.
+
+45
+00:03:43,085 --> 00:03:44,983
+Now a hostile surface contact.
+
+46
+00:03:45,033 --> 00:03:50,955
+Self-Defense reports it, and the agents recommend going quiet and sounding general quarters.
+
+47
+00:03:51,005 --> 00:03:52,708
+Neither happens on its own.
+
+48
+00:03:52,758 --> 00:03:57,318
+Both wait in the decisions column, with a countdown and a safe default.
+
+49
+00:03:57,368 --> 00:04:00,499
+Weapons and personnel orders always need a human.
+
+50
+00:04:00,549 --> 00:04:06,276
+The operator approves, the ship goes to battle stations, and every step is on the record.
+
+51
+00:04:39,452 --> 00:04:40,236
+Ship Systems.
+
+52
+00:04:40,286 --> 00:04:41,839
+Inject an aft power loss.
+
+53
+00:04:41,889 --> 00:04:45,238
+Steering has no power, and no breaker can restore it.
+
+54
+00:04:45,288 --> 00:04:52,548
+The Electrical Plant lookout works out a patch cable from a live switchboard, and checks the generator load first.
+
+55
+00:04:52,598 --> 00:04:57,294
+The model recommends it, and because it sends people, Warden asks a human.
+
+56
+00:04:57,344 --> 00:05:00,693
+Approve, and the team walks there and rigs the cable.
+
+57
+00:05:19,485 --> 00:05:21,176
+Now the test that matters.
+
+58
+00:05:21,226 --> 00:05:24,657
+Compromise the AI commander, then send in torpedoes.
+
+59
+00:05:24,707 --> 00:05:28,273
+The hijacked model tries to steer and fire on its own.
+
+60
+00:05:28,323 --> 00:05:34,633
+Warden blocks every order, because a decider holds no tools, and quarantines it within seconds.
+
+61
+00:05:34,683 --> 00:05:41,729
+The lookouts still answer the torpedoes by doctrine, so the ship keeps defending itself, under governance.
+
+62
+00:05:54,252 --> 00:05:57,807
+Ask Warden is a chat grounded in the live picture.
+
+63
+00:05:57,857 --> 00:06:04,079
+Ask what the biggest threat is, and it answers from the agents, escalations and ledger.
+
+64
+00:06:04,129 --> 00:06:06,675
+Ask it to act, and it only proposes.
+
+65
+00:06:06,725 --> 00:06:15,038
+Each proposal is a card, and nothing runs until the operator presses Confirm, through the same route as the buttons.
+
+66
+00:06:28,419 --> 00:06:30,712
+The operator must stay in the loop.
+
+67
+00:06:30,762 --> 00:06:37,875
+A system check asks for confirmation every two minutes, and two misses stop the ship's agents on their own.
+
+68
+00:06:37,925 --> 00:06:41,423
+Hold SAFE-STOP for two seconds and every agent halts.
+
+69
+00:06:41,473 --> 00:06:42,828
+Hold again to resume.
+
+70
+00:06:42,878 --> 00:06:47,180
+Verify the ledger, and the hash chain proves nothing was changed.
+
+71
+00:07:10,052 --> 00:07:11,486
+Here is the Fleet behind it.
+
+72
+00:07:11,536 --> 00:07:17,263
+Every model call from Bridge Warden is labeled, routed and logged by Fairlead, served here by the fast route.
+
+73
+00:07:17,313 --> 00:07:18,534
+Lazarette holds the key.
+
+74
+00:07:18,584 --> 00:07:20,389
+Shellback is a planned integration.
+
+75
+00:07:27,452 --> 00:07:32,185
+Fast where it must be fast, smart where judgment matters, and governed everywhere.
+

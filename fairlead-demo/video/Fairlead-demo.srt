@@ -1,0 +1,335 @@
+1
+00:00:00,000 --> 00:00:03,455
+Every tool on this computer needs a model.
+
+2
+00:00:03,455 --> 00:00:11,516
+Each one used to carry its own address, its own key, and its own plan for when the internet drops.
+
+3
+00:00:11,516 --> 00:00:13,902
+Fairlead is the model router.
+
+4
+00:00:13,902 --> 00:00:19,331
+One local address, one key per tool, and a trace of every request.
+
+5
+00:00:19,331 --> 00:00:21,151
+Here is how Fairlead fits together.
+
+6
+00:00:21,151 --> 00:00:28,379
+Fleet tools call one address on this computer, in the OpenAI or the Anthropic dialect, each with its own key.
+
+7
+00:00:28,905 --> 00:00:36,266
+Inside the engine, a request is checked, routed, retried if a target fails, and logged.
+
+8
+00:00:36,266 --> 00:00:40,419
+The log keeps the decision, never the prompt.
+
+9
+00:00:41,119 --> 00:00:44,055
+One piece makes the outbound calls.
+
+10
+00:00:44,055 --> 00:00:47,763
+Local models, Ollama and Windlass.
+
+11
+00:00:47,763 --> 00:00:51,085
+Cloud providers, OpenAI and OpenRouter.
+
+12
+00:00:51,695 --> 00:00:57,296
+Cloud keys live in Lazarette, shared by name, and held in memory only.
+
+13
+00:00:57,980 --> 00:01:01,700
+Mark a request private, and it never leaves this PC.
+
+14
+00:01:02,400 --> 00:01:09,468
+Planned, not built: git hosts and databases behind the same address, and routing by prompt difficulty.
+
+15
+00:01:10,047 --> 00:01:11,578
+Every request leaves a trace.
+
+16
+00:01:12,127 --> 00:01:13,060
+That is the evidence.
+
+17
+00:01:13,060 --> 00:01:14,040
+Start with the key.
+
+18
+00:01:14,040 --> 00:01:22,756
+It goes into Lazarette, the encrypted vault on this machine, as an API credential named OPENAI underscore API underscore KEY.
+
+19
+00:01:23,068 --> 00:01:29,061
+Test credential checks it against OpenAI's read only endpoint before anything uses it.
+
+20
+00:01:29,061 --> 00:01:31,830
+This footage comes from the Halyard demo.
+
+21
+00:01:32,530 --> 00:01:34,467
+Then share it with Fairlead by name.
+
+22
+00:01:35,167 --> 00:01:37,135
+Fairlead sees only what you share.
+
+23
+00:01:37,912 --> 00:01:41,727
+Fairlead reads it from the vault and connects.
+
+24
+00:01:41,727 --> 00:01:45,560
+That is the only place the cloud key lives.
+
+25
+00:01:45,560 --> 00:01:46,461
+The Providers page.
+
+26
+00:01:46,461 --> 00:01:51,513
+Lazarette is paired, and Fairlead asks it for two names, both shared.
+
+27
+00:01:51,513 --> 00:01:56,699
+Lazarette is locked right now, so Fairlead keeps what it already read for eight hours.
+
+28
+00:01:57,399 --> 00:01:58,199
+OpenAI.
+
+29
+00:01:57,755 --> 00:01:59,269
+Test connection.
+
+30
+00:01:59,269 --> 00:02:04,035
+Connected, with the key from Lazarette, not typed here.
+
+31
+00:02:04,735 --> 00:02:06,817
+Ollama, the local provider.
+
+32
+00:02:06,817 --> 00:02:14,190
+Fetch model list finds Llama three point two, three billion, imported from a model file already on this PC.
+
+33
+00:02:14,940 --> 00:02:17,090
+Routes are the model names your tools send.
+
+34
+00:02:17,090 --> 00:02:24,220
+Smart is one target, fast is another, and each can hold an ordered list that fails over to the next.
+
+35
+00:02:24,920 --> 00:02:30,855
+The local route was empty, so we give it a target: the model we just installed.
+
+36
+00:02:30,855 --> 00:02:33,095
+Private requests and offline mode land here.
+
+37
+00:02:33,795 --> 00:02:44,413
+Auto picks a route for each request from rules: prompt size, tools, images, keywords, and whether the prompt carries a secret.
+
+38
+00:02:45,113 --> 00:02:50,639
+Aliases catch hard coded names, so any claude or gpt name lands on a route.
+
+39
+00:02:50,639 --> 00:02:52,070
+Every tool gets its own key.
+
+40
+00:02:52,070 --> 00:02:59,971
+The Install button makes one and saves it to Windows Credential Manager, so the tool reads it from there and it never sits in a config file.
+
+41
+00:03:00,671 --> 00:03:02,952
+Keys are shown once and stored only as a hash.
+
+42
+00:03:02,952 --> 00:03:10,316
+Each can be limited by route, by rate, and by daily tokens, and Revoke ends one tool without touching the rest.
+
+43
+00:03:11,016 --> 00:03:18,178
+Each tool's setup is copy and paste: the OpenAI SDK, curl with the privacy header, or the Halyard profile.
+
+44
+00:03:18,178 --> 00:03:20,981
+Claude Code needs just a base URL and a token.
+
+45
+00:03:21,231 --> 00:03:22,031
+Settings.
+
+46
+00:03:21,704 --> 00:03:24,140
+Kedge mode is the offline switch.
+
+47
+00:03:24,140 --> 00:03:27,772
+Auto goes local the moment the cloud is out of reach.
+
+48
+00:03:27,772 --> 00:03:34,002
+I will not force it on here, because other tools share this Fairlead right now.
+
+49
+00:03:34,702 --> 00:03:41,616
+Privacy: look for secrets in prompts, keep private requests on local models, require a client key.
+
+50
+00:03:41,616 --> 00:03:46,790
+Prompts are kept only if you tick content logging, in memory, never on disk.
+
+51
+00:03:46,790 --> 00:03:48,188
+It is off.
+
+52
+00:03:48,888 --> 00:03:49,688
+Diagnostics.
+
+53
+00:03:49,472 --> 00:03:57,709
+The network, and each provider: Ollama and OpenAI reachable, Windlass not running, with the reason.
+
+54
+00:03:58,409 --> 00:04:05,820
+Circuit breakers below keep dead targets out of the way, so a failing model stops costing every request a retry.
+
+55
+00:04:06,183 --> 00:04:06,983
+A real request.
+
+56
+00:04:06,952 --> 00:04:09,036
+Model auto, a short prompt.
+
+57
+00:04:09,036 --> 00:04:15,901
+Explain shows the plan without calling a model: the quick chat rule matched, and the first choice is OpenAI mini.
+
+58
+00:04:16,601 --> 00:04:17,401
+Send.
+
+59
+00:04:16,865 --> 00:04:21,661
+OpenAI answered, and the decision and the attempt are right there.
+
+60
+00:04:22,361 --> 00:04:25,044
+Now a prompt that carries a cloud key.
+
+61
+00:04:25,044 --> 00:04:30,027
+It is the example key from Amazon's documentation, not a real credential.
+
+62
+00:04:30,027 --> 00:04:34,244
+Explain says private request, local models only.
+
+63
+00:04:34,944 --> 00:04:36,584
+Send.
+
+64
+00:04:37,284 --> 00:04:38,090
+It never leaves this PC.
+
+65
+00:04:38,750 --> 00:04:40,177
+Llama answered, and the log marks it private.
+
+66
+00:04:40,877 --> 00:04:45,241
+Without a secret, tick private, which sends the privacy header any tool can set.
+
+67
+00:04:45,241 --> 00:04:48,039
+Same result: it stays on this machine.
+
+68
+00:04:48,753 --> 00:04:49,936
+Now another Fleet tool.
+
+69
+00:04:49,936 --> 00:04:53,193
+This is Halyard, with its own Fairlead key.
+
+70
+00:04:53,193 --> 00:04:56,414
+Test model sends a real request through Fairlead.
+
+71
+00:04:56,414 --> 00:04:59,543
+Reply from auto, in under half a second.
+
+72
+00:05:00,243 --> 00:05:04,439
+On the overview, the routing map shows each tool as a client, and the providers it reached.
+
+73
+00:05:05,139 --> 00:05:08,419
+Activity lists every request with its client, route and target.
+
+74
+00:05:08,419 --> 00:05:12,651
+Halyard's is right there, next to other demos running on this PC.
+
+75
+00:05:12,651 --> 00:05:17,199
+Open one: the rule that matched, the target and the timing.
+
+76
+00:05:17,199 --> 00:05:18,723
+Prompts are not kept.
+
+77
+00:05:19,423 --> 00:05:20,592
+Failover is logged too.
+
+78
+00:05:20,592 --> 00:05:26,367
+I sent this one from the command line, to a route whose first model was retired.
+
+79
+00:05:26,367 --> 00:05:32,469
+OpenAI answered not found, and Fairlead moved to the next target before any byte reached the caller.
+
+80
+00:05:32,840 --> 00:05:34,886
+Fairlead is the one address.
+
+81
+00:05:34,886 --> 00:05:44,314
+Keys stay in the vault, each tool holds one key, private requests stay on this PC, and every request leaves a trace you can read.
+
+82
+00:05:44,314 --> 00:05:48,627
+The demos in this series that call a model went through it.
+
+83
+00:05:48,627 --> 00:05:53,158
+Planned next: git hosts and databases behind the same address.
+
+84
+00:05:53,158 --> 00:05:54,401
+That's the watch.
