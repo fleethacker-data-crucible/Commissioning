@@ -1,299 +1,437 @@
 1
-00:00:00,000 --> 00:00:07,132
-The relieving watchstander needs to know what remains unresolved, and where the evidence is.
+00:00:00,000 --> 00:00:05,094
+The relieving watchstander needs
+to know what remains unresolved,
 
 2
-00:00:07,132 --> 00:00:18,179
-Eight Bells is a focused watch-turnover tool: it reads the log, flags what needs a second look, and drafts the turnover with a source line behind every point.
+00:00:05,094 --> 00:00:07,132
+and where the evidence is.
 
 3
+00:00:07,132 --> 00:00:10,319
+Eight Bells is a focused
+watch-turnover tool:
+
+4
+00:00:10,319 --> 00:00:13,789
+it reads the log, flags
+what needs a second look,
+
+5
+00:00:13,789 --> 00:00:18,179
+and drafts the turnover with a
+source line behind every point.
+
+6
 00:00:18,179 --> 00:00:19,927
 Today's log is synthetic.
 
-4
+7
 00:00:20,177 --> 00:00:21,912
 Here is how it works.
 
-5
-00:00:21,912 --> 00:00:31,242
-Everything runs on this one computer: the page in your browser, a small PowerShell server on loopback, and a launcher you double-click.
+8
+00:00:21,912 --> 00:00:26,298
+Everything runs on this one computer:
+the page in your browser,
 
-6
+9
+00:00:26,298 --> 00:00:31,242
+a small PowerShell server on loopback,
+and a launcher you double-click.
+
+10
 00:00:31,242 --> 00:00:32,869
 Closing the tab stops the server.
 
-7
-00:00:33,569 --> 00:00:40,426
-Records live in an encrypted store for your Windows account, with a hash-chained audit trail.
+11
+00:00:33,569 --> 00:00:38,041
+Records live in an encrypted
+store for your Windows account,
 
-8
-00:00:41,213 --> 00:00:48,608
-Watch logs go in: text, CSV, JSON, tables, XML, and the text layer of digital PDFs.
+12
+00:00:38,041 --> 00:00:40,426
+with a hash-chained audit trail.
 
-9
+13
+00:00:41,213 --> 00:00:45,001
+Watch logs go in: text, CSV, JSON, tables,
+
+14
+00:00:45,001 --> 00:00:48,608
+XML, and the text layer of digital PDFs.
+
+15
 00:00:49,308 --> 00:00:54,322
-Out come findings and a turnover draft, built offline by rules, with no AI.
+Out come findings and a turnover draft,
+built offline by rules, with no AI.
 
-10
+16
 00:00:54,322 --> 00:00:57,358
 Every point links to its line in the log.
 
-11
+17
 00:00:58,058 --> 00:01:00,259
 An AI briefing is optional.
 
-12
-00:01:00,259 --> 00:01:03,551
-The model key sits in Lazarette, shared to Fairlead.
-
-13
-00:01:03,551 --> 00:01:09,959
-Eight Bells has its own Fairlead key, and requests stay local-only unless you say otherwise.
-
-14
-00:01:10,659 --> 00:01:17,584
-Reviewed lessons can go to Halyard as a hand-off file, and counts go to Semaphore as a CSV.
-
-15
-00:01:17,584 --> 00:01:21,971
-Not built yet: OCR for scans, and vendor log formats.
-
-16
-00:01:22,671 --> 00:01:31,807
-And the guardrails: loopback only, drafts tied to their source, AI only when you consent, and every finding needs a person.
-
-17
-00:01:32,198 --> 00:01:35,764
-To use the AI briefing, give Eight Bells its own key.
-
 18
-00:01:35,764 --> 00:01:41,171
-In Fairlead, open Clients, and choose Install for an app.
+00:01:00,259 --> 00:01:03,551
+The model key sits in Lazarette,
+shared to Fairlead.
 
 19
+00:01:03,551 --> 00:01:06,156
+Eight Bells has its own Fairlead key,
+
+20
+00:01:06,156 --> 00:01:09,959
+and requests stay local-only
+unless you say otherwise.
+
+21
+00:01:10,659 --> 00:01:14,814
+Reviewed lessons can go to
+Halyard as a hand-off file,
+
+22
+00:01:14,814 --> 00:01:17,584
+and counts go to Semaphore as a CSV.
+
+23
+00:01:17,584 --> 00:01:21,971
+Not built yet: OCR for scans,
+and vendor log formats.
+
+24
+00:01:22,671 --> 00:01:27,389
+And the guardrails: loopback only,
+drafts tied to their source,
+
+25
+00:01:27,389 --> 00:01:31,807
+AI only when you consent,
+and every finding needs a person.
+
+26
+00:01:32,198 --> 00:01:35,764
+To use the AI briefing,
+give Eight Bells its own key.
+
+27
+00:01:35,764 --> 00:01:41,171
+In Fairlead, open Clients,
+and choose Install for an app.
+
+28
 00:01:41,871 --> 00:01:43,643
 Name it EightBells and install.
 
-20
+29
 00:01:44,343 --> 00:01:48,217
-Fairlead makes the key and saves it straight to Windows Credential Manager.
+Fairlead makes the key and saves it
+straight to Windows Credential Manager.
 
-21
+30
 00:01:48,917 --> 00:01:50,005
 It is never shown.
 
-22
-00:01:50,705 --> 00:01:56,661
-Fairlead's OpenAI connection already takes its key from Lazarette, so the provider key never touches Eight Bells.
+31
+00:01:50,705 --> 00:01:54,215
+Fairlead's OpenAI connection already
+takes its key from Lazarette,
 
-23
-00:01:57,361 --> 00:02:02,592
-Back in Eight Bells, the router card shows Fairlead answering, and its own key installed.
+32
+00:01:54,215 --> 00:01:56,661
+so the provider key never
+touches Eight Bells.
 
-24
+33
+00:01:57,361 --> 00:02:01,046
+Back in Eight Bells, the router
+card shows Fairlead answering,
+
+34
+00:02:01,046 --> 00:02:02,592
+and its own key installed.
+
+35
 00:02:02,592 --> 00:02:06,059
-Start with an empty store, and import a log.
+Start with an empty store,
+and import a log.
 
-25
+36
 00:02:06,059 --> 00:02:11,007
-This one is a simulated engineering watch, marked synthetic in its first line.
+This one is a simulated engineering watch,
+marked synthetic in its first line.
 
-26
-00:02:11,707 --> 00:02:17,729
-The preview shows every entry with its time, its equipment and its source line number, before anything is saved.
+37
+00:02:11,707 --> 00:02:14,854
+The preview shows every entry
+with its time, its equipment
 
-27
+38
+00:02:14,854 --> 00:02:17,729
+and its source line number,
+before anything is saved.
+
+39
 00:02:18,429 --> 00:02:19,968
 Import, and it is stored encrypted.
 
-28
+40
 00:02:19,968 --> 00:02:22,364
-Quality review found three advisory findings.
+Quality review found
+three advisory findings.
 
-29
+41
 00:02:22,364 --> 00:02:26,562
-They are prompts to check the record, not conclusions.
+They are prompts to check
+the record, not conclusions.
 
-30
-00:02:27,262 --> 00:02:34,635
-The first is an entry out of sequence: line eight is a late entry, logged after a later time.
+42
+00:02:27,262 --> 00:02:30,307
+The first is an entry out of sequence:
 
-31
+43
+00:02:30,307 --> 00:02:34,635
+line eight is a late entry,
+logged after a later time.
+
+44
 00:02:34,635 --> 00:02:36,781
 Each finding shows its source lines.
 
-32
-00:02:37,481 --> 00:02:43,759
-The second is a possible unresolved condition: Pump B vibration stays open from the first line to the last.
+45
+00:02:37,481 --> 00:02:40,205
+The second is a possible
+unresolved condition:
 
-33
+46
+00:02:40,205 --> 00:02:43,759
+Pump B vibration stays open
+from the first line to the last.
+
+47
 00:02:43,759 --> 00:02:46,856
-A reviewer records a disposition and a reason.
+A reviewer records a
+disposition and a reason.
 
-34
+48
 00:02:47,556 --> 00:02:49,753
 The review is recorded beside the finding.
 
-35
+49
 00:02:50,466 --> 00:02:52,385
 The source log is never changed.
 
-36
+50
 00:02:52,385 --> 00:02:54,025
 Now the turnover, offline.
 
-37
+51
 00:02:54,025 --> 00:02:58,277
-This browser can reach nothing but this computer, and AI is off.
+This browser can reach nothing
+but this computer, and AI is off.
 
-38
+52
 00:02:58,977 --> 00:03:00,024
 Generate the draft.
 
-39
-00:03:00,024 --> 00:03:07,355
-The rules engine writes it in an instant: observations, open conditions, and quality findings.
+53
+00:03:00,024 --> 00:03:03,256
+The rules engine writes it in an instant:
 
-40
-00:03:08,055 --> 00:03:13,151
-Select any line number and the source line opens below, in the log exactly as imported.
+54
+00:03:03,256 --> 00:03:07,355
+observations, open conditions,
+and quality findings.
 
-41
+55
+00:03:08,055 --> 00:03:11,314
+Select any line number and
+the source line opens below,
+
+56
+00:03:11,314 --> 00:03:13,151
+in the log exactly as imported.
+
+57
 00:03:13,151 --> 00:03:15,415
 That is the evidence trail.
 
-42
+58
 00:03:15,665 --> 00:03:17,197
 Now the stale-draft guard.
 
-43
+59
 00:03:17,705 --> 00:03:19,329
 Generate a draft for this log.
 
-44
+60
 00:03:19,946 --> 00:03:22,785
-Then the log is corrected, and a new version is imported.
+Then the log is corrected,
+and a new version is imported.
 
-45
+61
 00:03:23,485 --> 00:03:26,449
-Select the corrected log and the old draft is gone.
+Select the corrected log
+and the old draft is gone.
 
-46
+62
 00:03:27,310 --> 00:03:28,770
 Copy and Save are disabled.
 
-47
+63
 00:03:29,279 --> 00:03:32,188
-A draft cannot be exported once its source has changed.
+A draft cannot be exported
+once its source has changed.
 
-48
+64
 00:03:32,888 --> 00:03:36,147
-Even going back to the original does not bring it back.
+Even going back to the original
+does not bring it back.
 
-49
+65
 00:03:36,147 --> 00:03:40,261
-Generate again, and the draft is rebuilt from the source as it is now.
+Generate again, and the draft is
+rebuilt from the source as it is now.
 
-50
+66
 00:03:40,261 --> 00:03:44,082
-Now the optional AI briefing, through Fairlead.
+Now the optional AI briefing,
+through Fairlead.
 
-51
+67
 00:03:44,082 --> 00:03:47,885
-The card shows Fairlead answering and the key installed.
+The card shows Fairlead answering
+and the key installed.
 
-52
+68
 00:03:47,885 --> 00:03:52,067
-Keep requests on this PC is ticked, so only local models may answer.
+Keep requests on this PC is ticked,
+so only local models may answer.
 
-53
+69
 00:03:52,767 --> 00:03:56,031
-Ask for a draft with the consent box ticked.
+Ask for a draft with
+the consent box ticked.
 
-54
-00:03:56,031 --> 00:04:02,528
-No local model is loaded on this PC, so Fairlead refuses, and nothing leaves the machine.
+70
+00:03:56,031 --> 00:03:58,689
+No local model is loaded on this PC,
 
-55
+71
+00:03:58,689 --> 00:04:02,528
+so Fairlead refuses,
+and nothing leaves the machine.
+
+72
 00:04:02,528 --> 00:04:03,878
 Eight Bells says why.
 
-56
+73
 00:04:04,578 --> 00:04:08,528
-For synthetic data only, untick it and name a model.
+For synthetic data only,
+untick it and name a model.
 
-57
+74
 00:04:08,528 --> 00:04:11,954
-Fairlead may now use a cloud model, under that provider's terms.
+Fairlead may now use a cloud model,
+under that provider's terms.
 
-58
+75
 00:04:12,654 --> 00:04:14,865
 Same request, now with cloud allowed.
 
-59
-00:04:15,565 --> 00:04:21,986
-A real answer in about two seconds, marked unverified, citing line numbers to check against the log.
+76
+00:04:15,565 --> 00:04:19,067
+A real answer in about two
+seconds, marked unverified,
 
-60
-00:04:22,686 --> 00:04:31,304
-Fairlead's Activity page shows both calls from the client EightBells: one refused as private, one served by OpenAI's gpt-4.
+77
+00:04:19,067 --> 00:04:21,986
+citing line numbers to
+check against the log.
 
-61
-00:04:31,304 --> 00:04:31,718
-1-mini.
+78
+00:04:22,686 --> 00:04:27,517
+Fairlead's Activity page shows both
+calls from the client EightBells:
 
-62
-00:04:31,718 --> 00:04:37,350
-Across the two logs, Eight Bells notices that Pump B stays open, and suggests a lesson.
+79
+00:04:27,517 --> 00:04:31,718
+one refused as private,
+one served by OpenAI's gpt-4.1-mini.
 
-63
+80
+00:04:31,718 --> 00:04:35,909
+Across the two logs, Eight Bells
+notices that Pump B stays open,
+
+81
+00:04:35,909 --> 00:04:37,350
+and suggests a lesson.
+
+82
 00:04:38,050 --> 00:04:40,437
 Save it as a draft, then mark it reviewed.
 
-64
+83
 00:04:40,437 --> 00:04:43,543
 That mark is local, not a signed approval.
 
-65
-00:04:44,243 --> 00:04:45,089
+84
+00:04:44,243 --> 00:04:45,243
 Export it for Halyard.
 
-66
+85
 00:04:45,789 --> 00:04:48,138
-Halyard's Intake reads that file through its API.
+Halyard's Intake reads
+that file through its API.
 
-67
+86
 00:04:48,138 --> 00:04:51,182
-It returns a story draft linked back to the lesson.
+It returns a story draft
+linked back to the lesson.
 
-68
+87
 00:04:51,182 --> 00:04:54,671
-Preview only, nothing written to the backlog.
+Preview only, nothing
+written to the backlog.
 
-69
+88
 00:04:54,671 --> 00:04:57,673
-There is no button for it in Halyard's page yet.
+There is no button for
+it in Halyard's page yet.
 
-70
-00:04:58,373 --> 00:05:05,890
-Counts per watch go to Semaphore as a CSV: logs, open conditions, findings, lessons.
+89
+00:04:58,373 --> 00:05:02,177
+Counts per watch go to Semaphore as a CSV:
 
-71
-00:05:05,890 --> 00:05:06,517
-No log text.
+90
+00:05:02,177 --> 00:05:06,517
+logs, open conditions,
+findings, lessons. No log text.
 
-72
+91
 00:05:06,517 --> 00:05:11,288
-That is Eight Bells: a focused watch-turnover capability.
+That is Eight Bells: a focused
+watch-turnover capability.
 
-73
+92
 00:05:11,288 --> 00:05:17,064
-It tells the relieving watch what is open, and where the evidence is.
+It tells the relieving watch what
+is open, and where the evidence is.
 
-74
-00:05:17,064 --> 00:05:24,012
-The log was synthetic, the findings are advisory, and a person verifies everything.
+93
+00:05:17,064 --> 00:05:21,216
+The log was synthetic,
+the findings are advisory,
 
-75
-00:05:24,012 --> 00:05:24,933
+94
+00:05:21,216 --> 00:05:24,012
+and a person verifies everything.
+
+95
+00:05:24,012 --> 00:05:25,012
 Fair winds.
