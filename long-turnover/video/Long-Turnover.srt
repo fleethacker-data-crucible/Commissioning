@@ -1,0 +1,237 @@
+1
+00:00:15,900 --> 00:00:16,903
+SULLIVAN: Ask me.
+
+2
+00:00:16,953 --> 00:00:17,544
+REYES: Ask you.
+
+3
+00:00:28,500 --> 00:00:31,041
+A watch turnover takes fifteen minutes.
+
+4
+00:00:33,400 --> 00:00:35,951
+A career takes fifteen years.
+
+5
+00:00:38,300 --> 00:00:43,423
+Most of what makes a senior person valuable
+never gets written down. Who to call.
+
+6
+00:00:43,473 --> 00:00:49,595
+Which alarm always lies. Why the
+workaround from 2019 is still there.
+
+7
+00:00:50,400 --> 00:00:55,910
+And when they rotate, retire or transfer,
+it walks out the gate with them.
+
+8
+00:01:01,300 --> 00:01:07,666
+What if the job could be handed over the whole way, with
+her consent, from her first week to her last?
+
+9
+00:01:10,000 --> 00:01:16,365
+The Long Turnover is a way to capture it.
+With her consent. On her machine.
+
+10
+00:01:16,415 --> 00:01:20,162
+Anonymized, then distilled by generative
+models.
+
+11
+00:01:20,212 --> 00:01:22,677
+And counted only once she confirms it.
+
+12
+00:01:23,477 --> 00:01:28,959
+Not a surveillance product. An agent she
+helps build, and signs.
+
+13
+00:01:30,477 --> 00:01:35,449
+It has a service record. It shadows. It
+co-pilots.
+
+14
+00:01:35,499 --> 00:01:39,011
+It sits sea trials against her own past
+cases.
+
+15
+00:01:39,061 --> 00:01:43,389
+It relieves her, and it advises, but a
+human decides.
+
+16
+00:01:43,439 --> 00:01:47,574
+Then it goes emeritus, with the date of
+its knowledge on every answer.
+
+17
+00:01:47,624 --> 00:01:51,048
+And one day it is decommissioned, on
+purpose.
+
+18
+00:01:51,848 --> 00:01:55,943
+Opt-in. Revocable. Never used to rate or
+rank her.
+
+19
+00:01:55,993 --> 00:02:01,169
+Anonymized before any model sees it. Every
+claim traced to its source.
+
+20
+00:02:01,219 --> 00:02:06,500
+A named human decides. And her name stays
+on what she taught it.
+
+21
+00:02:07,300 --> 00:02:12,838
+Passive capture is good at what people do.
+It is poor at why.
+
+22
+00:02:15,400 --> 00:02:20,543
+The why lives in the hard calls, and she
+does not know which ones mattered.
+
+23
+00:02:20,593 --> 00:02:21,987
+Neither does the system.
+
+24
+00:02:24,300 --> 00:02:26,166
+So we ask a different question.
+
+25
+00:02:26,366 --> 00:02:29,668
+Can wearable sensors tell us when a hard
+decision is being made?
+
+26
+00:02:29,718 --> 00:02:32,259
+Not what she is thinking. When.
+
+27
+00:02:34,400 --> 00:02:38,085
+The sensor only picks the moment. The
+answer is hers.
+
+28
+00:02:38,135 --> 00:02:40,332
+SULLIVAN: That one, yes. Here is why.
+
+29
+00:02:40,382 --> 00:02:47,505
+The sensors never read thoughts, never judge skill, and
+the raw signals are deleted after each session.
+
+30
+00:02:52,305 --> 00:02:58,478
+Phase one is small on purpose. Ninety
+days. Four developer volunteers.
+
+31
+00:02:58,528 --> 00:03:02,476
+Two veteran-and-successor pairs, in an
+isolated lab.
+
+32
+00:03:02,526 --> 00:03:04,985
+Nothing identifiable leaves the building.
+
+33
+00:03:05,785 --> 00:03:07,635
+Setup. Calibration.
+
+34
+00:03:07,685 --> 00:03:12,640
+Real work, with questions timed by sensors
+against questions on a schedule.
+
+35
+00:03:12,690 --> 00:03:18,656
+And a successor test: can the next person finish the
+veteran's task using only what was captured?
+
+36
+00:03:19,456 --> 00:03:21,753
+Five questions, each with a measure.
+
+37
+00:03:32,056 --> 00:03:37,742
+The request is equipment only: about seven
+and a half to eight thousand dollars.
+
+38
+00:03:37,792 --> 00:03:40,127
+Labor is the team's own time.
+
+39
+00:03:40,927 --> 00:03:44,828
+It ends in one of three ways. Go: field
+pilot.
+
+40
+00:03:44,878 --> 00:03:48,550
+Pivot: keep the headsets, drop the extra
+sensors.
+
+41
+00:03:48,600 --> 00:03:54,102
+Stop: keep the weekly questions, no
+sensors. Each outcome is useful.
+
+42
+00:03:54,902 --> 00:04:05,466
+If it works, the road runs on: a field pilot, a software relief agent, and, years
+away, a robot that carries the expert's judgment as well as their motions.
+
+43
+00:04:06,166 --> 00:04:09,063
+Always with a named person accountable.
+
+44
+00:04:10,366 --> 00:04:13,079
+This part is not part of this request.
+
+45
+00:04:14,466 --> 00:04:20,689
+We are asking for four decisions. Fund the
+equipment. Approve the quote request.
+
+46
+00:04:20,789 --> 00:04:23,326
+Approve a ninety-day study with
+volunteers.
+
+47
+00:04:23,426 --> 00:04:27,306
+And name the people who will hold us to
+our own guardrails.
+
+48
+00:04:32,706 --> 00:04:41,335
+RELIEF: Loop 4. In winter this alarm is a known false trigger. Confirmed by
+Chief Sullivan, eleven months ago. Please verify before you ignore it.
+
+49
+00:04:42,406 --> 00:04:45,094
+A watch turnover takes fifteen minutes.
+
+50
+00:04:46,006 --> 00:04:50,601
+A career takes fifteen years. Hand it over
+the whole way.
+
+51
+00:04:52,601 --> 00:04:54,081
+Let's start now.
