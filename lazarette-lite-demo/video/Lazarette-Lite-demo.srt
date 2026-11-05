@@ -1,171 +1,254 @@
 1
-00:00:00,250 --> 00:00:06,591
-Fleet tools need credentials by name, and they need somewhere sensible to keep them.
+00:00:00,250 --> 00:00:03,420
+Fleet tools need credentials by name, and
 
 2
-00:00:06,591 --> 00:00:16,575
-Lazarette Lite is the light answer: a browser window on the Windows Credential Manager you already have, with no new vault.
+00:00:03,420 --> 00:00:06,591
+they need somewhere sensible to keep them.
 
 3
-00:00:16,575 --> 00:00:20,651
-This is a short run, using throwaway credentials only.
+00:00:06,591 --> 00:00:12,111
+Lazarette Lite is the light answer:
+a browser window on the Windows
 
 4
-00:00:21,401 --> 00:00:24,933
-Lazarette Lite is a browser window on the Windows Credential Manager.
+00:00:12,111 --> 00:00:16,575
+Credential Manager you already have,
+with no new vault.
 
 5
-00:00:24,933 --> 00:00:30,217
-Double-click the launcher, and a small PowerShell server starts on this computer.
+00:00:16,575 --> 00:00:20,651
+This is a short run,
+using throwaway credentials only.
 
 6
-00:00:30,917 --> 00:00:35,890
-The server listens on loopback only, on a port Windows picks.
+00:00:21,401 --> 00:00:24,933
+Lazarette Lite is a browser window
+on the Windows Credential Manager.
 
 7
-00:00:35,890 --> 00:00:42,415
-It answers only your own Windows user's processes, with a one-time launch token and a session cookie.
+00:00:24,933 --> 00:00:30,217
+Double-click the launcher, and a small
+PowerShell server starts on this computer.
 
 8
-00:00:43,115 --> 00:00:49,573
-The secrets themselves stay in Windows Credential Manager, as ordinary generic entries under a prefix.
+00:00:30,917 --> 00:00:35,890
+The server listens on loopback only,
+on a port Windows picks.
 
 9
+00:00:35,890 --> 00:00:41,058
+It answers only your own Windows user's
+processes, with a one-time launch token
+
+10
+00:00:41,058 --> 00:00:42,415
+and a session cookie.
+
+11
+00:00:43,115 --> 00:00:45,584
+The secrets themselves stay in Windows
+
+12
+00:00:45,584 --> 00:00:49,573
+Credential Manager, as ordinary
+generic entries under a prefix.
+
+13
 00:00:49,573 --> 00:00:52,041
 Lite ships no vault of its own.
 
-10
-00:00:52,741 --> 00:01:00,635
-Fleet tools reach them through a loader that answers to the same command names as Lazarette: get a secret by service and user.
+14
+00:00:52,741 --> 00:00:56,500
+Fleet tools reach them through a loader
+that answers to the
 
-11
-00:01:01,335 --> 00:01:07,649
-What Lite does not do: custom fields, or Lazarette's key sharing with Fairlead.
+15
+00:00:56,500 --> 00:01:00,635
+same command names as Lazarette:
+get a secret by service and user.
 
-12
+16
+00:01:01,335 --> 00:01:04,372
+What Lite does not do: custom fields,
+
+17
+00:01:04,372 --> 00:01:07,649
+or Lazarette's key sharing with Fairlead.
+
+18
 00:01:07,649 --> 00:01:10,305
 That stays with the full Lazarette.
 
-13
-00:01:11,005 --> 00:01:18,511
-Safety: secrets stay hidden until you reveal them, delete asks first, and nothing outside its prefix is listed.
+19
+00:01:11,005 --> 00:01:14,454
+Safety:
+secrets stay hidden until you reveal them,
 
-14
+20
+00:01:14,454 --> 00:01:18,511
+delete asks first,
+and nothing outside its prefix is listed.
+
+21
 00:01:18,761 --> 00:01:21,798
 First, add a credential in the browser.
 
-15
+22
 00:01:21,798 --> 00:01:26,175
-Service fleet-tools, user demo, and a secret I made up for this demo.
+Service fleet-tools, user demo,
+and a secret I made up for this demo.
 
-16
-00:01:26,175 --> 00:01:30,564
-The field masks it as it's typed, and none of it is a real password.
+23
+00:01:26,175 --> 00:01:31,364
+The field masks it as it's typed,
+and none of it is a real password. Save.
 
-17
-00:01:30,564 --> 00:01:31,364
-Save.
-
-18
+24
 00:01:31,503 --> 00:01:34,827
-Saved, and it's already in Windows Credential Manager.
+Saved, and it's already in
+Windows Credential Manager.
 
-19
+25
 00:01:34,827 --> 00:01:37,512
-The secret stays hidden until someone clicks Reveal.
+The secret stays hidden
+until someone clicks Reveal.
 
-20
-00:01:37,512 --> 00:01:42,290
-Here it is, blurred for the recording, because even a throwaway doesn't belong on screen.
+26
+00:01:37,512 --> 00:01:39,606
+Here it is, blurred for the recording,
 
-21
+27
+00:01:39,606 --> 00:01:42,290
+because even a throwaway
+doesn't belong on screen.
+
+28
 00:01:42,882 --> 00:01:44,851
 Now a Fleet tool asks for it by name.
 
-22
+29
 00:01:44,851 --> 00:01:48,210
-This is a short stand-in script, not a real tool.
+This is a short stand-in script,
+not a real tool.
 
-23
-00:01:48,210 --> 00:01:53,892
-It loads Lazarette the way the real ones do, and Start-LiteFleet points that loader at Lite.
+30
+00:01:48,210 --> 00:01:52,657
+It loads Lazarette the way the real
+ones do, and Start-LiteFleet points
 
-24
+31
+00:01:52,657 --> 00:01:53,892
+that loader at Lite.
+
+32
 00:01:54,592 --> 00:01:57,803
 It gets the secret: fifteen characters.
 
-25
+33
 00:01:57,803 --> 00:01:59,241
 The value is never printed.
 
-26
+34
 00:01:59,941 --> 00:02:01,494
 Now a name Lite doesn't hold.
 
-27
+35
 00:02:01,494 --> 00:02:03,600
 It refuses with a plain error.
 
-28
-00:02:03,600 --> 00:02:11,255
-It never guesses, and it never hands back an empty password, so a tool fails early instead of running with nothing.
+36
+00:02:03,600 --> 00:02:07,660
+It never guesses,
+and it never hands back an empty password,
 
-29
+37
+00:02:07,660 --> 00:02:11,255
+so a tool fails early instead of running
+with nothing.
+
+38
 00:02:11,255 --> 00:02:12,625
 Now the evidence trail.
 
-30
+39
 00:02:12,625 --> 00:02:17,371
-Get-LiteItemNames returns names only, never a secret.
+Get-LiteItemNames returns names only,
+never a secret.
 
-31
-00:02:17,371 --> 00:02:24,133
-And this is the whole data store: an ordinary generic entry in Windows Credential Manager.
+40
+00:02:17,371 --> 00:02:19,926
+And this is the whole data store:
 
-32
+41
+00:02:19,926 --> 00:02:24,133
+an ordinary generic entry in
+Windows Credential Manager.
+
+42
 00:02:24,833 --> 00:02:27,670
-I also made a second throwaway entry outside Lite's prefix.
+I also made a second throwaway
+entry outside Lite's prefix.
 
-33
+43
 00:02:27,670 --> 00:02:31,797
-Windows has it, you can see it here, and Lite's list never showed it.
+Windows has it, you can see it here,
+and Lite's list never showed it.
 
-34
+44
 00:02:31,797 --> 00:02:35,066
-Lite only reads and writes entries under its own prefix.
+Lite only reads
+and writes entries under its own prefix.
 
-35
+45
 00:02:35,766 --> 00:02:37,450
 Cleanup belongs in the trail too.
 
-36
-00:02:37,450 --> 00:02:45,980
-Delete asks you to confirm first, then the credential is removed from Windows Credential Manager, and the list is empty again.
+46
+00:02:37,450 --> 00:02:42,189
+Delete asks you to confirm first,
+then the credential is removed from
 
-37
-00:02:46,680 --> 00:02:48,867
-Quit ends the session and the server stops.
+47
+00:02:42,189 --> 00:02:45,980
+Windows Credential Manager,
+and the list is empty again.
 
-38
-00:02:49,170 --> 00:02:49,970
-Nothing was left running.
+48
+00:02:46,680 --> 00:02:49,970
+Quit ends the session and the server
+stops. Nothing was left running.
 
-39
-00:02:50,177 --> 00:02:59,163
-That is Lazarette Lite: named credentials for Fleet tools, from the Credential Manager you already have, with no new vault.
+49
+00:02:50,177 --> 00:02:54,487
+That is Lazarette Lite:
+named credentials for Fleet tools,
 
-40
-00:02:59,163 --> 00:03:05,885
-Everything you saw ran for real on this PC, with throwaway credentials that are now deleted.
+50
+00:02:54,487 --> 00:02:59,163
+from the Credential Manager you
+already have, with no new vault.
 
-41
+51
+00:02:59,163 --> 00:03:04,351
+Everything you saw ran for real on
+this PC, with throwaway credentials
+
+52
+00:03:04,351 --> 00:03:05,885
+that are now deleted.
+
+53
 00:03:05,885 --> 00:03:09,099
-The only stand-in was the short tool script.
+The only stand-in was
+the short tool script.
 
-42
-00:03:09,099 --> 00:03:15,309
-Custom fields and Lazarette's key sharing with Fairlead stay with the full Lazarette.
+54
+00:03:09,099 --> 00:03:12,136
+Custom fields and Lazarette's key sharing
 
-43
-00:03:15,309 --> 00:03:16,113
-Fair winds.
+55
+00:03:12,136 --> 00:03:16,113
+with Fairlead stay
+with the full Lazarette. Fair winds.
+
