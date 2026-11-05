@@ -1,0 +1,3 @@
+# Capstan demo: intent
+
+For a team lead or training author who records screen walkthroughs and worries that a customer's email, a phone number or an API key will be left visible in the video. The 3.5 minute demo shows Capstan, a local-first screen recorder and editor, recording a real browser tab (a synthetic support console with made-up customers), cutting it, placing a blur region, importing captions and exporting an H.264 MP4, then checking the exported file (ffprobe, before and after frame, Fleet CLI caption hand-off) to show the blur is in the pixels. It is candid that the console and customers are synthetic, that Capstan has no model (so no Fairlead or approval queue), and that nothing leaves the PC. It makes no measured time-saving claim.
