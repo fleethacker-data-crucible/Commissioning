@@ -1,82 +1,68 @@
 # Bridge Warden: full walkthrough (long form)
 
-Written from the live dry run and recording of 2026-11-04. Everything on screen is the real app: Bridge Warden
-(branch `demo/bridge-warden`: PR #14 plus the fixes below, with the Fleet skin), real model calls through Fairlead
-(route `fast`, served by `openai/gpt-4.1-mini`, key held in Lazarette). The only synthetic data is the ship
-simulation Bridge Warden ships with. Final cut: `Bridge-Warden-demo.mp4` (1920x1080, 7:34, captions burned in).
+**Cut:** 5:59, Renoise cast (Harlan, Sullivan, Reyes), recorded on the new Fleet UI against a clean reset. Storyline: conflicting recommendations, violated boundary, operator decides, SAFE-STOP, audit record. It is a simulation (synthetic ship, nothing real) and the narration says so. Agents call a real model through Fairlead.
 
-**Voices (TalkForge, offline Piper).** CO = Captain HARLAN (hfc_male-medium), CHIEF = Chief SULLIVAN
-(libritts-high speaker 120), RADIO = Radioman DELGADO (libritts-high speaker 87), XO = Lt. Cmdr. REYES (amy-medium).
-Short presentation cuts use Renoise voices (cost approval first); not generated yet.
+**Files:** `Bridge-Warden-demo.mp4` (1080p, soft captions), `Bridge-Warden-demo-phone.mp4` (720p, soft captions, about 1.4 Mbps video, 66 MiB), `Bridge-Warden-demo-captioned.mp4` (1080p, captions burned in), `Bridge-Warden-demo.srt`, `INTENT.md`, the architecture SVG and PNG. Earlier versions are in `old/` with `-v1`/`-v2` suffixes.
 
-**Recording.** Playwright tab capture only (Capstan's playwright, `recordVideo`, 1920x1080 per chapter), overlay from
-Signal-Gun's `overlay.js` for cursor, ripples, ring, terminal replay and title cards. Nothing on the screen is captured.
-Re-run: `work\recorder.mjs prep c02..c12`, then `work\build.mjs`. Narration: `work\narration-tts.json`.
+**Output spec:** audio -15.8 LUFS integrated, stereo 48 kHz; video yuv420p, tv range. Captions are a soft `mov_text` track (language `eng`), at most two rows of 42 characters, each cue 1 to 6 s. The OpenAI-key and Lazarette chapters reuse Halyard's read-only footage. Rebuild: `work/build-v4.mjs renoise`, then `work/export2.mjs`.
 
-| # | Chapter | Clip | Speaker | Length |
-|---|---|---|---|---|
-| 0 | Cold open | c01 | CO | 0:15 |
-| 1 | Install, launch and the launch page | c02 | XO | 0:44 |
-| 2a | Get a model key (reused from Halyard) | Halyard c02 | XO | 0:17 |
-| 2b | Stow it in Lazarette, share with Fairlead (reused) | Halyard c03 | RADIO | 0:18 |
-| 3 | Connect the AI through Fairlead | c03 | RADIO | 0:54 |
-| 4 | The bridge: tour, Start Operations | c04 | CHIEF | 0:30 |
-| 5 | Crossing contact, provenance, Explain | c05 | CHIEF | 0:41 |
-| 6 | Hostile contact: the operator decides | c06 | CO | 0:56 |
-| 7 | Ship Systems: patch cable | c07 | CHIEF | 0:40 |
-| 8 | Compromised AI commander + torpedoes | c08 | CO | 0:35 |
-| 9 | Ask Warden (chat, proposals) | c09 | XO | 0:35 |
-| 10 | System check, SAFE-STOP, ledger | c10 | CO | 0:41 |
-| 11 | Fairlead's activity: every call labeled | c11 | RADIO | 0:20 |
-| 12 | Close | c12 | CO | 0:10 |
+## Shots and narration (timings of the delivered cut, 5:59)
 
-Narration starts about 4 s into each chapter, after its title card.
+### 0:00 to 0:18: Pitch and simulation
 
-## Shots and narration
+When multiple AI systems disagree, the watchstander needs one place to understand the conflict, enforce authority, and stop them. This is Bridge Warden. Everything you see is a simulation: a synthetic ship, and nothing real.
 
-**0. Cold open.** Main app over the live picture, emblem card first. CO: "Future ships will run many AI systems at
-once. Bridge Warden is the layer every AI order must pass. No AI touches the ship directly."
+### 0:18 to 1:21: Architecture at a glance
 
-**1. Install and launch.** Terminal replay: `git clone`, `cd ...\challenges\ai-automated-systems`, `.\run.bat`, with the real
-launcher output. Warden Control, ring on the header and the **Look** button (Fleet / Kit / Classic). Then the main app opens on the **launch page** (shown once as a newcomer sees it: emblem, what Bridge Warden is, four steps), **Get started** closes it, and the **Welcome** button in the header is ringed as the way back.
-XO: nothing to install; Windows PowerShell 5.1 compiles the engine from source, no admin rights, no network; two
-windows; the first time a launch page explains it in four steps, closes once, and the Welcome button brings it back.
+Bridge Warden sits between a ship's AI agents and the ship. The agents recommend. Warden decides what actually happens, and a person stays in charge. A launcher compiles the engine at start and serves two windows on this machine only: Warden Control and the main app. Thirteen agents, a synthetic ship, and a ledger live inside. A run goes like this. Lookouts watch and report. A model picks an option. Warden checks it in eight stages, then acts, or asks the operator. Every step goes in the ledger. Model calls go through Fairlead, using the key Fairlead installed for Bridge Warden. Lazarette holds the provider key behind Fairlead, so Bridge Warden never sees it. The models get no tools. Weapons and people always wait for a human. Hold SAFE-STOP and everything halts.
 
-**2a/2b. Key and Lazarette.** Reused Halyard chapters (OpenAI key page, then Lazarette item, Send and test, Settings,
-Fairlead tab, Share with Fairlead). Already blurred. XO and RADIO as in Halyard's script.
+### 1:21 to 1:56: Install and launch
 
-**3. Fairlead.** Fairlead Providers: ring on the Lazarette card (`OPENAI_API_KEY shared`, names only). Clients:
-**Another app...**, name `BridgeWarden`, **Install for this app** ("Saved to Windows Credential Manager as
-Fairlead/BridgeWarden"); the key table is blurred. Warden Control, AI MODEL SERVER: **Use Fairlead** finds the gateway,
-the line reads "Using the key Fairlead installed in Credential Manager (Fairlead/BridgeWarden)", route list, pick
-`fast`, "Model loaded: fast in 0.6 s". Terminal replay of the saved `backend\.env` (endpoint and route only).
-RADIO: Bridge Warden never holds a model key; Lazarette to Fairlead to Bridge Warden's own Fairlead key.
+There's nothing to install. Clone the repository and run the launcher. Windows PowerShell five point one compiles the engine from source at start. No admin rights, no network. It opens two windows. Warden Control for the operator. The main app for the watch. The first time, a launch page explains it in four steps. Close it once and it stays closed, and the Welcome button brings it back.
 
-**4. The bridge.** Chain of command, decisions column, ASK/ACT switch; Warden Control tiles, SAFE-STOP, log;
-**Start Operations**. CHIEF.
+### 1:56 to 2:22: OpenAI key
 
-**5. Crossing contact.** Inject Issues, Crossing Contact. Tactical Action Officer answers (0.8 s), Warden executes the
-turn. Intents row, Decision Provenance (LLM VERIFIED, model `fast`, latency, SHA-256), **Explain** streams. CHIEF.
+Every tool in the fleet needs a model key. At OpenAI, create a new secret key. Name it something generic. I call mine fleet-tools. Seven days is plenty. Copy it once. OpenAI never shows it again.
 
-**6. Hostile contact.** Hostile Surface: EMCON and General Quarters wait in Decisions with a countdown and safe
-default; operator approves both. CO: weapons and personnel orders always need a human.
+### 2:22 to 2:51: Lazarette
 
-**7. Ship Systems.** Aft Power Loss (Patch Cables): electrical one-line, patch-cable option with generator load,
-operator approves, team rigs it. CHIEF.
+The key goes into Lazarette, the encrypted vault on this machine. Test credential checks it against OpenAI's read-only endpoint. HTTP two hundred. The key is good. Share it with Fairlead by name, and Fairlead sees only what you share.
 
-**8. Compromised AI.** Compromised AI Commander, then Torpedoes Close: red log lines, `QUARANTINED tao-01`, Agents page
-(TAO quarantined), Undersea Warfare still answers by doctrine. CO.
+### 2:51 to 3:13: Fairlead connection
 
-**9. Ask Warden.** Chat: threat question answered from the live picture ("AI model via Fairlead (fast)" label);
-"Set every agent to ASK" returns Confirm cards; click Confirm. XO.
+The agents think through Fairlead. Here is the key Fairlead made for Bridge Warden. Bridge Warden never holds a provider key. In Warden Control, one button, Use Fairlead, finds the router on its own. Pick the fast route, and the model loads.
 
-**10. Human authority.** Sys Check, Confirm Operations, hold SAFE-STOP 2.5 s (banner, all agents stop), hold RESUME,
-Verify Ledger. CO.
+### 3:13 to 3:34: The watch
 
-**11. Integrations.** Fairlead Activity: every row Client `BridgeWarden`, route `fast`, served by `openai/gpt-4.1-mini`;
-Overview traffic map. RADIO: Fairlead routes and logs, Lazarette holds the key.
+This is the watch. Thirteen agents, each with a state. Waiting decisions, conflicts, and the audit record, all on one screen. The simulation flag stays on every screen. Press Start Operations in Warden Control, and the ship comes alive.
 
-**12. Close.** Emblem card. CO: "Fast where it must be fast, smart where judgment matters, and governed everywhere."
+### 3:34 to 4:04: Scenario 1: conflicting recommendations
+
+Scenario one: conflicting recommendations. Inject a crossing contact, an engine fault, and a squall. Collision Avoidance wants the rudder one way. Weather Routing wants it another. Warden sees that both claim the same rudder. The higher authority wins, and the conflict is logged with its reason on the Conflicts page.
+
+### 4:04 to 4:42: Scenario 2: violated boundary, operator decides
+
+Scenario two: a violated boundary. A hostile surface contact, and torpedoes in the water. An agent asks to arm weapons. Warden names the rule it hit: weapons need a human. The order waits, with a countdown and a safe default. The operator decides. Here, hold fire. Then a compromised commander reaches outside its role, and Warden quarantines it.
+
+### 4:42 to 5:03: Scenario 3: SAFE-STOP
+
+Scenario three: safe-stop. You have to type the word STOP, so it can't be pressed by accident. Every agent halts, and the ship holds course at a safe speed. Resume is one click.
+
+### 5:03 to 5:20: Scenario 4: audit record
+
+Scenario four: the audit record. Every decision, who made it and when, is a row in a hash-chained ledger. Press Verify Chain, and it proves that no row was changed.
+
+### 5:20 to 5:37: Proof: governance tests and green CI
+
+These rules are tested. Forbidden actions, resource conflicts, human escalation, timeouts, rollback, and safe-stop each have a test. They run in CI on every change. This run is green.
+
+### 5:37 to 5:49: Fairlead activity
+
+Every model call from Bridge Warden shows in Fairlead under its own name, with the route and the model that served it. Provider keys stay in Lazarette. Bridge Warden never sees them.
+
+### 5:49 to 5:59: Close
+
+Fast where it must be fast, smart where judgment matters, and governed everywhere. Fair winds.
 
 ## Integrations Bridge Warden has
 - **Fairlead** (live): endpoint `fairlead` auto-detected (CLI file, else 127.0.0.1:8776), key from Credential Manager
@@ -93,13 +79,6 @@ Overview traffic map. RADIO: Fairlead routes and logs, Lazarette holds the key.
 - Fairlead and Warden session links: never shown (redaction script blurs `session=` text).
 - Reused Halyard clips: OpenAI key page already blurred there; no key, passphrase or account shown.
 - No API key value appears anywhere; `backend\.env` replay shows endpoint and route only.
-
-## Known rough edges
-- c01 cold open and the c02 log show the live state of the run: c01 was recorded after the torpedo scenario (TAO
-  shown quarantined behind the card), and c02's log has two "AI model did not load" lines because the recording setup
-  deliberately starts on the default local endpoint (no local model on this PC).
-- Captions are timed by sentence length, not forced alignment.
-- Assembled with ffmpeg (`work\build.mjs`), not in Capstan's editor UI.
 
 ## PRs and fixes found during the run
 See the final report. Fixes: Pester CI (2), AI Model Server key line and stale error, Fairlead/route labels, Fleet skin and AGENTS.md rule.
