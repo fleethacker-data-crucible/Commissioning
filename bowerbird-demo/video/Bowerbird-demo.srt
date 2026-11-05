@@ -1,0 +1,131 @@
+1
+00:00:00,000 --> 00:00:06,363
+Screenshots pile up as Screenshot, date, time, and nobody can find the one they need.
+
+2
+00:00:06,363 --> 00:00:08,384
+Bowerbird is the file mate.
+
+3
+00:00:08,384 --> 00:00:13,923
+It reads them, proposes honest names, and moves nothing until you approve.
+
+4
+00:00:14,173 --> 00:00:15,547
+Bowerbird runs on one PC.
+
+5
+00:00:15,547 --> 00:00:21,123
+A PowerShell launcher starts the engine, and your browser talks to it on localhost.
+
+6
+00:00:21,823 --> 00:00:28,122
+The engine indexes and searches, proposes renames, and organizes by rules.
+
+7
+00:00:28,122 --> 00:00:30,974
+The index is encrypted on disk.
+
+8
+00:00:31,674 --> 00:00:37,426
+Model calls go through Fairlead, with Bowerbird's own key from Credential Manager.
+
+9
+00:00:37,426 --> 00:00:39,279
+The OpenAI key stays in Lazarette.
+
+10
+00:00:39,279 --> 00:00:44,673
+Semaphore export and SnapShackle names exist in the code, but aren't shown here.
+
+11
+00:00:45,373 --> 00:00:47,670
+One rule holds it together.
+
+12
+00:00:47,670 --> 00:00:52,333
+Nothing is renamed until you type APPLY, and a journal can undo it.
+
+13
+00:00:53,030 --> 00:00:57,569
+The OpenAI key is already in Lazarette, shared to Fairlead by name.
+
+14
+00:00:57,569 --> 00:01:00,253
+Fairlead sees only what you share.
+
+15
+00:01:00,953 --> 00:01:02,648
+Fairlead gives Bowerbird its own key.
+
+16
+00:01:02,648 --> 00:01:07,662
+Pick Bowerbird, install, and it lands in Windows Credential Manager.
+
+17
+00:01:08,292 --> 00:01:12,955
+Seven invented screenshots, every one named Screenshot, date, time.
+
+18
+00:01:13,655 --> 00:01:14,683
+In Smart Rename, tick AI vision.
+
+19
+00:01:15,425 --> 00:01:19,074
+Bowerbird asks before any image leaves this PC.
+
+20
+00:01:19,074 --> 00:01:21,645
+These are synthetic, so send them.
+
+21
+00:01:21,645 --> 00:01:28,936
+Seven live vision calls go through Fairlead to the cloud route, because Fairlead has no local vision model here.
+
+22
+00:01:29,636 --> 00:01:33,997
+Seven proposals, each with its reason and a confidence.
+
+23
+00:01:33,997 --> 00:01:35,956
+Nothing has moved yet.
+
+24
+00:01:36,656 --> 00:01:38,230
+To apply, type APPLY.
+
+25
+00:01:38,230 --> 00:01:41,169
+The files are renamed exactly as previewed.
+
+26
+00:01:41,869 --> 00:01:43,649
+Explorer shows the new names.
+
+27
+00:01:44,296 --> 00:01:45,281
+Nothing was deleted.
+
+28
+00:01:45,981 --> 00:01:47,091
+Undo has its own gate.
+
+29
+00:01:47,720 --> 00:01:49,921
+Type UNDO, and every original name comes back.
+
+30
+00:01:50,171 --> 00:01:51,354
+Bowerbird proposes.
+
+31
+00:01:51,354 --> 00:01:52,926
+People decide.
+
+32
+00:01:52,926 --> 00:02:00,131
+The names are better, the moves are reversible, and the model only ever saw what you let it see.
+
+33
+00:02:00,131 --> 00:02:01,890
+That's the watch.
