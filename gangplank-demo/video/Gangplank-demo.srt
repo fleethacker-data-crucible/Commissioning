@@ -1,151 +1,234 @@
 1
 00:00:00,250 --> 00:00:04,247
-Most people who need to change a project were never taught Git.
+Most people who need to change a project
+were never taught Git.
 
 2
-00:00:04,247 --> 00:00:12,748
-Gangplank puts them on a branch of their own, in a browser, checks what they save, and hands the work to the team as a review request.
+00:00:04,247 --> 00:00:09,503
+Gangplank puts them on a branch of their
+own, in a browser, checks what they save,
 
 3
+00:00:09,503 --> 00:00:12,748
+and hands the work to the team as a
+review request.
+
+4
 00:00:12,748 --> 00:00:14,652
 The shared branch never moves.
 
-4
-00:00:14,652 --> 00:00:16,185
+5
+00:00:14,652 --> 00:00:16,234
 Gangplank runs on your PC.
 
-5
-00:00:16,185 --> 00:00:24,897
-A PowerShell server listens on localhost, your browser is the interface, and nothing like git, Node or Python is needed.
-
 6
-00:00:25,597 --> 00:00:31,129
-Inside the server: Smart Save, the Sentinel secret scan, and an audit log.
+00:00:16,234 --> 00:00:21,795
+A PowerShell server listens on localhost,
+your browser is the interface,
 
 7
-00:00:31,129 --> 00:00:33,849
-You edit files in an ordinary folder.
+00:00:21,795 --> 00:00:25,398
+and nothing like git,
+Node or Python is needed.
 
 8
-00:00:34,549 --> 00:00:38,521
-Out to GitHub or GitLab over HTTPS, on a branch of your own.
+00:00:26,098 --> 00:00:30,855
+Inside the server: Smart Save,
+the Sentinel secret scan,
 
 9
-00:00:38,521 --> 00:00:41,250
-AI help goes through Fairlead only.
+00:00:30,855 --> 00:00:32,325
+and an audit log.
 
 10
-00:00:41,250 --> 00:00:46,123
-Lazarette, the vault, is an opt-in source for Git tokens.
+00:00:32,325 --> 00:00:35,083
+You edit files in an ordinary folder.
 
 11
-00:00:46,823 --> 00:00:54,796
-Safe by design: your branch only, stop if it moved, secrets blocked, every write audited.
+00:00:35,783 --> 00:00:39,838
+Out to GitHub or GitLab over HTTPS,
+on a branch of your own.
 
 12
-00:00:54,796 --> 00:00:58,195
-Single sign-on and roles are planned, not built.
+00:00:39,838 --> 00:00:43,604
+AI help goes through Fairlead only.
 
 13
-00:00:58,445 --> 00:01:00,470
-Setup starts in Fairlead.
+00:00:43,604 --> 00:00:47,855
+Lazarette, the vault,
+is an opt-in source for Git tokens.
 
 14
-00:01:00,470 --> 00:01:04,798
-One click installs a key for Gangplank in Windows Credential Manager.
+00:00:48,555 --> 00:00:54,140
+Safe by design: your branch only,
+stop if it moved, secrets blocked,
 
 15
-00:01:04,798 --> 00:01:09,230
-The key is never shown, and Gangplank reads it from there.
+00:00:54,140 --> 00:00:55,807
+every write audited.
 
 16
-00:01:09,878 --> 00:01:10,678
-Then launch.
+00:00:55,807 --> 00:01:00,360
+Single sign-on and roles are planned,
+not built.
 
 17
-00:01:10,468 --> 00:01:14,144
-A local server starts and your browser gets a one-time link.
+00:01:00,964 --> 00:01:02,990
+Setup starts in Fairlead.
 
 18
-00:01:14,144 --> 00:01:19,236
-This is the test-mode launcher, so the GitHub behind it is synthetic and Lazarette is off.
+00:01:02,990 --> 00:01:07,317
+One click installs a key for Gangplank in
+Windows Credential Manager.
 
 19
-00:01:19,486 --> 00:01:25,137
-The job: a watchstander must add weekend maintenance notes to the team project.
+00:01:07,317 --> 00:01:11,750
+The key is never shown,
+and Gangplank reads it from there.
 
 20
-00:01:25,137 --> 00:01:31,507
-Paste the address, connect, name a branch, and start.
+00:01:11,988 --> 00:01:12,988
+Then launch.
 
 21
-00:01:32,207 --> 00:01:35,700
-Gangplank downloads a fresh copy to a folder of their own.
+00:01:12,988 --> 00:01:16,663
+A local server starts and your browser
+gets a one-time link.
 
 22
-00:01:35,700 --> 00:01:44,608
-They edit with ordinary tools: the notes, a readme line, and by mistake an old deploy script with a token in it.
+00:01:16,663 --> 00:01:20,771
+This is the test-mode launcher,
+so the GitHub behind it is synthetic and
 
 23
-00:01:45,308 --> 00:01:47,130
-Smart Save lists what changed.
+00:01:20,771 --> 00:01:21,771
+Lazarette is off.
 
 24
-00:01:47,130 --> 00:01:56,350
-The script with the token is excluded automatically, and the Sentinel scan names it: a possible GitHub credential.
+00:01:22,005 --> 00:01:27,656
+The job: a watchstander must add weekend
+maintenance notes to the team project.
 
 25
-00:01:57,050 --> 00:02:01,002
-For the commit title, Refine using AI asks first.
+00:01:27,656 --> 00:01:32,802
+Paste the address, connect, name a branch,
 
 26
-00:02:01,002 --> 00:02:07,504
-Only file names and change types go out, through Fairlead, to a local model.
+00:01:32,802 --> 00:01:34,027
+and start.
 
 27
-00:02:08,204 --> 00:02:12,726
-Publish asks again, then makes one commit on their branch.
+00:01:34,727 --> 00:01:38,219
+Gangplank downloads a fresh copy to a
+folder of their own.
 
 28
-00:02:12,726 --> 00:02:18,976
-The review request asks again, then opens a pull request for the team.
+00:01:38,219 --> 00:01:42,714
+They edit with ordinary tools: the notes,
+a readme line,
 
 29
-00:02:19,726 --> 00:02:20,719
-Now the trust check.
+00:01:42,714 --> 00:01:47,127
+and by mistake an old deploy script
+with a token in it.
 
 30
-00:02:21,284 --> 00:02:23,230
-A teammate pushes to the same branch.
+00:01:47,827 --> 00:01:49,649
+Smart Save lists what changed.
 
 31
-00:02:23,930 --> 00:02:26,324
-Gangplank sees it on refresh and stops: saving stays off until they get the latest.
+00:01:49,649 --> 00:01:53,886
+The script with the token is
+excluded automatically,
 
 32
-00:02:27,024 --> 00:02:29,692
-It never force-updates.
+00:01:53,886 --> 00:01:58,870
+and the Sentinel scan names it:
+a possible GitHub credential.
 
 33
-00:02:30,333 --> 00:02:32,866
-The review request is listed for the team.
+00:01:59,570 --> 00:02:03,522
+For the commit title,
+Refine using AI asks first.
 
 34
-00:02:32,866 --> 00:02:37,983
-Every write is in the audit log: the branch, the commit, the review, when and where, never contents or tokens.
+00:02:03,522 --> 00:02:06,989
+Only file names and change types go out,
 
 35
-00:02:38,683 --> 00:02:47,032
-And the model call is on Fairlead's own log: client Gangplank, local route, served by a small local model.
+00:02:06,989 --> 00:02:10,023
+through Fairlead, to a local model.
 
 36
-00:02:47,653 --> 00:02:55,470
-That was Gangplank in test mode: a synthetic GitHub, a live local model through Fairlead, and the real safeguards.
+00:02:10,723 --> 00:02:15,245
+Publish asks again,
+then makes one commit on their branch.
 
 37
-00:02:55,470 --> 00:02:57,596
-Its own branch, its own review.
+00:02:15,245 --> 00:02:17,963
+The review request asks again,
 
 38
-00:02:57,596 --> 00:02:58,396
+00:02:17,963 --> 00:02:21,496
+then opens a pull request for the team.
+
+39
+00:02:22,246 --> 00:02:23,246
+Now the trust check.
+
+40
+00:02:23,804 --> 00:02:25,749
+A teammate pushes to the same branch.
+
+41
+00:02:26,449 --> 00:02:28,400
+Gangplank sees it on refresh and stops:
+saving stays off until they
+
+42
+00:02:28,400 --> 00:02:29,400
+get the latest.
+
+43
+00:02:29,543 --> 00:02:32,212
+It never force-updates.
+
+44
+00:02:32,853 --> 00:02:35,385
+The review request is listed for the team.
+
+45
+00:02:35,385 --> 00:02:38,560
+Every write is in the audit log:
+the branch, the commit, the review,
+
+46
+00:02:38,560 --> 00:02:40,503
+when and where, never contents or tokens.
+
+47
+00:02:41,203 --> 00:02:47,144
+And the model call is on Fairlead's own
+log: client Gangplank, local route,
+
+48
+00:02:47,144 --> 00:02:49,552
+served by a small local model.
+
+49
+00:02:50,173 --> 00:02:53,765
+That was Gangplank in test mode:
+a synthetic GitHub,
+
+50
+00:02:53,765 --> 00:02:57,990
+a live local model through Fairlead,
+and the real safeguards.
+
+51
+00:02:57,990 --> 00:03:00,116
+Its own branch, its own review.
+
+52
+00:03:00,116 --> 00:03:01,116
 Fair winds.
