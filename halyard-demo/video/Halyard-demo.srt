@@ -363,17 +363,29 @@ The write audit lists every write Halyard made.
 Every one went to the backlog.
 
 92
-00:05:35,254 --> 00:05:37,573
+00:05:35,504 --> 00:05:37,026
 Halyard proposes.
 
 93
-00:05:37,573 --> 00:05:39,482
+00:05:37,026 --> 00:05:38,279
 People decide.
 
 94
-00:05:39,482 --> 00:05:41,800
+00:05:38,279 --> 00:05:39,800
 That's the watch.
 
 95
-00:05:41,800 --> 00:05:43,300
-Fair winds.
+00:05:39,800 --> 00:05:45,349
+This demo took longer than it actually took to build the tool.
+
+96
+00:05:45,349 --> 00:05:49,287
+So why would you pay for ADO Boards or Jira?
+
+97
+00:05:49,287 --> 00:05:50,450
+SaaS is dead.
+
+98
+00:05:50,450 --> 00:05:54,298
+Compute and creativity is the new frontier.
