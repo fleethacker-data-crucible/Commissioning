@@ -1,323 +1,497 @@
 1
 00:00:00,000 --> 00:00:04,848
-A developer on a locked-down PC wants an AI pair programmer.
+A developer on a locked-down
+PC wants an AI pair programmer.
 
 2
-00:00:04,848 --> 00:00:11,394
-Cloud assistants are blocked, and nobody wants project files leaving the machine.
+00:00:04,848 --> 00:00:07,221
+Cloud assistants are blocked,
 
 3
-00:00:11,394 --> 00:00:23,272
-Phoenix LAi runs Gemma models on your own GPU, serves them as an OpenAI API, and gives you a chat that edits project files only where you allow it.
+00:00:07,221 --> 00:00:11,394
+and nobody wants project
+files leaving the machine.
 
 4
-00:00:23,272 --> 00:00:26,828
-Everything you will see is running for real.
+00:00:11,394 --> 00:00:15,162
+Phoenix LAi runs Gemma
+models on your own GPU,
 
 5
+00:00:15,162 --> 00:00:19,258
+serves them as an OpenAI API,
+and gives you a chat
+
+6
+00:00:19,258 --> 00:00:23,272
+that edits project files
+only where you allow it.
+
+7
+00:00:23,272 --> 00:00:26,828
+Everything you will see is running
+for real.
+
+8
 00:00:27,078 --> 00:00:30,004
 Phoenix is two programs on one PC.
 
-6
-00:00:30,004 --> 00:00:37,252
-The server turns Gemma 4 models into an OpenAI API on port 1234, with a dashboard and a console.
+9
+00:00:30,004 --> 00:00:34,887
+The server turns Gemma 4 models
+into an OpenAI API on port 1234,
 
-7
+10
+00:00:34,887 --> 00:00:37,252
+with a dashboard and a console.
+
+11
 00:00:37,744 --> 00:00:39,279
 Models are plain files in a models folder.
 
-8
+12
 00:00:39,979 --> 00:00:42,642
-The engine runs them on your GPU through the driver's own Vulkan.
+The engine runs them on your GPU
+through the driver's own Vulkan.
 
-9
+13
 00:00:43,358 --> 00:00:46,682
 No installs, no admin.
 
-10
+14
 00:00:47,471 --> 00:00:50,462
 The client is the chat window.
 
-11
-00:00:50,462 --> 00:00:59,477
-It holds your project files in a jailed folder, with a backup before every edit, and talks to the server over the same API.
+15
+00:00:50,462 --> 00:00:53,935
+It holds your project
+files in a jailed folder,
 
-12
-00:01:00,177 --> 00:01:06,739
-Providers are any OpenAI compatible address: the Phoenix server, Fairlead, LM Studio, Ollama, even a cloud.
+16
+00:00:53,935 --> 00:00:59,477
+with a backup before every edit,
+and talks to the server over the same API.
 
-13
+17
+00:01:00,177 --> 00:01:02,901
+Providers are any OpenAI
+compatible address:
+
+18
+00:01:02,901 --> 00:01:06,739
+the Phoenix server, Fairlead,
+LM Studio, Ollama, even a cloud.
+
+19
 00:01:06,739 --> 00:01:10,524
-Only the Phoenix server gets your files by default.
+Only the Phoenix server
+gets your files by default.
 
-14
+20
 00:01:10,524 --> 00:01:12,366
 Everyone else gets what you type.
 
-15
+21
 00:01:13,127 --> 00:01:17,462
-Cloud keys live in Lazarette and are shared to Fairlead.
+Cloud keys live in Lazarette
+and are shared to Fairlead.
 
-16
+22
 00:01:17,462 --> 00:01:19,893
 Phoenix never reads the vault.
 
-17
-00:01:19,893 --> 00:01:24,562
-It holds only its own Fairlead key, in Windows Credential Manager.
-
-18
-00:01:25,262 --> 00:01:30,925
-A VS Code panel shows the same chat, with inline completion from the server.
-
-19
-00:01:31,625 --> 00:01:38,854
-And the safety line: the model never runs a command, every edit keeps the old version, and your files stay on this PC.
-
-20
-00:01:38,854 --> 00:01:41,840
-This is the Phoenix server's dashboard, live.
-
-21
-00:01:41,840 --> 00:01:45,047
-No model is loaded and no GPU memory is in use.
-
-22
-00:01:45,047 --> 00:01:50,719
-One client is connected, the Phoenix client, with its last call listed.
-
 23
+00:01:19,893 --> 00:01:24,562
+It holds only its own Fairlead key,
+in Windows Credential Manager.
+
+24
+00:01:25,262 --> 00:01:27,981
+A VS Code panel shows the same chat,
+
+25
+00:01:27,981 --> 00:01:30,925
+with inline completion from the server.
+
+26
+00:01:31,625 --> 00:01:34,838
+And the safety line:
+the model never runs a command,
+
+27
+00:01:34,838 --> 00:01:38,854
+every edit keeps the old version,
+and your files stay on this PC.
+
+28
+00:01:38,854 --> 00:01:41,840
+This is the Phoenix server's dashboard,
+live.
+
+29
+00:01:41,840 --> 00:01:45,047
+No model is loaded
+and no GPU memory is in use.
+
+30
+00:01:45,047 --> 00:01:48,612
+One client is connected,
+the Phoenix client,
+
+31
+00:01:48,612 --> 00:01:50,719
+with its last call listed.
+
+32
 00:01:50,719 --> 00:01:52,063
 Everything here is local.
 
-24
+33
 00:01:52,763 --> 00:01:57,334
-The console speaks only Phoenix's own commands, never a shell.
+The console speaks only Phoenix's
+own commands, never a shell.
 
-25
+34
 00:01:57,334 --> 00:02:00,150
-Status shows the API address and the device.
+Status shows the API address
+and the device.
 
-26
+35
 00:02:00,850 --> 00:02:02,847
 Models lists what the API offers.
 
-27
+36
 00:02:02,847 --> 00:02:04,482
 Here, no models folder yet.
 
-28
-00:02:05,346 --> 00:02:06,146
-This PC has no Gemma 4 file, and Phoenix refuses other models.
+37
+00:02:05,346 --> 00:02:06,346
+This PC has no Gemma 4 file,
+and Phoenix refuses other models.
 
-29
-00:02:06,366 --> 00:02:12,681
-So for this demo, the model comes through Fairlead.
+38
+00:02:06,366 --> 00:02:08,513
+So for this demo,
 
-30
+39
+00:02:08,513 --> 00:02:12,681
+the model comes through Fairlead.
+
+40
 00:02:12,931 --> 00:02:18,322
-The client opens, and the Fleet skin switches it to navy and brass.
+The client opens, and the Fleet
+skin switches it to navy and brass.
 
-31
-00:02:18,322 --> 00:02:24,260
-Providers lists the Phoenix server, green because it is running.
+41
+00:02:18,322 --> 00:02:21,621
+Providers lists the Phoenix server,
 
-32
+42
+00:02:21,621 --> 00:02:24,260
+green because it is running.
+
+43
 00:02:24,260 --> 00:02:25,660
 Now we add Fairlead.
 
-33
-00:02:26,360 --> 00:02:27,160
-Plus.
+44
+00:02:26,360 --> 00:02:30,053
+Plus. A name, Fairlead's local address,
 
-34
-00:02:26,674 --> 00:02:34,149
-A name, Fairlead's local address, and the key Fairlead issued to this app.
+45
+00:02:30,053 --> 00:02:34,149
+and the key Fairlead issued to this app.
 
-35
+46
 00:02:34,149 --> 00:02:39,565
-It goes straight into Windows Credential Manager, never into a file.
+It goes straight into Windows
+Credential Manager, never into a file.
 
-36
+47
 00:02:40,419 --> 00:02:45,180
-Load models: Fairlead offers its routes, here one called local.
+Load models: Fairlead offers its routes,
+here one called local.
 
-37
-00:02:45,180 --> 00:02:51,620
-Test probes eighteen OpenAI features, so Phoenix never sends this provider something it refuses.
+48
+00:02:45,180 --> 00:02:47,689
+Test probes eighteen OpenAI features,
 
-38
+49
+00:02:47,689 --> 00:02:51,620
+so Phoenix never sends this
+provider something it refuses.
+
+50
 00:02:52,320 --> 00:02:56,053
-The feature map is saved with the provider.
+The feature map is saved
+with the provider.
 
-39
+51
 00:02:56,053 --> 00:03:01,154
-Embeddings are not offered, so docs search falls back to keywords.
+Embeddings are not offered,
+so docs search falls back to keywords.
 
-40
+52
 00:03:01,154 --> 00:03:04,955
 And look at the privacy switch: off.
 
-41
-00:03:04,955 --> 00:03:10,539
-This provider gets only what you type, never your files.
-
-42
-00:03:10,539 --> 00:03:11,339
-Save.
-
-43
-00:03:11,637 --> 00:03:20,096
-First live answer: the question goes through Fairlead to a three billion parameter Llama on this machine, about ninety tokens a second.
-
-44
-00:03:20,096 --> 00:03:25,618
-The answer is rough, as small models are, but it is real and it is live.
-
-45
-00:03:26,230 --> 00:03:29,812
-Scenario: a ledger clerk with a small PowerShell script.
-
-46
-00:03:29,812 --> 00:03:33,835
-A project is a folder, jailed inside Phoenix projects.
-
-47
-00:03:33,835 --> 00:03:39,846
-I drop in two synthetic files, a script and a sample ledger, and ask about the script.
-
-48
-00:03:40,472 --> 00:03:44,717
-With the privacy switch off, Fairlead never saw the file.
-
-49
-00:03:44,717 --> 00:03:47,737
-The model can only guess, and it does.
-
-50
-00:03:47,737 --> 00:03:50,611
-That is the gate working, not a bug.
-
-51
-00:03:51,311 --> 00:03:56,037
-To let this provider see the project, open its window and switch on send local context.
-
-52
-00:03:56,037 --> 00:04:00,409
-The red warning says project files are sent to this provider.
-
 53
-00:04:00,409 --> 00:04:04,288
-Fairlead's local route stays on this PC, so I accept it.
+00:03:04,955 --> 00:03:10,539
+This provider gets only what you type,
+never your files.
 
 54
-00:04:04,288 --> 00:04:05,088
+00:03:10,539 --> 00:03:11,539
 Save.
 
 55
-00:04:05,259 --> 00:04:12,560
-Now the same chat lists the project with a real list command, and finds the script, the ledger and a rules file.
+00:03:11,637 --> 00:03:14,983
+First live answer:
+the question goes through Fairlead
 
 56
-00:04:13,260 --> 00:04:19,754
-A deliberately mechanical edit for a small model: replace this text with the decimal cast.
+00:03:14,983 --> 00:03:20,096
+to a three billion parameter Llama on this
+machine, about ninety tokens a second.
 
 57
-00:04:19,754 --> 00:04:27,032
-Phoenix shows the diff, writes it, and keeps the previous version in a dot llm backup folder.
+00:03:20,096 --> 00:03:25,618
+The answer is rough, as small models are,
+but it is real and it is live.
 
 58
-00:04:27,032 --> 00:04:31,052
-A small model can get this wrong, so the backup is the point.
+00:03:26,230 --> 00:03:29,812
+Scenario: a ledger clerk
+with a small PowerShell script.
 
 59
-00:04:31,384 --> 00:04:32,184
-Safety.
+00:03:29,812 --> 00:03:33,835
+A project is a folder,
+jailed inside Phoenix projects.
 
 60
-00:04:31,750 --> 00:04:34,717
-The model never runs anything.
+00:03:33,835 --> 00:03:35,957
+I drop in two synthetic files,
 
 61
-00:04:34,717 --> 00:04:40,152
-I ask it to run the script, and all it does is give me the command to run myself.
+00:03:35,957 --> 00:03:39,846
+a script and a sample ledger,
+and ask about the script.
 
 62
-00:04:40,912 --> 00:04:45,125
-Ask again, even with permission, and the run guard steps in.
+00:03:40,472 --> 00:03:44,717
+With the privacy switch off,
+Fairlead never saw the file.
 
 63
-00:04:45,638 --> 00:04:50,240
-A red warning, and the chat says this is the third request to run something.
+00:03:44,717 --> 00:03:47,737
+The model can only guess, and it does.
 
 64
-00:04:50,240 --> 00:04:55,529
-The sixth locks chat input for five minutes, and the lockout survives a restart.
+00:03:47,737 --> 00:03:50,611
+That is the gate working, not a bug.
 
 65
-00:04:55,529 --> 00:04:57,204
-I will not push it.
+00:03:51,311 --> 00:03:52,311
+To let
 
 66
-00:04:58,095 --> 00:05:02,183
-The project jail: I try to open a folder outside Phoenix projects.
+00:03:52,311 --> 00:03:56,037
+this provider see the project, open its
+window and switch on send local context.
 
 67
-00:05:02,183 --> 00:05:09,115
-Dots in the path are refused, and the message says folders are always inside the projects folder, fixed and unchangeable.
+00:03:56,037 --> 00:04:00,409
+The red warning says project
+files are sent to this provider.
 
 68
-00:05:09,815 --> 00:05:13,347
-Same answer for a project path that tries to climb out with dot dot.
+00:04:00,409 --> 00:04:04,288
+Fairlead's local route stays on this PC,
+so I accept it.
 
 69
-00:05:13,347 --> 00:05:17,233
-Everything in the client is a slash command, no menus.
+00:04:04,288 --> 00:04:09,271
+Save. Now the same chat lists the project
+with a real list command,
 
 70
-00:05:17,233 --> 00:05:25,263
-Help lists them all: connect a project, switch provider, compact a long chat, accept mode to approve each file action.
+00:04:09,271 --> 00:04:12,560
+and finds the script,
+the ledger and a rules file.
 
 71
-00:05:25,963 --> 00:05:32,058
-Skills are reusable instructions in plain files, matched to what you type or called by name.
+00:04:13,260 --> 00:04:16,835
+A deliberately mechanical edit
+for a small model:
 
 72
-00:05:32,058 --> 00:05:35,006
-The Skill Builder drafts and tests them.
+00:04:16,835 --> 00:04:19,754
+replace this text with the decimal cast.
 
 73
-00:05:35,256 --> 00:05:36,762
-The evidence trail.
+00:04:19,754 --> 00:04:22,443
+Phoenix shows the diff, writes it,
 
 74
-00:05:36,762 --> 00:05:42,629
-The chat is saved with the project, and the edit line names the exact backup folder holding the version from before the change.
+00:04:22,443 --> 00:04:27,032
+and keeps the previous version
+in a dot llm backup folder.
 
 75
-00:05:43,329 --> 00:05:49,542
-Open the saved chat and every step is there: the list, the diff, the write and the backup path.
+00:04:27,032 --> 00:04:31,052
+A small model can get this wrong,
+so the backup is the point.
 
 76
-00:05:50,242 --> 00:05:54,127
-Back on the server dashboard, the only requests are the client's embedding checks.
+00:04:31,384 --> 00:04:35,086
+Safety. I ask the model to run the script.
 
 77
-00:05:54,127 --> 00:05:56,506
-The chat itself went through Fairlead.
+00:04:35,086 --> 00:04:40,455
+It cannot: Phoenix never runs a command,
+so all it can do is answer in text.
 
 78
-00:05:57,006 --> 00:06:00,616
-Phoenix LAi keeps the work on the machine.
+00:04:40,885 --> 00:04:43,564
+I ask again, this time with permission.
 
 79
-00:06:00,616 --> 00:06:09,211
-Your files go only where you allow, the model never runs a command, and every edit keeps its backup.
+00:04:43,564 --> 00:04:47,811
+It still declines,
+and offers a script for me to run myself.
 
 80
-00:06:09,211 --> 00:06:15,485
-Today's model came through Fairlead, because this PC has no Gemma 4 file.
+00:04:48,127 --> 00:04:50,334
+A third try, and the run guard steps in.
 
 81
-00:06:15,485 --> 00:06:18,322
+00:04:50,334 --> 00:04:53,667
+Chat is suspended for five minutes,
+with a countdown,
+
+82
+00:04:53,667 --> 00:04:56,497
+and by design the lockout
+survives a restart.
+
+83
+00:04:56,497 --> 00:04:59,566
+That is a safety stop, not a bug.
+
+84
+00:05:00,266 --> 00:05:04,577
+The project jail: I try
+to open a folder outside Phoenix projects.
+
+85
+00:05:04,577 --> 00:05:06,763
+Dots in the path are refused,
+
+86
+00:05:06,763 --> 00:05:07,763
+and the
+
+87
+00:05:07,763 --> 00:05:13,471
+message says folders are always inside the
+projects folder, fixed and unchangeable.
+
+88
+00:05:14,171 --> 00:05:17,900
+Same answer for a project path
+that tries to climb out with dot dot.
+
+89
+00:05:17,900 --> 00:05:21,786
+Everything in the client is
+a slash command, no menus.
+
+90
+00:05:21,786 --> 00:05:25,629
+Help lists them all:
+connect a project, switch provider,
+
+91
+00:05:25,629 --> 00:05:29,815
+compact a long chat, accept mode
+to approve each file action.
+
+92
+00:05:30,515 --> 00:05:33,730
+Skills are reusable
+instructions in plain files,
+
+93
+00:05:33,730 --> 00:05:36,610
+matched to what you type
+or called by name.
+
+94
+00:05:36,610 --> 00:05:39,559
+The Skill Builder drafts and tests them.
+
+95
+00:05:39,809 --> 00:05:41,315
+The evidence trail.
+
+96
+00:05:41,315 --> 00:05:42,984
+The chat is saved with the project,
+
+97
+00:05:42,984 --> 00:05:43,984
+and the edit
+
+98
+00:05:43,984 --> 00:05:47,181
+line names the exact backup folder holding
+the version from before the change.
+
+99
+00:05:47,881 --> 00:05:50,790
+Open the saved chat
+and every step is there:
+
+100
+00:05:50,790 --> 00:05:54,095
+the list, the diff,
+the write and the backup path.
+
+101
+00:05:54,795 --> 00:05:55,795
+Back
+
+102
+00:05:55,795 --> 00:05:58,680
+on the server dashboard, the only requests
+are the client's embedding checks.
+
+103
+00:05:58,680 --> 00:06:01,059
+The chat itself went through Fairlead.
+
+104
+00:06:01,559 --> 00:06:05,169
+Phoenix LAi keeps the work on the machine.
+
+105
+00:06:05,169 --> 00:06:08,207
+Your files go only where you allow,
+
+106
+00:06:08,207 --> 00:06:13,764
+the model never runs a command,
+and every edit keeps its backup.
+
+107
+00:06:13,764 --> 00:06:16,901
+Today's model came through Fairlead,
+
+108
+00:06:16,901 --> 00:06:20,038
+because this PC has no Gemma 4 file.
+
+109
+00:06:20,038 --> 00:06:22,874
 Everything else you saw was live.

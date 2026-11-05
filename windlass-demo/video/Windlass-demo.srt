@@ -1,323 +1,376 @@
 1
 00:00:00,250 --> 00:00:04,716
-Some questions deserve a model far bigger than this computer can hold.
+Some questions deserve a model far
+bigger than this computer can hold.
 
 2
-00:00:05,184 --> 00:00:11,322
-A seventy billion parameter model is over forty gigabytes before it answers a word.
+00:00:05,184 --> 00:00:08,213
+A seventy billion parameter model is over
 
 3
-00:00:11,894 --> 00:00:18,319
-Windlass hauls it through memory one layer at a time, so an ordinary PC can run it.
+00:00:08,253 --> 00:00:11,322
+forty gigabytes before it answers a word.
 
 4
-00:00:18,803 --> 00:00:23,317
-It is slow on purpose, and everything you see today runs live.
+00:00:11,894 --> 00:00:15,145
+Windlass hauls it through memory one layer
 
 5
-00:00:23,889 --> 00:00:28,725
-Our demo model is a small three billion one, so you can watch it work.
+00:00:15,185 --> 00:00:18,319
+at a time, so an ordinary PC can run it.
 
 6
-00:00:29,475 --> 00:00:31,175
-Here is how it works.
+00:00:18,803 --> 00:00:23,317
+It is slow on purpose,
+and everything you see today runs live.
 
 7
-00:00:31,175 --> 00:00:33,850
-Windlass reads a GGUF model file from your drive.
+00:00:23,889 --> 00:00:28,725
+Our demo model is a small three
+billion one, so you can watch it work.
 
 8
-00:00:33,850 --> 00:00:37,656
-It reads the header first, never the whole model.
+00:00:29,475 --> 00:00:31,135
+Here is how it works.
 
 9
-00:00:37,656 --> 00:00:41,637
-Everything stays on this one computer, on loopback.
+00:00:31,175 --> 00:00:33,810
+Windlass reads a GGUF
+model file from your drive.
 
 10
-00:00:42,337 --> 00:00:44,950
-One layer at a time goes into memory.
+00:00:33,850 --> 00:00:37,616
+It reads the header first,
+never the whole model.
 
 11
-00:00:44,950 --> 00:00:49,129
-While layer N computes on the CPU, layer N plus one loads from disk.
+00:00:37,656 --> 00:00:41,637
+Everything stays on this
+one computer, on loopback.
 
 12
-00:00:49,129 --> 00:00:56,493
-The keys and values cache stays in RAM, so a seventy billion model needs about two gigabytes plus that cache.
+00:00:42,337 --> 00:00:44,910
+One layer at a time goes into memory.
 
 13
-00:00:57,193 --> 00:01:01,052
-Callers are the browser UI, or any OpenAI-style client on this PC.
+00:00:44,950 --> 00:00:49,089
+While layer N computes on the CPU,
+layer N plus one loads from disk.
 
 14
-00:01:01,052 --> 00:01:07,112
-The server checks the Host and Origin of every request and keeps a first-in, first-out queue.
+00:00:49,129 --> 00:00:52,634
+The keys and values cache
+stays in RAM, so a seventy
 
 15
-00:01:07,812 --> 00:01:12,303
-A machine playbook measures speed and quality here and publishes them.
+00:00:52,674 --> 00:00:56,493
+billion model needs about two
+gigabytes plus that cache.
 
 16
-00:01:12,303 --> 00:01:16,250
-A number never measured shows as null, not as a guess.
+00:00:57,193 --> 00:01:02,265
+Fairlead, the model router, treats
+Windlass as one more local provider.
 
 17
-00:01:16,250 --> 00:01:19,657
-The log holds ids, counts and timings, never your text.
+00:01:02,305 --> 00:01:05,230
+The route is deep-local,
+reached by name only,
 
 18
-00:01:20,357 --> 00:01:25,469
-Fairlead, the model router, treats Windlass as one more local provider.
+00:01:05,270 --> 00:01:07,720
+so interactive tools never wait on it.
 
 19
-00:01:25,469 --> 00:01:30,884
-The route is deep-local, reached by name only, so interactive tools never wait on it.
+00:01:08,420 --> 00:01:12,148
+And the guardrails: loopback only,
+no outgoing connections,
 
 20
-00:01:31,584 --> 00:01:34,034
-GPU offload is planned, not built.
+00:01:12,188 --> 00:01:16,276
+no text in the log, and it never
+stops in the middle of a reply.
 
 21
-00:01:34,034 --> 00:01:36,544
-Today the math runs on the CPU.
+00:01:16,853 --> 00:01:19,051
+Setup needs no admin
+rights and no install.
 
 22
-00:01:37,244 --> 00:01:45,099
-And the guardrails: loopback only, no outgoing connections, no text in the log, and it never stops in the middle of a reply.
+00:01:19,091 --> 00:01:23,843
+First, info reads only the model's
+header: twenty-eight layers,
 
 23
-00:01:45,677 --> 00:01:47,915
-Setup needs no admin rights and no install.
+00:01:23,883 --> 00:01:29,167
+three point four gigabytes, Q8 weights,
+and the Llama 3 chat template.
 
 24
-00:01:47,915 --> 00:01:58,031
-First, info reads only the model's header: twenty-eight layers, three point four gigabytes, Q8 weights, and the Llama 3 chat template.
-
-25
-00:01:58,031 --> 00:02:00,136
+00:01:29,207 --> 00:01:31,312
 Nothing is ever downloaded.
 
+25
+00:01:32,012 --> 00:01:35,005
+The overview shows the model,
+its measured speed,
+
 26
-00:02:00,808 --> 00:02:04,606
-Then serve, with a cache of zero so the layers really stream.
+00:01:35,045 --> 00:01:37,295
+and the base URL any program can use.
 
 27
-00:02:04,606 --> 00:02:15,856
-The log explains each choice: two layer slots of point four gigabytes, no layers kept resident, thirty-two threads, and the model loaded in a fraction of a second.
+00:01:37,335 --> 00:01:41,573
+There is no key to paste:
+nothing here leaves the computer.
 
 28
-00:02:16,556 --> 00:02:21,878
-The overview shows the model, its measured speed, and the base URL any program can use.
+00:01:41,613 --> 00:01:45,958
+Now a real task: a short watch log,
+and a request for two bullets,
 
 29
-00:02:21,878 --> 00:02:26,157
-There is no key to paste: nothing here leaves the computer.
+00:01:45,998 --> 00:01:49,719
+with a system prompt that
+says answer only from the log.
 
 30
-00:02:26,157 --> 00:02:34,262
-Now a real task: a short watch log, and a request for two bullets, with a system prompt that says answer only from the log.
-
-31
-00:02:34,962 --> 00:02:36,667
+00:01:50,419 --> 00:01:52,084
 The reply streams token by token.
 
+31
+00:01:52,124 --> 00:01:56,271
+Every token costs a pass over all
+twenty-eight layers, so it is slow,
+
 32
-00:02:36,667 --> 00:02:45,466
-Every token costs a pass over all twenty-eight layers, so it is slow, about a second a token here, and a seventy billion model would take minutes.
+00:01:56,311 --> 00:02:00,883
+about a second a token here, and a
+seventy billion model would take minutes.
 
 33
-00:02:45,466 --> 00:02:46,821
+00:02:00,923 --> 00:02:02,278
 That is the trade.
 
 34
-00:02:47,521 --> 00:02:51,094
-When it finishes, the page shows the first-token time and the counts.
+00:02:02,978 --> 00:02:06,511
+When it finishes, the page shows
+the first-token time and the counts.
 
 35
-00:02:51,094 --> 00:03:02,519
-Now the proof of streaming: the model file is about thirty-two hundred megabytes, yet the engine's memory is about one gigabyte, because only a couple of layers sit in RAM at once.
+00:02:06,551 --> 00:02:11,710
+Now the proof of streaming: the model file
+is about thirty-two hundred megabytes,
 
 36
-00:03:03,269 --> 00:03:23,748
-These numbers were measured on this computer, not estimated: about a second a reply token in streaming mode, a tenth of a second a prompt token, the CPU as the limit, a perplexity score, and a context recall of four of four planted facts.
+00:02:11,750 --> 00:02:14,662
+yet the engine's memory
+is about one gigabyte,
 
 37
-00:03:23,748 --> 00:03:26,021
-Anything never measured shows a dash.
+00:02:14,702 --> 00:02:17,976
+because only a couple of
+layers sit in RAM at once.
 
 38
-00:03:26,721 --> 00:03:30,439
-The Playbook page says why each setting was chosen.
+00:02:18,726 --> 00:02:22,641
+These numbers were
+measured on this computer,
 
 39
-00:03:30,439 --> 00:03:35,716
-Our cache of zero overrides the playbook, as the serve log showed.
+00:02:22,681 --> 00:02:25,893
+not estimated: about a second a reply
 
 40
-00:03:35,716 --> 00:03:43,515
-For scale, the repo's own stress test measured a seventy billion model at about eight point seven seconds a token.
+00:02:25,933 --> 00:02:29,145
+token in streaming mode, a tenth of a
 
 41
-00:03:43,515 --> 00:03:44,935
-That was not rerun here.
+00:02:29,185 --> 00:02:33,012
+second a prompt token,
+the CPU as the limit,
 
 42
-00:03:45,185 --> 00:03:45,915
-Now Fairlead.
+00:02:33,052 --> 00:02:35,913
+a perplexity score, and a context
 
 43
-00:03:45,915 --> 00:03:56,388
-We register Windlass as a local provider, a custom OpenAI-compatible one, with a timeout of an hour, because a layer pass can be long.
+00:02:35,953 --> 00:02:39,165
+recall of four of four planted facts.
 
 44
-00:03:56,388 --> 00:04:00,008
-Discover finds its one model and its context length.
+00:02:39,205 --> 00:02:41,478
+Anything never measured shows a dash.
 
 45
-00:04:00,008 --> 00:04:01,805
-Fairlead needs no code for this.
+00:02:42,178 --> 00:02:45,856
+The Playbook page says why
+each setting was chosen.
 
 46
-00:04:02,505 --> 00:04:09,577
-Then the route, deep-local-3b, with this one target, failover, and local fallback off.
+00:02:45,896 --> 00:02:51,133
+Our cache of zero overrides the
+playbook, as the serve log showed.
 
 47
-00:04:09,577 --> 00:04:13,839
-Fairlead's own page lists it beside the others.
+00:02:51,173 --> 00:02:54,998
+For scale, the repo's own
+stress test measured a seventy
 
 48
-00:04:13,839 --> 00:04:20,985
-It is reached only by asking for it by name, never by auto or fast, so interactive tools never wait on it.
+00:02:55,038 --> 00:02:58,932
+billion model at about eight
+point seven seconds a token.
 
 49
-00:04:21,501 --> 00:04:25,137
-Each app gets its own Fairlead client key.
+00:02:58,972 --> 00:03:00,392
+That was not rerun here.
 
 50
-00:04:25,137 --> 00:04:30,072
-It is shown once, and masked here, because it is a live key.
+00:03:00,642 --> 00:03:03,595
+Now Fairlead. We register Windlass as a
 
 51
-00:04:30,958 --> 00:04:37,239
-Now the real call, through Fairlead's address, asking for deep-local-3b.
+00:03:03,635 --> 00:03:06,817
+local provider, a custom OpenAI-compatible
 
 52
-00:04:37,239 --> 00:04:42,295
-The model on this machine is working through its layers, so we skip ahead.
+00:03:06,857 --> 00:03:11,805
+one, with a timeout of an hour,
+because a layer pass can be long.
 
 53
-00:04:42,995 --> 00:04:54,202
-The reply is the model's own, with its token counts and the time it took through Fairlead: about ninety seconds, because the model streams from disk.
+00:03:11,845 --> 00:03:15,425
+Discover finds its one model
+and its context length.
 
 54
-00:04:54,202 --> 00:04:54,851
-Trust details.
+00:03:15,465 --> 00:03:17,261
+Fairlead needs no code for this.
 
 55
-00:04:54,851 --> 00:05:03,019
-A request with the wrong Host name, or an Origin from some web page, gets a four oh three, so no browser tab can quietly drive your model.
+00:03:17,961 --> 00:03:21,195
+Now the real call, through Fairlead's
 
 56
-00:05:03,719 --> 00:05:07,535
-Now a long reply is running, and eleven more requests arrive at once.
+00:03:21,235 --> 00:03:24,202
+address, asking for deep-local-3b.
 
 57
-00:05:07,535 --> 00:05:19,177
-The queue holds eight, so three are told the server is busy, a five oh three that Fairlead treats as a reason to fail over, and the rest wait their turn, first in, first out.
+00:03:24,242 --> 00:03:29,298
+The model on this machine is working
+through its layers, so we skip ahead.
 
 58
-00:05:19,177 --> 00:05:21,384
-Stop cancels the running reply.
+00:03:29,998 --> 00:03:35,411
+The reply is the model's own,
+with its token counts and the time it took
 
 59
-00:05:21,938 --> 00:05:24,816
-The reply stopped and the queue drained.
+00:03:35,451 --> 00:03:41,166
+through Fairlead: about ninety seconds,
+because the model streams from disk.
 
 60
-00:05:24,816 --> 00:05:34,140
-And the check command proves the source makes no outgoing connections, starts no process and loads nothing dynamically, before it will even compile.
+00:03:41,206 --> 00:03:43,443
+Trust details. A request with the wrong
 
 61
-00:05:34,140 --> 00:05:35,224
-The evidence trail.
+00:03:43,483 --> 00:03:45,954
+Host name, or an Origin
+from some web page,
 
 62
-00:05:35,224 --> 00:05:50,729
-Fairlead's Activity shows the request: client Windlass, route deep-local-3b, served by the Windlass provider, a hundred and two tokens in, sixty-nine out, first token after eighty-nine seconds.
+00:03:45,994 --> 00:03:50,023
+gets a four oh three, so no browser
+tab can quietly drive your model.
 
 63
-00:05:51,141 --> 00:05:56,162
-And Windlass's own log shows request ids, token counts and timings.
+00:03:50,723 --> 00:03:54,499
+Now a long reply is running,
+and eleven more requests arrive at once.
 
 64
-00:05:56,162 --> 00:05:59,903
-It never records what you asked or what it answered.
+00:03:54,539 --> 00:03:59,981
+The queue holds eight, so three are told
+the server is busy, a five oh three that
 
 65
-00:06:00,153 --> 00:06:03,732
-One more idea, a concept that is not built and not tested.
+00:04:00,021 --> 00:04:02,756
+Fairlead treats as a reason to fail over,
 
 66
-00:06:03,732 --> 00:06:11,679
-Take that seventy billion model: eighty layers, forty-two gigabytes, too big for any one phone.
+00:04:02,796 --> 00:04:06,141
+and the rest wait their turn,
+first in, first out.
 
 67
-00:06:12,379 --> 00:06:16,702
-Now split the layers into slices and give each device a few.
+00:04:06,181 --> 00:04:08,388
+Stop cancels the running reply.
 
 68
-00:06:16,702 --> 00:06:25,143
-Fourteen phones with about three gigabytes each could hold the whole model, on the ship's own network, with no cloud.
+00:04:08,942 --> 00:04:11,780
+The reply stopped and the queue drained.
 
 69
-00:06:25,540 --> 00:06:29,477
-A token then travels from phone to phone, in order.
+00:04:11,820 --> 00:04:16,220
+And the check command proves the
+source makes no outgoing connections,
 
 70
-00:06:29,477 --> 00:06:36,439
-Only a small vector moves between them, about sixteen kilobytes, while each phone keeps its own layers and its own cache.
+00:04:16,260 --> 00:04:21,103
+starts no process and loads nothing
+dynamically, before it will even compile.
 
 71
-00:06:36,439 --> 00:06:40,863
-A hundred and twenty billion model would take roughly two dozen phones.
+00:04:21,143 --> 00:04:27,000
+The evidence trail. Fairlead's Activity
+shows the request: client Windlass,
 
 72
-00:06:41,625 --> 00:06:46,889
-In theory that fits Windlass, because layers are already handled one at a time.
+00:04:27,040 --> 00:04:31,953
+route deep-local-3b, served by
+the Windlass provider, a hundred
 
 73
-00:06:46,889 --> 00:06:52,929
-But nobody has tried it, and it is slow by design, since every token visits every phone.
+00:04:31,993 --> 00:04:37,733
+and two tokens in, sixty-nine out,
+first token after eighty-nine seconds.
 
 74
-00:06:53,261 --> 00:07:07,227
-Here is what it would take, none of it built: an opt-in network mode, because Windlass is loopback only today, authenticated devices, a slice map, and a plan for a phone that drops out.
+00:04:38,145 --> 00:04:43,126
+And Windlass's own log shows request ids,
+token counts and timings.
 
 75
-00:07:07,227 --> 00:07:08,706
-Planned, not promised.
+00:04:43,166 --> 00:04:46,907
+It never records what you
+asked or what it answered.
 
 76
-00:07:08,956 --> 00:07:12,038
-Windlass is slow on purpose and honest about it.
+00:04:47,157 --> 00:04:50,239
+Windlass is slow on purpose
+and honest about it.
 
 77
-00:07:12,830 --> 00:07:16,610
-Everything you saw ran live on this computer, through Fairlead.
+00:04:51,031 --> 00:04:54,811
+Everything you saw ran live on
+this computer, through Fairlead.
 
 78
-00:07:17,397 --> 00:07:20,630
+00:04:55,597 --> 00:04:58,831
 Not built yet: GPU offload.
 
 79
-00:07:21,398 --> 00:07:25,603
-Not measured yet: batching throughput on real models.
+00:04:59,599 --> 00:05:03,804
+Not measured yet: batching
+throughput on real models.
 
 80
-00:07:26,303 --> 00:07:31,097
-And the seventy billion timings are the repo's, not rerun today.
+00:05:04,504 --> 00:05:09,298
+And the seventy billion timings
+are the repo's, not rerun today.
 
 81
-00:07:31,972 --> 00:07:35,037
+00:05:10,173 --> 00:05:13,238
 Slow, local, and verifiable.
