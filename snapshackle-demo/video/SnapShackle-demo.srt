@@ -1,0 +1,403 @@
+1
+00:00:00,250 --> 00:00:03,524
+A support engineer
+has to share a screenshot of a ticket,
+
+2
+00:00:03,524 --> 00:00:06,799
+and it shows an email,
+a phone number and a deploy token.
+
+3
+00:00:06,799 --> 00:00:11,713
+SnapShackle covers them before the picture
+leaves, and keeps the evidence.
+
+4
+00:00:11,713 --> 00:00:15,642
+Everything on screen is invented,
+and this is an expanding prototype.
+
+5
+00:00:15,892 --> 00:00:17,592
+Here is how it works.
+
+6
+00:00:17,592 --> 00:00:22,461
+It all runs on this one computer:
+double-click the launcher and a PowerShell
+
+7
+00:00:22,461 --> 00:00:25,728
+host on loopback
+serves the studio to your browser.
+
+8
+00:00:26,429 --> 00:00:29,720
+Captures and settings
+stay in one local folder:
+
+9
+00:00:29,720 --> 00:00:32,240
+a PNG, and a small record beside it.
+
+10
+00:00:32,940 --> 00:00:35,636
+What goes in is pixels from this PC:
+
+11
+00:00:35,636 --> 00:00:40,429
+a region, a window or a screen,
+or an image you open or drop in.
+
+12
+00:00:41,129 --> 00:00:46,336
+What comes out is a file you chose:
+a flat PNG, the clipboard,
+
+13
+00:00:46,336 --> 00:00:49,779
+or a copy into a share folder you set up.
+
+14
+00:00:50,479 --> 00:00:53,395
+AI is optional, and off.
+
+15
+00:00:53,395 --> 00:00:55,302
+The host calls Fairlead on
+
+16
+00:00:55,302 --> 00:01:00,364
+loopback with SnapShackle's own key,
+installed in Credential Manager.
+
+17
+00:01:00,364 --> 00:01:06,084
+Lazarette holds Fairlead's provider key,
+and is not linked to SnapShackle itself.
+
+18
+00:01:06,784 --> 00:01:11,184
+Captures can go to Bowerbird, Capstan and
+Scrimshaw as files with a manifest.
+
+19
+00:01:11,884 --> 00:01:14,784
+Slack,
+Teams and Jira upload are not built.
+
+20
+00:01:15,484 --> 00:01:20,993
+And the guardrails: loopback and a session
+token, nothing uploaded by
+
+21
+00:01:20,993 --> 00:01:26,741
+SnapShackle, AI off until you turn it on,
+and you tick every suggestion.
+
+22
+00:01:26,741 --> 00:01:31,116
+To start from zero, run the start
+script with its own data folder.
+
+23
+00:01:31,116 --> 00:01:33,457
+It binds an available loopback port,
+
+24
+00:01:33,457 --> 00:01:36,838
+here eighty-seven sixty-six,
+and prints the address.
+
+25
+00:01:37,538 --> 00:01:40,613
+Then make the evidence: a purpose-built
+
+26
+00:01:40,613 --> 00:01:45,737
+window that exists only for this demo,
+captured with PrintWindow,
+
+27
+00:01:45,737 --> 00:01:49,443
+read by Windows OCR,
+and checked for leftovers.
+
+28
+00:01:49,443 --> 00:01:50,684
+Invented content only.
+
+29
+00:01:50,684 --> 00:01:53,979
+Nothing else on this
+desktop is ever in frame.
+
+30
+00:01:54,229 --> 00:01:59,940
+Open the invented ticket window that
+evidence capture made, then mark it up.
+
+31
+00:02:00,552 --> 00:02:03,810
+An arrow at the token,
+a box on the ticket line.
+
+32
+00:02:03,810 --> 00:02:07,297
+Undo is one step, and redo brings it back.
+
+33
+00:02:07,297 --> 00:02:09,215
+Then numbered steps and a text note.
+
+34
+00:02:09,215 --> 00:02:11,940
+Every mark stays a layer you can move.
+
+35
+00:02:12,640 --> 00:02:13,792
+Now the point of the tool.
+
+36
+00:02:14,492 --> 00:02:17,702
+Find sensitive info
+reads the image with Windows OCR.
+
+37
+00:02:18,402 --> 00:02:22,132
+It finds the email,
+the phone number and the API token,
+
+38
+00:02:22,132 --> 00:02:24,642
+and lists each one to tick or untick.
+
+39
+00:02:25,342 --> 00:02:28,297
+Redact checked covers all
+three with solid boxes.
+
+40
+00:02:28,842 --> 00:02:31,175
+Then redact every
+instance of the project name.
+
+41
+00:02:31,875 --> 00:02:36,095
+Export writes a flat PNG,
+so the boxes are in the pixels.
+
+42
+00:02:36,795 --> 00:02:38,736
+Save it to the library with
+tags and a note.
+
+43
+00:02:39,436 --> 00:02:41,312
+The saved record is what we check next.
+
+44
+00:02:42,062 --> 00:02:44,993
+Search finds it by the words
+inside the image,
+
+45
+00:02:44,993 --> 00:02:48,626
+not just its name or tags:
+ticket forty-eight twenty-one.
+
+46
+00:02:49,326 --> 00:02:54,601
+On disk it is a PNG, and a small record
+beside it, in this demo's own data folder.
+
+47
+00:02:55,301 --> 00:02:56,751
+The record holds the tags,
+
+48
+00:02:56,751 --> 00:03:00,320
+the note, and the text Windows
+OCR reads from the saved picture.
+
+49
+00:03:00,320 --> 00:03:04,075
+The name,
+the phone and the token are not in it.
+
+50
+00:03:04,775 --> 00:03:06,275
+Reading the saved file
+
+51
+00:03:06,275 --> 00:03:10,912
+again from the command line proves it:
+no email, no phone, no token.
+
+52
+00:03:10,912 --> 00:03:13,835
+That is the evidence trail.
+
+53
+00:03:14,085 --> 00:03:15,675
+AI help goes through Fairlead.
+
+54
+00:03:15,675 --> 00:03:20,406
+SnapShackle has its own client there,
+so its calls can be told apart.
+
+55
+00:03:21,106 --> 00:03:23,618
+Fairlead installed the key in Windows
+Credential Manager.
+
+56
+00:03:24,318 --> 00:03:26,366
+This lists the target only, never the key.
+
+57
+00:03:27,194 --> 00:03:28,934
+Lazarette is not involved on this side.
+
+58
+00:03:29,634 --> 00:03:32,282
+Open the saved
+capture and turn AI help on.
+
+59
+00:03:32,282 --> 00:03:34,773
+Privacy is local-only by default.
+
+60
+00:03:34,773 --> 00:03:36,729
+For this demo I let the router
+
+61
+00:03:36,729 --> 00:03:41,880
+pick any model, so the redacted picture
+goes to a cloud model through Fairlead.
+
+62
+00:03:42,580 --> 00:03:47,324
+Describe image asks Fairlead, live,
+and the alt text comes back in a moment.
+
+63
+00:03:48,024 --> 00:03:51,311
+Suggest annotations returns a checklist,
+
+64
+00:03:51,311 --> 00:03:54,926
+and the status bar
+names the model: GPT-4.1.
+
+65
+00:03:54,956 --> 00:03:57,055
+These are a model's guesses.
+
+66
+00:03:57,055 --> 00:03:58,274
+It even offers to cover
+
+67
+00:03:58,274 --> 00:04:02,675
+text that is already covered, so I untick
+those and keep only the box and the step.
+
+68
+00:04:03,375 --> 00:04:07,833
+Add checked puts them in as normal layers,
+and one undo removes them all.
+
+69
+00:04:08,533 --> 00:04:12,411
+And the evidence for the AI
+call is Fairlead's own log:
+
+70
+00:04:12,411 --> 00:04:15,937
+client SnapShackle,
+the model, status two hundred.
+
+71
+00:04:15,937 --> 00:04:18,717
+No image, and no prompt.
+
+72
+00:04:19,217 --> 00:04:20,402
+Sharing is a file copy.
+
+73
+00:04:20,402 --> 00:04:23,713
+Under Settings I name a folder,
+here an outbox,
+
+74
+00:04:23,713 --> 00:04:26,390
+and the studio never uploads anything.
+
+75
+00:04:27,090 --> 00:04:31,156
+Select the capture,
+choose that destination and share.
+
+76
+00:04:31,156 --> 00:04:32,946
+A copy never overwrites an existing file.
+
+77
+00:04:33,646 --> 00:04:37,263
+There it is in the outbox:
+the same PNG the library holds.
+
+78
+00:04:37,263 --> 00:04:39,815
+Nothing was sent anywhere else.
+
+79
+00:04:40,515 --> 00:04:45,377
+For Bowerbird, Capstan or Scrimshaw,
+the hand-off script copies chosen captures
+
+80
+00:04:45,377 --> 00:04:49,315
+and writes a manifest with hashes,
+tags and the recognised text.
+
+81
+00:04:50,015 --> 00:04:54,175
+Their import is their side,
+and I have not tested it here.
+
+82
+00:04:54,175 --> 00:04:56,019
+The manifest holds no folder paths.
+
+83
+00:04:56,719 --> 00:04:59,903
+End session
+stops the host and releases the port.
+
+84
+00:04:59,903 --> 00:05:04,758
+The window, the customer and the token
+were all invented.
+
+85
+00:05:04,758 --> 00:05:10,549
+Not built: Slack, Teams or Jira upload,
+and a direct Lazarette link.
+
+86
+00:05:10,549 --> 00:05:14,297
+OCR can miss text,
+so look before you share.
+
+87
+00:05:14,297 --> 00:05:18,215
+It still needs a run on a managed
+workstation.
+
