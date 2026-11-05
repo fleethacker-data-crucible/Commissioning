@@ -17,7 +17,7 @@ const FONT = 'C\\:/Windows/Fonts/segoeui.ttf', FONTB = 'C\\:/Windows/Fonts/segoe
 const W = join(here, 'build'); mkdirSync(W, { recursive: true });
 const CACHE = join(here, 'cache'); mkdirSync(CACHE, { recursive: true });
 
-const IDS = { 't00-open': 444045, 't01-key': 444066, 't02-lazarette': 444067, 't03-config': 444068, 't04-seed': 444069, 't05-drift': 444061, 't06-draft': 444070, 't07-undo': 444071, 't08-intake': 444072, 't09-plan': 444073, 't10-vision': 444074, 't11-integrations': 444075, 't12-safety': 444078, 't13-close': 444046 };
+const IDS = { 't00-open': 444045, 't00b-arch': 444400, 't01-key': 444066, 't02-lazarette': 444067, 't03-config': 444068, 't04-seed': 444069, 't05-drift': 444061, 't06-draft': 444070, 't07-undo': 444071, 't08-intake': 444072, 't09-plan': 444073, 't10-vision': 444074, 't11-integrations': 444075, 't12-safety': 444078, 't13-close': 444046 };
 const LABELS = { 't01-key': 'A model key for the fleet', 't02-lazarette': 'Stow it in Lazarette', 't03-config': 'Configure Halyard', 't04-seed': 'Seed the backlog', 't05-drift': 'See the drift', 't06-draft': 'Draft, approve, apply', 't07-undo': 'Undo', 't08-intake': 'Intake', 't09-plan': 'Plan the sprint', 't10-vision': 'Vision and leadership', 't11-integrations': 'Integrations', 't12-safety': 'Safety and audit' };
 const STILLS = {
   c02: { ids: ['bqxogj', 'znybz1', 'qutyhm', 'q6sdhr', '57ef5g'], blur: [[556, 178, 244, 255]] },
@@ -98,10 +98,12 @@ function trimPlan(a, starts) {
   const nt = (t) => { for (const m of map) if (t >= m.s - 1e-6 && t <= m.e + 1e-6) return m.off + (t - m.s); const m = map.filter((x) => x.e <= t).pop() || map[0]; return m.off + Math.min(m.e - m.s, Math.max(0, t - m.s)); };
   return { segs, nt, total: off };
 }
+// Tasks whose generated audio ends right on the last word: keep this much silence after it so the next chapter does not start on top of it
+const PADTAIL = { 444400: 0.5 };
 function trimAudio(id, plan, out) {
   const mp3 = srcAudio(id), F = 0.03;
   const parts = plan.segs.map(([s, e], k) => `[0:a]atrim=start=${fmt(s)}:end=${fmt(e)},asetpts=PTS-STARTPTS,afade=t=in:d=${F},afade=t=out:st=${fmt(Math.max(0, e - s - F))}:d=${F}[a${k}]`).join(';');
-  const cat = plan.segs.map((_, k) => `[a${k}]`).join('') + `concat=n=${plan.segs.length}:v=0:a=1,aresample=48000,highpass=f=70,aformat=channel_layouts=stereo`;
+  const cat = plan.segs.map((_, k) => `[a${k}]`).join('') + `concat=n=${plan.segs.length}:v=0:a=1,aresample=48000,highpass=f=70,aformat=channel_layouts=stereo${PADTAIL[id] ? ',apad=whole_dur=' + fmt(plan.total) : ''}`;
   // two-pass linear loudnorm: same level for every task, no pumping/noise swell
   const pass1 = spawnSync(FF, ['-hide_banner', '-i', mp3, '-filter_complex', parts + ';' + cat + ',loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json[out]', '-map', '[out]', '-f', 'null', '-'], { encoding: 'utf8' });
   const m = (pass1.stderr.match(/\{[^{}]*"input_i"[^{}]*\}/) || [])[0]; const j = m ? JSON.parse(m) : null;
@@ -154,7 +156,7 @@ const taskFiles = [], captions = []; let clock = 0; const report = [];
 for (const task of dlg.tasks) {
   if (only && task.id !== only) continue;
   const id = IDS[task.id]; const a = analyze(id);
-  const starts = turnStarts(a, task.turns), plan = trimPlan(a, starts);
+  const starts = turnStarts(a, task.turns), plan = trimPlan(a, starts); if (PADTAIL[id]) plan.total += PADTAIL[id];
   const onset = starts.map((c) => a.chunks[c][0]);
   const tb = task.turns.map((_, k) => (k === 0 ? 0 : Math.max(0.2, plan.nt(onset[k]) - 0.2)));
   const D = task.turns.map((_, k) => (k + 1 < task.turns.length ? tb[k + 1] : plan.total) - tb[k]);
@@ -177,7 +179,7 @@ for (const task of dlg.tasks) {
   task.turns.forEach((t, k) => {
     const c0 = starts[k], c1 = (k + 1 < starts.length ? starts[k + 1] : a.chunks.length) - 1;
     const cn = a.chunks.slice(c0, c1 + 1).map(([s, e]) => [plan.nt(s), plan.nt(e)]);
-    captions.push(...captionsFor(t.text, cn, clock));
+    captions.push(...captionsFor(t.text, cn, clock).map((c) => [...c, task.id]));
   });
   report.push(`${task.id}: audio ${a.dur.toFixed(1)}s -> ${plan.total.toFixed(1)}s, turns at ${tb.map((x) => x.toFixed(1)).join(' / ')}  (pitch/gap picks chunks ${starts.join(',')})`);
   clock += plan.total; taskFiles.push(out);
@@ -186,7 +188,10 @@ console.log(report.join('\n'));
 const listAll = join(W, 'all.txt'); writeFileSync(listAll, taskFiles.map((f) => `file '${f.replace(/\\/g, '/')}'`).join('\n'));
 const joined = join(W, 'joined.mov'); ff(['-f', 'concat', '-safe', '0', '-i', listAll, '-c', 'copy', joined]);
 const ts = (x) => { const ms = Math.round(x * 1000); const h = Math.floor(ms / 3600000), m = Math.floor(ms / 60000) % 60, s = Math.floor(ms / 1000) % 60; return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')},${String(ms % 1000).padStart(3, '0')}`; };
-const srt = join(ROOT, 'Halyard-demo.srt'); writeFileSync(srt, captions.map(([s, e, x], i) => `${i + 1}\n${ts(s)} --> ${ts(Math.max(e, s + 0.8))}\n${x}\n`).join('\n'));
-const srtPath = srt.replace(/\\/g, '/').replace(':', '\\:');
+const fmtSrt = (list) => list.map(([s, e, x], i) => `${i + 1}\n${ts(s)} --> ${ts(Math.max(e, s + 0.8))}\n${x}\n`).join('\n');
+const srt = join(ROOT, 'Halyard-demo.srt'); writeFileSync(srt, fmtSrt(captions));
+// the architecture chapter carries its own labels: keep its captions in the .srt but do not burn them over the diagram
+const burn = join(W, 'burn.srt'); writeFileSync(burn, fmtSrt(captions.filter((c) => c[3] !== 't00b-arch')));
+const srtPath = burn.replace(/\\/g, '/').replace(':', '\\:');
 ff(['-i', joined, '-f', 'lavfi', '-i', 'anoisesrc=c=pink:a=0.0012:r=48000', '-filter_complex', `[0:v]subtitles='${srtPath}':fontsdir='C\\:/Windows/Fonts':force_style='FontName=Segoe UI,FontSize=20,PrimaryColour=&H00F5EDE8,OutlineColour=&H80000000,BackColour=&H990A1428,BorderStyle=4,Outline=0,Shadow=0,MarginV=36'[v];[0:a]afftdn=nr=8:nf=-35[s];[1:a]aformat=channel_layouts=stereo[n];[s][n]amix=inputs=2:normalize=0:duration=first[a]`, '-map', '[v]', '-map', '[a]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', join(ROOT, only ? `Halyard-demo-${only}.mp4` : 'Halyard-demo.mp4')]);
 console.log('done', probeDur(join(ROOT, only ? `Halyard-demo-${only}.mp4` : 'Halyard-demo.mp4')).toFixed(1) + 's');
