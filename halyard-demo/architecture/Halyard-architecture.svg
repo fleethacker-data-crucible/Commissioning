@@ -92,8 +92,8 @@
   <rect class="box" x="1356" y="568" width="478" height="68" rx="12"></rect>
   <text class="s" x="1376" y="610">Source backlog · read only</text>
   <rect class="gold" x="1356" y="654" width="478" height="84" rx="12"></rect>
-  <text class="sg" x="1376" y="690">Halyard-Ballast backlog</text>
-  <text class="sg" x="1376" y="722">the only place it writes</text>
+  <text class="sg" x="1376" y="690">Sandbox backlog · write here</text>
+  <text class="sg" x="1376" y="722">Halyard-Ballast in this demo</text>
   <path class="ln dash" pathLength="1" d="M1330 598 L1214 586" marker-end="url(#ah)"></path>
   <path class="lg dash" pathLength="1" d="M1194 696 H1326" marker-end="url(#ag)"></path>
 </g>

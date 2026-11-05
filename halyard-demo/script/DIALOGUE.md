@@ -65,5 +65,5 @@ Each task is one Renoise generation (20 credits). Turns map to the picture range
 - **SULLIVAN** _(c13 10.2-22.7 s)_: The write audit lists every write Halyard made. Every one went to the backlog.
 
 ## t13-close
-- **HARLAN** _(card: close)_: Halyard proposes. People decide. That's the watch. Fair winds.
+- **HARLAN** _(card: close)_: Halyard proposes. People decide. That's the watch. This demo took longer to make than the tool took to build. So why would you pay for ADO Boards or Jira? The tools are changing, and compute and creativity are the new frontier.
 

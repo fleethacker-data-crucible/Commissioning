@@ -38,51 +38,60 @@
           "who": "R",
           "clip": "arch",
           "from": 0.01,
-          "to": 10.21,
+          "to": 11.41,
           "text": "Here is how Halyard fits together. Everything runs on one machine. A PowerShell launcher compiles the engine in memory, and the browser talks to it on localhost."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 10.21,
-          "to": 19.21,
+          "from": 11.41,
+          "to": 20.91,
           "text": "Inside the engine: review, intelligence for drafting and sizing, planning, and a proposal store. Every change starts as a proposal."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 19.21,
-          "to": 28.11,
-          "text": "Halyard reads your backlog from GitHub, read only. The write gateway lets it touch exactly one place, the backlog repository."
+          "from": 20.91,
+          "to": 29.71,
+          "text": "Halyard reads your backlog from GitHub, read only. The write gateway lets it write to one place: the sandbox backlog you configure."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 28.11,
-          "to": 39.01,
+          "from": 29.71,
+          "to": 41.01,
           "text": "Model calls go through Fairlead and nowhere else. Halyard's own key sits in Windows Credential Manager. The OpenAI key stays in Lazarette, shared to Fairlead."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 39.01,
-          "to": 45.21,
+          "from": 41.01,
+          "to": 47.11,
           "text": "Out the other side: four tables for Semaphore, and the weekly dashboard as an Outlook draft."
         },
         {
           "who": "S",
           "clip": "arch",
-          "from": 45.21,
-          "to": 50.81,
+          "from": 47.11,
+          "to": 54.01,
           "text": "Dashed means planned: live Shellback skills, and a runner on your repositories."
         },
         {
           "who": "R",
           "clip": "arch",
-          "from": 50.81,
-          "to": 55.51,
+          "from": 54.01,
+          "to": 59.71,
           "text": "One rule holds it together. Nothing is written until a person approves."
         }
+      ],
+      "starts": [
+        0,
+        4,
+        10,
+        13,
+        17,
+        20,
+        24
       ]
     },
     {
@@ -121,37 +130,31 @@
       "turns": [
         {
           "who": "S",
-          "clip": "c03",
-          "stills": [
-            0,
-            1
-          ],
-          "text": "The key goes into Lazarette, the encrypted vault on this machine."
+          "clip": "c03r",
+          "text": "The key goes into Lazarette, the encrypted vault on this machine.",
+          "from": 1.5,
+          "to": 9.9
         },
         {
           "who": "R",
-          "clip": "c03",
-          "stills": [
-            2,
-            3
-          ],
-          "text": "Test credential checks it against OpenAI's read-only endpoint. HTTP two hundred. The key is good."
+          "clip": "c03r",
+          "text": "Test credential checks it against OpenAI's read-only endpoint. HTTP two hundred. The key is good.",
+          "from": 16.2,
+          "to": 25.9
         },
         {
           "who": "S",
-          "clip": "c03",
-          "stills": [
-            4
-          ],
-          "text": "Share it with Fairlead by name, and Fairlead sees only what you share."
+          "clip": "c03r",
+          "text": "Share it with Fairlead by name, and Fairlead sees only what you share.",
+          "from": 25.95,
+          "to": 33.6
         },
         {
           "who": "R",
-          "clip": "c03",
-          "stills": [
-            5
-          ],
-          "text": "Fairlead reads it from the vault and connects. Eighty-three models, in under a second."
+          "clip": "c03r",
+          "text": "Fairlead reads it from the vault and connects. Fifty-three models, in about a second.",
+          "from": 36.4,
+          "to": 48.6
         }
       ]
     },
@@ -403,7 +406,7 @@
         {
           "who": "H",
           "card": "close",
-          "text": "Halyard proposes. People decide. That's the watch. Fair winds."
+          "text": "Halyard proposes. People decide. That's the watch. This demo took longer to make than the tool took to build. So why would you pay for ADO Boards or Jira? The tools are changing, and compute and creativity are the new frontier."
         }
       ]
     }
