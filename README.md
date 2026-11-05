@@ -20,6 +20,7 @@ The presentation videos for the FleetHacker hackathon: the pitch, the opening sc
 | `judges-brief/` | The 23-slide infographic deck for the judges, with PowerPoint and PDF exports. See `judges-brief/README.md`. |
 | `long-turnover/` | The Long Turnover proposal film (4:57), its subtitles, timeline, notes and edit sources. See `long-turnover/README.md`. |
 | `audit/` | The demo video quality audit (`AUDIT-REPORT.md`) and its contact sheets. |
+| `competitive-scorecard/`        | How the suite compares with 17 other FleetHacker repositories, as one offline HTML page. See `competitive-scorecard/README.md`. |
 
 ## How the opening scene was made
 
