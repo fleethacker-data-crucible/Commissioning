@@ -1,0 +1,332 @@
+{
+ "title": "The Long Turnover, 480p (pass 4)",
+ "fps": 24,
+ "resolution": "854x480",
+ "total_seconds": 297.0,
+ "beats": [
+  {
+   "beat": "b00",
+   "act": "0",
+   "start": 0.0,
+   "end": 4.0,
+   "picture_source": "native HTML/SVG 'b00' (0.0-4.0s). Black + honesty card (final)",
+   "vo_text": "",
+   "status": "native"
+  },
+  {
+   "beat": "b01",
+   "act": "0",
+   "start": 4.0,
+   "end": 9.0,
+   "picture_source": "Renoise Seedance 2.5 clip task 445871 (0.0-5.0s). Macro gauge, amber lamp, window reflection, wall clock 03:03",
+   "vo_text": "",
+   "status": "generated"
+  },
+  {
+   "beat": "b02",
+   "act": "0",
+   "start": 9.0,
+   "end": 15.0,
+   "picture_source": "Renoise Seedance 2.5 clip task 445872 (0.0-6.0s). Over the shoulder of Tomas: alarm banner PRESSURE HIGH Loop 4, SOP binder",
+   "vo_text": "",
+   "status": "generated"
+  },
+  {
+   "beat": "b03",
+   "act": "0",
+   "start": 15.0,
+   "end": 21.0,
+   "picture_source": "Renoise Seedance 2.5 clip task 445873 (0.0-3.6s); Renoise Seedream 5.0 Pro still task 445852 with push-in (3.6-6.0s). Wide control room, empty chair, mug, cardigan, handwritten label",
+   "vo_text": "Ask me. Ask you.",
+   "status": "generated"
+  },
+  {
+   "beat": "b04",
+   "act": "0",
+   "start": 21.0,
+   "end": 25.0,
+   "picture_source": "Renoise Seedream 5.0 Pro still task 445854 with push-in (0.0-4.0s). Phone in hand, thumb hovering, 3 a.m.",
+   "vo_text": "",
+   "status": "generated"
+  },
+  {
+   "beat": "b05",
+   "act": "0",
+   "start": 25.0,
+   "end": 26.0,
+   "picture_source": "native HTML/SVG 'b05' (0.0-1.0s). Smash to black",
+   "vo_text": "",
+   "status": "native"
+  },
+  {
+   "beat": "b06",
+   "act": "0",
+   "start": 26.0,
+   "end": 28.0,
+   "picture_source": "native HTML/SVG 'b06' (0.0-2.0s). Title card, gold type-on",
+   "vo_text": "",
+   "status": "native"
+  },
+  {
+   "beat": "b07",
+   "act": "1",
+   "start": 28.0,
+   "end": 33.0,
+   "picture_source": "Renoise Seedance 2.5 clip task 445874 (0.0-5.0s). Daytime flashback: Calloway hands over the watch, clock shows 15 minutes",
+   "vo_text": "A watch turnover takes fifteen minutes.",
+   "status": "generated"
+  },
+  {
+   "beat": "b08",
+   "act": "1",
+   "start": 33.0,
+   "end": 38.0,
+   "picture_source": "Renoise Seedance 2.5 clip task 445875 (0.0-5.0s). Calendar flipping across 31 years, hair greying, mug always there, 15 years counter",
+   "vo_text": "A career takes fifteen years.",
+   "status": "generated"
+  },
+  {
+   "beat": "b09",
+   "act": "1",
+   "start": 38.0,
+   "end": 50.0,
+   "picture_source": "Renoise Seedance 2.5 clip task 445876 (0.0-12.0s). Dolly onto hands writing a three-line note, tucked into thick binder",
+   "vo_text": "Most of what makes a senior person valuable never gets written down. Who to call. Which alarm always lies. Why the workaround from 2019 is still there.",
+   "status": "generated"
+  },
+  {
+   "beat": "b10",
+   "act": "1",
+   "start": 50.0,
+   "end": 57.0,
+   "picture_source": "native HTML/SVG 'b10' (0.0-7.0s). Iceberg as a ship's chart (four layers)",
+   "vo_text": "And when they rotate, retire or transfer, it walks out the gate with them.",
+   "status": "native"
+  },
+  {
+   "beat": "b11",
+   "act": "1",
+   "start": 57.0,
+   "end": 60.5,
+   "picture_source": "Renoise Seedream 5.0 Pro still task 445853 with push-in (0.0-3.5s). Tomas at dawn, sticky note 'Winter? Summer? WHY?'",
+   "vo_text": "",
+   "status": "generated"
+  },
+  {
+   "beat": "b12",
+   "act": "2",
+   "start": 60.5,
+   "end": 69.5,
+   "picture_source": "Renoise Seedance 2.5 clip task 447915 (0.0-6.0s); native HTML/SVG 'b12_ui' (6.0-9.0s). Bright office, laptop, capture dialog, finger on Pause but does not press",
+   "vo_text": "What if the job could be handed over the whole way, with her consent, from her first week to her last?",
+   "status": "generated"
+  },
+  {
+   "beat": "b13",
+   "act": "2",
+   "start": 69.5,
+   "end": 83.08,
+   "picture_source": "native HTML/SVG 'b13' (0.0-13.6s). Voyage chart (native SVG), illustrative label",
+   "vo_text": "The Long Turnover is a way to capture it. With her consent. On her machine. Anonymized, then distilled by generative models. And counted only once she confirms it.",
+   "status": "native"
+  },
+  {
+   "beat": "b14",
+   "act": "2",
+   "start": 83.08,
+   "end": 90.08,
+   "picture_source": "native HTML/SVG 'b14' (0.0-7.0s). Friday review cards: Confirm / Strike",
+   "vo_text": "Not a surveillance product. An agent she helps build, and signs.",
+   "status": "native"
+  },
+  {
+   "beat": "b15",
+   "act": "2",
+   "start": 90.08,
+   "end": 111.45,
+   "picture_source": "native HTML/SVG 'b15' (0.0-21.4s). Six-stage service record plaque",
+   "vo_text": "It has a service record. It shadows. It co-pilots. It sits sea trials against her own past cases. It relieves her, and it advises, but a human decides. Then it goes emeritus, with the date of its knowledge on every answer. And one day it is decommissioned, on purpose.",
+   "status": "native"
+  },
+  {
+   "beat": "b16",
+   "act": "2",
+   "start": 111.45,
+   "end": 126.9,
+   "picture_source": "native HTML/SVG 'b16' (0.0-15.5s). Six guardrail plaques sliding into bulkhead",
+   "vo_text": "Opt-in. Revocable. Never used to rate or rank her. Anonymized before any model sees it. Every claim traced to its source. A named human decides. And her name stays on what she taught it.",
+   "status": "native"
+  },
+  {
+   "beat": "b17",
+   "act": "3",
+   "start": 126.9,
+   "end": 134.9,
+   "picture_source": "native HTML/SVG 'b17' (0.0-8.0s). Iceberg with passive-capture bars",
+   "vo_text": "Passive capture is good at what people do. It is poor at why.",
+   "status": "native"
+  },
+  {
+   "beat": "b18",
+   "act": "3",
+   "start": 134.9,
+   "end": 143.9,
+   "picture_source": "Renoise Seedance 2.5 clip task 445878 (0.0-9.0s). Calloway on a hard night: wide, then eyes, gold marker on timeline",
+   "vo_text": "The why lives in the hard calls, and she does not know which ones mattered. Neither does the system.",
+   "status": "generated"
+  },
+  {
+   "beat": "b19",
+   "act": "3",
+   "start": 143.9,
+   "end": 153.9,
+   "picture_source": "native HTML/SVG 'b19' (0.0-10.0s). Bookmark diagram: signals into one clock",
+   "vo_text": "So we ask a different question. Can wearable sensors tell us when a hard decision is being made? Not what she is thinking. When.",
+   "status": "native"
+  },
+  {
+   "beat": "b20",
+   "act": "3",
+   "start": 153.9,
+   "end": 167.91,
+   "picture_source": "native HTML/SVG 'b20_ui' (0.0-4.0s); Renoise Seedance 2.5 clip task 445879 (4.0-14.0s). Calloway next morning, tea, one question on screen",
+   "vo_text": "The sensor only picks the moment. The answer is hers. That one, yes. Here is why. The sensors never read thoughts, never judge skill, and the raw signals are deleted after each session.",
+   "status": "generated"
+  },
+  {
+   "beat": "b21",
+   "act": "3",
+   "start": 167.91,
+   "end": 171.91,
+   "picture_source": "native HTML/SVG 'b21' (0.0-4.0s). Sticky note becomes a typed card; one chime",
+   "vo_text": "",
+   "status": "native"
+  },
+  {
+   "beat": "b22",
+   "act": "4",
+   "start": 171.91,
+   "end": 185.38,
+   "picture_source": "native HTML/SVG 'b22' (0.0-13.5s). 90-day calendar sweep, four volunteer silhouettes in two pairs",
+   "vo_text": "Phase one is small on purpose. Ninety days. Four developer volunteers. Two veteran-and-successor pairs, in an isolated lab. Nothing identifiable leaves the building.",
+   "status": "native"
+  },
+  {
+   "beat": "b23",
+   "act": "4",
+   "start": 185.38,
+   "end": 199.06,
+   "picture_source": "native HTML/SVG 'b23' (0.0-13.7s). Four session-type panels",
+   "vo_text": "Setup. Calibration. Real work, with questions timed by sensors against questions on a schedule. And a successor test: can the next person finish the veteran's task using only what was captured?",
+   "status": "native"
+  },
+  {
+   "beat": "b24",
+   "act": "4",
+   "start": 199.06,
+   "end": 211.56,
+   "picture_source": "native HTML/SVG 'b24' (0.0-12.5s). Five research-question cards with measures",
+   "vo_text": "Five questions, each with a measure.",
+   "status": "native"
+  },
+  {
+   "beat": "b25",
+   "act": "4",
+   "start": 211.56,
+   "end": 220.53,
+   "picture_source": "native HTML/SVG 'b25' (0.0-9.0s). Equipment flat lay and budget figure",
+   "vo_text": "The request is equipment only: about seven and a half to eight thousand dollars. Labor is the team's own time.",
+   "status": "native, vendor product photos"
+  },
+  {
+   "beat": "b26",
+   "act": "4",
+   "start": 220.53,
+   "end": 234.5,
+   "picture_source": "native HTML/SVG 'b26' (0.0-14.0s). Go / Pivot / Stop signposts from fog",
+   "vo_text": "It ends in one of three ways. Go: field pilot. Pivot: keep the headsets, drop the extra sensors. Stop: keep the weekly questions, no sensors. Each outcome is useful.",
+   "status": "native"
+  },
+  {
+   "beat": "b27",
+   "act": "5",
+   "start": 234.5,
+   "end": 245.87,
+   "picture_source": "native HTML/SVG 'b27' (0.0-11.4s). Four-phase road, lit one phase at a time",
+   "vo_text": "If it works, the road runs on: a field pilot, a software relief agent, and, years away, a robot that carries the expert's judgment as well as their motions.",
+   "status": "native"
+  },
+  {
+   "beat": "b28",
+   "act": "5",
+   "start": 245.87,
+   "end": 250.07,
+   "picture_source": "Renoise Seedance 2.5 clip task 445880 (0.0-4.2s). Robot hand pauses before gauge, human hand takes over",
+   "vo_text": "Always with a named person accountable.",
+   "status": "generated"
+  },
+  {
+   "beat": "b29",
+   "act": "5",
+   "start": 250.07,
+   "end": 254.07,
+   "picture_source": "native HTML/SVG 'b29' (0.0-4.0s). Road: last phase tagged 'Not part of this request. Not funded.'",
+   "vo_text": "This part is not part of this request.",
+   "status": "native"
+  },
+  {
+   "beat": "b30",
+   "act": "6",
+   "start": 254.07,
+   "end": 267.71,
+   "picture_source": "native HTML/SVG 'b30' (0.0-13.6s). Decision card, four decisions",
+   "vo_text": "We are asking for four decisions. Fund the equipment. Approve the quote request. Approve a ninety-day study with volunteers. And name the people who will hold us to our own guardrails.",
+   "status": "native"
+  },
+  {
+   "beat": "b31",
+   "act": "6",
+   "start": 267.71,
+   "end": 271.21,
+   "picture_source": "Renoise Seedance 2.5 clip task 445881 (0.0-3.5s). Night room at sunrise, Tomas calm, Loop 4 alarm blinks",
+   "vo_text": "",
+   "status": "generated"
+  },
+  {
+   "beat": "b32",
+   "act": "6",
+   "start": 271.21,
+   "end": 282.21,
+   "picture_source": "Renoise Seedance 2.5 clip task 445882 (0.0-2.5s); native HTML/SVG 'b32_ui' (2.5-7.6s); Renoise Seedance 2.5 clip task 445882 (7.6-11.0s). RELIEF cold-blue card; Tomas reads, nods, acts",
+   "vo_text": "Loop 4. In winter this alarm is a known false trigger. Confirmed by Chief Sullivan, eleven months ago. Please verify before you ignore it.",
+   "status": "generated"
+  },
+  {
+   "beat": "b33",
+   "act": "6",
+   "start": 282.21,
+   "end": 286.01,
+   "picture_source": "Renoise Seedance 2.5 clip task 445883 (0.0-3.8s). Tomas lifts mug from empty chair, sets it back, straightens cardigan",
+   "vo_text": "A watch turnover takes fifteen minutes.",
+   "status": "generated"
+  },
+  {
+   "beat": "b34",
+   "act": "6",
+   "start": 286.01,
+   "end": 291.0,
+   "picture_source": "Renoise Seedance 2.5 clip task 445884 (0.0-5.0s). Camera pulls back out of the window into dawn",
+   "vo_text": "A career takes fifteen years. Hand it over the whole way.",
+   "status": "generated"
+  },
+  {
+   "beat": "b35",
+   "act": "6",
+   "start": 291.0,
+   "end": 297.0,
+   "picture_source": "native HTML/SVG 'b35' (0.0-6.0s). End card; 'Let's start now.'",
+   "vo_text": "Let's start now.",
+   "status": "native"
+  }
+ ]
+}
