@@ -1,156 +1,146 @@
-# Halyard — full walkthrough (long form)
+# Halyard demo: narration with timings
 
-Shot list and narration written from the live dry run on 2026-11-04 (real GitHub, real OpenAI through Fairlead,
-key held in Lazarette; the only synthetic data is the seeded backlog in Halyard-Ballast). Narration says
-"the backlog" for Halyard-Ballast, never "sandbox".
+Timings are from the final cut (`Halyard-demo.mp4`, 5:50). Captions use the same wording.
+Cast: Captain HARLAN opens and closes, Chief SULLIVAN and Lt. Cmdr. REYES volley the lines.
 
-**Voices.** Long form: TalkForge. Short presentation cut: Renoise (Seed Audio clones of HARLAN / SULLIVAN /
-DELGADO, Gemini TTS female officer). Roles:
+## Opening (0:00 to 0:19)
 
-| Tag | Character | Role |
-|---|---|---|
-| CO | Captain HARLAN | opens and closes each chapter: the why |
-| CHIEF | Chief SULLIVAN | hands-on: what to click, what to type |
-| XO | Lt. Cmdr. REYES (female, clear, concise) | configuration, keys, safety gates |
-| RADIO | Radioman DELGADO | integrations: Lazarette, Fairlead, Outlook, Semaphore, runner |
+- `0:00.2` Every backlog drifts.
+- `0:01.5` Stories without acceptance criteria.
+- `0:04.4` Features without a parent.
+- `0:06.7` Sizes nobody agreed.
+- `0:08.2` Halyard is the product owner's mate.
+- `0:11.1` It reads the backlog, finds the drift, drafts the fix, and waits for a person to approve it.
+- `0:17.5` Nothing moves without your say.
 
-**Recording.** Capstan in Firefox (recorder profile), entire screen, cursor capture on, no audio. Crop to the
-browser pane in the edit. One clip per chapter; Ctrl+Shift+F11 drops a marker at each beat.
+## Architecture at a glance (0:19 to 1:16)
 
----
+- `0:19.9` Here is how Halyard fits together.
+- `0:22.2` Everything runs on one machine.
+- `0:24.5` A PowerShell launcher compiles the engine in memory, and the browser talks to it on localhost.
+- `0:30.3` Inside the engine: review, intelligence for drafting and sizing, planning, and a proposal store.
+- `0:38.5` Every change starts as a proposal.
+- `0:40.9` Halyard reads your backlog from GitHub, read only.
+- `0:44.0` The write gateway lets it write to one place: the sandbox backlog you configure.
+- `0:49.8` Model calls go through Fairlead and nowhere else.
+- `0:52.4` Halyard's own key sits in Windows Credential Manager.
+- `0:56.6` The OpenAI key stays in Lazarette, shared to Fairlead.
+- `1:00.5` Out the other side: four tables for Semaphore, and the weekly dashboard as an Outlook draft.
+- `1:06.7` Dashed means planned: live Shellback skills, and a runner on your repositories.
+- `1:12.4` One rule holds it together.
+- `1:14.4` Nothing is written until a person approves.
 
-## 0. Cold open (30 s)
-- **Shot:** Halyard Overview, slow push-in on the hierarchy bars.
-- **CO:** "Every backlog drifts. Stories without acceptance criteria, features without a parent, sizes nobody
-  agreed. Halyard is the product owner's mate: it reads the backlog, finds the drift, drafts the fix, and waits
-  for a human to approve it. Nothing moves without your say."
+## Create the OpenAI key (1:17 to 1:33)
 
-## 1. Before you start (60 s)
-- **Shot:** release zip, unzip, folder view: `Launch-Halyard.bat`, `config\halyard.env.example`.
-- **XO:** "You need three things on the machine: Halyard, Fairlead, and Lazarette. No installer, no admin rights.
-  Halyard compiles its engine from source when it launches, so locked-down workstations can run it."
+- `1:17.4` Every tool in the fleet needs a model key.
+- `1:20.5` At OpenAI, create a new secret key.
+- `1:23.8` Name it something generic.
+- `1:26.1` I call mine fleet-tools.
+- `1:27.9` Seven days is plenty.
+- `1:30.7` Copy it once.
+- `1:32.3` OpenAI never shows it again.
 
-## 2. Get a model key and stow it in Lazarette (90 s)  — reusable clip for every Fleet demo
-- **Shot:** platform.openai.com → API keys → **Create new secret key**: name `fleet-tools`, expiry **7 days**,
-  permissions All → **Create secret key** → **Copy**. *Blur: key dialog, account name, tracking ids.*
-- **XO:** "One key for the whole fleet. Name it something generic, keep the expiry short, and copy it once.
-  OpenAI shows it only this one time."
-- **Shot:** Lazarette → unlock (*blur passphrase*) → **New item** → **API credential**. Name `OPENAI_API_KEY`,
-  account `fleet-tools`, website `https://platform.openai.com/api-keys`, Endpoint `https://api.openai.com/v1`
-  (no tags). Paste into **Key / token** (*blur*). **Create item**.
-- **Shot:** **Test credential** → **Send and test** → "Key confirmed · HTTP 200".
-- **RADIO:** "Lazarette is the vault. It checks the key against OpenAI's read-only endpoint before anything uses it."
+## Lazarette and Fairlead (1:33 to 1:55)
 
-## 3. Share it with Fairlead (60 s)
-- **Shot:** Lazarette → Settings → **Fairlead** tab → Name Fairlead asks for `OPENAI_API_KEY`, vault item
-  `OPENAI_API_KEY · fleet-tools` → **Share with Fairlead** → toast.
-- **RADIO:** "Fairlead asks for secrets by name and sees only what you share. Everything else in the vault stays dark to it."
-- **Shot:** Fairlead → Providers → Lazarette card: *Connected*, `OPENAI_API_KEY shared`. OpenAI provider:
-  label reads *API key (from Lazarette as OPENAI_API_KEY)* → **Test connection** → "Connected · 83 models".
-  (If an old key was saved there: **Forget saved key** first — fixed live, Fairlead#65.)
-- **XO:** "Fairlead is the only thing that talks to OpenAI. Every tool gets its own Fairlead key instead, so you
-  change or revoke the provider key in one place."
+- `1:33.8` The key goes into Lazarette, the encrypted vault on this machine.
+- `1:38.5` Test credential checks it against OpenAI's read-only endpoint.
+- `1:42.1` HTTP two hundred.
+- `1:43.8` The key is good.
+- `1:45.1` Share it with Fairlead by name, and Fairlead sees only what you share.
+- `1:50.5` Fairlead reads it from the vault and connects.
+- `1:53.2` Fifty-three models, in about a second.
 
-## 4. Give Halyard its Fairlead key and configure it (90 s)
-- **Shot:** Fairlead → Clients → Install for an app: **Halyard** → **Install for this app** →
-  "Saved to Windows Credential Manager as Fairlead/Halyard".
-- **Shot:** editor on `config\halyard.env`:
-  ```
-  HALYARD_PROVIDER=github
-  HALYARD_SOURCE_REPO=fleethacker-data-crucible/Halyard-Ballast
-  HALYARD_SANDBOX_REPO=fleethacker-data-crucible/Halyard-Ballast
-  HALYARD_WRITE_MODE=sandbox
-  HALYARD_FAIRLEAD_MODEL=auto
-  LAZARETTE_PATH=C:\...\Lazarette
-  HALYARD_USE_LAZARETTE=1
-  HALYARD_LAZARETTE_ITEM_GitHub=<your GitHub token item>
-  ```
-- **XO:** "Where Halyard reads, where it may write, and the write mode live only in this file. The browser
-  cannot change them. Writes go to the backlog repository you name, and nowhere else."
-- **Shot:** double-click `Launch-Halyard.bat` → Settings: Model calls *ready*, Key *installed* → **Test model**
-  → "Reply from auto: OK · 2.2 s".
-- **CHIEF:** "Halyard to Fairlead, Fairlead to Lazarette for the key, out to the model and back. Two seconds."
+## Configure Halyard (1:55 to 2:16)
 
-## 5. Seed the backlog (60 s)
-- **Shot:** Sandbox page → Total work items **30** → gaps 20% → **Seed 30 items** → progress → Seed runs: complete.
-- **CHIEF:** "For the walkthrough we seed a synthetic backlog: themes down to tasks, a fifth of it with
-  deliberate gaps. Every item carries a run label, so the whole run comes out again in one click."
-- **Shot:** GitHub issue list for Halyard-Ballast, the new issues with `halyard-synthetic`, `halyard-run::…`.
+- `1:55.9` Fairlead gives each tool its own key.
+- `1:58.7` Pick Halyard and install it.
+- `2:00.8` It lands in Windows Credential Manager.
+- `2:03.5` Halyard's config file names the backlog it reads, the backlog it may write to, and the write mode.
+- `2:09.2` The browser can't change any of it.
+- `2:12.3` Test the model.
+- `2:13.8` Under two seconds, end to end.
 
-## 6. See the drift (75 s)
-- **Shot:** Overview → levels, Needs attention, Definition-of-ready gaps. Review → *Only items that need
-  attention*, one row expanded: gaps and *Fix with*. Hierarchy tree.
-- **CHIEF:** "Every item is checked against its level's definition of ready and the declared parent chain. Each
-  finding tells you which fix closes it."
+## Seed the backlog (2:17 to 2:38)
 
-## 7. The intelligence layer: draft, read, approve, apply (2 min)
-- **Shot:** Proposals → With the model → Draft missing sections, At most 10 → **Draft** → "Drafting 4/6…".
-- **CO:** "This is the part a product owner never has time for."
-- **Shot:** batch: six proposals, *high* confidence. Open #679 *Redact tokens from diagnostic logs* → diff:
-  green Acceptance criteria added; Parent Feature and Sizing unchanged.
-- **CHIEF:** "Read the diff. The model adds what is missing and keeps what is there; if it ever drops a section,
-  Halyard puts it back word for word and tells you." *(fixed live: Halyard#64)*
-- **Shot:** **Approve all high-confidence** → **Apply 6 approved** → GitHub issue #679 refreshed with the new section.
-- **Shot (optional):** Propose sizes → Story points → **Propose sizes**; Tag with the model.
+- `2:17.0` For this walkthrough we seed a synthetic backlog.
+- `2:20.8` Thirty items, a quarter of them with deliberate gaps.
+- `2:24.9` Each one is a real GitHub issue with a run label, so the whole run comes out again in one click.
+- `2:30.2` It takes about two minutes, paced for the rate limits.
+- `2:34.5` Thirty of thirty.
+- `2:36.4` The backlog is live.
 
-## 8. Undo (45 s)
-- **Shot:** Applied changes → "6 written · latest" → **Undo** → "Restore 6 items" → GitHub shows the old text.
-  Proposals back to Pending. *(the Undo row now appears right after Apply: Halyard#65)*
-- **XO:** "Every apply is recorded with what it replaced. Undo previews first, and leaves alone anything a
-  person edited since."
+## Overview, review and hierarchy (2:39 to 3:02)
 
-## 9. Bring work in: intake (60 s)
-- **Shot:** Intake → Source tickets with guessed levels. Type two notes:
-  "Export the leadership dashboard as a PDF for the weekly brief…" / "Alert the on-call engineer when nightly
-  ingestion runs more than an hour late." → **Preview drafts** → **Copy 2 into the backlog**.
-- **CHIEF:** "Raw tickets and loose notes come in as structured work items, with a link back to where they started."
+- `2:39.0` The overview shows the shape of the backlog and what needs attention: items to review, missing parents, topology errors.
+- `2:46.8` Scroll down for the findings by severity, and the next actions.
+- `2:52.1` Review checks every item against its level's definition of ready and the parent chain.
+- `2:56.8` Each finding names the fix that closes it.
+- `2:59.7` Hierarchy shows the tree, theme to task.
 
-## 10. Plan the sprint (75 s)
-- **Shot:** Plan → Sprint review table → **Preview plan** → sprints filled, owners by skill, skill gaps warning.
-- **CHIEF:** "Capacity from the team file, owners matched on skills, and anything that slipped last sprint goes first."
-- **RADIO:** "Skills come from peer cards exported from Shellback. A live Shellback link is planned."
+## Draft and approve (3:02 to 3:32)
 
-## 11. Vision and leadership (90 s)
-- **Shot:** Vision → **Draft with the model** → themes, priorities, risks, next quarter, *Facts this draft rests on*.
-- **CO:** "Upward, Halyard drafts the portfolio story for leadership, and shows the facts under every claim."
-- **Shot:** Leadership → features on track, velocity, ready backlog, capacity, blockers → **Read aloud** (short).
+- `3:02.8` Draft missing sections sends each gap to the model through Fairlead.
+- `3:06.9` Real model, a few seconds per item.
+- `3:10.0` Six drafts, all high confidence.
+- `3:12.0` Each is a proposal with a reason.
+- `3:14.4` Open one and read the diff: the model adds what's missing and leaves the rest alone.
+- `3:20.1` And if it ever drops a section, Halyard puts it back word for word.
+- `3:25.1` Approve the high-confidence drafts, then apply.
+- `3:28.6` Six written to the backlog on GitHub, and the apply is recorded.
 
-## 12. Integrations (2 min)
-- **Outlook — RADIO:** terminal:
-  `.\scripts\Send-HalyardReport.ps1 -Via Outlook -Draft -Subject "Platform weekly"` → Outlook opens the
-  dashboard as a new message; nothing is sent until a person presses Send. *(new: Halyard#66)*
-  Weekly: `Register-HalyardReportSchedule.ps1`.
-- **Semaphore — RADIO:** Leadership → **Export for Semaphore** → toast with the folder → Semaphore → Data →
-  add the four CSV files → chart on `items.deficiencies`. *(new button: Halyard#67)*
-- **Runner (planned) — CO:** "Next: a runner on the team's repositories watches commits and pull requests,
-  and Halyard writes the story for the work it sees: what changed, which backlog item it belongs to, what is
-  left. Developers stop doing the admin; the product owner approves what the runner proposes, through the same
-  diff and the same gate."
-- **Lazarette for GitHub — XO:** the GitHub token can come from Lazarette too (`HALYARD_USE_LAZARETTE=1`).
+## Undo and the write audit (3:32 to 3:49)
 
-## 13. Safety, cleanup, close (60 s)
-- **Shot:** Sandbox → bottom line "Promote to production: off · how to turn it on". *(Halyard#63)*
-- **XO:** "Production stays shut: it needs a production write mode, an explicit allow flag, a typed phrase and
-  a diff. None of that can be switched on from the browser."
-- **Shot:** Diagnostics → Write audit: every write, all to the backlog repository. Sandbox → **Delete run**.
-- **CO:** "Halyard proposes. People decide. That's the watch. This demo took longer to make than the tool took to build. So why would you pay for ADO Boards or Jira? The tools are changing, and compute and creativity are the new frontier."
+- `3:32.5` Every apply is recorded with what it replaced.
+- `3:36.1` Undo previews first, then restores the earlier text.
+- `3:39.3` Six items restored.
+- `3:41.1` Anything a person edited since is left alone.
+- `3:44.3` The proposals go back to pending, so approve and apply again when you're ready.
 
-## 14. "Found it, fixed it" segment (optional, 60–90 s)
-Bugs found during the live dry run and fixed on the spot (each its own PR):
-Capstan#61 Firefox recording · Fairlead#65 forget saved key · Halyard#63 promote line · Halyard#64 model drafts keep
-sections · Halyard#65 Undo appears after Apply · Halyard#66 Outlook draft · Halyard#67 Semaphore button.
+## Intake (3:49 to 4:06)
 
----
+- `3:49.5` Work comes in from anywhere.
+- `3:51.4` A raw ticket, or a note typed straight into Intake.
+- `3:55.3` Two loose notes, no structure at all.
+- `3:58.2` Preview the drafts.
+- `3:59.1` Halyard turns each note into a structured work item and copies it into the backlog, with a link back to where it started.
 
-## Blur list
-OpenAI key dialog, account name and key tracking ids · Lazarette passphrase and Key / token field · launcher
-console session links (`?session=`, `#k=`) · Windows user name in paths (Settings → Environment, Diagnostics file path).
+## Plan and size (4:06 to 4:22)
 
-## Reset checklist before the clean recorded run
-1. Halyard-Ballast: **Wipe everything** (you click Delete permanently), so the old closed issues are gone.
-2. Delete `config\halyard.env`; revoke the `Halyard` key in Fairlead → Clients; clear Settings label filter.
-3. Lazarette: delete the `OPENAI_API_KEY` item and its Fairlead share; Fairlead: OpenAI provider with no key.
-4. OpenAI: revoke `fleet-tools` (it is recreated on camera).
-5. Halyard running from a build with PRs #63–#67 merged (today: local branch `demo/halyard-live`).
-6. Seed **30** items, not 100.
-7. Hide Discord / notifications; Capstan in the Firefox recorder profile.
+- `4:06.6` Plan fills the next sprints from ready stories.
+- `4:09.7` Capacity comes from the team file.
+- `4:11.5` Owners are matched on skills, and anything that slipped last sprint goes first.
+- `4:17.4` Skills come from Shellback peer cards today.
+- `4:20.5` A live Shellback link is planned.
+
+## Vision (4:22 to 4:48)
+
+- `4:22.6` Upward, Halyard drafts the portfolio story for leadership.
+- `4:26.1` This one is the live model, thinking.
+- `4:28.9` Themes, priorities, risks and the next quarter, with the facts every claim rests on.
+- `4:34.5` Everything it says about the backlog, it can point to.
+- `4:38.8` The leadership page puts features on track, velocity, ready backlog, capacity and blockers on one screen.
+
+## Integrations and what is planned (4:48 to 5:16)
+
+- `4:48.0` One click exports backlog health for Semaphore, as four tables ready to chart.
+- `4:52.5` The weekly dashboard opens in Outlook as a draft, so a person reviews it and presses send.
+- `4:58.0` Next on the chart: a runner on the team's repositories.
+- `5:02.2` It watches commits and pull requests, and writes the story for the work it sees.
+- `5:07.3` Developers stop doing the admin.
+- `5:09.3` The product owner approves what the runner proposes, through the same diff and the same gate.
+
+## Production stays shut (5:16 to 5:31)
+
+- `5:16.9` Production stays shut.
+- `5:17.8` Promote needs a production write mode, an explicit allow flag, a typed phrase and a diff, and none of it can be switched on from the browser.
+- `5:26.3` The write audit lists every write Halyard made.
+- `5:30.0` Every one went to the backlog.
+
+## Close (5:31 to 5:50)
+
+- `5:31.8` Halyard proposes.
+- `5:33.2` People decide.
+- `5:34.3` That's the watch.
+- `5:35.6` This demo took longer to make than the tool took to build.
+- `5:40.2` So why would you pay for Azure DevOps Boards or Jira?
+- `5:44.5` The tools are changing, and compute and creativity are the new frontier.
