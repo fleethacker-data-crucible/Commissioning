@@ -1,0 +1,3 @@
+# Fairlead demo: intent
+
+For operators and developers on a locked-down Windows PC who run several Fleet tools that each need a model. It shows Fairlead as the single local OpenAI- and Anthropic-compatible address: cloud keys held in Lazarette and shared by name, a separate key per tool, routes with failover, private requests that never leave the PC (header or secret scan), Kedge offline mode, and a request log that records the decision and never the prompt. It runs the real tool, ends with a live call from Halyard, and ends on the logged failover as the evidence trail. Planned items (git hosts and databases behind the same address, routing by prompt difficulty) are labelled planned.

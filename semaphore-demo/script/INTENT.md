@@ -1,0 +1,3 @@
+# Semaphore demo: intent
+
+For analysts and the leaders they report to, and for anyone judging whether a plain-English dashboard builder can be trusted on a local machine. It shows Semaphore set up from zero, wired to Fairlead (model router) and Lazarette (vault), drafting a dashboard from a plain-English brief on the real model route, loading Halyard's backlog export, and answering one concrete question, "can we commit the next sprint?", with a timed, real PowerShell-versus-Semaphore comparison. The backlog data is seeded sample data, and the connectors chapter labels which sources were shown live and which are still pending live validation. It closes on the reviewed-answers trail leaders can ask against.
