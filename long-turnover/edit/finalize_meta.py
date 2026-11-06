@@ -41,4 +41,4 @@ tl=[]
 for b in TL['beats']:
     gen=any(s['src']!='nat' for s in SHOTS[b['id']])
     tl.append({'beat':b['id'],'act':b['act'],'start':round(b['start'],2),'end':round(b['end'],2),'picture_source':src(b),'vo_text':b['vo'],'status':'generated' if gen else ('native, vendor product photos' if b['scene']=='flatlay' else 'native')})
-json.dump({'title':'The Long Turnover, 480p (pass 4)','fps':24,'resolution':'854x480','total_seconds':round(TL['total'],2),'beats':tl},open('../timeline.json','w'),indent=1,ensure_ascii=False)
+json.dump({'title':'The Long Turnover, 480p (pass 8)','fps':24,'resolution':'854x480','total_seconds':round(TL['total'],2),'beats':tl},open('../timeline.json','w'),indent=1,ensure_ascii=False)

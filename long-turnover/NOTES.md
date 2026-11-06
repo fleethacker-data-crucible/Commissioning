@@ -1,4 +1,7 @@
-# The Long Turnover: production notes (pass 7, 1080p master)
+# The Long Turnover: production notes (pass 8)
+
+## Pass 8 change (2026-11-05)
+- **Hard-night shot (b18, 2:15) retaken.** In the pass-2 clip (task 445878) the wide showed Sullivan with the cardigan hanging to the floor and no chair seat or legs under her, floating beside the chair. Two Seedance 2.5 takes with the same actor and set references, the wide re-prompted so she is seated with the chair back and armrests in frame (144 credits each): A (task 449913), from behind, clearly seated in the chair, typing; B (task 449914), the cardigan draped over the chair back like a cape, which still reads oddly. The cut uses A for the full 9 s; B is kept in `work/gen` unused. A was upscaled with Topaz Starlight Precise 2.5 at 1080p (task 449933, 270 credits). Only that beat was re-composited at both resolutions (`seg_replace.py`), overlaid onto the previous masters and each file re-encoded once (CRF 18). Credits for pass 8: 558. Total about 5,157.
 
 ## Pass 7: 1080p (2026-11-05)
 - `Long-Turnover-1080p.mp4` (1920x1080, 24 fps, H.264 CRF 18, AAC 160k, soft English subtitles) plus `Long-Turnover-720p-preview.mp4` for sending. The 480p master is kept as is.

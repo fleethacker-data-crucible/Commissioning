@@ -82,4 +82,4 @@ Fast where it must be fast, smart where judgment matters, and governed everywher
 
 ## PRs and fixes found during the run
 See the final report. Fixes: Pester CI (2), AI Model Server key line and stale error, Fairlead/route labels, Fleet skin and AGENTS.md rule.
-Anthony to do: delete credential `Fairlead/BridgeWarden` (and revoke the key in Fairlead) after the night.
+To do: delete credential `Fairlead/BridgeWarden` (and revoke the key in Fairlead) after the night.
