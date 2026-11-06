@@ -17,6 +17,6 @@ im=Image.open(os.path.join(E,'cyton.png'));im=flat(im).resize((300,300),Image.LA
 im=Image.open(os.path.join(E,'polar_0496c9c54f1e296e047c2ccb7c3710a989b550a9.png'));im=flat(im.crop((0,120,600,480))).resize((300,180),Image.LANCZOS);out['polar']=jpg(im)
 # BITalino kit: 800x800 white bg -> crop the kit
 im=Image.open(os.path.join(E,'bitalino.jpg'));im=im.crop((0,160,800,640)).resize((300,180),Image.LANCZOS);out['bitalino']=jpg(im)
-js='// product photos (vendor images, see NOTES.md), embedded for the equipment beat\nconst EQ='+'{'+','.join(f'{k}:"{v}"' for k,v in out.items())+'};\n'
+js='// product photos (vendor images), embedded for the equipment beat\nconst EQ='+'{'+','.join(f'{k}:"{v}"' for k,v in out.items())+'};\n'
 open(os.path.join(HERE,'src','equip.js'),'w').write(js)
 print({k:len(v)//1024 for k,v in out.items()},'KB')

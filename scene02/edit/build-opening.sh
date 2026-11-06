@@ -2,7 +2,7 @@
 # Rebuilds the opening scene from the downloaded Renoise clips.
 # Needs: bash (Git Bash on Windows), ffmpeg, ffprobe, Python 3 with Pillow.
 #
-# Inputs (download these from Renoise first, see ../assets.md):
+# Inputs (download these from Renoise first):
 #   CLIP_A   task 413642  clip A, blast, alarm, "Report."
 #   CLIP_A3  task 413731  A3, Sullivan gripping the joystick
 #   CLIP_B   task 413643  B v2, uplink lost and the Captain's order

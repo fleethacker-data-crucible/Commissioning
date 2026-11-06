@@ -10,7 +10,6 @@ A 4:57 film pitching the Long Turnover R&D proposal: capturing a veteran's tacit
 | `storyboard-contact-sheet.png` | One frame per beat. |
 | `timeline.json` | Every beat with start, end, picture source (generator task ids or native), narration and status. |
 | `SCRIPT.md` | The script as shot. |
-| `NOTES.md` | Production notes by pass: what was generated, credits spent, checks run, shot notes, what is unverified. |
 | `edit/` | The HTML/SVG scenes (`src/`), the Playwright renderer, numpy compositor, audio builder and encode scripts. Generated clips, voice files and the 1080p master are not in the repo. |
 
 ## Things to know

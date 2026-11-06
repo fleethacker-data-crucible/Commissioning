@@ -10,16 +10,13 @@ The presentation videos for the FleetHacker hackathon: the pitch, the opening sc
 |---|---|
 | `intro/video/` | Rendered cuts of the opening scene. `opening-scene-rough-cut.mp4` is the current one. |
 | `intro/script/opening-scene.md` | Shot list, final dialogue, how to say the tool names, and a draft Windlass voiceover. |
-| `intro/prompts/` | Every prompt and setting sent to the generators, with task IDs and costs. `prompt-audit.md` is the first part, `prompt-audit-part2.md` the later fixes. |
-| `assets.md` | Task and material IDs for the cast, the set, the voices and the clips, and which were kept or rejected. |
 | `intro/edit/` | The ffmpeg and Python scripts that cut the clips together, clip in corrected audio and build the zoom into the monitor. |
 | `intro/notes/open-questions.md` | What is unverified, what is still rough, lessons, and the plan for the next scene. |
 | `scene02/` | Placeholder for the next scene. Currently an unchanged copy of `intro/`. |
 | `pitch/` | The elevator pitch, cut v6 at 1080p, with its build scripts. See `pitch/README.md`. |
 | `*-demo/` | One folder per tool demo (16: Bowerbird, Bridge Warden, Capstan, Eight Bells, Fairlead, Gangplank, Halyard, Lazarette Lite, Noodler, Packet Rat, Phoenix LAi, Scrimshaw, Semaphore, Shellback, SnapShackle, Windlass), each with `video/` (the demo, a phone cut and the `.srt`), `script/` (`INTENT.md`, `SCRIPT.md`) and `architecture/` (the diagram as SVG and PNG). |
 | `judges-brief/` | The 23-slide infographic deck for the judges, with PowerPoint and PDF exports. See `judges-brief/README.md`. |
-| `long-turnover/` | The Long Turnover proposal film (4:57), its subtitles, timeline, notes and edit sources. See `long-turnover/README.md`. |
-| `audit/` | The demo video quality audit (`AUDIT-REPORT.md`) and its contact sheets. |
+| `long-turnover/` | The Long Turnover proposal film (4:57), its subtitles, timeline and edit sources. See `long-turnover/README.md`. |
 | `competitive-scorecard/`        | How the suite compares with 17 other FleetHacker repositories, as one offline HTML page. See `competitive-scorecard/README.md`. |
 
 ## How the opening scene was made
