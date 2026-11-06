@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FleetHacker competitive scorecard</title>
+<style>:root{color-scheme:light dark;--color-fg:#17233a;--color-fg-muted:#5b6678;--color-bg:#f5f6f8;--color-panel:#fff;--color-border-line:#dfe3ea;--color-ok:#1d7a4d;--color-warn:#a8690b;--color-bad:#b3362b;--cds-chart-muted:#aeb6c4;--cds-chart-grid:#e3e6ec;--cds-surface-popover:#fff;--cds-border:#dfe3ea;--cds-text-secondary:#5b6678;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.14);
+--cds-radius:8px;--cds-pad-xs:.25rem;--cds-pad-sm:.5rem;--cds-pad-lg:1.25rem;--cds-gap-xs:.25rem;--cds-gap-sm:.5rem;--cds-gap-md:1rem;--cds-gap-xl:2rem;--cds-font-size-caption:.8125rem;--cds-font-size-heading:1.0625rem;--cds-font-size-title:2rem;--cds-font-weight-medium:600;--font-anthropic-sans:system-ui,-apple-system,"Segoe UI",sans-serif;--font-anthropic-serif:Georgia,"Times New Roman",serif}
+@media (prefers-color-scheme:dark){:root{--color-fg:#e8ebf1;--color-fg-muted:#a0a9b8;--color-bg:#10151f;--color-panel:#19202c;--color-border-line:#2d3543;--color-ok:#5cc58f;--color-warn:#e0a94d;--color-bad:#ec7a6f;--cds-chart-muted:#5b6678;--cds-chart-grid:#2d3543;--cds-surface-popover:#19202c;--cds-border:#2d3543;--cds-text-secondary:#a0a9b8}}
+body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans)}#dash-root{max-width:80rem;margin:auto;padding:2rem 1rem}a{color:inherit}</style></head><body><div id="dash-root">
+<script>
+const DATA={"scorecard": [{"project": "Data Crucible suite", "kind": "us", "url": "https://github.com/fleethacker-data-crucible", "mission": "Edge-Ops: 17 tools for locked-down Windows", "commits": 297, "note": "Team reports testing on Nautilus with CAC authentication and NMCI, and judges the tools could deploy tomorrow. No public record yet. No UDS or Zarf package seen in the hub or Bridge Warden pages.", "offline": "Yes", "noinstall": "Yes", "human": "Yes", "audit": "Yes", "tests": "Yes", "package": "No", "validation": "Yes", "demo": "Yes"}, {"project": "Bridge Warden alone", "kind": "ref", "url": "https://github.com/fleethacker-data-crucible/bridge-warden", "mission": "Governance layer between shipboard AI agents and the ship", "commits": 57, "note": "Our flagship scored alone, to test whether the suite score leans on breadth. Its README describes a synthetic ship; rated Partial because the team's testing was not broken out by tool.", "offline": "Yes", "noinstall": "Yes", "human": "Yes", "audit": "Yes", "tests": "Yes", "package": "No", "validation": "Partial", "demo": "Yes"}, {"project": "Cyber Thunder", "kind": "rival", "url": "https://github.com/fleethacker/cyber-thunder", "mission": "Scanner output to approved, verified, reversible fixes", "commits": 172, "note": "Recorded real-target runs: 28/28 seeded findings across Rocky 9, Podman and k3s. Identity binding still open.", "offline": "Yes", "noinstall": "No", "human": "Yes", "audit": "Yes", "tests": "Yes", "package": "Yes", "validation": "Yes", "demo": "No"}, {"project": "OTIS", "kind": "rival", "url": "https://github.com/fleethacker/OTIS", "mission": "Naval messages to searchable tasking and a schedule", "commits": 138, "note": "14 OPTASK types plus CASREP. UDS bundle built; current OIDC profile still needs re-acceptance. ARM64 lock.", "offline": "Yes", "noinstall": "No", "human": "Yes", "audit": "Partial", "tests": "Yes", "package": "Yes", "validation": "Partial", "demo": "Yes"}, {"project": "LOCKER", "kind": "rival", "url": "https://github.com/TristanGru/LOCKER", "mission": "Readiness decision support with donor trade-offs", "commits": 53, "note": "Deep, cited, live on Vercel. Synthetic only; username sign-in; Zarf file not verified as a deployment.", "offline": "Yes", "noinstall": "No", "human": "Yes", "audit": "Yes", "tests": "Yes", "package": "Partial", "validation": "No", "demo": "Yes"}, {"project": "Anchor Management", "kind": "rival", "url": "https://github.com/fleethacker/anchor-management", "mission": "CASREP workspace, release route and logistics", "commits": 130, "note": "Zarf package and CI. Fictional and unauthenticated by its own statement.", "offline": "Partial", "noinstall": "Partial", "human": "Yes", "audit": "Partial", "tests": "Yes", "package": "Yes", "validation": "No", "demo": "Partial"}, {"project": "Media Compliance Reviewer", "kind": "rival", "url": "https://github.com/Charlie22911/FleetHacker", "mission": "Offline image and video compliance review", "commits": 6, "note": "Single x64 executable, closest to our no-install model. Unsigned preview.", "offline": "Yes", "noinstall": "Yes", "human": "Yes", "audit": "Partial", "tests": "Yes", "package": "No", "validation": "No", "demo": "No"}, {"project": "DORE Afloat", "kind": "rival", "url": "https://github.com/Tking6304/dore-afloat", "mission": "Rule-based casualty brief, tasking and debrief", "commits": 5, "note": "Python only or one HTML file; tamper-evident audit demo. All data notional.", "offline": "Yes", "noinstall": "Yes", "human": "Yes", "audit": "Yes", "tests": "Partial", "package": "No", "validation": "No", "demo": "No"}, {"project": "SUROB MSI Calculator", "kind": "rival", "url": "https://github.com/WardenOfTheKeys/SUROB", "mission": "Surf observation worksheet and craft limits", "commits": 35, "note": "Installable offline app, live. Correction tables not yet checked against the publication.", "offline": "Yes", "noinstall": "Yes", "human": "Yes", "audit": "No", "tests": "No", "package": "No", "validation": "No", "demo": "Yes"}, {"project": "HATCH", "kind": "rival", "url": "https://github.com/johnbabick-prog/fleethacker", "mission": "Offline MH-60R maintenance administration", "commits": 2, "note": "Helm and draft Zarf, security scan evidence. OCR and real sync not built. Low commit count despite a large codebase.", "offline": "Yes", "noinstall": "No", "human": "Partial", "audit": "Partial", "tests": "Yes", "package": "Partial", "validation": "No", "demo": "No"}, {"project": "SAGGLE ROC / FleetPulse", "kind": "rival", "url": "https://github.com/saggleroc/saggleroc.github.io", "mission": "Automated Eight O'Clock report over low bandwidth", "commits": 30, "note": "Strongest impact claim: 912+ hours per ship per year, an estimate. Synthetic demo.", "offline": "Yes", "noinstall": "Yes", "human": "Partial", "audit": "No", "tests": "No", "package": "No", "validation": "No", "demo": "Yes"}, {"project": "Pier Review", "kind": "rival", "url": "https://github.com/fleethacker/pier-review", "mission": "Mooring, tug and ship-path prediction", "commits": 680, "note": "Most commits in the field. Real physics on placeholder data; results unqualified.", "offline": "Partial", "noinstall": "No", "human": "Yes", "audit": "Partial", "tests": "Yes", "package": "Partial", "validation": "No", "demo": "No"}, {"project": "NavyLINK", "kind": "rival", "url": "https://github.com/ragunawan/NavLink", "mission": "Find existing capabilities before building", "commits": 29, "note": "Measured evaluation harness on synthetic fixtures. Container path not exercised.", "offline": "Yes", "noinstall": "No", "human": "Partial", "audit": "No", "tests": "Yes", "package": "No", "validation": "No", "demo": "No"}, {"project": "Next In Line", "kind": "rival", "url": "https://github.com/bryan-rigsby/next-in-line-fleethacker", "mission": "Sailor service queue on Forms, SharePoint and Power Automate", "commits": 10, "note": "Uses approved Microsoft 365 tools, a real fielding shortcut. No README; read from its plan. Needs connectivity.", "offline": "No", "noinstall": "Yes", "human": "Partial", "audit": "Partial", "tests": "Partial", "package": "No", "validation": "Partial", "demo": "No"}, {"project": "PB4T Weekly Planner", "kind": "rival", "url": "https://github.com/fleethacker/pb4t", "mission": "Training calendar with conflict repair", "commits": 14, "note": "UDS package. Its README says no automated test suite is included.", "offline": "Yes", "noinstall": "No", "human": "Yes", "audit": "No", "tests": "No", "package": "Yes", "validation": "No", "demo": "No"}, {"project": "SUROB (FleetHacker2026)", "kind": "rival", "url": "https://github.com/H4CK3R-M4N/FleetHacker2026", "mission": "Packaged static build of a SUROB calculator", "commits": 2, "note": "Same mission as SUROB. One-line README.", "offline": "Yes", "noinstall": "Yes", "human": "Partial", "audit": "No", "tests": "No", "package": "No", "validation": "No", "demo": "No"}, {"project": "Watchstander-Copilot", "kind": "rival", "url": "https://github.com/burhaps/Watchstander-Copilot", "mission": "Planned local RAG for engineering watchstations", "commits": 4, "note": "Objective statement and two manuals only; no application code seen.", "offline": "No", "noinstall": "No", "human": "No", "audit": "No", "tests": "No", "package": "No", "validation": "No", "demo": "No"}, {"project": "Platform Onboarding", "kind": "rival", "url": "https://github.com/jgarcines/fleethacker-platform-onboarding", "mission": "Training prototype and onboarding toolkit", "commits": 2, "note": "README is empty and the toolkit folder could not be read, so this is no evidence, not proof of nothing.", "offline": "No", "noinstall": "No", "human": "No", "audit": "No", "tests": "No", "package": "No", "validation": "No", "demo": "No"}, {"project": "Drill Seeker", "kind": "rival", "url": "https://github.com/fleethacker/drill-seeker", "mission": "Unknown", "commits": 0, "note": "Repository is empty.", "offline": "No", "noinstall": "No", "human": "No", "audit": "No", "tests": "No", "package": "No", "validation": "No", "demo": "No"}], "tools": [{"tool": "Halyard", "status": "Unreleased"}, {"tool": "Lazarette", "status": "Unreleased"}, {"tool": "Gangplank", "status": "Preview"}, {"tool": "PacketRat", "status": "Prototype"}, {"tool": "Shellback", "status": "Prototype"}, {"tool": "SnapShackle", "status": "Prototype"}, {"tool": "Bowerbird", "status": "Unreleased"}, {"tool": "Eight Bells", "status": "Prototype"}, {"tool": "Capstan", "status": "Versioned"}, {"tool": "Scrimshaw", "status": "Unreleased"}, {"tool": "Semaphore", "status": "Versioned"}, {"tool": "Fairlead", "status": "Unreleased"}, {"tool": "Windlass", "status": "Versioned"}, {"tool": "TalkForge", "status": "Not stated"}, {"tool": "Data Noodler", "status": "Not stated"}, {"tool": "Phoenix LAI", "status": "Not stated"}, {"tool": "Bridge Warden", "status": "Unreleased"}], "matchups": [{"rival": "OTIS", "ours": "PacketRat, Eight Bells", "leader": "OTIS", "why": "Both turn traffic into action. OTIS parses 14 OPTASK types plus CASREP with a UDS path. PacketRat is a prototype; its edge is running on a locked-down Windows box with nothing installed."}, {"rival": "Cyber Thunder", "ours": "Bridge Warden", "leader": "Split", "why": "Both keep a human gate and a hash-chained ledger, on different missions. Cyber Thunder has real-target results and UDS. Bridge Warden needs no install or admin rights but runs on a simulation."}, {"rival": "DORE Afloat", "ours": "Eight Bells, Bridge Warden", "leader": "Split", "why": "DORE owns the casualty moment with voice and step clocks, rule-based on notional data. Eight Bells covers log quality and turnover; Bridge Warden adds real AI governance."}, {"rival": "SAGGLE ROC / FleetPulse", "ours": "Semaphore, Data Noodler", "leader": "SAGGLE ROC", "why": "Our analytics tools are more general and need no Foundry. SAGGLE ROC tells the better story: one named report and an estimate of 912+ hours per ship per year."}, {"rival": "HATCH", "ours": "Fairlead, Phoenix LAI, Windlass", "leader": "Split", "why": "Our suite ships local model serving; HATCH needs a separately provisioned server. HATCH has a maintenance workflow we have no equivalent for."}, {"rival": "Watchstander-Copilot", "ours": "Phoenix LAI, Fairlead", "leader": "Data Crucible", "why": "It states the local RAG objective. We have the running local model layer."}, {"rival": "Platform Onboarding", "ours": "Scrimshaw", "leader": "Unknown", "why": "Same training space, but its toolkit could not be read."}, {"rival": "LOCKER", "ours": "None", "leader": "LOCKER", "why": "No direct counterpart. Readiness trade-offs with cited briefs are uncontested by our suite."}, {"rival": "Anchor Management", "ours": "None", "leader": "Anchor Management", "why": "No CASREP workflow in our catalog. OTIS also reads CASREPs."}]};
+window.d3={format:()=>n=>Number(n).toLocaleString('en-US'),max:(a,f)=>Math.max(...a.map(f))};
+window.dash={colors:['#2f6fed'],_c:{},_d:[],calc(id,o){this._c[id]=o},
+ data(id){if(DATA[id])return{status:'ok',data:DATA[id]};const o=this._c[id];if(!o)return{status:'missing',data:[]};if(!o.v)o.v=o.fn(...o.inputs.map(i=>this.data(i).data));return{status:'ok',data:o.v}},
+ draw(n,f){this._d.push([n,f])},_run(){this._d.forEach(([n,f])=>document.querySelectorAll('[data-draw="'+n+'"]').forEach(f))}};
+</script>
+<style>
+.fh{font-family:var(--font-anthropic-sans);display:grid;gap:var(--cds-gap-xl)}
+.fh h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0}
+.fh h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.fh p{margin:0}
+.fh .sub{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);margin-top:var(--cds-gap-xs)}
+.fh .lead{margin-top:var(--cds-gap-sm);max-width:62rem}
+.fh .lead b{font-weight:var(--cds-font-weight-medium)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10.5rem),1fr));gap:var(--cds-gap-md)}
+.tile,.card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);min-width:0}
+.tile .lab{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.tile .num{font-family:var(--font-anthropic-serif);font-size:var(--cds-font-size-title);line-height:1.2;margin-top:var(--cds-gap-xs);font-variant-numeric:tabular-nums}
+.tile .of{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-top:var(--cds-gap-xs)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:var(--cds-gap-md)}
+.body{margin-top:var(--cds-gap-md);position:relative}
+.bar{display:grid;grid-template-columns:minmax(6rem,11rem) 1fr 3rem;gap:var(--cds-gap-sm);align-items:center;min-height:1.6rem;font-size:var(--cds-font-size-caption)}
+.bar .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar.us .nm{font-weight:var(--cds-font-weight-medium)}
+.bar .tr{height:.8rem;display:flex}
+.bar .fl{height:100%;border-radius:2px;background:var(--cds-chart-muted)}
+.bar .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--color-fg-muted)}
+.bar.gap .tr{gap:1px}
+.key{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-top:var(--cds-gap-sm)}
+.key i{display:inline-block;width:.6rem;height:.6rem;border-radius:2px;margin-right:.3rem}
+.scroll{overflow:auto;margin-top:var(--cds-gap-md)}
+.fh table{border-collapse:collapse;width:100%;font-size:var(--cds-font-size-caption)}
+.fh th{position:sticky;top:0;background:var(--color-panel);text-align:left;font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);padding:var(--cds-pad-xs) var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line);white-space:nowrap}
+.fh td{padding:var(--cds-pad-xs) var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.fh td.num{font-variant-numeric:tabular-nums;text-align:right}
+.fh tr.us td{background:color-mix(in srgb,var(--color-fg) 6%,transparent)}
+.fh tr.ref td{color:var(--color-fg-muted)}
+.chip{display:inline-block;padding:0 .4rem;border-radius:var(--cds-radius);white-space:nowrap}
+.chip.Yes{color:var(--color-ok)}.chip.Partial{color:var(--color-warn)}.chip.No{color:var(--color-fg-muted);opacity:.65}
+.fh td.mis{min-width:14rem}
+.fh td.why{min-width:12rem}
+.steps{margin:var(--cds-gap-md) 0 0;padding-left:1.2rem;display:grid;gap:var(--cds-gap-sm)}
+.fine{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);display:grid;gap:var(--cds-gap-xs)}
+.tip{position:absolute;z-index:3;max-width:18rem;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);pointer-events:none}
+.tip span{display:block;color:var(--cds-text-secondary)}
+.dashbox{min-height:12rem}
+[data-dash-source-state=refreshing]{opacity:.5}
+</style>
+<div class="fh">
+<header id="top">
+<h1>FleetHacker competitive scorecard</h1>
+<p class="sub">Public GitHub pages read 5 November 2026, plus the team's own testing report</p>
+<p class="lead">Data Crucible leads by <b data-draw="margin" data-source="summary" data-field="margin">—</b> points, and we are the only entry reporting tests on Nautilus with CAC and NMCI. Our gap is packaging: <b data-draw="pkg" data-source="summary" data-field="rivalPackage">—</b> rivals show a UDS or Zarf package and we show none.</p>
+</header>
+
+<section class="tiles">
+<div class="tile"><div class="lab">Evidence score</div><div class="num" data-draw="score" data-source="summary" data-field="ourScore">—</div><div class="of">out of a possible 16</div></div>
+<div class="tile"><div class="lab">Rank in the field</div><div class="num" data-draw="rank" data-source="summary" data-field="ourRank">—</div><div class="of">against the 17 listed rivals</div></div>
+<div class="tile"><div class="lab">Best rival score</div><div class="num" data-draw="best" data-source="summary" data-field="bestRival">—</div><div class="of">Cyber Thunder and OTIS</div></div>
+<div class="tile"><div class="lab">Tools in our catalog</div><div class="num" data-draw="tools" data-source="summary" data-field="toolCount">—</div><div class="of">rivals show one product each</div></div>
+<div class="tile"><div class="lab">Our tools with a version</div><div class="num" data-draw="ver" data-source="summary" data-field="versioned">—</div><div class="of">the rest are prototype or unstated</div></div>
+</section>
+
+<section class="card" id="ranking">
+<h2>Evidence score by project</h2>
+<p class="sub">Eight criteria at 2 for yes, 1 for partial, 0 for none seen. Hover a bar for the reason.</p>
+<div class="body dashbox" data-draw="scores" data-source="ranked"></div>
+</section>
+
+<section class="grid">
+<div class="card" id="criteria">
+<h2>Where the field is strong</h2>
+<p class="sub">How many of the rivals meet each criterion, and our own rating.</p>
+<div class="body dashbox" data-draw="coverage" data-source="coverage"></div>
+<div class="key"><span><i style="background:var(--color-ok)"></i>Rivals: yes</span><span><i style="background:var(--color-warn)"></i>Rivals: partial</span><span><i style="background:var(--cds-chart-grid)"></i>Rivals: none seen</span></div>
+</div>
+<div class="card" id="commits">
+<h2>Activity is not readiness</h2>
+<p class="sub">Commits on the default branch. Ours counts only edge-ops, Commissioning and Bridge Warden, so it is a floor.</p>
+<div class="body dashbox" data-draw="commits" data-source="ranked"></div>
+</div>
+</section>
+
+<section class="card" id="matrix">
+<h2>The full evidence matrix</h2>
+<p class="sub">Open a project name to see its repository. Bridge Warden alone is a reference row and is not ranked.</p>
+<div class="scroll">
+<table data-source="ranked" data-row-key="project">
+<thead><tr><th data-field="rank">Rank</th><th data-field="project">Project</th><th data-field="mission">Mission</th><th data-field="offline">Offline</th><th data-field="noinstall">No install</th><th data-field="human">Human gate</th><th data-field="audit">Audit trail</th><th data-field="tests">Tests or CI</th><th data-field="package">UDS or Zarf</th><th data-field="validation">Real-target testing</th><th data-field="demo">Public demo</th><th data-field="total">Score</th></tr></thead>
+<tbody data-draw="heat"></tbody>
+</table>
+</div>
+</section>
+
+<section class="grid">
+<div class="card" id="clashes">
+<h2>Where our tools collide with theirs</h2>
+<p class="sub">Who leads is a judgment from each README, not a measured result.</p>
+<div class="scroll">
+<table data-source="matchups" data-row-key="rival">
+<thead><tr><th data-field="rival">Rival</th><th data-field="ours">Our tools</th><th data-field="leader">Who leads</th><th data-field="why">Why</th></tr></thead>
+<tbody data-draw="match"></tbody>
+</table>
+</div>
+</div>
+<div class="card" id="moves">
+<h2>What would widen the lead</h2>
+<p class="sub">In order of likely effect.</p>
+<ol class="steps">
+<li><b>Publish the validation record.</b> Testing on Nautilus with CAC and NMCI is our strongest fact, and nothing public shows it. Cyber Thunder publishes a validation matrix; a dated one from us lets judges check the claim. The hub README also still calls every tool a prototype or preview, which undercuts the view that they could deploy tomorrow.</li>
+<li><b>Answer the UDS question.</b> OTIS's repository tags Defense Unicorns, so judges may ask. Say plainly why no-admin Windows, tested on NMCI, is the faster route to the Fleet, or package one flagship with Zarf as well.</li>
+<li><b>Lead with one mission thread.</b> Every rival sells one problem. Eighteen tools can read as unfocused, so walk a single watch from message to log to decision.</li>
+<li><b>Add a number.</b> SAGGLE ROC owns the only hours-saved headline we found. A sourced estimate for one of our tools would answer it.</li>
+<li><b>Tidy the hub.</b> The release workflow is still staged and several tools are marked unreleased. Check these before a judge clicks through.</li>
+</ol>
+</div>
+</section>
+
+<section class="fine" id="method">
+<p><b>How to read this.</b> The criteria and ratings are this report's own, not the judges'. A rating reflects what a repository says about itself, or for us what the team reports; no code was run, and claims were not tested.</p>
+<p><b>Uneven reading.</b> Rivals were read from their README or plan. Ours were read from the hub, Bridge Warden and Commissioning pages plus repository metadata, so another of our repositories may hold a UDS package that was missed. Correct that rating if so.</p>
+<p><b>Suite effect.</b> Our score takes the best evidence across all tools, which favors a suite. Bridge Warden alone scores one point lower. The Nautilus, CAC and NMCI testing and the view that the tools could deploy tomorrow are the team's own report, and no record of them was reviewed.</p>
+<p><b>Thin evidence.</b> The Platform Onboarding toolkit could not be read, and a low commit count can mean code was pushed in one batch, as HATCH's seems to be.</p>
+</section>
+</div>
+<script>
+dash.calc('ranked',{title:'Scores and ranks',description:'Counts yes as 2, partial as 1 and no as 0 across eight criteria, then ranks everything except the reference row.',inputs:['scorecard'],fn:(scorecard)=>{
+ const K=['offline','noinstall','human','audit','tests','package','validation','demo'],V={Yes:2,Partial:1,No:0};
+ const o={us:0,ref:1,rival:2};
+ const r=scorecard.map(x=>({...x,total:K.reduce((s,k)=>s+V[x[k]],0)})).sort((a,b)=>b.total-a.total||o[a.kind]-o[b.kind]||a.project.localeCompare(b.project));
+ const t=r.filter(x=>x.kind!=='ref').map(x=>x.total);
+ return r.map(x=>({...x,rank:x.kind==='ref'?'—':t.indexOf(x.total)+1}));
+}});
+dash.calc('coverage',{title:'Coverage by criterion',description:'Counts how many rivals rate yes, partial or no on each criterion, with our rating beside it.',inputs:['ranked'],fn:(ranked)=>{
+ const L={offline:'Offline',noinstall:'No install',human:'Human gate',audit:'Audit trail',tests:'Tests or CI',package:'UDS or Zarf',validation:'Real-target testing',demo:'Public demo'};
+ const ri=ranked.filter(x=>x.kind==='rival'),us=ranked.find(x=>x.kind==='us');
+ return Object.keys(L).map(k=>({criterion:L[k],yes:ri.filter(x=>x[k]==='Yes').length,partial:ri.filter(x=>x[k]==='Partial').length,none:ri.filter(x=>x[k]==='No').length,ours:us[k]}));
+}});
+dash.calc('summary',{title:'Headline figures',description:'Our score and rank, the best rival, and counts from the tool catalog.',inputs:['ranked','tools'],fn:(ranked,tools)=>{
+ const us=ranked.find(x=>x.kind==='us'),ri=ranked.filter(x=>x.kind==='rival'),best=Math.max(...ri.map(x=>x.total));
+ return [{ourScore:us.total,ourRank:us.rank,bestRival:best,margin:us.total-best,rivalPackage:ri.filter(x=>x.package==='Yes').length,toolCount:tools.length,versioned:tools.filter(x=>x.status==='Versioned').length}];
+}});
+const one=(f)=>(el)=>{const d=dash.data('summary');el.textContent=d.status==='ok'&&d.data[0]?d.data[0][f]:'—';};
+[['margin','margin'],['pkg','rivalPackage'],['score','ourScore'],['rank','ourRank'],['best','bestRival'],['tools','toolCount'],['ver','versioned']].forEach(([n,f])=>dash.draw(n,one(f)));
+const mk=(p,t,c)=>{const e=document.createElement(t);if(c)e.className=c;p.appendChild(e);return e;};
+const tip=(box,row,head,text)=>{
+ row.onpointermove=(ev)=>{let t=box.querySelector('.tip');if(!t)t=mk(box,'div','tip');t.replaceChildren();mk(t,'span').textContent=head;t.append(text);
+  const b=box.getBoundingClientRect();const x=Math.min(ev.clientX-b.left+12,Math.max(0,b.width-t.offsetWidth));t.style.left=x+'px';t.style.top=(ev.clientY-b.top+14)+'px';};
+ row.onpointerleave=()=>{const t=box.querySelector('.tip');if(t)t.remove();};
+};
+const bars=(el,rows,val,mx,sub)=>{el.replaceChildren();rows.forEach(r=>{
+ const b=mk(el,'div','bar'+(r.kind==='us'?' us':''));mk(b,'div','nm').textContent=r.project;
+ const f=mk(mk(b,'div','tr'),'div','fl');f.style.width=(val(r)/mx*100)+'%';if(r.kind==='us')f.style.background=dash.colors[0];
+ mk(b,'div','v').textContent=d3.format(',')(val(r));tip(el,b,r.project,sub(r));});};
+dash.draw('scores',(el)=>{const d=dash.data('ranked');if(d.status!=='ok'){el.textContent='';return;}
+ bars(el,d.data,r=>r.total,16,r=>r.note);});
+dash.draw('commits',(el)=>{const d=dash.data('ranked');if(d.status!=='ok'){el.textContent='';return;}
+ const r=d.data.filter(x=>x.kind!=='ref').slice().sort((a,b)=>b.commits-a.commits);
+ bars(el,r,x=>x.commits,d3.max(r,x=>x.commits),x=>d3.format(',')(x.commits)+' commits, evidence score '+x.total);});
+dash.draw('coverage',(el)=>{const d=dash.data('coverage');el.replaceChildren();if(d.status!=='ok')return;
+ d.data.forEach(r=>{const b=mk(el,'div','bar gap');mk(b,'div','nm').textContent=r.criterion;const t=mk(b,'div','tr');const n=r.yes+r.partial+r.none;
+  [['yes','var(--color-ok)'],['partial','var(--color-warn)'],['none','var(--cds-chart-grid)']].forEach(([k,c])=>{if(!r[k])return;const f=mk(t,'div','fl');f.style.width=(r[k]/n*100)+'%';f.style.background=c;});
+  const v=mk(b,'div','v');v.textContent=r.ours;v.style.color=r.ours==='Yes'?'var(--color-ok)':r.ours==='Partial'?'var(--color-warn)':'var(--color-bad)';
+  tip(el,b,r.criterion,r.yes+' yes, '+r.partial+' partial, '+r.none+' none seen. Ours: '+r.ours);});});
+dash.draw('heat',(el)=>{const d=dash.data('ranked');el.replaceChildren();if(d.status!=='ok')return;
+ const K=['offline','noinstall','human','audit','tests','package','validation','demo'];
+ d.data.forEach(r=>{const tr=mk(el,'tr',r.kind==='us'?'us':r.kind==='ref'?'ref':'');mk(tr,'td','num').textContent=r.rank;
+  const a=mk(mk(tr,'td'),'a');a.textContent=r.project;if(/^https:\/\/github\.com\//.test(r.url)){a.href=r.url;a.target='_blank';a.rel='noopener';}
+  mk(tr,'td','mis').textContent=r.mission;K.forEach(k=>{mk(mk(tr,'td'),'span','chip '+r[k]).textContent=r[k];});mk(tr,'td','num').textContent=r.total;});});
+dash.draw('match',(el)=>{const d=dash.data('matchups');el.replaceChildren();if(d.status!=='ok')return;
+ d.data.forEach(r=>{const tr=mk(el,'tr');mk(tr,'td').textContent=r.rival;mk(tr,'td').textContent=r.ours;mk(tr,'td').textContent=r.leader;mk(tr,'td','why').textContent=r.why;});});
+dash._run();
+</script>
+
+</div></body></html>
