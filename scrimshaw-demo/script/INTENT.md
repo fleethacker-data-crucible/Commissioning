@@ -1,6 +1,6 @@
 # Scrimshaw demo: intent and audit (short cut)
 
-Repo: `C:\Users\Anthony\Projects\Scrimshaw`, `main` at 58fd125 (the local checkout was on a merged branch 37 commits behind; I switched it to `main`, no files changed).
+Repo: the local Scrimshaw checkout, `main` at 58fd125 (the local checkout was on a merged branch 37 commits behind; I switched it to `main`, no files changed).
 
 ## What it is
 An open-source e-learning authoring tool (Storyline-style): slides, layers, states, triggers, variables, graded quizzes, preview, and publishing to SCORM 1.2/2004, xAPI, cmi5 or a standalone page. Local-first: a PowerShell 5.1 loopback server (port 8775, Fleet registry) serves one compiled file; courses live in the browser (IndexedDB) and `.scrim` files.
