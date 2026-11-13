@@ -84,7 +84,7 @@ S.iceberg2=(t,D,c)=>iceberg(t,D,c,2);
     s+=Draw(pC,tC,{stroke:C.blue,sw:6,extra:'filter="url(#glowS)"'});
     // confirmation ticks
     for(let i=0;i<5;i++){const yr=3+i*3;const a=pr(t,tx+i*.22,tx+i*.22+.35,E.back)*pr(tC,.99,1);if(a>0)s+=G(Cc(0,0,10,{fill:C.navy,stroke:C.goldL,sw:3})+P('M-5 0 L-1.5 4 L5.5 -4',{stroke:C.goldL,sw:3}),{tx:X(yr),ty:Y(Cap(yr)),s:a,op:Math.min(1,a)});}
-    s+=Draw(pF,tD,{stroke:C.blue,sw:5,op:.7,extra:'stroke-dasharray="1.2 1.6" stroke-dashoffset="0" style="stroke-dasharray:none"'}).replace('stroke-dasharray="1 1"','stroke-dasharray="1 1"');
+    s+=Draw(pF,tD,{stroke:C.blue,sw:5,op:.7,extra:'stroke-dasharray="1.2 1.6" stroke-dashoffset="0" style="stroke-dasharray:none"'});
     // lost at exit bracket
     const tL=pr(t,Math.min(tx+4.6,D-3),Math.min(tx+4.6,D-3)+.8,E.out);
     s+=Op(Ln(X(CAR)-14,Y(K(CAR)),X(CAR)-14,Y(capExit),{stroke:C.red,sw:3})+T(X(CAR)-26,(Y(K(CAR))+Y(capExit))/2+8,'lost at exit',{size:24,fill:C.red,anchor:'end'})+Cc(X(CAR),Y(K(CAR)),8,{fill:C.gold})+Cc(X(CAR),Y(capExit),8,{fill:C.blue}),tL);

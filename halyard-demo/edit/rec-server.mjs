@@ -11,6 +11,7 @@ import { createRequire } from 'node:module';
 import { mkdirSync, renameSync, rmSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { clientErrorText } from './client-error.mjs';
 const require = createRequire('C:/Users/you/Projects/Capstan/package.json');
 const { chromium } = require('playwright');
 const here = dirname(fileURLToPath(import.meta.url));
@@ -58,5 +59,5 @@ http.createServer(async (req, res) => {
       return out({ ok: true, events });
     }
     out({ error: 'unknown' }, 404);
-  } catch (e) { out({ error: String(e && e.message || e) }, 500); }
+  } catch (e) { console.error(e); out({ error: clientErrorText(e) }, 500); }
 }).listen(9340, '127.0.0.1', () => console.log('rec-server ready'));
