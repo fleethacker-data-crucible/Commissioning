@@ -27,7 +27,7 @@ A second sailor sits in the other helm seat. He is only seen from behind and has
 > *[General alarm. Ship's announcement: "Man battle stations."]*
 > **CAPTAIN** (flat): "Report."
 > **SULLIVAN** (gravelly): "Helm's answering, Captain. Holding depth and course."
-> **DELGADO** (fast, shaky): "Captain! We've lost the uplink. No internet!"
+> **DELGADO** (fast, shaky): "Captain! We've lost the uplink. CANES network is down!"
 > **CAPTAIN** (deadpan, a beat first): "Then we get our inference local. Rig for ultra-quiet. Windlass and Fairlead. Bring them online now."
 > **DELGADO** (shaky): "Windlass online! Fairlead online!"
 
